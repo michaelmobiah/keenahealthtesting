@@ -1,0 +1,36 @@
+// Widget - Layered Nav Filters
+
+.woocommerce {
+
+  .widget_layered_nav_filters {
+
+    ul {
+      li {
+        float: none;
+        position: relative;
+        padding: @padding-xxsmall @padding @padding-xxsmall 0;
+
+        a {
+          &:before {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin: 0;
+            .translateY(-50%);
+
+            color: currentColor;
+
+            .transition(color);
+          }
+
+          &:hover,
+          &:focus {
+            &:before {
+              color: @error-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

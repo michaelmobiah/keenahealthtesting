@@ -1,0 +1,33 @@
+// Common - Selection
+
+::selection {
+  text-shadow: none;
+
+  color: @selection-color;
+  background-color: @selection-color-background;
+
+  -webkit-text-fill-color: @selection-color;
+}
+
+img::selection {
+  background: transparent;
+}
+
+// Form
+
+input,
+textarea,
+select {
+
+  &::selection {
+    background-color: @selection-color-background;
+    -webkit-text-fill-color: @selection-color;
+  }
+
+  &:-webkit-autofill {
+    &::selection {
+      background-color: @selection-color-background;
+      -webkit-text-fill-color: @selection-color;
+    }
+  }
+}

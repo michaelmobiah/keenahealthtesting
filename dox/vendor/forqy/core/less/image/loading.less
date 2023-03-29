@@ -1,0 +1,42 @@
+// Image - Loading
+
+.@{prefix}-image-loading {
+  opacity: 0;
+
+  .flex-center();
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+
+  color: currentColor;
+  border-radius: inherit;
+
+  .transition(opacity, @transition-duration, @transition-timing-function);
+}
+
+// Display only within <figure> tag
+
+figure {
+
+  .@{prefix}-image-loading {
+    display: block;
+  }
+}
+
+// Hide if image is PNG
+
+img[src*='.png'] {
+
+  + .@{prefix}-image-loading {
+    display: none;
+  }
+}

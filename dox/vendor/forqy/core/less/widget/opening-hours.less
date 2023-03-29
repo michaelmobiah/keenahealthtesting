@@ -1,0 +1,50 @@
+// Widget - Opening Hours
+
+.widget_opening_hours {
+
+  .@{prefix}-day {
+    padding: @padding-xxsmall 0;
+    border-bottom: @border-width-1 solid fade(@content-color, 10%);
+
+    .clearfix();
+
+    // First
+    &:first-of-type {
+      padding-top: 0;
+    }
+
+    // Last
+    &:last-of-type {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    strong {
+      font-weight: @font-weight;
+    }
+  }
+}
+
+// Sidebar
+
+.@{prefix}-sidebar {
+
+  .widget_opening_hours {
+
+    .@{prefix}-day {
+      border-bottom-color: fade(@content-color, 10%);
+    }
+  }
+}
+
+// Footer
+
+.@{prefix}-footer {
+
+  .widget_opening_hours {
+
+    .@{prefix}-day {
+      border-bottom-color: fade(@footer-color, 10%);
+    }
+  }
+}

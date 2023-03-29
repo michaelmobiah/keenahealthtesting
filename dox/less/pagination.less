@@ -1,0 +1,40 @@
+// Pagination
+
+.fy-pagination {
+  margin-top: @grid-gutter-large;
+  text-align: center;
+
+  span {
+    &.current {
+      border-radius: @border-radius;
+    }
+  }
+
+  .prev {
+    padding-left: @padding;
+
+    &:before {
+      content: '\2039';
+      position: absolute;
+      left: @padding-small;
+    }
+  }
+
+  .next {
+    padding-right: @padding;
+
+    &:after {
+      content: '\203A';
+      position: absolute;
+      right: @padding-small;
+    }
+  }
+}
+
+// Post Pagination
+
+.fy-pagination-post {
+  > span {
+    color: @content-color-accent;
+  }
+}

@@ -1,0 +1,23 @@
+/*
+
+Icon
+
+*/
+
+svg {
+  &.icon {
+    fill: currentColor;
+
+    .transition-property(~'fill');
+    .transition-duration(@transition-duration);
+    .transition-timing-function(@transition-timing-function);
+
+    .shape {
+      fill: currentColor;
+
+      .transition-property(~'fill, opacity');
+      .transition-duration(@transition-duration);
+      .transition-timing-function(@transition-timing-function);
+    }
+  }
+}

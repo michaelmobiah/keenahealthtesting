@@ -1,0 +1,59 @@
+// Socials
+
+.fy-socials {
+
+  a {
+
+    // Decoration
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: @border-width;
+      left: 50%;
+      width: 0;
+      height: @border-width;
+      z-index: @layer-1;
+
+      background-color: @link-border-color-hover;
+
+      .transition(all, @transition-duration, @transition-timing-function);
+    }
+
+    // Icon
+    .fy-icon {
+      .scale(0.75, 0.75);
+      .transition-transform(@transition-duration-half @transition-timing-function);
+    }
+
+    &:hover,
+    &:focus {
+
+      &:before {
+        left: 0;
+        width: 100%;
+      }
+
+      .fy-icon {
+        .scale(1, 1);
+      }
+    }
+  }
+}
+
+// Share
+
+.fy-share {
+  padding: 0;
+
+  li {
+    &.fy-share-title {
+      display: none;
+    }
+  }
+
+  a {
+    &:before {
+      bottom: 0;
+    }
+  }
+}

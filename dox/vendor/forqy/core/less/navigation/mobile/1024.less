@@ -1,0 +1,51 @@
+// Navigation - Mobile - Breakpoint - 1024 [Default]
+
+[class*="@{prefix}-navigation-mobile-container"] {
+
+  @media (max-width: @screen-tablet-max) {
+    .navigation-mobile-container();
+
+    // Active
+    &.active {
+      .navigation-mobile-container-active();
+    }
+  }
+}
+
+// List [ul]
+
+[class*="@{prefix}-navigation-mobile-list"] {
+  @media (max-width: @screen-tablet-max) {
+    .navigation-mobile-list();
+  }
+}
+
+// Trigger
+
+[class*="@{prefix}-navigation-trigger"] {
+  @media (max-width: @screen-tablet-max) {
+    .navigation-mobile-trigger();
+  }
+}
+
+// Overlay
+
+.@{prefix}-navigation-overlay {
+  @media (max-width: @screen-tablet-max) {
+    display: block;
+  }
+}
+
+// Prevent Display of the Cloned Navigation
+
+body:not([class*='navigation-all--enabled']) {
+
+  > [class*="@{prefix}-navigation-mobile-container"] {
+
+    &.relocated {
+      @media (min-width: @screen-desktop) {
+        display: none;
+      }
+    }
+  }
+}

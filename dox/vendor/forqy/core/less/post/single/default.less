@@ -1,0 +1,136 @@
+// Post - Single - Default
+
+.@{prefix}-post-single {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  // Excerpt
+
+  .@{prefix}-post-excerpt {
+    margin-bottom: @grid-gutter-medium;
+    font-size: @font-size-xxlarge;
+
+    @media (max-width: @screen-tablet-max) {
+      font-size: @font-size-xlarge;
+    }
+  }
+
+  // Image
+
+  .@{prefix}-post-image {
+    margin-bottom: @grid-gutter-medium;
+
+    a {
+      &:before {
+        background-color: fade(@image-overlay-color, 0);
+      }
+
+      &:hover,
+      &:focus {
+        &:before {
+          background-color: fade(@image-overlay-color, @image-overlay-opacity);
+        }
+      }
+    }
+  }
+
+  // Location
+
+  .@{prefix}-post-location {
+    margin-bottom: @grid-gutter-medium;
+
+    h3 {
+      font-size: @font-size-h3;
+      color: @content-color;
+    }
+
+    .@{prefix}-post-meta {
+      text-align: center;
+
+      li {
+        font-size: @font-size-xlarge;
+      }
+    }
+  }
+
+  // Map
+
+  .@{prefix}-post-map {
+    margin-bottom: @grid-gutter-medium;
+
+    iframe {
+      width: 100%;
+    }
+  }
+
+  // Meta
+
+  .@{prefix}-post-meta {
+    a {
+      &:hover,
+      &:focus {
+        color: @link-color-hover;
+        border-color: @link-border-color-hover;
+      }
+    }
+  }
+
+  // Tags
+
+  .@{prefix}-post-tags {
+    justify-content: inherit;
+    text-align: inherit;
+  }
+
+  // Categories
+
+  .@{prefix}-post-categories {
+    color: fade(@content-color, @content-color-opacity);
+
+    a {
+      color: @link-color;
+      border-color: @link-border-color;
+
+      &:hover,
+      &:focus {
+        color: @link-color-hover;
+        border-color: @link-border-color-hover;
+      }
+    }
+  }
+
+  // Footer
+
+  .@{prefix}-post-footer {
+    padding-bottom: @grid-gutter-medium;
+
+    > [class*='fy-post-'] {
+      margin-top: @grid-gutter-small;
+      margin-bottom: @grid-gutter-small;
+
+      // First
+      &:first-child {
+        margin-top: 0;
+      }
+
+      // Last
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // WP Shortcodes
+
+  .wp-audio-shortcode,
+  .wp-video-shortcode {
+    width: 100%;
+  }
+
+  .wp-video-shortcode {
+    min-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}

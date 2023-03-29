@@ -1,0 +1,61 @@
+// Socials - Base
+
+.@{prefix}-socials {
+  display: block;
+  padding: @grid-gutter-medium @grid-gutter-small;
+  text-align: right;
+
+  user-select: none;
+
+  ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    display: inline-flex;
+    padding: 0;
+    margin: 0 @border-width-small;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    .flex-center();
+
+    position: relative;
+    padding: @padding-xsmall (@padding-xxsmall + 1px); // 24px icon + (5px * 2) @padding-xxsmall + 1px = 36px
+
+    overflow: visible;
+
+    color: fade(@content-color, @content-color-opacity - 20%);
+    border: 0;
+
+    // Icon
+    .@{prefix}-icon {
+      display: block;
+      position: relative;
+      z-index: @layer-2;
+
+      color: currentColor;
+    }
+
+    .icon {
+      float: left;
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover,
+    &:focus {
+      color: @link-color-hover;
+    }
+  }
+}
+

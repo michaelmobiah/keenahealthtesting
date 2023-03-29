@@ -1,0 +1,57 @@
+// Mixins
+// Adapta
+@import "../vendor/forqy/adapta/less/mixins/animation";
+@import "../vendor/forqy/adapta/less/mixins/border";
+@import "../vendor/forqy/adapta/less/mixins/box";
+@import "../vendor/forqy/adapta/less/mixins/font";
+@import "../vendor/forqy/adapta/less/mixins/fix";
+@import "../vendor/forqy/adapta/less/mixins/flex";
+@import "../vendor/forqy/adapta/less/mixins/column";
+@import "../vendor/forqy/adapta/less/mixins/form";
+@import "../vendor/forqy/adapta/less/mixins/gradient";
+@import "../vendor/forqy/adapta/less/mixins/filter";
+@import "../vendor/forqy/adapta/less/mixins/scrollbar";
+@import "../vendor/forqy/adapta/less/mixins/select";
+@import "../vendor/forqy/adapta/less/mixins/transformation";
+@import "../vendor/forqy/adapta/less/mixins/transition";
+@import "../vendor/forqy/adapta/less/mixins/truncate";
+@import "../vendor/forqy/adapta/less/mixins/mask";
+// CORE
+@import "../vendor/forqy/core/less/_mixins";
+
+// Shadow
+
+.shadow (@color: fade(@color-dark, 15%), @size: @padding) {
+  box-shadow: 0 floor((@size / 10)) floor((@size / 5)) fadeout(@color, 10%),
+  0 floor((@size / 10)) floor((@size / 2)) fadeout(@color, 5%);
+}
+
+// Large
+
+.shadow-large (@color: fade(@color-dark, 15%), @size: @padding) {
+  .shadow(@color, @size);
+}
+
+// XLarge
+
+.shadow-xlarge (@color: fade(@color-dark, 15%), @size: @padding-large) {
+  .shadow(@color, @size);
+}
+
+// Hover
+
+.shadow-hover (@color: fade(@color-dark, 20%), @size: @padding-large) {
+  .shadow(@color, @size);
+}
+
+// Inset
+
+.shadow-inset (@color: fade(@color-dark, 15%), @size: @padding-small) {
+  box-shadow: inset 0 floor((@size / 5)) @size @color;
+}
+
+// Shadow Navigation
+
+.shadow-navigation (@color: fade(@color-dark, 20%), @size: @padding) {
+  .shadow(@color, @size);
+}

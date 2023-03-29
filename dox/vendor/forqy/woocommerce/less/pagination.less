@@ -1,0 +1,100 @@
+// Pagination
+
+.woocommerce {
+
+  nav.woocommerce-pagination {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: @grid-gutter-medium auto 0;
+
+    ul {
+      margin: 0;
+      border: 0;
+
+      li {
+        margin: 0 @border-width;
+        border: 0;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        a,
+        span {
+          display: inline-block;
+          position: relative;
+          padding: @padding-xsmall @padding-small;
+          margin: 0 0 @margin-xxsmall 0;
+
+          line-height: @line-height;
+          text-decoration: none;
+
+          color: @link-color;
+          background-color: transparent;
+          border-bottom: @link-border-width solid transparent;
+
+          @media (max-width: @screen-phone-max) {
+            padding-right: @padding-xsmall;
+            padding-left: @padding-xsmall;
+          }
+
+          // Icon
+
+          svg {
+            position: relative;
+            display: inline-flex;
+            vertical-align: middle;
+
+            color: currentColor;
+          }
+        }
+
+        a {
+          &:hover,
+          &:focus {
+            color: @link-color-hover;
+            background-color: transparent;
+            border-color: @link-border-color-hover;
+          }
+
+          // Previous/Next
+          &.prev {
+            svg {
+              margin-right: @margin-xsmall;
+            }
+          }
+
+          &.next {
+            svg {
+              margin-left: @margin-xsmall;
+            }
+          }
+        }
+
+        span {
+
+          // Dots
+          &.dots {
+            padding-right: @padding-xsmall;
+            padding-left: @padding-xsmall;
+
+            color: fade(@content-color, @content-color-opacity - 20%);
+            border-color: transparent;
+          }
+
+          // Current
+          &.current {
+            color: @color-light;
+            background-color: @content-color-accent;
+            border-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

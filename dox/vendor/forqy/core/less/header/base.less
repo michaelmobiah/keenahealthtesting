@@ -1,0 +1,93 @@
+// Header - Base
+
+.@{prefix}-header {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: @screen-min;
+  padding: 0;
+  z-index: @layer-6;
+
+  color: fade(@header-color, 60%);
+  background-color: fade(@header-color-background, @header-color-background-opacity);
+
+  .transition(all, @transition-duration, @transition-timing-function);
+
+  // Modal Open
+  .has-modal-open & {
+    z-index: @layer-1;
+  }
+
+  // Gutters
+
+  .@{prefix}-flex-gutter-medium {
+
+    @media (max-width: @screen-tablet-max) {
+      margin-left: -(@grid-gutter-xsmall);
+
+      > [class*="fy-flex-column"] {
+        padding-left: @grid-gutter-xsmall;
+      }
+    }
+  }
+
+  .@{prefix}-flex-gutter-small {
+
+    @media (max-width: @screen-phone-max) {
+      margin-left: -(@grid-gutter-xxsmall);
+
+      > [class*="fy-flex-column"] {
+        padding-left: @grid-gutter-xxsmall;
+      }
+    }
+  }
+
+  // Hide
+
+  .@{prefix}-desktop-hide {
+
+    .navigation-all--enabled &,
+    .navigation-mobile-enabled & {
+      display: block;
+    }
+  }
+
+  // Gradient
+
+  .header-background-gradient & {
+    background-color: transparent;
+    box-shadow: none;
+
+    // Gradient
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      z-index: -@layer-1;
+
+      pointer-events: none;
+
+      .gradient-vertical(fade(@header-color-background, @header-color-background-opacity), fade(@header-color-background, 0));
+    }
+
+    .@{prefix}-border {
+      display: none;
+    }
+  }
+}
+
+// Container
+
+.@{prefix}-header-container {
+  .centerer();
+
+  position: relative;
+  padding-top: @header-padding;
+  padding-bottom: @header-padding;
+  z-index: @layer-1;
+}

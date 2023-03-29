@@ -1,0 +1,166 @@
+// Off Mixins
+
+.off () {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate3d(100%, 0, 0);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  min-height: 100vh;
+  max-height: none;
+  padding: @spacing-large @spacing;
+  z-index: @off-z-index;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  backface-visibility: hidden;
+  will-change: opacity;
+
+  // Momentum Scroll
+  -webkit-overflow-scrolling: touch;
+
+  // Overscroll
+  @supports (overscroll-behavior-y: contain) {
+    overscroll-behavior-y: contain;
+  }
+
+  transition-property: opacity, visibility, box-shadow;
+  transition-duration: @off-transition-duration;
+  transition-timing-function: @off-transition-timing-function;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  @media (min-width: 768px) {
+    padding-right: @spacing-large;
+    padding-left: @spacing-large;
+  }
+
+  @media (max-width: 320px) {
+    padding-right: @spacing-small;
+    padding-left: @spacing-small;
+  }
+
+  // Position
+  // Right Position [default]
+
+  &[data-off-position] {
+    opacity: 1;
+
+    transition-property: transform, box-shadow;
+    transition-duration: @off-transition-duration;
+    transition-timing-function: @off-transition-timing-function;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+
+    // Close
+
+    .@{prefix}-off__close {
+      opacity: 1;
+    }
+  }
+
+  // Top Position
+
+  &[data-off-position='top'] {
+    top: 0;
+    bottom: auto;
+    height: auto;
+    min-height: auto;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  // Right Position
+
+  &[data-off-position='right'] {
+    right: 0;
+    left: auto;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  // Bottom Position
+
+  &[data-off-position='bottom'] {
+    top: auto;
+    bottom: 0;
+    height: auto;
+    min-height: auto;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  // Left Position
+
+  &[data-off-position='left'] {
+    right: auto;
+    left: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  // Horizontal Position
+  &[data-off-position='right'],
+  &[data-off-position='left'] {
+    width: 80%;
+    max-width: @off-width-max;
+
+    @media (max-width: (@off-width-min + 40px)) {
+      max-width: calc(~'100% - @{spacing}');
+    }
+  }
+}
+
+// Active
+
+.off--active () {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate3d(0, 0, 0);
+
+  // Closing
+  &.closing {
+    opacity: 0;
+  }
+
+  // Closing Position
+  &.closing[data-off-position] {
+    opacity: 1;
+  }
+
+  // Closing Top Position
+  &.closing[data-off-position='top'] {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  // Closing Right Position
+  &.closing[data-off-position='right'] {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  // Closing Bottom Position
+  &.closing[data-off-position='bottom'] {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  // Closing Left Position
+  &.closing[data-off-position='left'] {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  // Close Button
+
+  .@{prefix}-off__close {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

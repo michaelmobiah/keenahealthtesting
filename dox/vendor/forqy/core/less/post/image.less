@@ -1,0 +1,97 @@
+// Post - Image
+
+.@{prefix}-post-image {
+  position: relative;
+  z-index: @layer-1;
+  top: 0;
+
+  color: currentColor;
+
+  a {
+    display: block;
+    overflow: hidden;
+
+    color: inherit;
+
+    transition: none;
+
+    // Overlay
+    &:before {
+      opacity: 0;
+
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: @layer-2;
+
+      background-color: fade(@image-overlay-color, @image-overlay-opacity);
+
+      .transition-property(~'background-color, opacity');
+      .transition-duration(@transition-duration);
+      .transition-timing-function(@transition-timing-function);
+
+      // Reversed
+      .post-overlay-reversed & {
+        background-color: fade(@image-overlay-color, 0);
+      }
+
+      // None
+      .post-overlay-none & {
+        display: none;
+      }
+    }
+
+    // Loaded
+    &.lazy-loaded {
+      &:before {
+        opacity: 1;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      // Overlay
+      &:before {
+        background-color: fade(@image-overlay-color, @image-overlay-opacity - 40%);
+
+        // Reversed
+        .post-overlay-reversed & {
+          background-color: fade(@image-overlay-color, @image-overlay-opacity);
+        }
+      }
+    }
+  }
+}
+
+// Hover
+
+.@{prefix}-post-listing {
+
+  &:hover,
+  &:focus-within {
+
+    .@{prefix}-post-image {
+      a {
+        // Overlay
+        &:before {
+          background-color: fade(@image-overlay-color, @image-overlay-opacity - 40%);
+
+          // Reversed
+          .post-overlay-reversed & {
+            background-color: fade(@image-overlay-color, @image-overlay-opacity);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Caption
+
+.@{prefix}-post-image-caption {
+  padding: @padding-xsmall 0;
+  color: fade(@content-color, @content-color-opacity - 20%);
+}

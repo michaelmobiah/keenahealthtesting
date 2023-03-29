@@ -1,0 +1,43 @@
+// Layout - Masonry - Broken Grid
+
+.posts-layout-masonry-broken {
+
+  // Item
+
+  .@{prefix}-masonry-item {
+    &:nth-child(odd) {
+      border-top: (@post-gutter * 2) solid transparent;
+      border-left: @post-gutter solid transparent;
+
+      @media (max-width: @screen-desktop-max) {
+        border-top-width: @post-gutter;
+        border-left-width: (@post-gutter / 2);
+      }
+      @media (max-width: @screen-phone-min) {
+        border-width: 0;
+      }
+    }
+  }
+
+  // Menu
+
+  .@{prefix}-main-menu {
+
+    .@{prefix}-masonry-item {
+      &:nth-child(odd) {
+        border-top-width: (@post-gutter / 2);
+      }
+    }
+  }
+
+  // Albums
+
+  .@{prefix}-main-albums {
+
+    .@{prefix}-masonry-item {
+      &:nth-child(odd) {
+        border-left-width: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,188 @@
+// Section - Base
+
+.@{prefix}-section {
+  position: relative;
+  margin: @grid-gutter-medium 0;
+
+  // Products
+
+  .woocommerce {
+    .@{prefix}-products-container {
+      padding: 0;
+    }
+  }
+
+  // Center
+  &--center {
+    text-align: center;
+  }
+
+  // Right
+  &--right {
+    text-align: right;
+  }
+}
+
+// Container
+
+.@{prefix}-section__container {
+  position: relative;
+  max-width: 100%;
+  padding-top: @grid-gutter-medium;
+  padding-bottom: @grid-gutter-medium;
+  z-index: @layer-1;
+
+  // Large
+  &--large {
+    padding-top: @grid-gutter-large;
+    padding-bottom: @grid-gutter-large;
+  }
+
+  // XLarge
+  &--xlarge {
+    padding-top: @grid-gutter-xlarge;
+    padding-bottom: @grid-gutter-xlarge;
+  }
+
+  // XXLarge
+  &--xxlarge {
+    padding-top: @grid-gutter-xxlarge;
+    padding-bottom: @grid-gutter-xxlarge;
+  }
+}
+
+// Heading
+
+.@{prefix}-section__heading {
+
+  // Center
+  &--center {
+    text-align: center;
+  }
+
+  // Right
+  &--right {
+    text-align: right;
+  }
+}
+
+// Header
+
+.@{prefix}-section__header {
+  position: relative;
+  margin-bottom: @grid-gutter-medium;
+
+  text-align: inherit;
+
+  color: @content-color;
+
+  h2,
+  h3 {
+    position: relative;
+    color: inherit;
+  }
+
+  a {
+    color: inherit;
+    border-color: inherit;
+
+    &:hover,
+    &:focus {
+      color: @link-color-hover;
+      border-color: @link-border-color-hover;
+    }
+  }
+
+  // Center
+  &--center {
+    text-align: center;
+  }
+
+  // Right
+  &--right {
+    text-align: right;
+  }
+}
+
+// Content
+
+.@{prefix}-section__content {
+  margin-bottom: @grid-gutter-medium;
+
+  font-size: @font-size-large;
+  text-align: inherit;
+
+  color: inherit;
+
+  // Center
+  &--center {
+    text-align: center;
+  }
+
+  // Right
+  &--right {
+    text-align: right;
+  }
+
+  // Elements
+
+  > * {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Image
+
+.@{prefix}-section__image {
+  position: relative;
+  color: inherit;
+}
+
+// Actions
+
+.@{prefix}-section__actions {
+  display: flex;
+  flex-wrap: wrap;
+  margin: @grid-gutter-medium -(@button-gutter / 2) -(@button-gutter);
+
+  // Button
+
+  > .@{prefix}-button {
+    display: inline-block;
+    align-self: center;
+    margin: 0 (@button-gutter / 2) @button-gutter (@button-gutter / 2);
+  }
+
+  // Center
+  &--center {
+    justify-content: center;
+    text-align: center;
+  }
+
+  // Right
+  &--right {
+    justify-content: flex-end;
+    text-align: right;
+  }
+}
+
+// Background
+
+.@{prefix}-section__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+// Customize
+
+.@{prefix}-section {
+  > .customize-partial-edit-shortcut button {
+    left: @margin-xxsmall;
+  }
+}

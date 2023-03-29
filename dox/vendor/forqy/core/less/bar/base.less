@@ -1,0 +1,43 @@
+// Bar - Base
+
+.@{prefix}-bar {
+  display: block;
+  position: relative;
+  height: @bar-height;
+  max-height: @bar-height;
+  z-index: @layer-2;
+
+  color: fade(@bar-color, @bar-color-opacity);
+  background-color: @bar-color-background;
+}
+
+// Container
+
+.@{prefix}-bar-container {
+  display: block;
+  max-height: @bar-height;
+}
+
+// Icon
+
+.@{prefix}-bar-icon {
+
+  a {
+    .flex-center();
+    width: @bar-height;
+    height: @bar-height;
+
+    color: @bar-link-color;
+    outline-offset: 0;
+
+    &:hover,
+    &:focus {
+      color: @bar-link-color-hover;
+    }
+  }
+
+  img {
+    width: auto;
+    height: 36px;
+  }
+}

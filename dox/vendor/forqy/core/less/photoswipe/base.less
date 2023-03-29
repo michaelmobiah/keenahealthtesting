@@ -1,0 +1,180 @@
+// PhotoSwipe - Base
+
+.pswp {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  touch-action: none;
+
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: (@layer-9 * 2);
+  overflow: hidden;
+
+  will-change: opacity;
+  backface-visibility: hidden;
+  outline: none;
+
+  .transition(opacity, @transition-duration, @transition-timing-function);
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: none;
+  }
+
+  // "Justified Gallery" Plugin Compatibility
+  button {
+    background-position: center center !important;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+
+    &:hover {
+      background-color: transparent !important;
+    }
+  }
+}
+
+// Open
+
+.pswp--open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+// Cursors
+
+.pswp--zoom-allowed {
+  .pswp__img {
+    cursor: zoom-in;
+  }
+}
+
+.pswp--zoomed-in {
+  .pswp__img {
+    cursor: grab;
+  }
+}
+
+.pswp--dragging {
+  .pswp__img {
+    cursor: grabbing;
+  }
+}
+
+// Background
+
+.pswp__bg {
+  opacity: 0;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  will-change: opacity;
+  backface-visibility: hidden;
+
+  .transition(opacity, @transition-duration, @transition-timing-function);
+}
+
+// Wrap/Container
+
+.pswp__scroll-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.pswp__container,
+.pswp__zoom-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+
+  touch-action: none;
+  user-select: none;
+
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.pswp__zoom-wrap {
+  transition: transform @transition-duration @transition-timing-function;
+  transform-origin: left top;
+}
+
+// Item
+
+.pswp__item {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+// Image
+
+.pswp__img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 0;
+  left: 0;
+  user-select: none;
+}
+
+// Error
+
+.pswp__error-msg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  line-height: 16px;
+  margin-top: -8px;
+
+  font-size: @font-size;
+  text-align: center;
+  color: fade(@pswp-color, 80%);
+
+  a {
+    color: fade(@pswp-color, 80%);
+    text-decoration: underline;
+  }
+}
+
+// Placeholder
+
+.pswp__img--placeholder {
+  backface-visibility: hidden;
+}
+
+.pswp__img--placeholder--blank {
+  background: transparent;
+}
+
+// Animated
+
+.pswp--animated-in {
+  .pswp__bg,
+  .pswp__zoom-wrap {
+    transition: none;
+  }
+}

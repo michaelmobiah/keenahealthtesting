@@ -1,0 +1,11 @@
+// Lines 1px - 15px spacing - Diagonal - Left
+
+// Mixin
+.pattern-lines-01-15-dia-left (@fill: fade(@pattern-color, @pattern-opacity)) {
+  .inline-svg(~'<svg fill="@{fill}" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3,12v1h1v-1H3z M7,0v1h1V0H7z M4,13v1h1v-1H4z M5,14v1h1v-1H5z M0,9v1h1V9H0z M6,16h1v-1H6V16z M1,10v1h1v-1 H1z M2,11v1h1v-1H2z M11,4v1h1V4H11z M13,6v1h1V6H13z M14,7v1h1V7H14z M15,8v1h1V8H15z M9,2v1h1V2H9z M8,1v1h1V1H8z M10,3v1h1V3 H10z M12,5v1h1V5H12z"/></svg>');
+}
+
+// Pattern
+.@{prefix}-pattern-lines-01-15-dia-left {
+  .pattern-lines-01-15-dia-left();
+}

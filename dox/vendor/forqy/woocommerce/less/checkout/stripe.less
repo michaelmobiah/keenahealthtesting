@@ -1,0 +1,45 @@
+// Checkout - Stripe [https://wordpress.org/plugins/woocommerce-gateway-stripe/]
+
+.woocommerce-checkout {
+
+  // Methods
+
+  #payment {
+    div.payment_box {
+
+      // Method - Stripe
+      &.payment_method_stripe {
+
+
+      }
+    }
+  }
+}
+
+.wc-stripe-elements-field,
+.wc-stripe-iban-element-field {
+  padding: @form-field-padding-vertical @form-field-padding-horizontal;
+
+  color: @form-field-color;
+  background-color: @form-field-color-background;
+  border-width: @form-field-border-width;
+  border-color: @form-field-border-color;
+  border-radius: @form-field-border-radius;
+
+  .form-field-focus-shadow-transparent();
+  .transition();
+
+  &.focused,
+  &.StripeElement--focus {
+    color: @form-field-color-focus;
+    background-color: @form-field-color-background-focus;
+    border-color: @form-field-border-color-focus;
+    .form-field-focus-shadow(@form-field-border-color-focus);
+  }
+}
+
+// Checkbox
+
+#wc-stripe-new-payment-method {
+  width: @form-field-checkbox-radio-size !important;
+}

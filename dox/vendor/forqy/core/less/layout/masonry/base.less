@@ -1,0 +1,84 @@
+// Layout - Masonry - Base
+
+.@{prefix}-masonry {
+  opacity: 0;
+
+  display: block;
+  width: calc(~'100% + @{post-gutter}');
+  padding: 0;
+  margin: 0 -(@post-gutter / 2) -(@post-gutter);
+
+  .transition(opacity, @transition-duration-half);
+
+  @media (max-width: @screen-phone-max) {
+    padding-bottom: (@post-gutter / 2);
+  }
+
+  // Ready
+  &.masonry {
+    opacity: 1;
+  }
+}
+
+// Size
+
+.@{prefix}-masonry-size {
+  border: 0 !important;
+  margin: 0 !important;
+}
+
+// Item
+
+.@{prefix}-masonry-item {
+  width: 33.333%;
+  padding: 0 (@post-gutter / 2);
+
+  .sidebar-active & {
+    width: 50%;
+  }
+
+  @media (max-width: @screen-desktop-max) {
+    width: 50%;
+
+    .sidebar-active & {
+      width: 100%;
+    }
+  }
+  @media (max-width: @screen-phone-max) {
+    width: 100%;
+  }
+}
+
+// Full-width
+
+.@{prefix}-masonry-full {
+
+  .@{prefix}-masonry-item {
+    width: 25%;
+
+    .sidebar-active & {
+      width: 33.333%;
+    }
+
+    @media (max-width: @screen-tablet-max) {
+      width: 50%;
+
+      .sidebar-active & {
+        width: 100%;
+      }
+    }
+    @media (max-width: @screen-phone-max) {
+      width: 100%;
+    }
+  }
+}
+
+// Clear
+
+.@{prefix}-masonry-clear {
+  display: block;
+  clear: both;
+  height: 0;
+
+  .clearfix();
+}

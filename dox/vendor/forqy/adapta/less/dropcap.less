@@ -1,0 +1,61 @@
+/*
+
+Dropcap
+
+*/
+
+.@{prefix}-dropcap {
+  .flex-center();
+  float: left;
+  margin-right: @padding-xsmall;
+
+  font-family: @dropcap-font-family;
+  font-size: @dropcap-font-size;
+  font-weight: @dropcap-font-weight;
+  letter-spacing: @letter-spacing;
+  text-transform: @text-transform;
+
+  color: @dropcap-color;
+  background-color: @dropcap-color;
+}
+
+// Default
+.@{prefix}-dropcap-default {
+  font-size: @font-size-xlarge * 3;
+  height: floor((@dropcap-font-size * @line-height));
+}
+
+// Square
+.@{prefix}-dropcap-square {
+  width: floor((@dropcap-font-size * @line-height));
+  height: floor((@dropcap-font-size * @line-height));
+  padding: 0 @padding-xxsmall;
+
+  font-size: @font-size-large * 2;
+
+  color: @dropcap-color;
+  border: @border-width solid @dropcap-color;
+  border-radius: @border-radius;
+}
+
+// Rounded
+.@{prefix}-dropcap-rounded {
+  width: floor((@dropcap-font-size * @line-height));
+  height: floor((@dropcap-font-size * @line-height));
+  padding: 0 @padding-xsmall;
+  margin-left: -(@margin-xxsmall);
+
+  font-size: @font-size-large * 2;
+
+  color: @dropcap-color;
+  border: @border-width solid @dropcap-color;
+  border-radius: @padding;
+}
+
+// Colors
+
+// Accent
+.@{prefix}-dropcap-color-accent {
+  color: @dropcap-color-accent;
+  border-color: @dropcap-color-accent;
+}

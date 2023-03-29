@@ -1,0 +1,20 @@
+// Block - Group
+
+.wp-block-group {
+  margin-bottom: var(--wp--style--block-gap, 2.5rem);
+}
+
+.wp-block-group__inner-container {
+  max-width: @centerer-width;
+  margin: var(--wp--style--block-gap, 2.5rem) auto 0;
+
+  // Element
+
+  > * {
+    margin-bottom: var(--wp--style--block-gap, 2.5rem);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

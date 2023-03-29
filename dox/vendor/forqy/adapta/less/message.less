@@ -1,0 +1,99 @@
+/*
+
+Message
+
+*/
+
+// Alert
+
+.@{prefix}-alert {
+  display: block;
+  position: relative;
+  padding: @padding-small @padding;
+  margin-bottom: @margin;
+
+  color: @color-notice;
+  background-color: transparent;
+
+  border: @border-width solid @color-notice;
+  border-radius: @border-radius;
+
+  // Link
+
+  a {
+    &:not(.@{prefix}-button) {
+      color: @color-light;
+      border-bottom: @border-width solid fade(@color-light, 10%);
+
+      &:hover {
+        color: @color-light;
+        border-bottom-color: @color-accent;
+      }
+    }
+  }
+
+  // Heading
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding: 0;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: @font-size-h4;
+  }
+
+  h4 {
+    font-size: @font-size-h5;
+  }
+
+  h5 {
+    font-size: @font-size-h6;
+  }
+
+  h6 {
+    font-size: @font-size-xlarge;
+  }
+
+  // Paragraph
+
+  p {
+    &:last-child,
+    &:empty {
+      margin: 0;
+    }
+  }
+
+  // Next Alert
+
+  + .@{prefix}-alert {
+    margin-top: -@margin-small;
+  }
+}
+
+// Warning
+.@{prefix}-alert-warning {
+  color: @color-warning;
+  border-color: @color-warning;
+}
+
+// Error
+.@{prefix}-alert-error {
+  color: @color-error;
+  border-color: @color-error;
+}
+
+// Success
+.@{prefix}-alert-success {
+  color: @color-success;
+  border-color: @color-success;
+}
+
+// Notice
+.@{prefix}-alert-notice {
+  color: @color-notice;
+  border-color: @color-notice;
+}

@@ -1,0 +1,210 @@
+// Player - Playlist
+
+.wp-playlist {
+  padding: 0 !important;
+  margin: 0 0 @grid-gutter-medium !important;
+  text-align: left;
+  user-select: none;
+
+  &.wp-playlist-light,
+  &.wp-playlist-dark {
+    color: fade(@player-color, 60%);
+    background-color: transparent;
+    border: 0;
+
+    a {
+      color: fade(@player-color, 60%);
+      border-bottom: 0;
+
+      &:hover,
+      &:focus {
+        color: @player-color;
+      }
+    }
+
+    .wp-playlist-caption {
+      color: @player-color;
+    }
+
+    .wp-playlist-playing {
+      background-color: @player-color-background;
+    }
+  }
+
+  // Item Title
+
+  .wp-playlist-item-title {
+    margin-left: @margin;
+
+    font-family: @heading-font-family;
+    font-size: @font-size;
+    font-weight: @heading-font-weight;
+    letter-spacing: @heading-letter-spacing;
+    text-transform: @heading-text-transform;
+  }
+
+  // Item Artist
+
+  .wp-playlist-item-artist {
+    text-transform: none;
+  }
+
+  // Current Item
+
+  .wp-playlist-current-item {
+    margin-bottom: @margin-xsmall;
+    padding: @player-controls-border;
+    height: auto;
+
+    font-weight: inherit;
+
+    background-color: @player-color-background;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .wp-playlist-item-title {
+      margin-left: 0;
+      font-size: @font-size-h6;
+    }
+
+    .wp-playlist-item-album,
+    .wp-playlist-item-artist {
+      font-size: @font-size-small;
+      color: fade(@player-color, 60%);
+    }
+
+    img {
+      max-width: 50px !important;
+      margin-right: @margin-small !important;
+    }
+  }
+
+  // Tracks
+
+  .wp-playlist-tracks {
+    margin: @margin-xsmall 0 0;
+    background-color: transparent;
+  }
+
+  // Item
+
+  .wp-playlist-item {
+    position: relative;
+    padding: @padding-xsmall @padding-small;
+
+    font-weight: @font-weight;
+    z-index: @layer-1;
+
+    background-color: transparent;
+    border-bottom: @border-width-small solid fade(@player-color, 10%);
+
+    // Frame
+    &:after {
+      content: '';
+      position: absolute;
+      top: -(@border-width);
+      left: -(@border-width);
+      width: calc(~'100% + (@{border-width} * 2)');
+      height: calc(~'100% + (@{border-width} * 2)');
+
+      border: @border-width solid transparent;
+      .button-bordered-focus-shadow-transparent();
+
+      .transition-property(~'border, box-shadow');
+      .transition-duration(@transition-duration);
+      .transition-timing-function(@transition-timing-function);
+    }
+
+    // Caption [a]
+
+    .wp-playlist-caption {
+      margin-left: @margin-xsmall;
+      max-width: calc(~'100% - @{padding-large}');
+
+      color: fade(@player-color, 60%);
+      outline: none;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+
+      .wp-playlist-caption {
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    // Title
+    .wp-playlist-item-title {
+      color: @player-color;
+    }
+
+    // Artist
+    .wp-playlist-item-artist {
+      font-size: @font-size-xsmall;
+      color: fade(@player-color, 60%);
+    }
+
+    // Length
+    .wp-playlist-item-length {
+      top: 50%;
+      right: (@padding-small + @player-controls-border);
+      .translateY(-50%);
+
+      color: fade(@player-color, 60%);
+    }
+
+    // Focus
+    &:focus-within {
+      z-index: @layer-3;
+
+      &:after {
+        border-color: @player-color-accent;
+        .button-bordered-focus-shadow(@player-color-accent);
+      }
+    }
+
+    // Playing
+    &.wp-playlist-playing {
+      z-index: @layer-2;
+      font-weight: inherit;
+
+      background-color: transparent;
+      border-bottom-color: transparent;
+
+      &:after {
+        border-color: @player-color-accent;
+      }
+
+      .wp-playlist-caption {
+        color: @player-color;
+      }
+
+      &:focus-within {
+        &:after {
+          border-color: @player-color-accent;
+          .button-bordered-focus-shadow(@player-color-accent);
+        }
+      }
+    }
+  }
+
+  // Controls
+
+  .mejs-controls {
+
+    // Play/pause Button
+
+    .mejs-playpause-button {
+      button {
+        outline: none;
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+  }
+}

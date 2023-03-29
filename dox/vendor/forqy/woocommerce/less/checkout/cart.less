@@ -1,0 +1,224 @@
+// Checkout - Cart
+
+.woocommerce-cart {
+
+  // Table
+
+  table.cart {
+
+    // Actions
+
+    td.actions {
+
+      // Update Cart Button
+
+      > .button {
+        padding-top: min(@button-padding-vertical, @form-field-padding-vertical);
+        padding-bottom: min(@button-padding-vertical, @form-field-padding-vertical);
+        border-width: @form-field-border-width;
+
+        @media (max-width: @screen-phone-max) {
+          margin-top: @grid-gutter-medium;
+        }
+      }
+
+      // Coupon
+
+      .coupon {
+
+        .input-text {
+          padding: @form-field-padding-vertical @form-field-padding-horizontal;
+          margin: 0 @margin-xsmall 0 0;
+
+          border-width: @form-field-border-width;
+          border-color: @form-field-border-color;
+          border-style: solid;
+
+          &:focus {
+            border-color: @form-field-border-color-focus;
+          }
+        }
+
+        .button {
+          padding-top: min(@button-padding-vertical, @form-field-padding-vertical);
+          padding-bottom: min(@button-padding-vertical, @form-field-padding-vertical);
+
+          color: @content-color-background;
+          background-color: fade(@content-color, 40%);
+          border-width: @form-field-border-width;
+
+          &:hover,
+          &:focus {
+            color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+            background-color: @content-color-accent;
+          }
+
+          &:focus {
+            .button-focus-shadow(@content-color-accent);
+          }
+
+          &:focus-visible {
+            outline-color: @content-color-accent;
+          }
+        }
+
+        .input-text,
+        .button {
+          @media (max-width: @screen-phone-min + @grid-gutter-xlarge) {
+            width: 100% !important;
+            max-width: 100%;
+            margin: 0 0 @margin-xsmall;
+          }
+        }
+      }
+    }
+
+    td {
+      &.product-quantity {
+
+        input.qty {
+          line-height: 1rem !important;
+        }
+      }
+    }
+  }
+
+  // Collaterals
+
+  .cart-collaterals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: auto;
+    margin-left: -(@padding-large);
+
+    // Cross Sells + Cart Totals
+
+    .cross-sells,
+    .cart_totals {
+      flex-basis: 50%;
+      width: 50%;
+      padding-left: @padding-large;
+
+      @media (max-width: @screen-tablet-max) {
+        flex-basis: 100%;
+        width: 100%;
+      }
+    }
+
+    // Cross Sells
+
+    .cross-sells {
+
+      + .cart_totals {
+        @media (max-width: @screen-tablet-max) {
+          margin-top: @margin-large;
+        }
+      }
+    }
+
+    // Cart Totals
+
+    .cart_totals {
+
+      table {
+
+        // Suffix of Tax
+        small {
+          opacity: (@content-color-opacity - 20%);
+          color: currentColor;
+        }
+      }
+    }
+  }
+
+  // Cross Sells + Cart Totals
+
+  .cross-sells,
+  .cart_totals {
+
+    h2 {
+      margin-bottom: @grid-gutter-small;
+      color: @content-color;
+    }
+  }
+
+  // Cart Totals
+
+  .cart_totals {
+
+    @media (max-width: @screen-tablet-max) {
+      order: 1;
+    }
+
+    table.shop_table {
+      th, td {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+    // Shipping
+    tr.woocommerce-shipping-totals {
+
+      th {
+        padding-bottom: 0;
+      }
+
+      td {
+        border-top: 0;
+      }
+    }
+  }
+
+  // Destination
+
+  .woocommerce-shipping-destination {
+    padding: @padding-xsmall 0;
+    margin: 0;
+
+    font-size: @font-size-small;
+    line-height: @line-height-small;
+
+    color: fade(@content-color, @content-color-opacity);
+  }
+
+  // Shipping Calculator
+
+  .woocommerce-shipping-calculator {
+    position: relative;
+  }
+
+  .shipping-calculator-form {
+    margin: 0;
+    text-align: left;
+    border-top: @padding-small solid transparent;
+  }
+
+  .cart-collaterals {
+    .shipping-calculator-form {
+      margin: 0;
+    }
+  }
+
+  .shipping-calculator-button {
+    display: inline-block;
+    margin-top: 0;
+
+    font-size: @font-size-small;
+    line-height: normal;
+
+    color: @link-color;
+    border-bottom: @link-border-width solid @link-border-color;
+
+    &:after {
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      color: @link-color-hover;
+      border-bottom-color: @link-border-color-hover;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+// Mixins - Button
+
+.button-focus-shadow-transparent (@outline-width: 0) {
+  box-shadow: 0 0 0 @outline-width transparent;
+}
+
+.button-focus-shadow (@outline-color: @content-color, @outline-opacity: @button-outline-opacity, @outline-width: @button-outline-width) {
+  box-shadow: 0 0 0 @outline-width fade(@outline-color, @outline-opacity);
+}
+
+// Bottom
+
+.button-focus-shadow-bottom-transparent (@outline-width: 0) {
+  box-shadow: 0 @outline-width 0 0 transparent;
+}
+
+.button-focus-shadow-bottom (@outline-color: @content-color, @outline-opacity: @button-outline-opacity, @outline-width: @button-outline-width) {
+  box-shadow: 0 @outline-width 0 0 fade(@outline-color, @outline-opacity);
+}
+
+// Bordered
+
+.button-bordered-focus-shadow-transparent (@outline-width: 0) {
+  box-shadow: 0 0 0 @outline-width transparent;
+}
+
+.button-bordered-focus-shadow (@outline-color: @content-color, @outline-opacity: @button-bordered-outline-opacity, @outline-width: @button-bordered-outline-width) {
+  box-shadow: 0 0 0 @outline-width fade(@outline-color, @outline-opacity);
+}

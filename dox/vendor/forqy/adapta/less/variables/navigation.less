@@ -1,0 +1,69 @@
+// Navigation Variables
+
+// Default
+
+@navigation-padding-vertical: 0;
+@navigation-padding-horizontal: 0;
+
+@navigation-font-family: @font-primary;
+@navigation-font-size: @font-size-large;
+@navigation-font-weight: @font-weight-normal;
+@navigation-text-transform: @text-transform;
+@navigation-letter-spacing: @letter-spacing;
+
+@navigation-color: @navigation-link-color;
+@navigation-color-background: @color-primary;
+
+@navigation-border-radius: @border-radius;
+
+// Link
+@navigation-link-padding-vertical: @padding-small;
+@navigation-link-padding-horizontal: @padding;
+
+@navigation-link-color: @color-light;
+@navigation-link-color-hover: fade(@color-light, 60%);
+@navigation-link-color-active: fade(@color-light, 40%);
+@navigation-link-color-active-hover: @color-light;
+
+@navigation-link-color-background: @navigation-color-background;
+@navigation-link-color-background-opacity: 100%;
+
+@navigation-link-color-background-hover: darken(@navigation-color-background, 5%);
+@navigation-link-color-background-hover-opacity: 100%;
+
+@navigation-link-color-background-active: darken(@navigation-color-background, 10%);
+@navigation-link-color-background-active-opacity: 100%;
+@navigation-link-color-background-active-hover: @navigation-color-background;
+@navigation-link-color-background-active-hover-opacity: 100%;
+
+@navigation-link-border-width: 0;
+@navigation-link-border-color: transparent;
+@navigation-link-border-color-hover: transparent;
+@navigation-link-border-color-active: transparent;
+@navigation-link-border-color-active-hover: transparent;
+
+// Sub-navigation
+@navigation-sub-width: @screen-min;
+@navigation-sub-padding-vertical: 0;
+@navigation-sub-padding-horizontal: 0;
+@navigation-sub-z-index: @layer-9;
+
+@navigation-sub-background: @color-light;
+@navigation-sub-border-color: fade(@color-dark, 10%);
+
+@navigation-sub-link-padding-vertical: @navigation-link-padding-vertical / 2;
+@navigation-sub-link-padding-horizontal: @navigation-link-padding-horizontal;
+
+@navigation-sub-link-color: fade(@color-dark, 60%);
+@navigation-sub-link-color-hover: @color-dark;
+@navigation-sub-link-color-active: @color-light;
+@navigation-sub-link-color-active-hover: @color-light;
+
+@navigation-sub-link-background: @color-light;
+@navigation-sub-link-background-opacity: 0%;
+@navigation-sub-link-background-hover: darken(@color-light, 5%);
+@navigation-sub-link-background-hover-opacity: 100%;
+@navigation-sub-link-background-active: @color-primary;
+@navigation-sub-link-background-active-opacity: 100%;
+@navigation-sub-link-background-active-hover: @color-accent;
+@navigation-sub-link-background-active-hover-opacity: 100%;

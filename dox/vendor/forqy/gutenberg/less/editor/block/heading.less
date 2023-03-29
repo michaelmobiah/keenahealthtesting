@@ -1,0 +1,59 @@
+// Editor - Block - Heading
+
+h1, h2, h3, h4, h5, h6 {
+
+  // Editable
+  &.rich-text.block-editor-rich-text__editable {
+    margin-bottom: var(--wp--style--block-gap, 2.5rem);
+  }
+
+  // Background
+  &.has-background {
+    padding: calc(var(--wp--style--block-gap, 2.5rem) / 2) var(--wp--style--block-gap, 2.5rem);
+  }
+}
+
+// Sibling Headings
+
+h1.block-editor-block-list__block {
+  + h2.block-editor-block-list__block {
+    margin-top: calc(var(--wp--style--block-gap, 2.5rem) / 2 * -1);
+  }
+}
+
+h2.block-editor-block-list__block {
+  + h3.block-editor-block-list__block {
+    margin-top: calc(var(--wp--style--block-gap, 2.5rem) / 2 * -1);
+  }
+}
+
+h3.block-editor-block-list__block {
+  + h4.block-editor-block-list__block {
+    margin-top: calc(var(--wp--style--block-gap, 2.5rem) / 2 * -1);
+  }
+}
+
+h4.block-editor-block-list__block {
+  + h5.block-editor-block-list__block {
+    margin-top: calc(var(--wp--style--block-gap, 2.5rem) / 2 * -1);
+  }
+}
+
+h5.block-editor-block-list__block {
+  + h6.block-editor-block-list__block {
+    margin-top: calc(var(--wp--style--block-gap, 2.5rem) / 2 * -1);
+  }
+}
+
+// Block - Heading
+
+.wp-block-heading {
+
+  // Small
+
+  small {
+    display: block;
+    font-weight: normal;
+    opacity: 0.8;
+  }
+}

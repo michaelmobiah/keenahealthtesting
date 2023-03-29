@@ -1,0 +1,83 @@
+// Editor - Pattern - Alert
+
+.@{prefix}-pattern--alert {
+  padding: 0 var(--wp--style--block-gap, 2.5rem);
+  margin-bottom: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+
+  color: var(--fy--content-color);
+  border: @border-width-small solid var(--fy--content-color);
+  border-radius: min(var(--fy--border-radius), 4px);
+
+  @media (max-width: @screen-phone-max) {
+    padding: 0 calc(var(--wp--style--block-gap, 2.5rem) / 2);
+  }
+
+  // Background
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    opacity: 2.5%;
+    border-radius: min(var(--fy--border-radius), 4px);
+
+    pointer-events: none;
+  }
+
+  .wp-block-group__inner-container {
+    * {
+      margin-top: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+      margin-bottom: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+
+      &:not(.has-text-color) {
+        color: inherit;
+      }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: calc(var(--wp--style--block-gap, 2.5rem) / 4);
+
+      + * {
+        margin-top: calc(var(--wp--style--block-gap, 2.5rem) / 4);
+      }
+    }
+  }
+
+  // Accent
+  &-accent {
+    color: var(--fy--content-color-accent);
+    border-color: var(--fy--content-color-accent);
+
+    &:before {
+      background-color: var(--fy--content-color-accent);
+    }
+  }
+
+  // Success
+  &-success {
+    color: var(--fy--success-color);
+    border-color: var(--fy--success-color);
+
+    &:before {
+      background-color: var(--fy--success-color);
+    }
+  }
+
+  // Error
+  &-error {
+    color: var(--fy--error-color);
+    border-color: var(--fy--error-color);
+
+    &:before {
+      background-color: var(--fy--error-color);
+    }
+  }
+
+  // Next
+  + .@{prefix}-pattern--alert {
+    margin-top: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+  }
+}

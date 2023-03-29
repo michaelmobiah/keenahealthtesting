@@ -1,0 +1,158 @@
+// Order
+
+.woocommerce-order,
+.woocommerce-view-order {
+
+  h2 {
+    margin-bottom: @grid-gutter-medium;
+    .font-size-fluid(@font-size-h3);
+    color: @content-color;
+  }
+
+  // Notice
+
+  .woocommerce-notice {
+    font-size: @font-size-h5;
+    font-weight: @font-weight-bold;
+    text-align: center;
+
+    &.woocommerce-thankyou-order-received {
+      color: @success-color;
+    }
+  }
+
+  // Details
+
+  ul.order_details {
+    margin: 0;
+  }
+
+  // Sections
+
+  .woocommerce-order-overview,
+  .woocommerce-order-details,
+  .woocommerce-customer-details,
+  .woocommerce-bacs-bank-details {
+    margin: 0;
+    padding: @padding 0;
+    border-top: @border-width-1 solid fade(@content-color, 20%);
+  }
+
+  .woocommerce-order-overview {
+    border-top: 0;
+
+    li {
+      margin-bottom: @grid-gutter-xsmall;
+      font-size: @font-size;
+
+      strong {
+        font-size: @font-size-h6;
+        color: @content-color;
+      }
+    }
+
+    + p {
+      padding: @padding-small 0;
+      margin-top: -(@grid-gutter-small);
+      margin-bottom: 0;
+      border-top: @border-width-1 solid fade(@content-color, 20%);
+    }
+  }
+
+  .woocommerce-order-details {
+
+    // Meta
+    .wc-item-meta {
+      margin-top: @grid-gutter-xsmall;
+
+      font-family: @font-secondary;
+      font-size: @font-size;
+      font-weight: @font-weight;
+      text-transform: none;
+      letter-spacing: normal;
+      line-height: normal;
+    }
+  }
+
+  .woocommerce-customer-details {
+    padding-top: 0;
+    border-top: 0;
+
+    address {
+      padding: @padding-small @padding;
+      border: @border-width-small solid fade(@content-color, 20%);
+      border-radius: @border-radius;
+    }
+
+    .woocommerce-customer-details--phone,
+    .woocommerce-customer-details--email {
+      padding-left: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    + h2 {
+      border-top: @border-width-1 solid fade(@content-color, 20%);
+      padding: @grid-gutter-medium 0 0;
+
+      + a {
+        color: @link-color;
+        border-bottom: @link-border-width solid @link-border-color;
+
+        &:hover,
+        &:focus {
+          color: @link-color-hover;
+          border-bottom-color: @link-border-color-hover;
+        }
+      }
+    }
+  }
+
+  .woocommerce-bacs-bank-details {
+    h3 {
+      font-size: @font-size-h6;
+      margin-bottom: @grid-gutter-small;
+    }
+  }
+
+  // Table
+  table.order_details {
+
+    thead,
+    tbody,
+    tfoot {
+      th,
+      td {
+        padding: @padding-xsmall 0;
+      }
+    }
+  }
+}
+
+// Order Detail
+
+.woocommerce-view-order {
+
+  // Sections
+  .woocommerce-order-overview,
+  .woocommerce-order-details,
+  .woocommerce-customer-details {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  // Table
+  table.order_details {
+
+    thead,
+    tbody,
+    tfoot {
+      th,
+      td {
+        padding: @padding-xsmall 0;
+      }
+    }
+  }
+}

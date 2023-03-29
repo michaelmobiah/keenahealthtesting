@@ -1,0 +1,303 @@
+// Messages
+
+.woocommerce {
+
+  .woocommerce-notice,
+  .woocommerce-error,
+  .woocommerce-info,
+  .woocommerce-message {
+    position: relative;
+    padding: @padding-small @padding;
+    margin-bottom: @grid-gutter-small;
+
+    font-family: @font-secondary;
+    font-size: @font-size;
+    font-weight: @font-weight;
+    text-transform: @text-transform;
+    letter-spacing: @letter-spacing;
+    line-height: @button-line-height;
+
+    color: @content-color;
+    background-color: fade(@content-color, 2.5%);
+    border: @border-width-small solid @content-color;
+    border-radius: min(@border-radius, 4px);
+
+    @media (max-width: @screen-phone-max) {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+      padding: @padding-small;
+    }
+
+    // Icon
+    &:before {
+      display: none;
+    }
+
+    li {
+      padding: (@padding-xxsmall) 0;
+      margin-bottom: @grid-gutter-xsmall;
+      line-height: normal;
+      clear: both;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    br {
+      display: none;
+    }
+
+    strong {
+      font-weight: @font-weight;
+      color: @content-color;
+    }
+
+    a {
+      color: @link-color;
+      border-bottom: @link-border-width solid @link-border-color;
+
+      &:hover,
+      &:focus {
+        color: @link-color-hover;
+        border-bottom-color: @link-border-color-hover;
+      }
+    }
+
+    // Button
+
+    a.button {
+      position: relative;
+      float: right;
+      padding: @padding-xsmall @padding-small;
+      margin: -(@margin-xsmall) -(@margin - @margin-xsmall) -(@margin-xsmall) @margin;
+
+      line-height: @button-line-height;
+
+      color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+      background-color: @content-color-accent;
+      border: 0;
+
+      @media (max-width: @screen-phone-max) {
+        display: block;
+        float: none;
+        margin: @grid-gutter-small auto 0;
+      }
+
+      &:hover,
+      &:focus {
+        color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+        background-color: @content-color-accent-darker;
+        border-color: transparent;
+      }
+
+      &:focus {
+        .button-focus-shadow(@content-color-accent-darker);
+      }
+
+      &:focus-visible {
+        outline-color: @content-color-accent-darker;
+      }
+    }
+
+    // Next
+
+    + .woocommerce-notice,
+    + .woocommerce-error,
+    + .woocommerce-info,
+    + .woocommerce-message {
+      margin-top: -(@grid-gutter-xsmall);
+    }
+  }
+
+  // Error
+
+  .woocommerce-error {
+    color: @error-color;
+    background-color: fade(@error-color, 2.5%);
+    border-color: @error-color;
+
+    &:before {
+      color: @error-color;
+    }
+
+    strong {
+      color: @error-color;
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        color: @error-color;
+        border-bottom-color: @error-color;
+      }
+    }
+
+    // Button
+
+    a.button {
+      color: contrast(@error-color, @content-color, @content-color-background, @color-contrast-threshold);
+      background-color: @error-color !important;
+
+      &:hover,
+      &:focus {
+        color: contrast(@error-color, @content-color, @content-color-background, @color-contrast-threshold);
+        background-color: darken(@error-color, 5%) !important;
+      }
+
+      &:focus {
+        .button-focus-shadow(darken(@error-color, 5%));
+      }
+
+      &:focus-visible {
+        outline-color: darken(@error-color, 5%);
+      }
+    }
+  }
+
+  // Message
+
+  .woocommerce-message {
+    color: @success-color;
+    background-color: fade(@success-color, 2.5%);
+    border-color: @success-color;
+
+    &:before {
+      color: @success-color;
+    }
+
+    strong {
+      color: @success-color;
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        color: @success-color;
+        border-bottom-color: @success-color;
+      }
+    }
+
+    // Button
+
+    a.button {
+      color: contrast(@success-color, @content-color, @content-color-background, @color-contrast-threshold);
+      background-color: @success-color !important;
+
+      &:hover,
+      &:focus {
+        color: contrast(@success-color, @content-color, @content-color-background, @color-contrast-threshold);
+        background-color: darken(@success-color, 5%) !important;
+      }
+
+      &:focus {
+        .button-focus-shadow(darken(@success-color, 5%));
+      }
+
+      &:focus-visible {
+        outline-color: darken(@success-color, 5%);
+      }
+    }
+  }
+
+  // Notice
+
+  .woocommerce-notice {
+
+    // Success
+    &.woocommerce-notice--success {
+      color: @success-color;
+      background-color: fade(@success-color, 2.5%);
+      border-color: @success-color;
+
+      &:before {
+        color: @success-color;
+      }
+
+      strong {
+        color: @success-color;
+      }
+
+      a {
+        &:hover,
+        &:focus {
+          color: @success-color;
+          border-bottom-color: @success-color;
+        }
+      }
+
+      a.button {
+        color: contrast(@success-color, @content-color, @content-color-background, @color-contrast-threshold);
+        background-color: @success-color !important;
+
+        &:hover,
+        &:focus {
+          color: contrast(@success-color, @content-color, @content-color-background, @color-contrast-threshold);
+          background-color: darken(@success-color, 5%) !important;
+        }
+
+        &:focus {
+          .button-focus-shadow(darken(@success-color, 5%));
+        }
+
+        &:focus-visible {
+          outline-color: darken(@success-color, 5%);
+        }
+      }
+    }
+
+    // Error
+    &.woocommerce-notice--error {
+      color: @error-color;
+      background-color: fade(@error-color, 2.5%);
+      border-color: @error-color;
+
+      &:before {
+        color: @error-color;
+      }
+
+      strong {
+        color: @error-color;
+      }
+
+      a {
+        &:hover,
+        &:focus {
+          color: @error-color;
+          border-bottom-color: @error-color;
+        }
+      }
+
+      a.button {
+        color: contrast(@error-color, @content-color, @content-color-background, @color-contrast-threshold);
+        background-color: @error-color !important;
+
+        &:hover,
+        &:focus {
+          color: contrast(@error-color, @content-color, @content-color-background, @color-contrast-threshold);
+          background-color: darken(@error-color, 5%) !important;
+        }
+
+        &:focus {
+          .button-focus-shadow(darken(@error-color, 5%));
+        }
+
+        &:focus-visible {
+          outline-color: darken(@error-color, 5%);
+        }
+      }
+    }
+  }
+
+  // Checkout
+  // Failed Order
+
+  .woocommerce-thankyou-order-failed-actions {
+    a.button {
+      float: none;
+      margin: 0;
+    }
+  }
+}

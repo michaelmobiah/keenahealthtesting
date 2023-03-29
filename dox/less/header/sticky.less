@@ -1,0 +1,279 @@
+// Header - Sticky
+
+.fy-header {
+  &.sticky-clone {
+    background-color: fade(@header-sticky-color-background, @header-sticky-color-background-opacity);
+
+    .transition-property(~'transform, background, visibility, box-shadow');
+    //.transition-duration(@transition-duration);
+    .transition-duration(~'@{transition-duration}, @{transition-duration}, @{transition-duration}, @{transition-duration}');
+    .transition-timing-function(@transition-timing-function);
+
+    // Sticky
+    &.is-sticky {
+
+      // Visible
+      &.is-visible {
+        .shadow-large();
+
+        .header-background-gradient & {
+          box-shadow: none;
+        }
+      }
+
+      &.is-hidden {
+        box-shadow: none;
+        .transition-delay(~'0s, 0s, @{transition-duration}, @{transition-duration}');
+      }
+    }
+
+    .header-background-gradient & {
+      background-color: transparent;
+
+      &:before {
+        .gradient-vertical(fade(@header-sticky-color-background, @header-sticky-color-background-opacity), fade(@header-sticky-color-background, 0));
+      }
+    }
+
+    // Border
+    .fy-border {
+      color: fade(@header-sticky-color-background, @header-sticky-color-background-opacity);
+    }
+
+    // Container
+
+    .fy-header-container {
+      padding-top: (@header-padding / 2);
+      padding-bottom: (@header-padding / 2);
+    }
+
+    // Text
+
+    .fy-header-text {
+      color: @header-sticky-color;
+
+      a {
+        &:not(.fy-button) {
+          color: @header-sticky-color;
+          border-bottom: @border-width-small solid fade(@header-sticky-color, 60%);
+
+          &:hover,
+          &:focus {
+            color: @header-sticky-color;
+            border-bottom-color: @header-sticky-color-accent;
+          }
+        }
+      }
+
+      .fy-button {
+        color: @header-sticky-color-background;
+        background-color: @header-sticky-color;
+
+        &:hover,
+        &:focus {
+          color: @header-sticky-color-background;
+          background-color: darken(@header-sticky-color, 5%);
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 @button-outline-width fade(@header-sticky-color, @button-outline-opacity);
+        }
+      }
+
+      .fy-button-accent {
+        color: @color-light;
+        background-color: @header-sticky-color-accent;
+
+        &:hover,
+        &:focus {
+          color: @color-light;
+          background-color: darken(@header-sticky-color-accent, 5%);
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 @button-outline-width fade(@header-sticky-color-accent, @button-outline-opacity);
+        }
+      }
+
+      .fy-button-bordered {
+        color: @header-sticky-color;
+        background-color: transparent;
+        border-color: fade(@header-sticky-color, 20%);
+
+        &:hover,
+        &:focus {
+          color: @header-sticky-color;
+          background-color: transparent;
+          border-bottom-color: @header-sticky-color-accent;
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 @button-outline-width fade(@header-sticky-color-accent, @button-outline-opacity);
+        }
+      }
+    }
+
+    @media (min-width: @screen-desktop) {
+
+      .fy-header-container {
+
+        // Navigation
+
+        .fy-navigation {
+          color: @header-sticky-color;
+
+          > ul {
+            > li {
+              > a {
+                color: @header-sticky-color;
+
+                &:before {
+                  background-color: @header-sticky-color-accent;
+                }
+
+                &:hover,
+                &:focus {
+                  color: @header-sticky-color;
+                }
+              }
+
+              &.divider {
+                &:after {
+                  background-color: fade(@header-sticky-color, 20%);
+                }
+              }
+
+              // Current
+              &[class*="current"] {
+                > a {
+                  color: @header-sticky-color;
+
+                  &:before {
+                    background-color: currentColor;
+                  }
+                }
+
+                &.important {
+                  > a {
+                    &:before {
+                      background-color: @header-sticky-color-accent;
+                    }
+                  }
+                }
+              }
+
+              &:hover,
+              &:focus-within {
+                > a {
+                  color: @header-sticky-color;
+                }
+
+                &.important {
+                  > a {
+                    &:before {
+                      background-color: @header-sticky-color-accent;
+                    }
+                  }
+                }
+
+                ul {
+                  margin-top: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Elements
+
+    .fy-header-container {
+
+      // Logo
+      .fy-logo {
+        a {
+          color: @header-sticky-color;
+
+          &:hover,
+          &:focus {
+            color: @header-sticky-color;
+          }
+        }
+
+        &.has-sticky-logo {
+
+          .fy-logo-img {
+            display: none;
+          }
+
+          .fy-logo-img-sticky {
+            display: block;
+          }
+        }
+      }
+
+      // Navigation
+      .fy-navigation-trigger {
+        color: @header-sticky-color;
+      }
+
+      // Socials
+      .fy-socials {
+        a {
+          color: fade(@header-sticky-color, 60%);
+
+          &:before {
+            background-color: @header-sticky-color-accent;
+          }
+
+          &:hover,
+          &:focus {
+            color: @header-sticky-color;
+          }
+        }
+      }
+
+      // Toolbar
+      .fy-toolbar__list {
+
+        > li {
+          > a,
+          > button {
+            color: fade(@header-sticky-color, 60%);
+          }
+
+          &.has-product {
+            > a {
+              color: @header-sticky-color;
+            }
+
+            .fy-icon {
+              &:before {
+                background-color: @header-sticky-color;
+              }
+            }
+          }
+
+          &:hover,
+          &:focus-within {
+
+            > a,
+            > button {
+              color: @header-sticky-color;
+
+              &:before {
+                background-color: @header-sticky-color-accent;
+              }
+            }
+          }
+        }
+
+        .fy-cart-count {
+          color: contrast(@header-sticky-color-accent, @header-sticky-color, @header-sticky-color-background, @color-contrast-threshold);
+          background-color: @header-sticky-color-accent;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+// Categories
+
+.woocommerce {
+
+  // Spacer After Categories
+
+  .fy-term-column {
+    + .@{prefix}-product-column-spacer {
+      height: @grid-gutter-medium;
+    }
+  }
+
+  // Category/Term
+
+  .@{prefix}-product-category {
+    margin-bottom: @post-gutter;
+
+    // Image
+    .@{prefix}-term-image {
+
+      img { // Preserve empty space around image
+        position: absolute;
+        width: 130%;
+        max-width: 130%;
+        left: -15%;
+        top: 50%;
+        .translateY(-50%);
+
+        // Hide Default WooCommerce Placeholder Image
+        &[src*='woocommerce-placeholder'] {
+          display: none;
+        }
+      }
+    }
+  }
+
+  [class*='phone-100'] {
+
+    .@{prefix}-product-category {
+      @media (max-width: @screen-phone-max) {
+        margin-bottom: min(@post-gutter / 2, @grid-gutter-small);
+      }
+    }
+  }
+}

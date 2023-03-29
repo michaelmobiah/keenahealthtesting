@@ -1,0 +1,188 @@
+// Colors
+
+//
+// Foreground
+//
+
+// Content Color
+
+.has-cnt-color {
+  color: @content-color;
+}
+
+a.has-cnt-color {
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: @content-color;
+  }
+}
+
+.@{prefix}-content {
+
+  .has-cnt-color {
+
+    a {
+      color: inherit;
+      border-color: currentColor;
+
+      &:visited {
+        color: inherit;
+        border-color: currentColor;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: @link-color-hover;
+        border-color: @link-border-color-hover;
+      }
+    }
+  }
+}
+
+// Content Accent Color
+
+.has-cnt-ac-color {
+  color: @content-color-accent;
+}
+
+a.has-cnt-ac-color {
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: @content-color-accent;
+  }
+}
+
+.@{prefix}-content {
+
+  .has-cnt-ac-color {
+
+    a {
+      color: inherit;
+      border-color: currentColor;
+
+      &:visited {
+        color: inherit;
+        border-color: currentColor;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: @content-color;
+        border-color: @content-color;
+      }
+    }
+  }
+}
+
+// Content Background Color
+
+.has-cnt-bg-color {
+  color: @content-color-background;
+}
+
+a.has-cnt-bg-color {
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: @content-color-background;
+  }
+}
+
+.@{prefix}-content {
+
+  .has-cnt-bg-color {
+
+    a {
+      color: inherit;
+      border-color: currentColor;
+
+      &:visited {
+        color: inherit;
+        border-color: currentColor;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: @content-color-background;
+        border-color: @content-color-background;
+      }
+    }
+  }
+}
+
+//
+// Background
+//
+
+// Content Color
+
+.has-cnt-background-color {
+  background-color: @content-color;
+}
+
+a.has-cnt-background-color {
+  &:hover,
+  &:focus {
+    background-color: darken(@content-color, 5%);
+
+    // Block - Cover
+    .wp-block-cover & {
+      background-color: @content-color;
+    }
+  }
+
+  &:active,
+  &:visited {
+    background-color: @content-color;
+  }
+}
+
+// Content Accent Color
+
+.has-cnt-ac-background-color {
+  background-color: @content-color-accent;
+}
+
+a.has-cnt-ac-background-color {
+  &:hover,
+  &:focus {
+    background-color: darken(@content-color-accent, 5%);
+
+    // Block - Cover
+    .wp-block-cover & {
+      background-color: darken(@content-color-accent, 5%);
+    }
+  }
+
+  &:active,
+  &:visited {
+    background-color: @content-color-accent;
+  }
+}
+
+// Content Background Color
+
+.has-cnt-bg-background-color {
+  background-color: @content-color-background;
+}
+
+a.has-cnt-bg-background-color {
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: @content-color-background;
+
+    // Block - Cover
+    .wp-block-cover & {
+      background-color: @content-color-background;
+    }
+  }
+}

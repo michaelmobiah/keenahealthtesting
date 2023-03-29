@@ -1,0 +1,59 @@
+// Content - Link
+
+:where(.@{prefix}-content) {
+
+  :where(p),
+  :where(ul:not([class*='block']) li:not([class*='block'])),
+  :where(ol),
+  :where(th),
+  :where(td),
+  :where(dl),
+  :where(pre),
+  :where(address) {
+    a {
+      color: @link-color;
+      border-bottom: @link-border-width solid @link-border-color;
+
+      &:hover,
+      &:focus {
+        color: @link-color-hover;
+        border-color: @link-border-color-hover;
+      }
+    }
+
+    mark {
+      a {
+        color: currentColor;
+        border-color: currentColor;
+
+        &:hover,
+        &:focus {
+          opacity: 0.8;
+          color: currentColor;
+          border-color: currentColor;
+        }
+      }
+    }
+  }
+
+  // Blockquote Link
+
+  blockquote {
+
+    > a,
+    > p a {
+      color: currentColor;
+      border-bottom: (@link-border-width * 2) solid currentColor;
+      outline-width: (@link-border-width * 2);
+    }
+  }
+
+  // Figure Link
+
+  figure {
+    > a {
+      border: 0;
+      outline-width: (@link-border-width * 2);
+    }
+  }
+}

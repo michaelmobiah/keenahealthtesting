@@ -1,0 +1,37 @@
+// Font Mixins
+
+.font-size-fluid (@size: @font-size-h1, @multiplier: 1, @scale: @heading-font-scale) {
+  @-min: max(@font-size, round((((@size + (@multiplier - 1) / @scale) / @scale) / @scale), 1));
+  @-preferred: unit(round((@size + (@multiplier - 1)), 1), vw);
+  @-max: round((@size * @multiplier), 1);
+
+  font-size: @-min; // Fallback
+  font-size: ~'clamp(@{-min}, (@{font-size} + @{-preferred}), @{-max})';
+
+  // Oldschool Way
+
+  //font-size: @-min;
+
+  //@media (min-width: @screen-phone) {
+  //  font-size: calc(~'(@{font-size} + @{-preferred})');
+  //}
+  //@media (min-width: @screen-desktop-wide) {
+  //  font-size: @-max;
+  //}
+}
+
+// Heading
+
+.font-size-heading (@size: @font-size-h1, @multiplier: 1) { // TODO Deprecated, use .font-size-fluid() instead
+  font-size: max(@font-size-xlarge, round((@size * @multiplier), 4));
+
+  @media (max-width: @screen-desktop-max) {
+    font-size: max(@font-size-xlarge, round(@size * round((@multiplier * 0.90), 1), 4));
+  }
+  @media (max-width: @screen-tablet-max) {
+    font-size: max(@font-size-xlarge, round(@size * round((@multiplier * 0.80), 1), 4));
+  }
+  @media (max-width: @screen-phone-max) {
+    font-size: max(@font-size-xlarge, round(@size * round((@multiplier * 0.70), 1), 4));
+  }
+}

@@ -1,0 +1,54 @@
+// Checkout - Payment
+
+.woocommerce-cart,
+.woocommerce-checkout,
+#add_payment_method {
+
+  // Payment
+
+  #payment {
+    position: relative;
+    padding: 0 @grid-gutter-large;
+    margin: 0 -(@grid-gutter-large);
+    z-index: @layer-1;
+
+    @media (max-width: @screen-tablet-max) {
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    // Box
+    div.payment_box {
+      position: relative;
+      top: -(@margin-xxsmall);
+      padding-bottom: @padding-small;
+      margin-bottom: -(@margin-xxsmall);
+
+      p {
+        margin: 0;
+        color: fade(@content-color, @content-color-opacity);
+      }
+
+      // Form
+      .form-row {
+        padding: 0;
+        margin: 0 0 @margin-xsmall;
+      }
+    }
+
+    // Place Order Button
+    .place-order {
+      display: block;
+      height: 100%;
+      position: relative;
+      z-index: @layer-1;
+
+      .button {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

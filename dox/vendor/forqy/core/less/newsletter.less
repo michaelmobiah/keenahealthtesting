@@ -1,0 +1,202 @@
+// Newsletter: Plugin - MailChimp for WP
+
+// Firefox SVG Color Fix
+// http://codepen.io/geoffyuen/pen/zGKQQW
+@newsletter-select-color-rgba: rgba(red(@newsletter-color), green(@newsletter-color), blue(@newsletter-color), 0.4);
+@newsletter-select-color-focus-rgba: rgba(red(@newsletter-color), green(@newsletter-color), blue(@newsletter-color), 0.99);
+
+@newsletter-checkbox-radio-color-rgba: rgba(red(@newsletter-color), green(@newsletter-color), blue(@newsletter-color), .99);
+@newsletter-checkbox-radio-color-checked-rgba: rgba(red(@newsletter-color-accent), green(@newsletter-color-accent), blue(@newsletter-color-accent), .99);
+
+.@{prefix}-newsletter {
+  position: relative;
+  padding: @grid-gutter-large 0;
+  text-align: left;
+  z-index: (@layer-4 - 1); // under the footer
+
+  color: fade(@newsletter-color, @content-color-opacity);
+  background-color: @newsletter-color-background;
+
+  @media (max-width: @screen-tablet-max) {
+    padding: @grid-gutter-large 0;
+    text-align: center;
+  }
+
+  .@{prefix}-align-right {
+    @media (max-width: @screen-tablet-max) {
+      text-align: center;
+    }
+  }
+
+  // Form
+
+  .mc4wp-form {
+    padding: 0;
+    margin: 0;
+
+    color: @newsletter-color;
+    background-color: transparent;
+
+    // Label
+
+    label {
+      text-align: left;
+      color: @newsletter-color;
+
+      &:focus-within {
+        color: @newsletter-color-accent;
+      }
+    }
+
+    // Field
+
+    input,
+    textarea,
+    select {
+      color: fade(@newsletter-color, 80%);
+      background-color: contrast(@newsletter-color-background, @newsletter-color-background, darken(@newsletter-color-background, 1%), @color-contrast-threshold);
+      border-color: fade(@newsletter-color, 25%);
+
+      .placeholder(fade(@newsletter-color, 60%), fade(@newsletter-color, 20%));
+
+      &:focus {
+        color: @newsletter-color;
+        background-color: @newsletter-color-background;
+        border-color: @newsletter-color-accent;
+        .form-field-focus-shadow(@newsletter-color-accent);
+      }
+    }
+
+    select {
+      .inline-svg(~'<svg fill="@{newsletter-select-color-rgba}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.832,9.147c-0.189-0.196-0.498-0.196-0.688,0l-5.16,5.608l-5.16-5.608c-0.19-0.196-0.498-0.196-0.688,0 c-0.19,0.197-0.19,0.517,0,0.714l5.503,5.965c0.19,0.197,0.498,0.197,0.688,0l5.503-5.965C18.022,9.664,18.022,9.345,17.832,9.147 z"></path></svg>');
+
+      option {
+        color: @newsletter-color;
+        background-color: @newsletter-color-background;
+      }
+
+      &:focus {
+        .inline-svg(~'<svg fill="@{newsletter-select-color-focus-rgba}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.832,9.147c-0.189-0.196-0.498-0.196-0.688,0l-5.16,5.608l-5.16-5.608c-0.19-0.196-0.498-0.196-0.688,0 c-0.19,0.197-0.19,0.517,0,0.714l5.503,5.965c0.19,0.197,0.498,0.197,0.688,0l5.503-5.965C18.022,9.664,18.022,9.345,17.832,9.147 z"></path></svg>');
+      }
+    }
+
+    [type='checkbox'],
+    [type='radio'] {
+
+      &:focus {
+        color: @newsletter-color;
+        background-color: transparent;
+        border-color: @newsletter-color-accent;
+      }
+
+      &:checked {
+        color: @newsletter-color-accent;
+        background-color: @newsletter-color-background;
+        border-color: @newsletter-color-accent;
+      }
+    }
+
+    [type='checkbox'] {
+      &:checked {
+        .inline-svg(~'<svg fill="@{newsletter-checkbox-radio-color-checked-rgba}" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><rect id="dot" x="6" y="6" width="8" height="8"/></svg>');
+      }
+    }
+
+    [type='radio'] {
+      &:checked {
+        .inline-svg(~'<svg fill="@{newsletter-checkbox-radio-color-checked-rgba}" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle id="dot" cx="10" cy="10" r="4"/></svg>');
+      }
+    }
+
+    // Button
+
+    button,
+    [type='button'],
+    [type='submit'] {
+      color: contrast(@newsletter-color-accent, @newsletter-color, @newsletter-color-background, @color-contrast-threshold);
+      background-color: @newsletter-color-accent;
+      border-color: transparent;
+      .button-focus-shadow-transparent();
+
+      &:hover,
+      &:focus {
+        color: contrast(@newsletter-color-accent, @newsletter-color, @newsletter-color-background, @color-contrast-threshold);
+        background-color: darken(@newsletter-color-accent, 5%);
+        border-color: transparent;
+      }
+
+      &:focus {
+        .button-focus-shadow(@newsletter-color-accent);
+      }
+
+      &:focus-visible {
+        outline-color: @newsletter-color-accent;
+      }
+    }
+  }
+}
+
+// Icon
+
+.@{prefix}-newsletter-icon {
+  .flex-center();
+  padding: 0;
+  margin: 0 auto;
+
+  width: @icon-size-small;
+  height: @icon-size-small;
+
+  color: @newsletter-color;
+
+  .icon {
+    float: left;
+  }
+}
+
+// Heading
+
+.@{prefix}-newsletter-heading {
+  position: relative;
+  padding: 0;
+  margin: 0 0 @margin-xsmall;
+  text-align: left;
+
+  color: @newsletter-color;
+
+  @media (max-width: @screen-tablet-max) {
+    margin-top: @margin-small;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: @font-size-h3;
+    color: currentColor;
+  }
+}
+
+// Content
+
+.@{prefix}-newsletter-content {
+  font-size: @font-size;
+
+  p {
+    margin: 0;
+  }
+}
+
+// Footer
+
+.@{prefix}-newsletter-footer {
+  margin-top: @margin-xsmall;
+  font-style: @font-style-italic;
+  color: fade(@newsletter-color, @content-color-opacity - 20%);
+
+  @media (max-width: @screen-tablet-max) {
+    margin-bottom: @margin-small;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+

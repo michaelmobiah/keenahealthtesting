@@ -1,0 +1,26 @@
+// Heading - Empty
+
+.@{prefix}-heading-empty {
+  height: @heading-height-empty;
+  min-height: 0;
+  border: 0;
+
+  @media (max-width: @screen-phone-max) {
+    height: @heading-height-empty-phone;
+  }
+
+  .@{prefix}-heading-container {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+  }
+
+  > .@{prefix}-border {
+    display: none;
+  }
+}

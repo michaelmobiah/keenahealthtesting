@@ -1,0 +1,30 @@
+// Solid - Double
+
+// Border
+.@{prefix}-border-solid-double {
+  height: (@border-width * 2) + (@border-width-large * 2);
+  margin-bottom: 0;
+
+  .border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: @border-width;
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      top: @border-width + @border-width-large;
+    }
+  }
+}

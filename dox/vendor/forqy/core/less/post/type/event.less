@@ -1,0 +1,72 @@
+// Post - Format - Event
+
+.@{prefix}-post-event {
+
+  // Counter
+
+  .@{prefix}-post-image-counter {
+    display: none;
+  }
+
+  // Single
+  &.@{prefix}-post-single {
+
+    // Footer
+
+    .@{prefix}-post-footer {
+
+      // Meta
+
+      .@{prefix}-post-meta {
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Event Location
+
+.@{prefix}-post-event-location {
+  margin-top: @grid-gutter-medium;
+  text-align: center;
+
+  h3 {
+    margin-bottom: (@margin-small + @margin-xxsmall);
+    color: @content-color;
+  }
+
+  // Meta
+
+  .@{prefix}-post-meta {
+    display: flex;
+    justify-content: center;
+    margin-bottom: @margin;
+
+    @media (max-width: @screen-phone-max) {
+      flex-direction: column;
+
+      li {
+        padding: 0;
+        margin: 0;
+
+        line-height: @line-height;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// Past Event
+
+.@{prefix}-post-event-past {
+
+  // Date
+
+  .@{prefix}-post-date {
+    color: @post-color;
+    text-decoration: line-through;
+  }
+}

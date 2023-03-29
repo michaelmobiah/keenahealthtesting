@@ -1,0 +1,29 @@
+// Bar - Text
+
+.@{prefix}-bar-text {
+  padding: 0 0 0 @padding-xsmall;
+  margin-right: @margin-xsmall;
+
+  font-size: @font-size-small;
+  font-weight: @font-weight;
+  letter-spacing: @letter-spacing;
+  text-transform: @text-transform;
+  line-height: @line-height-xsmall;
+
+  color: fade(@bar-color, @bar-color-opacity);
+
+  a {
+    color: @bar-link-color;
+    border-bottom: @link-border-width solid @bar-link-border-color;
+
+    &:hover,
+    &:focus {
+      color: @bar-link-color-hover;
+      border-bottom-color: @bar-link-border-color-hover;
+    }
+  }
+
+  img {
+    max-height: @bar-height;
+  }
+}

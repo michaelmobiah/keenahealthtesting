@@ -1,0 +1,53 @@
+// Heading - Container
+
+.@{prefix}-heading-container {
+  position: relative;
+  padding-top: @grid-gutter-large;
+  padding-bottom: @grid-gutter-large;
+  z-index: @layer-2;
+
+  text-align: center;
+
+  &.@{prefix}-centerer-50,
+  &.@{prefix}-centerer-75 {
+    h1 {
+      min-width: 100%;
+    }
+  }
+
+  // Horizontal Alignment
+
+  .heading-horizontal-left & {
+    text-align: left;
+  }
+
+  .heading-horizontal-center & {
+    text-align: center;
+  }
+
+  .heading-horizontal-right & {
+    text-align: right;
+  }
+
+  // Vertical Alignment
+
+  .heading-vertical-top & {
+    .flex-align-self(flex-start);
+  }
+
+  .heading-vertical-center & {
+    .flex-align-self(center);
+  }
+
+  .heading-vertical-bottom & {
+    .flex-align-self(flex-end);
+  }
+
+  // Background Width Small
+  .heading-bg-w-small & {
+
+    @media (max-width: @screen-phone-max) {
+      align-self: flex-end;
+    }
+  }
+}

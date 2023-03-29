@@ -1,0 +1,81 @@
+// Form - Button
+
+button,
+[type='button'],
+[type='submit'],
+[type='reset'] {
+  display: inline-block;
+  width: auto;
+  padding: @button-padding-vertical @button-padding-horizontal;
+
+  font-family: @button-font-family;
+  font-size: @button-font-size;
+  font-weight: @button-font-weight;
+  text-transform: @button-text-transform;
+  letter-spacing: @button-letter-spacing;
+  line-height: @button-line-height;
+
+  white-space: normal;
+
+  appearance: none;
+  user-select: none;
+
+  cursor: pointer;
+
+  color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+  background-color: @content-color-accent;
+
+  border: @button-border-width solid transparent;
+  border-radius: @button-border-radius;
+
+  outline: @link-border-width solid transparent;
+  outline-offset: @button-outline-width;
+
+  .button-focus-shadow-transparent();
+
+  .transition-property(~'color, background-color, background-size, border, box-shadow, outline');
+  .transition-duration(@transition-duration);
+  .transition-timing-function(@transition-timing-function);
+
+  // Icon
+
+  svg {
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+
+    pointer-events: none;
+
+    color: currentColor;
+  }
+
+  &:hover,
+  &:focus {
+	color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+	background-color: @content-color-accent-darker;
+	border-color: transparent;
+  }
+
+  &:focus {
+	.button-focus-shadow(@content-color-accent-darker);
+  }
+
+  &:focus-visible {
+    outline-color: @content-color-accent-darker;
+  }
+
+  // Disabled
+  &:disabled,
+  &:disabled[disabled] {
+	opacity: 1;
+    cursor: not-allowed;
+
+    pointer-events: none;
+    touch-action: none;
+
+	color: @content-color-background;
+	background-color: fade(@content-color, 60%);
+	border-color: transparent;
+	box-shadow: none;
+  }
+}

@@ -1,0 +1,16 @@
+// Inset
+
+// Mask
+.@{prefix}-mask-inset {
+  clip-path: inset(20% calc(~'((100vw - @{screen-desktop-wide}) / 2) + @{padding-large}') 20% calc(~'((100vw - @{screen-desktop-wide}) / 2) + @{padding-large}'));
+
+  @media (max-width: @screen-desktop-max) {
+    clip-path: inset(20% (@padding-large * 2) 20% (@padding-large * 2));
+  }
+  @media (max-width: @screen-tablet-max) {
+    clip-path: inset(20% @padding-large 20% @padding-large);
+  }
+  @media (max-width: @screen-phone-max) {
+    clip-path: inset(20% @padding 20% @padding);
+  }
+}

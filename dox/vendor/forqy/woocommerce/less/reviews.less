@@ -1,0 +1,199 @@
+// Reviews
+
+.woocommerce {
+
+  // No Reviews
+
+  .woocommerce-noreviews {
+    margin-bottom: @grid-gutter-medium;
+    font-size: @font-size-large;
+    color: fade(@content-color, @content-color-opacity);
+  }
+
+  // Reviews
+
+  #reviews {
+    #comments {
+
+      h2 {
+        margin-bottom: @grid-gutter-medium;
+        color: @content-color;
+      }
+
+      ol.commentlist {
+        padding: 0;
+
+        li {
+          .comment-text {
+            border: 0 !important;
+            border-radius: 0;
+            padding: 0;
+
+            .meta {
+              margin-bottom: 0;
+
+              font-size: @font-size;
+              text-transform: @text-transform;
+              letter-spacing: @letter-spacing;
+              line-height: 32px; // Avatar size
+
+              color: fade(@content-color, @content-color-opacity - 20%);
+
+              .woocommerce-review__author {
+                font-family: @heading-font-family;
+                font-size: @font-size-xxlarge;
+                font-weight: @heading-font-weight;
+                text-transform: @heading-text-transform;
+                letter-spacing: @heading-letter-spacing;
+                color: @content-color;
+              }
+
+              .woocommerce-review__verified {
+                padding: @border-width @padding-xxsmall;
+                color: @color-light;
+                background-color: @content-color-accent;
+                border-radius: @border-radius-small;
+              }
+            }
+
+            .description {
+              font-size: @font-size-large;
+              color: fade(@content-color, @content-color-opacity);
+            }
+          }
+
+          img {
+            &.avatar {
+              padding: 0;
+              background-color: transparent;
+              border: 0;
+              border-radius: @border-radius;
+            }
+          }
+        }
+      }
+    }
+
+    // Form
+
+    #review_form {
+      padding-top: @padding;
+      margin-top: @margin;
+
+      text-align: left;
+
+      border-top: @border-width-1 solid fade(@content-color, 20%);
+
+      .comment-reply-title {
+        display: block;
+        margin-bottom: @margin-small;
+
+        font-family: @heading-font-family;
+        font-size: @font-size-h3;
+        font-weight: @heading-font-weight;
+        text-transform: @heading-text-transform;
+        letter-spacing: @heading-letter-spacing;
+
+        color: @content-color;
+      }
+
+      p {
+        margin-bottom: @grid-gutter-small;
+      }
+
+      // Rating
+
+      .comment-form-rating {
+        display: inline-block;
+
+        .stars {
+          margin: @margin-xsmall 0;
+
+          span {
+            font-size: @font-size-h4;
+
+            a {
+              color: @content-color;
+              background: none;
+              border: 0;
+
+              &:hover,
+              &:focus {
+                color: @content-color;
+              }
+            }
+          }
+
+          &.selected {
+            a {
+              &:not(.active) {
+                &:before {
+                  color: @content-color-accent;
+                }
+              }
+
+              &.active {
+                &:before {
+                  color: @content-color-accent;
+                }
+
+                ~ a {
+                  &:before {
+                    color: @content-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Cookies
+
+      .comment-form-cookies-consent {
+        margin-top: @grid-gutter-small;
+      }
+
+      // Submit
+
+      [type='submit'] {
+        margin-top: @margin-small !important;
+      }
+    }
+  }
+
+  // Submit
+
+  #respond input#submit {
+    padding: @button-padding-vertical @button-padding-horizontal;
+
+    font-family: @button-font-family;
+    font-size: @button-font-size;
+    font-weight: @button-font-weight;
+    text-transform: @button-text-transform;
+    letter-spacing: @button-letter-spacing;
+    line-height: @button-line-height;
+
+    color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+    background-color: @content-color-accent;
+    border: @button-border-width solid transparent;
+    border-radius: @button-border-radius;
+
+    .button-focus-shadow-transparent();
+
+    &:hover,
+    &:focus {
+      color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+      background-color: @content-color-accent-darker;
+      border-color: transparent;
+    }
+
+    &:focus {
+      .button-focus-shadow(@content-color-accent);
+    }
+
+    &:focus-visible {
+      outline-color: @content-color-accent;
+    }
+  }
+}

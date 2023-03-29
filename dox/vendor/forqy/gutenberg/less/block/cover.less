@@ -1,0 +1,158 @@
+// Block - Cover
+
+.wp-block-cover {
+  padding: var(--wp--style--block-gap, 2.5rem);
+  margin-top: var(--wp--style--block-gap, 2.5rem);
+  margin-bottom: var(--wp--style--block-gap, 2.5rem);
+
+  color: @content-color-background;
+
+  @media (max-width: @screen-phone-max) {
+    padding: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+  }
+
+  // Next
+  + .wp-block-cover {
+    margin-top: calc(var(--wp--style--block-gap, 2.5rem) * -1);
+  }
+
+  // Image
+  > img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  // Overlay
+  &.has-background-dim {
+
+    &.has-cnt-background-color {
+      color: contrast(@content-color, @content-color, @content-color-background, @color-contrast-threshold);
+      background-color: @content-color;
+    }
+
+    &.has-cnt-ac-background-color {
+      color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+      background-color: @content-color-accent;
+    }
+
+    &.has-cnt-bg-background-color {
+      color: contrast(@content-color-background, @content-color, @content-color-background, @color-contrast-threshold);
+      background-color: @content-color-background;
+    }
+  }
+
+  // Inner
+
+  .wp-block-cover__inner-container {
+    width: 100%;
+    max-width: @centerer-width;
+    padding: var(--wp--style--block-gap, 2.5rem);
+
+    @media (max-width: @screen-tablet-max) {
+      padding: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+    }
+
+    > *:not(.has-text-color) {
+      color: inherit;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+
+    // Link
+
+    a {
+      &:not([class*='button']) {
+        color: currentColor;
+        border-color: currentColor;
+
+        &:hover,
+        &:focus {
+          color: currentColor;
+          border-color: currentColor;
+        }
+      }
+    }
+  }
+
+  // Light
+  &.is-light {
+    color: @content-color-background;
+
+    .wp-block-cover__inner-container {
+      color: inherit;
+    }
+  }
+
+  // Gradient
+
+  .wp-block-cover__gradient-background {
+    margin: 0;
+  }
+
+  // Wide
+  &.alignwide {
+    margin-top: calc(var(--wp--style--block-gap, 2.5rem) * 1.5);
+    margin-bottom: calc(var(--wp--style--block-gap, 2.5rem) * 1.5);
+
+    @media (max-width: @screen-tablet-max) {
+      margin-top: var(--wp--style--block-gap, 2.5rem);
+      margin-bottom: var(--wp--style--block-gap, 2.5rem);
+    }
+  }
+
+  // Full-width
+  &.alignfull {
+    margin-top: calc(var(--wp--style--block-gap, 2.5rem) * 2);
+    margin-bottom: calc(var(--wp--style--block-gap, 2.5rem) * 2);
+
+    @media (max-width: @screen-tablet-max) {
+      margin-top: var(--wp--style--block-gap, 2.5rem);
+      margin-bottom: var(--wp--style--block-gap, 2.5rem);
+    }
+
+    // Next Full-width
+    + .wp-block-cover {
+      &.alignfull {
+        margin-top: calc(var(--wp--style--block-gap, 2.5rem) * 2 * -1);
+
+        @media (max-width: @screen-tablet-max) {
+          margin-top: calc(var(--wp--style--block-gap, 2.5rem) * -1);
+        }
+      }
+    }
+
+    .wp-block-cover__inner-container {
+      padding: var(--wp--style--block-gap, 2.5rem);
+    }
+  }
+
+  // Image Loading
+
+  .fy-image-loading {
+    display: none;
+  }
+}
+
+// Block - Cover in Columns
+
+.wp-block-columns {
+
+  .wp-block-cover {
+    padding: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+
+    .wp-block-cover__inner-container {
+      padding: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+    }
+  }
+}

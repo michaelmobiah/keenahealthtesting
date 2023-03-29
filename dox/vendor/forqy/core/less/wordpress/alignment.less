@@ -1,0 +1,81 @@
+// WordPress - Alignment
+
+.alignnone {
+  margin: 0 0 @grid-gutter-medium 0;
+}
+
+.aligncenter {
+  text-align: center;
+  margin: 0 auto @grid-gutter-medium auto;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 @grid-gutter-medium @grid-gutter-medium;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 @grid-gutter-medium @grid-gutter-medium 0;
+}
+
+// Link
+
+a {
+
+  // Image
+
+  img {
+    &.alignright {
+      float: right;
+      margin: 0 0 @grid-gutter-medium @grid-gutter-medium;
+    }
+
+    &.alignnone {
+      margin: 0 @grid-gutter-medium @grid-gutter-medium 0;
+    }
+
+    &.alignleft {
+      float: left;
+      margin: 0 @grid-gutter-medium @grid-gutter-medium 0;
+    }
+
+    &.aligncenter {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+// Paragraph
+
+p {
+
+  // Image
+
+  img {
+    &.alignnone {
+      margin-bottom: 0;
+    }
+
+    &.aligncenter {
+      display: inherit;
+      margin-bottom: 0;
+    }
+  }
+
+  // Next
+
+  + .aligncenter {
+    margin-top: 0;
+  }
+
+  + .alignright {
+    margin-top: 0;
+  }
+
+  + .alignleft {
+    margin-top: 0;
+  }
+}

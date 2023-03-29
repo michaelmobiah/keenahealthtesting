@@ -1,0 +1,31 @@
+// Post - Listing - Default
+
+.fy-post-listing {
+
+  &:not(.fy-post-side) {
+
+    @media (max-width: @screen-desktop-max) {
+      max-width: @post-width-max-tablet;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  // Container
+
+  .fy-post-container {
+    padding: @post-container-padding;
+  }
+
+  // Classic Appearance
+
+  &.fy-post-classic {
+
+    .fy-post-container {
+
+      .post-content-merge & {
+        padding: @padding-small (@post-container-padding / 2);
+      }
+    }
+  }
+}

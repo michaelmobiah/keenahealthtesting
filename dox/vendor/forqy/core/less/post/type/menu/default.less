@@ -1,0 +1,115 @@
+// Post - Format - Menu - Default
+
+.@{prefix}-post-menu {
+
+  // Listing
+
+  &.@{prefix}-post-listing {
+
+    // Card
+    &.@{prefix}-post-card {
+
+      &:after {
+        .shadow();
+      }
+
+      &:hover,
+      &:focus-within {
+        &:after {
+          .shadow-hover();
+        }
+      }
+    }
+
+    // Card
+    &.@{prefix}-post-side {
+
+      .@{prefix}-post-image {
+        text-align: center;
+        border-width: @border-width 0 @border-width @border-width;
+        border-style: solid;
+        border-color: transparent;
+
+        a {
+          padding: @padding 0 @padding @padding-small;
+        }
+
+        .@{prefix}-image {
+          max-width: 100%;
+          height: auto;
+          min-height: 0;
+        }
+      }
+    }
+  }
+
+  // Image
+
+  .@{prefix}-post-image {
+    a {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  // Header
+
+  .@{prefix}-post-header {
+    position: relative;
+  }
+
+  // Prices
+
+  .@{prefix}-post-prices {
+    position: relative;
+    z-index: @layer-2;
+
+    font-family: @heading-font-family;
+    font-size: @font-size-large;
+    font-weight: @font-weight;
+    letter-spacing: @heading-letter-spacing;
+    text-transform: @heading-text-transform;
+
+    color: @post-color;
+
+    @media (max-width: @screen-phone-max) {
+      font-size: @font-size;
+    }
+  }
+
+  // Single
+
+  &.@{prefix}-post-single {
+
+    // Prices
+
+    .@{prefix}-post-prices {
+      margin-top: @grid-gutter-medium;
+
+      font-size: @font-size-h6;
+      line-height: @line-height-normal;
+
+      color: @content-color;
+      background-color: transparent;
+    }
+
+    // Ingredients
+
+    .@{prefix}-post-ingredients {
+      margin-top: 0;
+    }
+
+    // Badges
+
+    .@{prefix}-post-badges {
+      margin-top: @grid-gutter-medium;
+    }
+
+    // Footer
+
+    .@{prefix}-post-footer {
+      margin-top: @grid-gutter-large;
+    }
+  }
+}

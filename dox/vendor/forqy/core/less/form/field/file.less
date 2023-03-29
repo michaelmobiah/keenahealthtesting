@@ -1,0 +1,23 @@
+// Form - Field - File
+
+[type='file'] {
+  padding: @form-field-padding-vertical;
+
+  &::-webkit-file-upload-button {
+    padding-right: @button-padding-horizontal;
+    padding-left: @button-padding-horizontal;
+    margin-right: @form-field-padding-horizontal;
+
+    font-family: @button-font-family;
+    font-size: @button-font-size;
+    font-weight: @button-font-weight;
+    text-transform: @button-text-transform;
+    letter-spacing: @button-letter-spacing;
+
+    cursor: pointer;
+
+    color: @form-field-color-background;
+    background-color: @form-field-color;
+    border: @button-border-width solid transparent;
+  }
+}

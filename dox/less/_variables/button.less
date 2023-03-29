@@ -1,0 +1,28 @@
+// Button
+
+@button-font-family: @font-button;
+@button-font-size: (1rem * round(@font-size-button / @font-size-base, 4)); // Convert PX to REM
+@button-font-weight: @font-weight-button;
+@button-text-transform: @text-transform-button;
+@button-letter-spacing: @letter-spacing-button;
+@button-line-height: 1.5rem;
+
+@button-border-width: min(@border-width-small, 2px);
+@button-border-radius: @border-radius;
+
+@button-padding-vertical: @form-field-padding-vertical;
+@button-padding-horizontal: (@form-field-padding-horizontal * 2);
+
+@button-margin-vertical: 0;
+@button-margin-horizontal: 0;
+
+@button-gutter: @grid-gutter-small;
+
+@button-outline-width: (@button-border-width + 2px);
+@button-outline-opacity: 40%;
+@button-outline-border: @button-border-width;
+
+// Bordered
+
+@button-bordered-outline-width: @button-outline-width;
+@button-bordered-outline-opacity: 40%;

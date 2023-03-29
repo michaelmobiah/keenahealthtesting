@@ -1,0 +1,29 @@
+// Editor - Block - Cover
+
+.wp-block-cover {
+  padding: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+  color: var(--fy--content-color-background);
+
+  a {
+    color: currentColor;
+    border-color: currentColor;
+  }
+
+  // Light
+  &.is-light {
+    color: var(--fy--content-color-background);
+
+    .wp-block-cover__inner-container {
+      color: inherit;
+    }
+  }
+
+  .wp-block-cover__inner-container {
+    max-width: 1200px;
+    padding: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

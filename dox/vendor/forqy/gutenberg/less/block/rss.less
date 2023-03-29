@@ -1,0 +1,66 @@
+// Block - RSS
+
+ul.wp-block-rss {
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 0;
+    margin: var(--wp--style--block-gap, 2.5rem) 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    // Title
+
+    .wp-block-rss__item-title {
+      a {
+        color: @content-color;
+        border-bottom: @border-width solid transparent;
+        outline-width: min(@link-border-width * 2, 2px);
+
+        &:hover,
+        &:focus {
+          color: @link-color-hover;
+          border-color: currentColor;
+        }
+      }
+    }
+  }
+}
+
+// Title
+
+.wp-block-rss__item-title {
+  margin: 0;
+
+  font-family: @font-primary;
+  font-size: @font-size-h4;
+  font-weight: @heading-font-weight;
+  letter-spacing: @heading-letter-spacing;
+  text-transform: @heading-text-transform;
+  line-height: @heading-line-height;
+}
+
+// Author & Date
+
+.wp-block-rss__item-author,
+.wp-block-rss__item-publish-date {
+  margin: calc(var(--wp--style--block-gap, 2.5rem) / 4) 0;
+
+  font-size: @font-size-small;
+  line-height: normal;
+
+  color: fade(@content-color, @content-color-opacity - 20%);
+}
+
+// Excerpt
+
+.wp-block-rss__item-excerpt {
+  font-size: @font-size;
+}

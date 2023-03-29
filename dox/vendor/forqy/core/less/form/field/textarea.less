@@ -1,0 +1,17 @@
+// Form - Field - Textarea
+
+textarea {
+  display: block;
+  max-height: 50vh;
+  min-height: @padding-xlarge;
+  overflow-x: hidden;
+
+  line-height: @line-height-small;
+
+  .resizable-textarea(vertical);
+  .scrollbar-thin();
+
+  &::-webkit-input-placeholder {
+    line-height: normal;
+  }
+}

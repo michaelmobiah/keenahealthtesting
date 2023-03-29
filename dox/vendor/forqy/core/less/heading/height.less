@@ -1,0 +1,70 @@
+// Heading - Height
+
+@heading-height-min-small: floor((@heading-height-max / 2.00));
+@heading-height-min-medium: floor((@heading-height-max / 1.60));
+@heading-height-min-large: floor((@heading-height-max / 1.35));
+@heading-height-min-xlarge: floor((@heading-height-max / 1.20));
+
+.@{prefix}-heading {
+  min-height: @heading-height-min;
+}
+
+// XSmall
+
+.@{prefix}-heading-xsmall {
+
+  .@{prefix}-heading-container {
+    padding-top: @grid-gutter-medium;
+    padding-bottom: @grid-gutter-medium;
+  }
+}
+
+// Small
+
+.@{prefix}-heading-small {
+  min-height: ~'min(@{heading-height-small}, @{heading-height-min-small})';
+
+  .@{prefix}-heading-container {
+    padding-top: @grid-gutter-medium;
+    padding-bottom: @grid-gutter-medium;
+  }
+}
+
+// Medium
+
+.@{prefix}-heading-medium {
+  min-height: ~'min(@{heading-height-medium}, @{heading-height-min-medium})';
+}
+
+// Large
+
+.@{prefix}-heading-large {
+  min-height: ~'min(@{heading-height-large}, @{heading-height-min-large})';
+}
+
+// XLarge
+
+.@{prefix}-heading-xlarge {
+  min-height: ~'min(@{heading-height-xlarge}, @{heading-height-min-xlarge})';
+
+  .@{prefix}-heading-container {
+    padding-top: @grid-gutter-xlarge;
+    padding-bottom: @grid-gutter-xlarge;
+  }
+}
+
+// Full
+
+.@{prefix}-heading-full {
+  min-height: ~'min(@{heading-height-full}, @{heading-height-max})';
+
+  .admin-bar & {
+    min-height: ~'min(@{heading-height-full-admin-bar}, @{heading-height-max})';
+
+    @media (max-width: 782px) {
+      min-height: ~'min(@{heading-height-full-admin-bar-phone}, @{heading-height-max})';
+    }
+  }
+}
+
+

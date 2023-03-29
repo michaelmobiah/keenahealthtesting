@@ -1,0 +1,44 @@
+// Block - Gallery
+
+.wp-block-gallery {
+  display: flex;
+  padding: 0;
+  margin-bottom: var(--wp--style--block-gap, 2.5rem);
+
+  // Item
+
+  .blocks-gallery-item {
+
+    // Caption
+
+    figcaption {
+      padding: calc(var(--wp--style--block-gap, 2.5rem) / 4);
+      z-index: @layer-1;
+      overflow: visible;
+
+      font-size: @font-size;
+      line-height: normal;
+
+      background: transparent;
+
+      @media (max-width: @screen-phone-max) {
+        font-size: @font-size-small;
+      }
+
+      // Gradient
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 300%;
+        z-index: -(@layer-1);
+
+        pointer-events: none;
+
+        background-image: linear-gradient(to bottom, fade(@color-dark, 0%), fade(@color-dark, 50%));
+      }
+    }
+  }
+}

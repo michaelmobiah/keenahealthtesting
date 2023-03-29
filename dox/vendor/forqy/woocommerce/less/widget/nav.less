@@ -1,0 +1,39 @@
+// Widget - Layered Nav
+
+.woocommerce {
+
+  // List
+  .woocommerce-widget-layered-nav-list {
+
+    // Item
+    .woocommerce-widget-layered-nav-list__item {
+      position: relative;
+      padding: @padding-xxsmall @padding @padding-xxsmall 0;
+    }
+
+    // Item - Chosen
+    .woocommerce-widget-layered-nav-list__item--chosen {
+
+      a {
+        &:before {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          margin: 0;
+          .translateY(-50%);
+
+          color: currentColor;
+
+          .transition(color);
+        }
+
+        &:hover,
+        &:focus {
+          &:before {
+            color: @error-color;
+          }
+        }
+      }
+    }
+  }
+}

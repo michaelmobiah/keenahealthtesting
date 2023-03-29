@@ -1,0 +1,112 @@
+/*
+
+Badge
+
+*/
+
+.@{prefix}-badge {
+  display: inline-block;
+  min-width: @padding-xsmall;
+  padding: @padding-xxsmall @padding-xsmall;
+  margin-right: @margin-xsmall;
+
+  font-size: @badge-font-size;
+  font-weight: @badge-font-weight;
+  line-height: @badge-line-height;
+
+  white-space: nowrap;
+  vertical-align: baseline;
+  text-align: center;
+
+  color: @badge-color-light;
+  background-color: @badge-color-background;
+  border-radius: @badge-border-radius;
+
+  // Last
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  // Empty
+  &:empty {
+    display: none;
+  }
+}
+
+// Primary
+.@{prefix}-badge-primary {
+  color: @badge-color-light;
+  background-color: @badge-color-background-primary;
+}
+
+// Secondary
+.@{prefix}-badge-secondary {
+  color: @badge-color-light;
+  background-color: @badge-color-background-secondary;
+}
+
+// Warning
+.@{prefix}-badge-warning {
+  color: @badge-color-light;
+  background-color: @badge-color-background-warning;
+}
+
+// Error
+.@{prefix}-badge-error {
+  color: @badge-color-light;
+  background-color: @badge-color-background-error;
+}
+
+// Success
+
+.@{prefix}-badge-success {
+  color: @badge-color-light;
+  background-color: @badge-color-background-success;
+}
+
+// Notice
+.@{prefix}-badge-notice {
+  color: @badge-color-light;
+  background-color: @badge-color-background-notice;
+}
+
+// Light
+.@{prefix}-badge-light {
+  color: @badge-color-dark;
+  background-color: @badge-color-background-light;
+}
+
+// Dark
+.@{prefix}-badge-dark {
+  color: @badge-color-light;
+  background-color: @badge-color-background-dark;
+}
+
+// Special
+
+// Class
+.@{prefix}-badge-class {
+  color: @badge-color-dark;
+  background-color: fade(@badge-color-dark, 10%);
+}
+
+// Button
+.@{prefix}-badge-button {
+  color: @badge-color-light;
+  background-color: @badge-color-dark;
+}
+
+// Badge as link
+
+a {
+  &.@{prefix}-badge {
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      cursor: pointer;
+      color: inherit;
+      background-color: inherit;
+    }
+  }
+}

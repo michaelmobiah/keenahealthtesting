@@ -1,0 +1,11 @@
+// Chessboard - 4px
+
+// Mixin
+.pattern-chessboard-04 (@fill: fade(@pattern-color, @pattern-opacity)) {
+  .inline-svg(~'<svg fill="@{fill}" width="4" height="4" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"><path d="M0,0v2h2V0H0z M2,2v2h2V2H2z"/></svg>');
+}
+
+// Pattern
+.@{prefix}-pattern-chessboard-04 {
+  .pattern-chessboard-04();
+}

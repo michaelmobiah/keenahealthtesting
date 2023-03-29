@@ -1,0 +1,151 @@
+// Tabs
+
+.@{prefix}-tabs {
+  position: relative;
+  .tabs-generate(10);
+
+  input[type='radio'] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.@{prefix}-tabs__navigation {
+  display: flex;
+  align-items: flex-end;
+  border-left: @border-width solid fade(@content-color, 20%);
+  border-bottom: @border-width solid fade(@content-color, 20%);
+
+  li {
+    display: inline-block;
+    border-right: @border-width solid fade(@content-color, 20%);
+  }
+
+  label {
+    display: block;
+    position: relative;
+    padding: @button-padding-vertical @padding;
+
+    font-family: @font-navigation;
+    font-size: @font-size-navigation;
+    font-weight: @font-weight-navigation;
+    letter-spacing: @letter-spacing-navigation;
+    text-transform: @text-transform-navigation;
+    line-height: @button-line-height;
+
+    color: fade(@content-color, @content-color-opacity);
+    background-color: @content-color-background;
+    border: solid fade(@content-color, 20%);
+    border-width: @border-width 0 0;
+    outline: @link-border-width solid transparent;
+    outline-offset: 0;
+
+    @media (max-width: @screen-tablet-max) {
+      padding-right: @padding-small;
+      padding-left: @padding-small;
+    }
+
+    // Border - Bottom
+    &:before {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: @border-width;
+      background-color: transparent;
+
+      .transition(background-color);
+    }
+  }
+
+  // Within Content
+  .fy-content & {
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0;
+    }
+  }
+}
+
+.@{prefix}-tabs__panel {
+  display: none;
+  padding: @padding;
+
+  border: solid fade(@content-color, 20%);
+  border-width: 0 @border-width @border-width;
+
+  @media (max-width: @screen-tablet-max) {
+    padding: @padding-small;
+  }
+}
+
+// Generate Tabs
+
+.tabs-generate (@index) when (@index > 0) {
+
+  input[type='radio']:nth-of-type(@{index}) {
+
+    // Checked
+    &:checked {
+
+      ~ .@{prefix}-tabs__navigation {
+
+        li:nth-of-type(@{index}) {
+
+          label {
+            color: @content-color;
+
+            // Border - Bottom
+            &:before {
+              background-color: @content-color-background;
+            }
+          }
+        }
+      }
+
+      ~ .@{prefix}-tabs__panel {
+        &:nth-of-type(@{index}) {
+          display: block;
+        }
+      }
+    }
+
+    // Focus
+
+    &:focus {
+
+      ~ .@{prefix}-tabs__navigation {
+
+        li:nth-of-type(@{index}) {
+
+          label {
+            color: @content-color-accent;
+          }
+        }
+      }
+    }
+
+    &:focus-visible {
+
+      ~ .@{prefix}-tabs__navigation {
+
+        li:nth-of-type(@{index}) {
+
+          label {
+            outline-color: currentColor;
+          }
+        }
+      }
+    }
+  }
+
+  .tabs-generate(@index - 1);
+}
+
+.tabs-generate (0) {
+}

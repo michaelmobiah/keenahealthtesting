@@ -1,0 +1,350 @@
+// Comments
+
+@comments-avatar-size: 48px;
+
+.@{prefix}-comments {
+  display: block;
+  padding: @grid-gutter-medium 0 0;
+}
+
+// Comments Header
+
+.@{prefix}-comments__header {
+  color: @content-color;
+  padding-bottom: @grid-gutter-medium;
+  margin-bottom: @grid-gutter-medium;
+
+  border-bottom: @border-width-small solid fade(@content-color, 20%);
+}
+
+// No Comments
+
+.@{prefix}-comments__no {
+  padding-bottom: @grid-gutter-medium;
+  margin-bottom: (@grid-gutter-small + @grid-gutter-xsmall);
+
+  font-size: @font-size;
+
+  color: fade(@content-color, @content-color-opacity - 20%);
+}
+
+// Comments Closed
+
+.@{prefix}-comments__closed {
+  padding-bottom: @grid-gutter-medium;
+  margin-bottom: @grid-gutter-medium;
+
+  font-size: @font-size-large;
+
+  color: fade(@content-color, @content-color-opacity);
+}
+
+// Comments Form
+
+.comment-form {
+
+  // Notes
+
+  .comment-notes,
+  .logged-in-as {
+    margin-bottom: @grid-gutter-small;
+    font-size: @font-size;
+
+    color: fade(@content-color, @content-color-opacity);
+
+    a {
+      color: fade(@content-color, @content-color-opacity);
+      border-bottom: @link-border-width solid @link-border-color;
+
+      &:hover,
+      &:focus {
+        color: @link-color-hover;
+        border-color: @link-border-color-hover;
+      }
+    }
+  }
+
+  // Field
+
+  [class*="comment-form"] {
+    margin: @grid-gutter-xsmall 0;
+
+    > label {
+      display: block;
+    }
+
+    // Focus
+    &:focus-within {
+
+      > label {
+        color: @form-label-color-focus;
+      }
+    }
+  }
+
+  .comment-form-author,
+  .comment-form-email,
+  .comment-form-url,
+  .comment-form-cookies-consent {
+    max-width: 60%;
+
+    @media (max-width: @screen-desktop-max) {
+      max-width: 75%;
+    }
+    @media (max-width: @screen-tablet-max) {
+      max-width: 100%;
+    }
+  }
+
+  // Cookies
+
+  .comment-form-cookies-consent {
+    display: flex;
+    align-items: center;
+    margin-top: @grid-gutter-small;
+  }
+
+  // Submit
+
+  .form-submit {
+    display: block;
+    margin: @grid-gutter-medium 0 0;
+  }
+}
+
+// Reply
+
+.comment-reply-title {
+  margin: 0 0 @grid-gutter-small;
+  color: @content-color;
+}
+
+#cancel-comment-reply-link {
+  opacity: 1;
+  float: right;
+  margin-top: @grid-gutter-xsmall;
+
+  font-family: @font-navigation;
+  font-size: @font-size;
+  font-weight: @font-weight-navigation;
+  letter-spacing: @letter-spacing-navigation;
+  text-transform: @text-transform-navigation;
+
+  color: @link-color;
+  border-bottom: @link-border-width solid transparent;
+
+  &:hover {
+    color: @link-color-hover;
+    border-bottom-color: @link-border-color-hover;
+  }
+}
+
+.@{prefix}-comments__form {
+
+  .comment-respond {
+    margin-bottom: 0;
+  }
+}
+
+.comment-respond {
+  > p {
+    a {
+      color: fade(@content-color, @content-color-opacity);
+      border-bottom: @link-border-width solid @link-border-color;
+
+      &:hover,
+      &:focus {
+        color: @link-color-hover;
+        border-color: @link-border-color-hover;
+      }
+    }
+  }
+}
+
+// Comments List
+
+.@{prefix}-comments__list {
+  position: relative;
+  margin-bottom: @grid-gutter-medium;
+
+  // Border to hide tha last item border
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: @border-width-1;
+    z-index: @layer-1;
+
+    background-color: @content-color-background;
+  }
+}
+
+// Comment
+
+.@{prefix}-comment {
+  position: relative;
+
+  // Depth
+  &.depth-2,
+  &.depth-3,
+  &.depth-4,
+  &.depth-5 {
+    margin-left: (@comments-avatar-size + @grid-gutter-small);
+
+    @media (max-width: @screen-tablet-max) {
+      margin-left: (@comments-avatar-size / 2);
+    }
+  }
+
+  // By Post Author
+  &.bypostauthor {
+    position: relative;
+    padding: 0;
+    border: 0;
+
+    // Triangle
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      z-index: 0;
+      border-style: solid;
+      border-color: transparent @content-color-accent @content-color-accent transparent;
+      border-width: @padding-xsmall;
+    }
+  }
+
+  // Next
+  + .@{prefix}-comment {
+    &.bypostauthor {
+      margin-top: @grid-gutter-xsmall;
+    }
+  }
+}
+
+// Comment Avatar
+
+.@{prefix}-comment__avatar {
+  width: @comments-avatar-size;
+  height: @comments-avatar-size;
+
+  img {
+    width: @comments-avatar-size;
+    height: @comments-avatar-size;
+    border-radius: @border-radius;
+  }
+}
+
+// Comment Body
+
+.@{prefix}-comment__body {
+  margin-bottom: (@grid-gutter-small + @grid-gutter-xsmall);
+  border-bottom: @border-width-1 solid fade(@content-color, 20%);
+}
+
+// Comment Author
+
+.@{prefix}-comment__author {
+  padding: 0;
+  margin: 0;
+
+  font-size: @font-size-xlarge;
+
+  color: @content-color;
+
+  @media (max-width: @screen-phone-max) {
+    font-size: @font-size-large;
+  }
+
+  a {
+    color: @content-color;
+    border-bottom: @link-border-width solid transparent;
+
+    &:hover,
+    &:focus {
+      color: @link-color-hover;
+      border-color: @link-border-color-hover;
+    }
+  }
+}
+
+// Comment Date
+
+.@{prefix}-comment__date {
+
+  a {
+    padding: 0;
+
+    font-size: @font-size-small;
+    text-transform: @text-transform;
+    letter-spacing: @letter-spacing;
+
+    color: fade(@content-color, @content-color-opacity - 20%);
+    border-bottom: @link-border-width solid transparent;
+
+    &:hover,
+    &:focus {
+      color: @link-color-hover;
+      border-color: @link-border-color-hover;
+    }
+  }
+}
+
+// Comment Toolbar
+
+.@{prefix}-comment__toolbar {
+  text-align: right;
+
+  a {
+    padding: 0;
+
+    font-family: @font-secondary;
+    font-size: @font-size-small;
+    font-weight: @font-weight;
+    text-transform: @text-transform;
+    letter-spacing: @letter-spacing;
+    line-height: normal;
+    white-space: nowrap;
+
+    color: fade(@content-color, @content-color-opacity - 20%);
+    border-bottom: @link-border-width solid fade(@content-color, 40%);
+
+    &:hover,
+    &:focus {
+      color: @link-color-hover;
+      border-color: @link-border-color-hover;
+    }
+  }
+}
+
+// Comment Content
+
+.@{prefix}-comment__content {
+  padding: @grid-gutter-small 0;
+  font-size: @font-size;
+
+  // Any Last Child
+  > * {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  p, ul, ol, blockquote {
+    margin-bottom: @grid-gutter-small;
+  }
+
+  blockquote {
+    padding: 0;
+
+    p {
+      font-size: @font-size-h6;
+      line-height: @line-height;
+    }
+  }
+}

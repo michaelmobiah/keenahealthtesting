@@ -1,0 +1,18 @@
+// All - Enabled
+
+body.off-all--enabled {
+
+  // Trigger
+  .@{prefix}-off__trigger {
+    .off-trigger();
+  }
+}
+
+.@{prefix}-off[data-off-breakpoint='all'] {
+  .off();
+
+  // Active
+  &.active {
+    .off--active();
+  }
+}

@@ -1,0 +1,78 @@
+// Back to Top
+
+.@{prefix}-back-to-top {
+  opacity: 0;
+  pointer-events: none;
+
+  position: fixed;
+  .flex-center();
+  right: (@centerer-gutter / 2);
+  bottom: (@centerer-gutter / 2);
+  width: @btt-size;
+  height: @btt-size;
+  z-index: @layer-8;
+
+  color: @btt-color;
+  background-color: fade(@btt-color-background, @btt-color-background-opacity);
+
+  -webkit-tap-highlight-color: transparent;
+
+  .transition(~'right, bottom, opacity, color, background, border, box-shadow, outline');
+  .transition-duration(@transition-duration);
+  .transition-timing-function(@transition-timing-function);
+
+  @media (max-width: @centerer-breakpoint) {
+    bottom: 28px;
+    right: 28px;
+  }
+
+  @media (max-width: @screen-tablet-max) {
+    bottom: @button-outline-width;
+    right: @button-outline-width;
+  }
+
+  // Icon
+
+  .@{prefix}-icon {
+    display: inherit;
+  }
+
+  // Active
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  // Hover/Focus
+  &:hover,
+  &:focus {
+    color: @btt-color;
+  }
+}
+
+// Footer
+
+.@{prefix}-footer {
+
+  .@{prefix}-back-to-top {
+    opacity: 1;
+    pointer-events: auto;
+
+    position: relative;
+    display: inline-flex;
+    bottom: unset;
+    right: unset;
+
+    color: @footer-link-color;
+    background-color: transparent;
+
+    @media (max-width: @screen-tablet-max) {
+      margin-top: @margin;
+    }
+
+    &:hover,
+    &:focus {
+      color: @footer-link-color-hover;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+// Form Mixins
+
+// Placeholder
+
+.placeholder (@color: @form-field-color; @color-focus: @form-field-color-focus) {
+
+  &::placeholder { // Chrome, Firefox, Opera, Safari 10.1+
+    color: @color;
+    .transition(color);
+  }
+
+  // Focus
+  &:focus {
+
+    &::placeholder {
+      color: @color-focus;
+    }
+  }
+}
+
+// Resizable Textarea
+
+.resizable-textarea (@direction: both) { // none, both, horizontal, vertical, inherit
+  resize: @direction;
+
+  // Safari Fix
+  overflow: auto;
+}

@@ -1,0 +1,176 @@
+// Widget - Call to Action
+
+.widget_call_to_action {
+  position: relative;
+  display: block;
+  padding: 0 @padding @padding;
+  overflow: hidden;
+
+  color: @call-to-action-color;
+  background-color: @call-to-action-color-background;
+  border-radius: @border-radius;
+
+  .transition(background-color);
+
+  * {
+    position: relative;
+    z-index: @layer-1;
+  }
+
+  // Image
+
+  .@{prefix}-widget-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    // Overlay
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: @layer-2;
+
+      background-color: fade(@call-to-action-color-background, 75%);
+
+      .transition(background-color);
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    background-color: @call-to-action-color-accent;
+
+    .@{prefix}-widget-image {
+      &:before {
+        background-color: fade(@call-to-action-color-accent, 90%);
+      }
+    }
+  }
+
+  // Widget Title
+
+  [class*="title"] {
+    padding: @padding 0 @padding-small;
+    margin: 0;
+
+    color: @call-to-action-color;
+
+    a {
+      color: @call-to-action-color;
+      border-bottom: max(@link-border-width, 2px) solid transparent;
+
+      &:hover,
+      &:focus {
+        color: @call-to-action-color;
+        border-bottom-color: @call-to-action-color;
+      }
+    }
+  }
+
+  // Content
+
+  .@{prefix}-widget-content {
+    margin-bottom: 0;
+
+    color: @call-to-action-color;
+  }
+
+  // Footer
+
+  .@{prefix}-widget-footer {
+    margin-top: @grid-gutter-small;
+  }
+
+  // Button
+
+  .@{prefix}-button {
+    color: @call-to-action-color;
+    background-color: transparent;
+    border: @button-border-width solid fade(@call-to-action-color, 40%);
+
+    .icon {
+      fill: fade(@call-to-action-color, 60%);
+    }
+
+    &:hover,
+    &:focus {
+      color: @call-to-action-color;
+      background-color: transparent;
+      border-color: @call-to-action-color;
+
+      .icon {
+        fill: @call-to-action-color;
+      }
+    }
+
+    &:focus {
+      .button-bordered-focus-shadow(@call-to-action-color);
+    }
+
+    &:focus-visible {
+      outline-color: @call-to-action-color;
+    }
+  }
+}
+
+// Sidebar
+
+.@{prefix}-sidebar {
+
+  .widget_call_to_action {
+    margin-bottom: @grid-gutter-medium;
+
+    [class*="widget-title"] {
+      margin: 0;
+      border: 0;
+    }
+  }
+}
+
+// Footer
+
+.@{prefix}-footer {
+
+  .widget_call_to_action {
+
+    [class*="widget-title"] {
+      border: 0;
+
+      a {
+        color: @call-to-action-color;
+        border-bottom-color: transparent;
+
+        &:hover,
+        &:focus {
+          color: @call-to-action-color;
+          border-bottom-color: @call-to-action-color;
+        }
+      }
+    }
+
+    // Button
+
+    .@{prefix}-button {
+
+      &:hover,
+      &:focus {
+        border-color: @call-to-action-color;
+      }
+
+      &:focus {
+        .button-bordered-focus-shadow(@call-to-action-color);
+      }
+
+      &:focus-visible {
+        outline-color: @call-to-action-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+// Footer - Base
+
+.@{prefix}-footer {
+  position: relative;
+  width: 100%;
+  min-width: @body-min-width;
+  padding: 0;
+  z-index: @layer-3;
+
+  color: fade(@footer-color, @footer-color-opacity);
+
+  // Enabled/Disabled
+
+  .footer-disabled & {
+    display: none;
+  }
+
+  // Enabled/Disabled - Homepage
+  .footer-disabled.footer-homepage-enabled & {
+    display: block;
+  }
+
+  .footer-homepage-disabled & {
+    display: none;
+  }
+
+  // Divider
+
+  .@{prefix}-divider {
+    border-width: @border-width-small;
+    border-color: fade(@footer-color, 10%);
+
+    &.@{prefix}-footer-divider {
+      padding: (@footer-padding / 2) 0 0;
+      margin: 0;
+    }
+  }
+
+  // Button
+
+  .@{prefix}-button-bordered {
+    color: fade(@footer-color, @footer-color-opacity);
+    background-color: transparent;
+    border-color: fade(@footer-color, 40%);
+
+    &:hover,
+    &:focus {
+      color: @footer-color;
+      border-color: @footer-color-accent;
+    }
+
+    &:focus {
+      .button-bordered-focus-shadow(@footer-color-accent);
+    }
+
+    &:focus-visible {
+      outline-color: @footer-color-accent;
+    }
+  }
+}

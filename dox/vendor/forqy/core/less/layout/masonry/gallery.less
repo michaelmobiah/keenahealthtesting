@@ -1,0 +1,43 @@
+// Layout - Masonry - Gallery
+
+.@{prefix}-masonry-gallery {
+  width: calc(~'100% + @{gallery-gutter}');
+  padding: 0;
+  margin: 0 -(@gallery-gutter / 2) -(@gallery-gutter);
+
+  .@{prefix}-masonry-size,
+  .@{prefix}-masonry-item {
+    padding: 0 (@gallery-gutter / 2);
+  }
+
+  .@{prefix}-masonry-item {
+    width: 25%;
+
+    @media (max-width: @centerer-width) {
+      width: 25%;
+    }
+    @media (max-width: @screen-desktop-max) {
+      width: 33.333%;
+    }
+    @media (max-width: @screen-tablet-max) {
+      width: 33.333%;
+    }
+    @media (max-width: @screen-phone-max) {
+      width: 50%;
+    }
+  }
+}
+
+// Broken
+
+.posts-layout-masonry-broken {
+
+  .@{prefix}-masonry-gallery {
+
+    .@{prefix}-masonry-item {
+      &:nth-child(odd) {
+        border-width: 0 !important;
+      }
+    }
+  }
+}

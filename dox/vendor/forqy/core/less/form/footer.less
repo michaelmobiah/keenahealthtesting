@@ -1,0 +1,130 @@
+// Form - Footer
+// Appearance of the Form Elements in a Footer
+
+// Firefox SVG Color Fix
+// http://codepen.io/geoffyuen/pen/zGKQQW
+@footer-select-color-rgba: rgba(red(@footer-color), green(@footer-color), blue(@footer-color), 0.4);
+@footer-select-color-focus-rgba: rgba(red(@footer-color), green(@footer-color), blue(@footer-color), 0.99);
+
+.@{prefix}-footer {
+
+  // Label
+
+  label {
+    color: @footer-color;
+
+    // Active
+    :focus-within & {
+      color: @footer-color;
+    }
+
+    a {
+      color: currentColor;
+      border-color: currentColor;
+    }
+  }
+
+  // Field
+
+  input:not([type='submit']),
+  textarea,
+  select {
+    color: fade(@footer-color, 60%);
+    background-color: @footer-color-background;
+    border-color: fade(@footer-color, 20%);
+
+    .placeholder(fade(@footer-color, 60%), fade(@footer-color, 20%));
+
+    // Focus
+    &:focus {
+      color: @footer-color;
+      background-color: @footer-color-background;
+      border-color: @footer-color-accent;
+      .form-field-focus-shadow(@footer-color-accent);
+    }
+
+    // Error
+    &.@{prefix}-error {
+      border-color: @color-error;
+      .form-field-focus-shadow(@color-error);
+
+      &:focus {
+        border-color: @footer-color-accent;
+        .form-field-focus-shadow(@footer-color-accent);
+      }
+    }
+  }
+
+  // Select
+
+  select {
+    .inline-svg(~'<svg fill="@{footer-select-color-rgba}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.832,9.147c-0.189-0.196-0.498-0.196-0.688,0l-5.16,5.608l-5.16-5.608c-0.19-0.196-0.498-0.196-0.688,0 c-0.19,0.197-0.19,0.517,0,0.714l5.503,5.965c0.19,0.197,0.498,0.197,0.688,0l5.503-5.965C18.022,9.664,18.022,9.345,17.832,9.147 z"></path></svg>');
+
+    option {
+      color: @footer-color;
+      background-color: @footer-color-background;
+    }
+
+    &:focus {
+      .inline-svg(~'<svg fill="@{footer-select-color-focus-rgba}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.832,9.147c-0.189-0.196-0.498-0.196-0.688,0l-5.16,5.608l-5.16-5.608c-0.19-0.196-0.498-0.196-0.688,0 c-0.19,0.197-0.19,0.517,0,0.714l5.503,5.965c0.19,0.197,0.498,0.197,0.688,0l5.503-5.965C18.022,9.664,18.022,9.345,17.832,9.147 z"></path></svg>');
+    }
+
+    // Multiple
+    &[multiple] {
+      background-image: none;
+
+      option {
+        background-color: transparent;
+      }
+    }
+  }
+
+  // Field
+
+  .@{prefix}-field {
+
+    // Focus
+    &:focus-within {
+
+      .@{prefix}-label {
+        color: @footer-color;
+      }
+
+      .@{prefix}-input {
+        color: @footer-color;
+        background-color: @footer-color-background;
+        border-color: @footer-color-accent;
+        .form-field-focus-shadow(@footer-color-accent);
+      }
+
+      [type='time'] {
+        color: @footer-color;
+      }
+    }
+  }
+
+  // Button
+
+  button,
+  [type='button'],
+  [type='submit'] {
+    color: contrast(@footer-color-accent, @footer-color, @footer-color-background, @color-contrast-threshold);
+    background-color: @footer-color-accent;
+    border-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: contrast(@footer-color-accent, @footer-color, @footer-color-background, @color-contrast-threshold);
+      background-color: @footer-color-accent-darker;
+      border-color: transparent;
+    }
+
+    &:focus {
+      .button-focus-shadow(@footer-color-accent-darker);
+    }
+
+    &:focus-visible {
+      outline-color: @footer-color-accent-darker;
+    }
+  }
+}

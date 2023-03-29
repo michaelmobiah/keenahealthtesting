@@ -1,0 +1,152 @@
+// Widget - Recent
+
+.widget_recent_entries,
+.widget_recent_comments {
+  color: fade(@content-color, @content-color-opacity - 20%);
+
+  li {
+    position: relative;
+    padding: @padding-xsmall @padding-small @padding-xsmall 0;
+    margin: 0;
+    line-height: @line-height-small;
+
+    border-bottom: @border-width-1 solid fade(@content-color, 10%);
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border: 0;
+    }
+  }
+
+  a {
+    color: @link-color;
+    border-bottom: @link-border-width solid fade(@link-color, 20%);
+
+    &:hover,
+    &:focus {
+      color: @link-color-hover;
+      border-color: @link-border-color-hover;
+    }
+  }
+
+  .comment-author-link {
+    color: @link-color;
+  }
+
+  .post-date {
+    display: block;
+    color: fade(@content-color, @content-color-opacity - 20%);
+  }
+}
+
+// RSS Widget
+
+.widget_rss {
+
+  li {
+    padding: @padding-small 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  a.rsswidget {
+    font-family: @heading-font-family;
+    font-size: @font-size-h6;
+    font-weight: @heading-font-weight;
+    text-transform: @heading-text-transform;
+    letter-spacing: @heading-letter-spacing;
+    line-height: normal;
+
+    color: @content-color;
+    border-bottom: @border-width solid transparent;
+
+    &:hover,
+    &:focus {
+      color: @content-color;
+      border-color: @content-color-accent;
+    }
+  }
+
+  .rss-date {
+    display: block;
+    font-size: @font-size-small;
+    margin: @margin-xsmall 0;
+  }
+
+  .rssSummary {
+    margin-bottom: @margin-xsmall;
+    font-size: @font-size-large;
+  }
+}
+
+// Text Widget
+
+.widget_text {
+
+  .textwidget {
+    p {
+      font-size: @font-size-large;
+      margin-bottom: @margin-small;
+
+      &:empty {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Footer
+
+.@{prefix}-footer {
+
+  .widget_recent_entries,
+  .widget_recent_comments {
+    color: fade(@footer-color, @footer-color-opacity - 20%);
+
+    li {
+      border-bottom-color: fade(@footer-color, 10%);
+    }
+
+    a {
+      color: @footer-link-color;
+      border-bottom-color: @footer-link-border-color;
+
+      &:hover,
+      &:focus {
+        color: @footer-link-color-hover;
+        border-color: @footer-link-border-color-hover;
+      }
+    }
+
+    .comment-author-link {
+      color: @footer-link-color;
+    }
+
+    .post-date {
+      color: fade(@footer-color, @footer-color-opacity - 20%);
+    }
+  }
+
+  .widget_rss {
+
+    a.rsswidget {
+      color: @footer-color;
+
+      &:hover,
+      &:focus {
+        color: @footer-color;
+        border-color: @footer-color-accent;
+      }
+    }
+  }
+}

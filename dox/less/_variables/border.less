@@ -1,0 +1,27 @@
+// Border variables
+
+// Widths
+
+@border-width-0: 0;
+@border-width-1: 1px;
+@border-width-xsmall: @border-width-1;
+@border-width-small: ceil((@border-width / 2));
+
+//@border-width: 2px;
+
+@border-width-large: ceil((@border-width * 2));
+@border-width-xlarge: ceil((@border-width * 3));
+@border-width-xxlarge: ceil((@border-width * 4));
+
+// Radiuses
+
+@border-radius-0: 0;
+@border-radius-1: 1px;
+@border-radius-xsmall: min(ceil((@border-radius / 3)), 4px);
+@border-radius-small: min(ceil((@border-radius / 2)), 8px);
+
+//@border-radius: 4px;
+
+@border-radius-large: ceil((@border-radius * 2));
+@border-radius-xlarge: ceil((@border-radius * 3));
+@border-radius-xxlarge: ceil((@border-radius * 4));

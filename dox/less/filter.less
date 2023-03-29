@@ -1,0 +1,10 @@
+// Filter
+
+// Opacity
+@filter-opacity-number: (unit(@filter-opacity) / 100); // 0 - 1
+// Intensity
+@filter-intensity-number: (unit(@filter-intensity) / 100); // 0 - 1
+@filter-intensity-percent: (@filter-intensity * 10); // 0% - 1000%
+
+@import "../vendor/forqy/filter/less/common";
+@import "../vendor/forqy/filter/less/filters/@{filter}";

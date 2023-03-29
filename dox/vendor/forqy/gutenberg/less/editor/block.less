@@ -1,0 +1,20 @@
+// Editor - Block
+
+// Alignment
+
+.wp-block {
+
+  // Right
+  &[data-align='right'] {
+    > .wp-block-image {
+      margin: 0 0 var(--wp--style--block-gap, 2.5rem) var(--wp--style--block-gap, 2.5rem);
+    }
+  }
+
+  // Left
+  &[data-align='left'] {
+    > .wp-block-image {
+      margin: 0 var(--wp--style--block-gap, 2.5rem) var(--wp--style--block-gap, 2.5rem) 0;
+    }
+  }
+}

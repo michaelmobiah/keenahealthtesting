@@ -1,0 +1,43 @@
+// Header - Layout
+
+// Center
+
+.@{prefix}-header-center {
+
+  // Navigation
+  .@{prefix}-navigation-container {
+
+    .navigation-align-default & {
+      .flex-center-left();
+    }
+
+    .@{prefix}-navigation-list {
+
+      .navigation-align-default &,
+      .navigation-align-left & {
+        @media (min-width: @screen-desktop) {
+          margin-left: -(@navigation-link-padding-horizontal);
+        }
+        @media (min-width: @screen-desktop) and (max-width: @screen-desktop-wide-max) {
+          margin-left: -(floor((@navigation-link-padding-horizontal * 0.8)));
+        }
+        @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+          margin-left: -(floor((@navigation-link-padding-horizontal * 0.4)));
+        }
+      }
+    }
+  }
+}
+
+// Centered
+
+.@{prefix}-header-centered {
+
+  // Navigation
+  .navigation-background-solid & {
+
+    .@{prefix}-navigation-container {
+      margin-top: @header-padding;
+    }
+  }
+}

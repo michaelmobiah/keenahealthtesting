@@ -1,0 +1,114 @@
+<wpml-config>
+	<custom-types>
+		<custom-type translate="1">menu</custom-type>
+		<custom-type translate="1">project</custom-type>
+		<custom-type translate="1">album</custom-type>
+		<custom-type translate="1">event</custom-type>
+		<custom-type translate="1">gallery</custom-type>
+	</custom-types>
+	<taxonomies>
+		<taxonomy translate="1">section</taxonomy>
+		<taxonomy translate="1">ingredient</taxonomy>
+		<taxonomy translate="1">category-portfolio</taxonomy>
+		<taxonomy translate="1">category-album</taxonomy>
+		<taxonomy translate="1">category-event</taxonomy>
+		<taxonomy translate="1">category-gallery</taxonomy>
+	</taxonomies>
+	<admin-texts>
+		<key name="theme_mods_dox">
+			<key name="dox_about_headline"/>
+			<key name="dox_about_description"/>
+			<key name="dox_about_content"/>
+
+			<key name="dox_about_address_street"/>
+			<key name="dox_about_address_postal"/>
+			<key name="dox_about_address_city"/>
+			<key name="dox_about_address_country"/>
+
+			<key name="dox_about_hours"/>
+			<key name="dox_about_cuisine"/>
+			<key name="dox_about_price"/>
+			<key name="dox_about_payment"/>
+			<key name="dox_about_reservations"/>
+			<key name="dox_about_menu"/>
+
+			<key name="dox_about_publisher"/>
+			<key name="dox_about_currency"/>
+
+			<key name="dox_bar_text"/>
+			<key name="dox_header_text"/>
+
+			<key name="dox_homepage_about_button_first"/>
+			<key name="dox_homepage_about_button_first_page"/>
+			<key name="dox_homepage_about_button_second"/>
+			<key name="dox_homepage_about_button_second_page"/>
+
+			<key name="dox_homepage_projects_title"/>
+			<key name="dox_homepage_projects_content"/>
+			<key name="dox_homepage_projects_button"/>
+			<key name="dox_homepage_projects_button_page"/>
+
+			<key name="dox_homepage_albums_title"/>
+			<key name="dox_homepage_albums_content"/>
+			<key name="dox_homepage_albums_button"/>
+			<key name="dox_homepage_albums_button_page"/>
+
+			<key name="dox_homepage_events_title"/>
+			<key name="dox_homepage_events_content"/>
+			<key name="dox_homepage_events_button"/>
+			<key name="dox_homepage_events_button_page"/>
+
+			<key name="dox_homepage_galleries_title"/>
+			<key name="dox_homepage_galleries_content"/>
+			<key name="dox_homepage_galleries_button"/>
+			<key name="dox_homepage_galleries_button_page"/>
+
+			<key name="dox_homepage_posts_title"/>
+			<key name="dox_homepage_posts_content"/>
+			<key name="dox_homepage_posts_button"/>
+			<key name="dox_homepage_posts_button_page"/>
+
+			<key name="dox_homepage_categories_title"/>
+			<key name="dox_homepage_categories_content"/>
+
+			<key name="dox_homepage_products_featured_title"/>
+			<key name="dox_homepage_products_featured_content"/>
+
+			<key name="dox_homepage_products_recent_title"/>
+			<key name="dox_homepage_products_recent_content"/>
+
+			<key name="dox_homepage_product_categories_title"/>
+			<key name="dox_homepage_product_categories_content"/>
+
+			<key name="dox_newsletter"/>
+			<key name="dox_newsletter_title"/>
+			<key name="dox_newsletter_content"/>
+			<key name="dox_newsletter_footer"/>
+
+			<key name="dox_date_format"/>
+			<key name="dox_date_delimiter"/>
+
+			<key name="dox_copyright"/>
+
+			<key name="fy_form_from_name"/>
+			<key name="fy_form_from_email"/>
+
+			<key name="fy_form_contact_title"/>
+			<key name="fy_form_contact_terms_page"/>
+			<key name="fy_form_contact_before_button"/>
+			<key name="fy_form_contact_button"/>
+			<key name="fy_form_contact_email"/>
+			<key name="fy_form_contact_subject"/>
+			<key name="fy_form_contact_content"/>
+
+			<key name="fy_form_reservation_title"/>
+			<key name="fy_form_reservation_date_format"/>
+			<key name="fy_form_reservation_terms_page"/>
+			<key name="fy_form_reservation_before_button"/>
+			<key name="fy_form_reservation_button"/>
+			<key name="fy_form_reservation_email"/>
+			<key name="fy_form_reservation_subject"/>
+			<key name="fy_form_reservation_content"/>
+		</key>
+	</admin-texts>
+</wpml-config>

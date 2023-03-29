@@ -1,0 +1,28 @@
+// Background
+
+.fy-background-wrap {
+  top: auto;
+  bottom: 0;
+
+  .admin-bar & {
+    height: calc(~'100% - @{admin-bar-height}');
+  }
+}
+
+// Background Image
+
+body.custom-background-image {
+  background-color: @background-color;
+
+  // Overlay
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: fade(@background-overlay-color, @background-overlay-opacity);
+  }
+}

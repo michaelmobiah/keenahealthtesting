@@ -1,0 +1,11 @@
+// Grid - 4px
+
+// Mixin
+.pattern-grid-04 (@fill: fade(@pattern-color, @pattern-opacity)) {
+  .inline-svg(~'<svg fill="@{fill}" width="4" height="4" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"><polygon points="0,0 0,4 1,4 1,1 4,1 4,0"/></svg>');
+}
+
+// Pattern
+.@{prefix}-pattern-grid-04 {
+  .pattern-grid-04();
+}

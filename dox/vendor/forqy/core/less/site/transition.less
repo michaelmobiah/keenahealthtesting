@@ -1,0 +1,133 @@
+// Site - Transition
+
+@site-transition-duration: 0.4s;
+
+.@{prefix}-site-overlay {
+  opacity: 1;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: (@layer-9 + 300);
+
+  background-color: @loading-color-background;
+
+  pointer-events: none;
+  will-change: opacity;
+
+  animation-duration: @site-transition-duration;
+  animation-timing-function: @transition-timing-function;
+  animation-delay: @site-transition-duration;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  .transition(all, @site-transition-duration);
+
+  // None
+  .loading-none &,
+  .loading-disabled &,
+  .loading-transition-none & {
+    display: none;
+    animation: none;
+  }
+
+  // Slide - Vertical
+  .loading-transition-slide-vertical & {
+    top: auto;
+    bottom: 0;
+    right: auto;
+    left: 0;
+  }
+}
+
+body {
+
+  // In
+
+  &.pace-done {
+
+    .@{prefix}-site-overlay {
+      pointer-events: none;
+    }
+
+    // Slide
+    &.loading-transition-slide {
+
+      .@{prefix}-site-overlay {
+        animation-name: animationSlideOutRight;
+        animation-duration: (@site-transition-duration * 2);
+        animation-delay: @site-transition-duration;
+      }
+    }
+
+    &.loading-transition-slide-vertical {
+
+      .@{prefix}-site-overlay {
+        animation-name: animationSlideOutBottom;
+        animation-duration: (@site-transition-duration * 2);
+        animation-delay: @site-transition-duration;
+      }
+    }
+
+    // Fade
+    &.loading-transition-fade {
+
+      .@{prefix}-site-overlay {
+        opacity: 0;
+      }
+    }
+  }
+
+  // Out
+
+  &.transition-out {
+
+    // Slide
+    &.loading-transition-slide {
+
+      .@{prefix}-site-overlay {
+        animation-name: animationSlideInLeft;
+        animation-duration: @site-transition-duration;
+        animation-delay: 0s;
+      }
+    }
+
+    &.loading-transition-slide-vertical {
+
+      .@{prefix}-site-overlay {
+        animation-name: animationSlideInTop;
+        animation-duration: @site-transition-duration;
+        animation-delay: 0s;
+      }
+    }
+
+    // Fade
+    &.loading-transition-fade {
+
+      .@{prefix}-site-overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  // End
+  &.transition-end {
+
+    .@{prefix}-site-overlay {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  // No Transition
+
+  &.loading-transition-none {
+
+    .@{prefix}-container {
+      opacity: 1;
+      transition: none;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+// Form - Field - Date/Time
+
+[type='date'],
+[type='time'] {
+
+  &::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button,
+  &::-webkit-clear-button {
+    appearance: none;
+    margin: 0;
+  }
+}
+
+[type="time"] {
+
+  &::-webkit-calendar-picker-indicator {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    .form-field-time-icon-svg(@form-field-color-rgba);
+    .transition();
+  }
+
+  // Focus
+  &:focus {
+
+    &::-webkit-calendar-picker-indicator {
+      .form-field-time-icon-svg(@form-field-color-focus-rgba);
+    }
+  }
+}

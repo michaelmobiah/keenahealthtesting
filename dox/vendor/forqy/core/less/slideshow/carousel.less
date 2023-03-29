@@ -1,0 +1,84 @@
+// Slideshow - Carousel
+
+.@{prefix}-slideshow {
+  &.@{prefix}-carousel {
+    background-color: transparent;
+
+    // Small
+    &.@{prefix}-carousel-small {
+      max-height: @carousel-height;
+
+      .@{prefix}-slide {
+        min-height: 0;
+      }
+    }
+
+    // Slide
+
+    .@{prefix}-slide {
+      .flex-center-left();
+    }
+
+    // Caption
+
+    .@{prefix}-caption-centerer {
+      position: relative;
+      width: 100%;
+      top: 0 !important;
+      left: 0;
+      padding: 0 @grid-gutter-medium;
+      margin: 0;
+      .translate(0, 0);
+    }
+
+    .@{prefix}-caption {
+      width: 100%;
+      padding: 0;
+      text-align: left;
+    }
+
+    .@{prefix}-caption-header {
+      h2, h3 {
+        margin: 0;
+        font-size: 1rem;
+        line-height: @line-height;
+      }
+    }
+
+    .@{prefix}-caption-date {
+      display: block;
+
+      font-family: @heading-font-family;
+      font-size: @font-size-small;
+      font-weight: @heading-font-weight;
+      letter-spacing: @heading-letter-spacing;
+      text-transform: @heading-text-transform;
+    }
+
+    // Navigation
+
+    .@{prefix}-slideshow-prev,
+    .@{prefix}-slideshow-next {
+      top: 50%;
+      width: @icon-size-small;
+
+      @media (max-width: @screen-phone-max) {
+        .flex-center();
+      }
+    }
+
+    .@{prefix}-slideshow-prev {
+      left: 0;
+    }
+
+    .@{prefix}-slideshow-next {
+      right: 0;
+    }
+  }
+}
+
+// Pagination
+
+.@{prefix}-carousel-pagination {
+  color: currentColor;
+}

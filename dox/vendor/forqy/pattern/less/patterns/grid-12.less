@@ -1,0 +1,11 @@
+// Grid - 12px
+
+// Mixin
+.pattern-grid-12 (@fill: fade(@pattern-color, @pattern-opacity)) {
+  .inline-svg(~'<svg fill="@{fill}" width="12" height="12" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><polygon points="0,0 0,12 1,12 1,1 12,1 12,0"/></svg>');
+}
+
+// Pattern
+.@{prefix}-pattern-grid-12 {
+  .pattern-grid-12();
+}

@@ -1,0 +1,60 @@
+// Logo
+
+.fy-logo {
+
+  > a {
+    .flex-center();
+
+    outline-width: @link-border-width;
+    outline-offset: -(@link-border-width);
+
+    .header-layout-left.navigation-align-left & {
+      margin-right: @margin-small;
+    }
+
+    // Decoration
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: @border-width;
+      margin-bottom: @border-width;
+      z-index: -1;
+      background-color: @header-color-accent;
+
+      .transition-property(~'left, width, background-color');
+      .transition-duration(@transition-duration);
+      .transition-timing-function(@transition-timing-function);
+    }
+
+    > img,
+    > svg {
+
+      @media (max-width: @screen-phone-max) {
+        max-width: 150px;
+        min-width: 100px;
+        height: auto;
+      }
+
+      .shop-search-enabled & {
+        @media (max-width: @screen-phone-min + @grid-gutter-xxlarge) {
+          max-width: 124px;
+        }
+      }
+    }
+
+    > svg.logo {
+      fill: currentColor;
+    }
+
+    &:focus-visible {
+      &:before {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+

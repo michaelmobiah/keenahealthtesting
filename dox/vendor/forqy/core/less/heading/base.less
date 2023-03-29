@@ -1,0 +1,329 @@
+// Heading - Base
+
+.@{prefix}-heading {
+  .flex-center();
+
+  position: relative;
+  padding: @header-height 0 0;
+
+  color: @heading-color;
+  background-color: @heading-color-background;
+
+  // Border
+
+  > .@{prefix}-border {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    z-index: (@layer-1 + 1); // over the gradient
+  }
+
+  // Heading
+
+  h1 {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+
+    .font-size-fluid(@font-size-h1, @heading-font-multiplier);
+    line-height: (@heading-line-height - 0.1);
+
+    color: inherit;
+
+    // Align - Horizontal - Right
+    .heading-horizontal-right & {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    // Align - Horizontal - Center
+    .heading-horizontal-center & {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  // Video
+
+  .@{prefix}-video-controls {
+
+    .@{prefix}-button {
+      color: @heading-color;
+
+      &:hover,
+      &:focus {
+        color: @heading-color;
+      }
+    }
+  }
+
+  // Avatar
+
+  .avatar {
+    display: inline-block;
+    position: relative;
+    z-index: @layer-1;
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+  }
+}
+
+// Subtitle
+
+.@{prefix}-heading-subtitle {
+  margin: @grid-gutter-small 0;
+
+  font-family: @heading-font-family;
+  font-size: @font-size-h6;
+  font-weight: @font-weight;
+  letter-spacing: @heading-letter-spacing;
+  text-transform: @heading-text-transform;
+  line-height: @line-height-normal;
+
+  @media (max-width: @screen-phone-max) {
+    font-size: floor((@font-size-h6 * 0.9));
+  }
+
+  //a {
+  //  color: @heading-link-color;
+  //  border-bottom: @link-border-width solid @heading-link-border-color;
+  //
+  //  &:hover,
+  //  &:focus {
+  //    color: @heading-link-color-hover;
+  //    border-bottom-color: @heading-link-border-color-hover;
+  //  }
+  //}
+}
+
+// Attribute
+
+.@{prefix}-heading-attr {
+  position: relative;
+  display: inline-block;
+  padding: @padding-xsmall 0;
+  margin-bottom: @margin-xsmall;
+  z-index: @layer-2;
+
+  font-size: @font-size-xlarge;
+
+  color: @heading-color;
+
+  //a {
+  //  color: @heading-link-color;
+  //  border-bottom: @link-border-width solid @heading-link-border-color;
+  //
+  //  &:hover,
+  //  &:focus {
+  //    color: @heading-link-color-hover;
+  //    border-color: @heading-link-border-color-hover;
+  //  }
+  //}
+}
+
+// Date
+
+.@{prefix}-heading-date {
+  display: inline-block;
+
+  font-family: @heading-font-family;
+  .font-size-fluid(@font-size-h3);
+  font-weight: @font-weight;
+  letter-spacing: @heading-letter-spacing;
+  text-transform: @heading-text-transform;
+  line-height: @line-height-normal;
+
+  // Past
+  &.@{prefix}-date-past {
+    time {
+      text-decoration: line-through;
+    }
+  }
+}
+
+// Time
+
+.@{prefix}-heading-time {
+  display: block;
+
+  font-family: @font-secondary;
+  font-size: @font-size-large;
+  font-weight: @font-weight;
+  letter-spacing: @letter-spacing;
+  text-transform: @text-transform;
+  line-height: @line-height-normal;
+
+  @media (max-width: @screen-phone-max) {
+    font-size: @font-size;
+  }
+}
+
+// Price
+
+.@{prefix}-heading-price {
+  margin-top: @margin-xsmall;
+
+  font-family: @heading-font-family;
+  font-size: @font-size-h6;
+  font-weight: @font-weight;
+  letter-spacing: @heading-letter-spacing;
+  text-transform: @heading-text-transform;
+  line-height: @line-height-normal;
+
+  @media (max-width: @screen-phone-max) {
+    font-size: floor((@font-size-h6 * 0.9));
+  }
+}
+
+// Content
+
+.@{prefix}-heading-content {
+  margin: @margin-small auto 0;
+
+  color: @heading-color;
+
+  .heading-horizontal-left & {
+    margin-left: 0;
+  }
+
+  .heading-horizontal-right & {
+    margin-right: 0;
+  }
+
+  > * {
+    margin-bottom: @grid-gutter-small;
+
+    // Last
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Link
+  //p, li, th, td, dl {
+  //  a {
+  //    color: @heading-link-color;
+  //    border-bottom: @link-border-width solid @heading-link-border-color;
+  //
+  //    &:hover,
+  //    &:focus {
+  //      color: @heading-link-color-hover;
+  //      border-bottom-color: @heading-link-border-color-hover;
+  //    }
+  //  }
+  //}
+
+  h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+  }
+}
+
+// Buttons
+
+.@{prefix}-heading-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin: ((@grid-gutter-medium - @grid-gutter-xsmall) - (@button-gutter / 2)) -(@button-gutter / 2) -(@button-gutter / 2);
+
+  // Button
+
+  > .@{prefix}-heading-button {
+    display: inline-block;
+    margin: (@button-gutter / 2);
+  }
+
+  // Alignment
+
+  .heading-horizontal-left & {
+    justify-content: flex-start;
+  }
+
+  .heading-horizontal-center & {
+    justify-content: center;
+  }
+
+  .heading-horizontal-right & {
+    justify-content: flex-end;
+  }
+}
+
+// Button
+
+.@{prefix}-heading-button {
+  color: @heading-color-background;
+  background-color: @heading-color;
+  border-color: transparent;
+
+  .button-focus-shadow-transparent();
+
+  &:hover,
+  &:focus {
+    color: contrast(@heading-color-accent, @heading-color, @heading-color-background, @color-contrast-threshold);
+    background-color: @heading-color-accent;
+  }
+
+  &:focus {
+    .button-focus-shadow(@heading-color-accent);
+  }
+
+  &:focus-visible {
+    outline-color: @heading-color-accent;
+  }
+
+  // Accent
+  &.@{prefix}-button-accent {
+    color: contrast(@heading-color-accent, @heading-color, @heading-color-background, @color-contrast-threshold);
+    background-color: @heading-color-accent;
+    border-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: @heading-color-accent;
+      background-color: @heading-color;
+    }
+
+    &:focus {
+      .button-focus-shadow(@heading-color);
+    }
+
+    &:focus-visible {
+      outline-color: @heading-color;
+    }
+  }
+
+  // Bordered
+  &.@{prefix}-button-bordered {
+    color: @heading-color;
+    background-color: transparent;
+    border-color: fade(@heading-color, 40%);
+
+    &:hover,
+    &:focus {
+      color: @heading-color;
+      background-color: transparent;
+      border-color: @heading-color;
+    }
+
+    &:focus {
+      .button-bordered-focus-shadow(@heading-color);
+    }
+
+    &:focus-visible {
+      outline-color: @heading-color;
+    }
+  }
+}
+
+// 404
+
+.@{prefix}-heading-404 {
+
+  .@{prefix}-heading-content {
+    > p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

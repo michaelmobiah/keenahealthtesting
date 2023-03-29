@@ -1,0 +1,84 @@
+// Content - Lead-in
+
+.@{prefix}-leadin {
+  display: block;
+  width: 40%;
+  padding: 0 @padding;
+
+  font-family: @heading-font-family;
+  font-size: @font-size-h4;
+  font-weight: @heading-font-weight;
+  letter-spacing: @heading-letter-spacing;
+  line-height: @heading-line-height;
+
+  color: @content-color;
+
+  border: solid fade(@content-color, 20%);
+
+  @media (max-width: @screen-tablet-max) {
+    width: 60%;
+  }
+  @media (max-width: @screen-phone-max) {
+    width: 100%;
+    padding: 0 @padding-small;
+    font-size: @font-size-h5;
+  }
+}
+
+// Left
+
+.@{prefix}-leadin-left {
+  float: left;
+  padding-left: 0;
+  margin-right: @margin;
+  margin-bottom: @margin-small;
+
+  border-width: 0 @border-width-small 0 0;
+
+  @media (max-width: @screen-phone-max) {
+    padding: @padding;
+    margin: @margin 0;
+    text-align: center;
+    border-width: @border-width-small 0;
+  }
+}
+
+// Right
+
+.@{prefix}-leadin-right {
+  float: right;
+  padding-right: 0;
+  margin-left: @margin;
+  margin-bottom: @margin-small;
+
+  border-width: 0 0 0 @border-width-small;
+
+  @media (max-width: @screen-phone-max) {
+    padding: @padding;
+    margin: @margin 0;
+    text-align: center;
+    border-width: @border-width 0;
+  }
+}
+
+// Full
+
+.@{prefix}-leadin-full,
+.@{prefix}-leadin-center {
+  width: 100%;
+  margin: @margin 0;
+  padding: @padding;
+  text-align: center;
+  border-width: @border-width-small 0;
+
+  @media (max-width: @screen-phone-max) {
+    padding: @padding @padding-small;
+  }
+}
+
+// Colors
+
+// Accent
+.@{prefix}-leadin-color-accent {
+  color: @content-color-accent;
+}

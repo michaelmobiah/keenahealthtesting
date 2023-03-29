@@ -1,0 +1,55 @@
+// Form Variables
+
+// Label
+
+@form-label-font-family: @font-primary;
+@form-label-font-size: @font-size-large;
+@form-label-font-weight: @font-weight-bold;
+@form-label-letter-spacing: @letter-spacing;
+@form-label-text-transform: @text-transform;
+
+@form-label-color: @content-color;
+@form-label-color-focus: contrast(@content-color-accent, @content-color-accent, @content-color, @color-contrast-threshold);
+
+// Field
+
+@form-field-font-family: @font-secondary;
+@form-field-font-size: @font-size;
+@form-field-font-weight: @font-weight-normal;
+@form-field-letter-spacing: @letter-spacing;
+@form-field-text-transform: @text-transform;
+@form-field-line-height: 1.5rem;
+
+@form-field-padding-vertical: @padding-xsmall;
+@form-field-padding-horizontal: @padding-small;
+
+@form-field-color: fade(@content-color, @content-color-opacity);
+@form-field-color-focus: @content-color;
+
+@form-field-color-background: @content-color-background;
+@form-field-color-background-focus: @content-color-background;
+
+@form-field-border-width: min(@border-width-small, 2px);
+@form-field-border-radius: min(@border-radius, 4px);
+@form-field-border-color: fade(@content-color, 25%);
+@form-field-border-color-focus: contrast(@content-color-accent, @content-color-accent, @content-color, @color-contrast-threshold);
+
+@form-field-outline-width: (@form-field-border-width + 2px);
+@form-field-outline-opacity: 20%;
+
+// Field - Checkbox/Radio
+
+@form-field-checkbox-radio-size: 20px;
+@form-field-checkbox-radio-line-height: @line-height;
+
+@form-field-checkbox-radio-color: @form-field-color;
+@form-field-checkbox-radio-color-focus: @form-field-color-focus;
+@form-field-checkbox-radio-color-checked: @form-field-border-color-focus;
+
+@form-field-checkbox-radio-color-background: @form-field-color-background;
+@form-field-checkbox-radio-color-background-focus: @form-field-color-background-focus;
+@form-field-checkbox-radio-color-background-checked: @form-field-color-background;
+
+@form-field-checkbox-radio-border-color: @form-field-border-color;
+@form-field-checkbox-radio-border-color-focus: @form-field-border-color-focus;
+@form-field-checkbox-radio-border-color-checked: @form-field-border-color-focus;

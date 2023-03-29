@@ -1,0 +1,103 @@
+// Block - Search
+
+.wp-block-search {
+
+  // Label
+
+  .wp-block-search__label {
+    display: block;
+  }
+
+  // Input
+
+  .wp-block-search__input {
+    border-color: @form-field-border-color;
+
+    &:focus {
+      border-color: @form-field-border-color-focus;
+    }
+  }
+
+  // Focus
+  &:focus-within {
+
+    // Label
+
+    .wp-block-search__label {
+      color: @form-label-color-focus;
+    }
+  }
+
+  // Button Inside
+
+  &.wp-block-search__button-inside {
+
+    // Wrapper
+
+    .wp-block-search__inside-wrapper {
+      padding: @form-field-padding-vertical @form-field-padding-horizontal;
+
+      color: @form-field-color;
+      background-color: @form-field-color-background;
+      border: @form-field-border-width solid @form-field-border-color;
+      border-radius: @form-field-border-radius;
+      .form-field-focus-shadow-transparent();
+
+      .transition-property(~'color, background-color, background-size, border, box-shadow, text-decoration, outline, opacity');
+      .transition-duration(@transition-duration);
+      .transition-timing-function(@transition-timing-function);
+
+      // Input
+
+      .wp-block-search__input {
+        padding: 0;
+        box-shadow: none;
+      }
+
+      // Button
+
+      .wp-block-search__button {
+        display: flex;
+        align-items: center;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin: -(@form-field-padding-vertical / 2) -(@form-field-padding-horizontal - (@form-field-padding-vertical / 2));
+
+        color: fade(@form-field-color, 40%);
+        background-color: transparent;
+        border-color: transparent;
+        border-radius: @form-field-border-radius;
+        box-shadow: none;
+        outline-offset: 0;
+
+        svg {
+          min-width: 24px;
+          min-height: 24px;
+
+          fill: currentColor;
+        }
+
+        &:hover,
+        &:focus {
+          color: @form-field-color-focus;
+          background-color: transparent;
+          box-shadow: none;
+        }
+      }
+
+      // Focus
+      &:focus-within {
+        color: @form-field-color-focus;
+        background-color: @form-field-color-background-focus;
+        border-color: @form-field-border-color-focus;
+        .form-field-focus-shadow(@form-field-border-color-focus);
+      }
+    }
+  }
+}
+
+.wp-block-search__label,
+.wp-block-search__input,
+.wp-block-search__button {
+  margin: 0;
+}

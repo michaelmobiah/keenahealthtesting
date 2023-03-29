@@ -1,0 +1,67 @@
+// Image - Loading - Skeleton
+
+.@{prefix}-image-loading--skeleton {
+  .gradient-vertical(darken(@content-color-background, 2.5%), @content-color-background);
+
+  // Shimmer
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    .gradient-horizontal-three-colors(fade(@content-color-background, 0%), @content-color-background, 50%, fade(@content-color-background, 0%));
+    .translateX(-100%);
+    .transition(transform);
+
+    will-change: transform;
+
+    animation: loadingSkeletonShimmer 2s infinite;
+  }
+}
+
+@keyframes loadingSkeletonShimmer {
+  100% {
+    .translateX(100%);
+  }
+}
+
+// Post Image
+
+.@{prefix}-post-listing {
+
+  .@{prefix}-image-loading--skeleton {
+    .gradient-vertical(darken(@post-color-background, 2.5%), @post-color-background);
+
+    // Shimmer
+    &:before {
+      .gradient-horizontal-three-colors(fade(@post-color-background, 0%), @post-color-background, 50%, fade(@post-color-background, 0%));
+    }
+  }
+}
+
+// Term Image
+
+.@{prefix}-term-image {
+
+  .@{prefix}-image-loading--skeleton {
+    .gradient-vertical(darken(@category-color-background, 2.5%), @category-color-background);
+
+    // Shimmer
+    &:before {
+      .gradient-horizontal-three-colors(fade(@category-color-background, 0%), @category-color-background, 50%, fade(@category-color-background, 0%));
+    }
+  }
+}
+
+// PNG Image
+
+.@{prefix}-image--png {
+
+  + .@{prefix}-image-loading--skeleton {
+    display: none;
+  }
+}

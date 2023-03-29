@@ -1,0 +1,69 @@
+// Form - Plugin - MailChimp for WP
+
+.mc4wp-form {
+  display: inline-block;
+  width: auto;
+  padding: @grid-gutter-medium 0;
+  margin: 0 0 @grid-gutter-medium;
+
+  color: @content-color;
+
+  // Form
+
+  label {
+    > span {
+      display: inline-block;
+      padding: 0;
+    }
+  }
+}
+
+// Fields
+
+.mc4wp-form-fields {
+  display: inline-block;
+
+  > p {
+    display: inline-block;
+    margin: 0 0 @grid-gutter-small @grid-gutter-small;
+
+    label {
+
+      &:first-child {
+        display: block;
+      }
+
+      &[for="terms"] {
+        text-align: inherit;
+      }
+    }
+  }
+}
+
+// Alert
+
+.mc4wp-alert {
+  display: block;
+  margin-top: @grid-gutter-small;
+  padding: @padding-small @padding;
+  color: @content-color;
+  border: @form-field-border-width solid @content-color;
+
+  p {
+    margin: 0;
+  }
+}
+
+// Footer
+
+.@{prefix}-footer {
+
+  .mc4wp-form {
+    color: fade(@footer-color, @footer-color-opacity);
+  }
+
+  .mc4wp-alert {
+    color: @footer-color;
+    border-color: @footer-color;
+  }
+}

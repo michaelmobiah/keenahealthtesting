@@ -1,0 +1,50 @@
+// Badge
+
+.@{prefix}-badges {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  top: @padding-small;
+  left: -(@padding-xxsmall);
+  margin: 0 -(max(floor((@border-width / 2)), 1px)) -(max(floor((@border-width / 2)), 1px));
+
+  z-index: @layer-4;
+
+  // Badge
+
+  [class*="@{prefix}-badge-"] {
+    display: inline-block;
+    align-self: center;
+    margin: 0 max(floor((@border-width / 2)), 1px) @border-width max(floor((@border-width / 2)), 1px);
+  }
+}
+
+// Badge
+
+[class*="@{prefix}-badge-"] {
+  position: relative;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: auto;
+  min-width: 0;
+  height: auto;
+  min-height: 0;
+  padding: @padding-xxsmall @padding-small;
+  margin: 0 @border-width @border-width 0;
+  z-index: @layer-2;
+
+  user-select: none;
+
+  font-family: @font-navigation;
+  font-size: @font-size-xsmall;
+  font-weight: @font-weight-navigation;
+  text-transform: @text-transform-navigation;
+  letter-spacing: @letter-spacing-navigation;
+  line-height: @line-height-normal;
+  text-align: center;
+
+  color: contrast(@post-color-accent, @post-color, @post-color-background, @color-contrast-threshold);
+  background-color: @post-color-accent;
+  border-radius: @border-radius-small;
+}

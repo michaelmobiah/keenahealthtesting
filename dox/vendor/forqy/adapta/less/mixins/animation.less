@@ -1,0 +1,331 @@
+// Animation Mixins
+
+.animation (@animation) {
+  animation: @animation;
+}
+
+.animation-name (@name) {
+  animation-name: @name;
+}
+
+.animation-duration (@duration) {
+  animation-duration: @duration;
+}
+
+.animation-timing-function (@timing-function) {
+  animation-timing-function: @timing-function;
+}
+
+.animation-delay (@delay) {
+  animation-delay: @delay;
+}
+
+.animation-iteration-count (@iteration-count) {
+  animation-iteration-count: @iteration-count;
+}
+
+.animation-direction (@direction) {
+  animation-direction: @direction;
+}
+
+.animation-fill-mode (@fill-mode) {
+  animation-fill-mode: @fill-mode;
+}
+
+// Animations
+
+// Rotate
+.animationRotateKeyframes () {
+
+  @keyframes animationRotate {
+    0% {
+      .rotate(0);
+    }
+    100% {
+      .rotate(360deg);
+    }
+  }
+}
+
+.animationRotate (@duration: @transition-duration-double, @delay: @transition-delay, @iteration-count: infinite) {
+  .animation-name(animationRotate);
+  .animation-duration(@duration);
+  .animation-delay(@delay);
+  .animation-iteration-count(@iteration-count);
+  .animation-timing-function(@transition-timing-function-linear);
+}
+
+// Pulse
+
+.animationPulseKeyframes () {
+
+  @keyframes animationPulse {
+    0% {
+      .scale(1, 1);
+    }
+    50% {
+      .scale(1.1, 1.1);
+    }
+    100% {
+      .scale(1, 1);
+    }
+  }
+}
+
+.animationPulse (@duration: @transition-duration-double, @delay: @transition-delay, @iteration-count: infinite) {
+  .animation-name(animationPulse);
+  .animation-duration(@duration);
+  .animation-delay(@delay);
+  .animation-iteration-count(@iteration-count);
+  .animation-timing-function(@transition-timing-function-linear);
+}
+
+// FadeIn
+
+.animationFadeInKeyframes () {
+
+  @keyframes animationFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.animationFadeIn (@duration: @transition-duration-double, @delay: @transition-delay, @iteration-count: 1) {
+  .animation-name(animationFadeIn);
+  .animation-duration(@duration);
+  .animation-delay(@delay);
+  .animation-iteration-count(@iteration-count);
+  .animation-timing-function(@transition-timing-function-linear);
+  .animation-fill-mode(forwards);
+}
+
+// FadeOut
+
+.animationFadeOutKeyframes () {
+
+  @keyframes animationFadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+.animationFadeOut (@duration: @transition-duration-double, @delay: @transition-delay, @iteration-count: 1) {
+  .animation-name(animationFadeOut);
+  .animation-duration(@duration);
+  .animation-delay(@delay);
+  .animation-iteration-count(@iteration-count);
+  .animation-timing-function(@transition-timing-function-linear);
+  .animation-fill-mode(forwards);
+}
+
+// SlideInTop
+
+.animationSlideInTopKeyframes (@from: -100vh, @to: 0) {
+
+  @keyframes animationSlideInTop {
+    from {
+      top: @from;
+    }
+    to {
+      top: @to;
+    }
+  }
+}
+
+.animationSlideInTop (@duration: @transition-duration-double, @delay: @transition-delay, @iteration-count: 1) {
+  .animation-name(animationSlideInTop);
+  .animation-duration(@duration);
+  .animation-delay(@delay);
+  .animation-iteration-count(@iteration-count);
+  .animation-timing-function(@transition-timing-function-linear);
+  .animation-fill-mode(forwards);
+}
+
+// SlideOutTop
+
+.animationSlideOutTopKeyframes (@from: 0, @to: -100vh) {
+
+  @keyframes animationSlideOutTop {
+    from {
+      top: @from;
+    }
+    to {
+      top: @to;
+    }
+  }
+}
+
+.animationSlideOutTop (@duration: @transition-duration-double, @delay: @transition-delay, @iteration-count: 1) {
+  .animation-name(animationSlideOutTop);
+  .animation-duration(@duration);
+  .animation-delay(@delay);
+  .animation-iteration-count(@iteration-count);
+  .animation-timing-function(@transition-timing-function-linear);
+  .animation-fill-mode(forwards);
+}
+
+// SlideInLeft
+
+.animationSlideInLeftKeyframes (@from: -100vw, @to: 0) {
+
+  @keyframes animationSlideInLeft {
+    from {
+      left: @from;
+    }
+    to {
+      left: @to;
+    }
+  }
+}
+
+.animationSlideInLeft (@duration: @transition-duration-double, @delay: @transition-delay, @iteration-count: 1) {
+  .animation-name(animationSlideInLeft);
+  .animation-duration(@duration);
+  .animation-delay(@delay);
+  .animation-iteration-count(@iteration-count);
+  .animation-timing-function(@transition-timing-function-linear);
+  .animation-fill-mode(forwards);
+}
+
+// SlideOutLeft
+
+.animationSlideOutLeftKeyframes (@from: 0, @to: -100vw) {
+
+  @keyframes animationSlideOutLeft {
+    from {
+      left: @from;
+    }
+    to {
+      left: @to;
+    }
+  }
+}
+
+.animationSlideOutLeft (@duration: @transition-duration-double, @delay: @transition-delay, @iteration-count: 1) {
+  .animation-name(animationSlideOutLeft);
+  .animation-duration(@duration);
+  .animation-delay(@delay);
+  .animation-iteration-count(@iteration-count);
+  .animation-timing-function(@transition-timing-function-linear);
+  .animation-fill-mode(forwards);
+}
+
+// SlideInRight
+
+.animationSlideInRightKeyframes (@from: -100vw, @to: 0) {
+
+  @keyframes animationSlideInRight {
+    from {
+      right: @from;
+    }
+    to {
+      right: @to;
+    }
+  }
+}
+
+.animationSlideInRight (@duration: @transition-duration-double, @delay: @transition-delay, @iteration-count: 1) {
+  .animation-name(animationSlideInRight);
+  .animation-duration(@duration);
+  .animation-delay(@delay);
+  .animation-iteration-count(@iteration-count);
+  .animation-timing-function(@transition-timing-function-linear);
+  .animation-fill-mode(forwards);
+}
+
+// SlideOutRight
+
+.animationSlideOutRightKeyframes (@from: 0, @to: -100vw) {
+
+  @keyframes animationSlideOutRight {
+    from {
+      right: @from;
+    }
+    to {
+      right: @to;
+    }
+  }
+}
+
+.animationSlideOutRight (@duration: @transition-duration-double, @delay: @transition-delay, @iteration-count: 1) {
+  .animation-name(animationSlideOutRight);
+  .animation-duration(@duration);
+  .animation-delay(@delay);
+  .animation-iteration-count(@iteration-count);
+  .animation-timing-function(@transition-timing-function-linear);
+  .animation-fill-mode(forwards);
+}
+
+// SlideInBottom
+
+.animationSlideInBottomKeyframes (@from: -100vh, @to: 0) {
+
+  @keyframes animationSlideInBottom {
+    from {
+      bottom: @from;
+    }
+    to {
+      bottom: @to;
+    }
+  }
+}
+
+.animationSlideInBottom (@duration: @transition-duration-double, @delay: @transition-delay, @iteration-count: 1) {
+  .animation-name(animationSlideInBottom);
+  .animation-duration(@duration);
+  .animation-delay(@delay);
+  .animation-iteration-count(@iteration-count);
+  .animation-timing-function(@transition-timing-function-linear);
+  .animation-fill-mode(forwards);
+}
+
+// SlideOutBottom
+
+.animationSlideOutBottomKeyframes (@from: 0, @to: -100vh) {
+
+  @keyframes animationSlideOutBottom {
+    from {
+      bottom: @from;
+    }
+    to {
+      bottom: @to;
+    }
+  }
+}
+
+.animationSlideOutBottom (@duration: @transition-duration-double, @delay: @transition-delay, @iteration-count: 1) {
+  .animation-name(animationSlideOutBottom);
+  .animation-duration(@duration);
+  .animation-delay(@delay);
+  .animation-iteration-count(@iteration-count);
+  .animation-timing-function(@transition-timing-function-linear);
+  .animation-fill-mode(forwards);
+}
+
+// Progress
+
+.animationProgressKeyframes () {
+
+  @keyframes animationProgress {
+    from {
+      width: 0;
+    }
+  }
+}
+
+.animationProgress (@duration: @transition-duration-double, @delay: @transition-delay, @iteration-count: 1) {
+  .animation-name(animationProgress);
+  .animation-duration(@duration);
+  .animation-delay(@delay);
+  .animation-iteration-count(@iteration-count);
+  .animation-timing-function(@transition-timing-function-linear);
+  .animation-fill-mode(forwards);
+}

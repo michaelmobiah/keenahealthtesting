@@ -1,0 +1,102 @@
+// Player Skin
+
+.mejs-container {
+  .shadow();
+
+  // Controls
+
+  .mejs-controls {
+
+    .mejs-button {
+      &.mejs-play,
+      &.mejs-replay {
+        button {
+          .inline-svg(~'<svg fill="@{player-color-rgba}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.524,3.148L5,4v16l1.524,0.852l13-8v-1.703L6.524,3.148z M7,18.21V5.79L17.092,12L7,18.21z"/></svg>');
+        }
+      }
+
+      &.mejs-pause {
+        button {
+          .inline-svg(~'<svg fill="@{player-color-rgba}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5,20h2V4H5V20z M17,4v16h2V4H17z"/></svg>');
+        }
+      }
+
+      &.mejs-mute {
+        button {
+          .inline-svg(~'<svg fill="@{player-color-rgba}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,5v14h1V5H20z M2,15h2V9H2V15z M6.667,9H6v6h0.713l7.757,4.848L16,19V4l-1.6-0.8L6.667,9z M14,17.195l-6-3.75V10.5 L14,6V17.195z M18,17h1V7h-1V17z"/></svg>');
+        }
+      }
+
+      &.mejs-unmute {
+        button {
+          opacity: 0.5;
+          .inline-svg(~'<svg fill="@{player-color-rgba}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2,15h2V9H2V15z M6.667,9H6v6h0.713l7.757,4.848L16,19V4l-1.6-0.8L6.667,9z M14,17.195l-6-3.75V10.5L14,6V17.195z M22.328,10.379l-0.707-0.707L19.5,11.793l-2.121-2.121l-0.707,0.707l2.121,2.121l-2.121,2.121l0.707,0.707l2.121-2.121 l2.121,2.121l0.707-0.707L20.207,12.5L22.328,10.379z"/></svg>');
+        }
+      }
+
+      &.mejs-fullscreen-button {
+        button {
+          .inline-svg(~'<svg fill="@{player-color-rgba}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6,15H4v5h5v-2H6V15z M4,9h2V6h3V4H4V9z M18,18h-3v2h5v-5h-2V18z M15,4v2h3v3h2V4H15z"/></svg>');
+        }
+
+        &.mejs-unfullscreen {
+          button {
+            .inline-svg(~'<svg fill="@{player-color-rgba}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,15v2h3v3h2v-4v-1H8H4z M7,7H4v2h4h1V8V4H7V7z M15,15v1v4h2v-3h3v-2h-4H15z M17,7V4h-2v4v1h1h4V7H17z"/></svg>');
+          }
+        }
+      }
+    }
+  }
+
+  // Big Play
+
+  .mejs-layers {
+    .mejs-overlay-play {
+
+      .mejs-overlay-button {
+        background-color: fade(@player-color-accent, 80%);
+        .inline-svg(~'<svg fill="@{player-color-contrast-rgba}" width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.524,3.148L5,4v16l1.524,0.852l13-8v-1.703L6.524,3.148z M7,18.21V5.79L17.092,12L7,18.21z"/></svg>');
+      }
+    }
+  }
+}
+
+// Playlist & Audio
+
+.wp-playlist,
+.wp-audio-shortcode {
+
+  .mejs-controls {
+
+    // Play/Pause Button
+
+    .mejs-playpause-button {
+
+      // Play
+      &.mejs-play {
+        button {
+          .inline-svg(~'<svg fill="@{player-color-contrast-rgba}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="shape" d="M6.524,3.148L5,4v16l1.524,0.852l13-8v-1.703L6.524,3.148z M7,18.21V5.79L17.092,12L7,18.21z"></path></svg>');
+        }
+      }
+
+      // Pause
+      &.mejs-pause {
+        button {
+          .inline-svg(~'<svg fill="@{player-color-contrast-rgba}" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="shape" d="M5,20h2V4H5V20z M17,4v16h2V4H17z"></path></svg>');
+        }
+      }
+    }
+  }
+
+  // Current item
+
+  .wp-playlist-current-item {
+    .shadow();
+  }
+
+  // Tracks
+
+  .wp-playlist-tracks {
+    .shadow();
+  }
+}

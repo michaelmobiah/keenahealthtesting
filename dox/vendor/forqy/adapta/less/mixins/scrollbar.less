@@ -1,0 +1,22 @@
+// Scrollbar Mixins
+
+// Webkit
+
+.scrollbar (@color: @color-dark; @opacity: 20%) {
+
+  &::-webkit-scrollbar {
+    width: @padding-xxsmall;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: fade(@color, 0%);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: fade(@color, @opacity);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: fade(@color, @opacity * 2);
+  }
+}

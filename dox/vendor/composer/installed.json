@@ -1,0 +1,119 @@
+{
+    "packages": [
+        {
+            "name": "forqy/adapta",
+            "version": "0.9.9",
+            "version_normalized": "0.9.9.0",
+            "source": {
+                "type": "git",
+                "url": "git@gitlab.forqy.rocks:forqy/adapta.git",
+                "reference": "master"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://package.forqy.website/adapta.zip"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "install-path": "../forqy/adapta"
+        },
+        {
+            "name": "forqy/border",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://package.forqy.website/theme/border.zip"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "install-path": "../forqy/border"
+        },
+        {
+            "name": "forqy/core",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://package.forqy.website/theme/core-1.0.1.zip"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "install-path": "../forqy/core"
+        },
+        {
+            "name": "forqy/filter",
+            "version": "1.0.2",
+            "version_normalized": "1.0.2.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://package.forqy.website/theme/filter.zip"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "install-path": "../forqy/filter"
+        },
+        {
+            "name": "forqy/gutenberg",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://package.forqy.website/theme/gutenberg.zip"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "install-path": "../forqy/gutenberg"
+        },
+        {
+            "name": "forqy/mask",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://package.forqy.website/theme/mask.zip"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "install-path": "../forqy/mask"
+        },
+        {
+            "name": "forqy/off",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://package.forqy.website/theme/off-1.0.0.zip"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "install-path": "../forqy/off"
+        },
+        {
+            "name": "forqy/pattern",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://package.forqy.website/theme/pattern.zip"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "install-path": "../forqy/pattern"
+        },
+        {
+            "name": "forqy/woocommerce",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://package.forqy.website/theme/woocommerce.zip"
+            },
+            "type": "library",
+            "installation-source": "dist",
+            "install-path": "../forqy/woocommerce"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

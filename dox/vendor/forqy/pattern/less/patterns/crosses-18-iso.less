@@ -1,0 +1,11 @@
+// Crosses - 18px - Isometric
+
+// Mixin
+.pattern-crosses-18-iso (@fill: fade(@pattern-color, @pattern-opacity)) {
+  .inline-svg(~'<svg fill="@{fill}" width="36" height="36" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path d="M20.6,10.6L18,13.3l-2.6-2.6l-0.7,0.7l2.6,2.6l-2.6,2.6l0.7,0.7l2.6-2.6l2.6,2.6l0.7-0.7L18.7,14l2.6-2.6 L20.6,10.6z M2.6,28.6L0,31.3v1.4l2.6,2.6l0.7-0.7L0.7,32l2.6-2.6L2.6,28.6z M33.4,28.6l-0.7,0.7l2.6,2.6l-2.6,2.6l0.7,0.7 l2.6-2.6v-1.4L33.4,28.6z"/></svg>');
+}
+
+// Pattern
+.@{prefix}-pattern-crosses-18-iso {
+  .pattern-crosses-18-iso();
+}

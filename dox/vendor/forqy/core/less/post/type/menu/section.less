@@ -1,0 +1,72 @@
+// Post - Format - Menu - Section
+
+.@{prefix}-menu-section {
+  padding: @grid-gutter-medium 0;
+
+  // First
+  &:first-child {
+    padding-top: 0;
+  }
+
+  // Last
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+// Header
+
+.@{prefix}-menu-header {
+  margin-bottom: @grid-gutter-medium;
+
+  color: @content-color;
+
+  h2 {
+    color: inherit;
+  }
+}
+
+// Content
+
+.@{prefix}-menu-content {
+  margin: @grid-gutter-small auto 0;
+
+  color: fade(@content-color, @content-color-opacity);
+
+  @media (min-width: @screen-desktop-wide) {
+    width: 75%;
+  }
+
+  * {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// First
+
+.@{prefix}-menu-section-1 {
+  padding-top: 0;
+
+  // Header
+  .@{prefix}-menu-header {
+    padding-top: 0;
+    border-top: 0;
+  }
+}
+
+//
+// Child
+//
+
+// Header
+
+.@{prefix}-menu-header-child {
+  margin-top: @grid-gutter-medium;
+  color: fade(@content-color, @content-color-opacity);
+
+  h3 {
+    color: inherit;
+  }
+}

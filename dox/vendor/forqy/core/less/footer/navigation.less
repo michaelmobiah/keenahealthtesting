@@ -1,0 +1,121 @@
+// Footer - Navigation
+
+.@{prefix}-footer-navigation {
+  padding: 0;
+
+  ul {
+    display: inline-flex;
+    margin-left: 0;
+    white-space: nowrap;
+
+    @media (max-width: @screen-tablet-max) {
+      flex-direction: column;
+    }
+  }
+
+  li {
+    display: inline-block;
+    position: relative;
+    padding: 0 @border-width-small;
+    margin: 0 @margin-small;
+
+    font-family: @font-secondary;
+    font-weight: @font-weight;
+    text-transform: @text-transform;
+    letter-spacing: @letter-spacing;
+
+    @media (max-width: @screen-desktop-max) {
+      margin: 0 @margin-xsmall;
+    }
+
+    // Line
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: @margin-xsmall;
+      height: @border-width-small;
+      margin-left: (@margin-small - (@margin-xsmall / 2));
+
+      background-color: fade(@footer-color, 20%);
+
+      @media (max-width: @screen-desktop-max) {
+        margin-left: (@margin-xsmall - (@margin-xsmall / 2));
+      }
+    }
+
+    &:first-child {
+
+      @media (min-width: @screen-desktop) {
+        margin-left: 0;
+      }
+    }
+
+    &:last-child {
+      @media (min-width: @screen-desktop) {
+        margin-right: 0;
+      }
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  a {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    line-height: @icon-size-xlarge;
+
+    color: @footer-link-color;
+    border: 0;
+
+    // Decoration
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: @border-width-small;
+      background-color: @footer-link-border-color-hover;
+
+      .transition-property(~'width, height, top, right, bottom, left, background');
+      .transition-duration(@transition-duration);
+      .transition-timing-function(@transition-timing-function);
+    }
+
+    &:hover,
+    &:focus {
+      color: @footer-link-color-hover;
+
+      &:before {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: @screen-tablet-max) {
+
+    li {
+      display: block;
+      padding: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.@{prefix}-footer {
+
+  .@{prefix}-footer-navigation {
+    a {
+      border: 0;
+    }
+  }
+}

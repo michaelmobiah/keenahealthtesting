@@ -1,0 +1,63 @@
+// Post - Listing
+
+.@{prefix}-post-listing {
+  position: relative;
+  background-color: @post-color-background;
+
+  // Date
+
+  .@{prefix}-post-date {
+    font-size: @font-size-xlarge;
+    line-height: @line-height-small;
+
+    color: @post-color-accent;
+  }
+
+  // Location
+
+  .@{prefix}-post-location {
+    font-size: @font-size-small;
+    line-height: @line-height-small;
+  }
+
+  // Status
+
+  .@{prefix}-post-status {
+    font-size: @font-size-small;
+    line-height: @line-height-small;
+  }
+
+  // Meta
+
+  .@{prefix}-post-meta {
+
+    li {
+      display: block;
+      padding: 0;
+      margin: @margin-xsmall 0;
+
+      font-size: @font-size-small;
+
+      // First
+      &:first-child {
+        margin-top: 0;
+      }
+
+      // Last
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      display: initial;
+      color: currentColor;
+
+      &:hover,
+      &:focus {
+        color: @post-link-color-hover;
+        border-color: @post-link-border-color-hover;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+// Footer - Socials
+
+.@{prefix}-footer {
+
+  .@{prefix}-socials {
+    padding: @padding-xsmall 0;
+
+    @media (max-width: @screen-tablet-max) {
+      text-align: center;
+    }
+
+    ul {
+      @media (max-width: @screen-tablet-max) {
+        display: inline-flex;
+        margin-left: 0;
+      }
+    }
+
+    a {
+      height: @icon-size-xlarge;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      color: fade(@footer-color, @footer-color-opacity - 20%);
+      background-color: transparent;
+      border: 0;
+
+      // Decoration
+      &:before {
+        height: @link-border-width;
+        bottom: 0;
+        background-color: @footer-link-border-color-hover;
+      }
+
+      &:hover,
+      &:focus {
+        color: @footer-link-color-hover;
+      }
+    }
+  }
+}

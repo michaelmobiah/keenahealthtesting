@@ -1,0 +1,57 @@
+// Common - Link
+
+a {
+  color: @link-color;
+  border-color: @link-border-color;
+  outline: transparent solid @link-border-width;
+  outline-offset: min(@link-border-width * 2, 2px);
+
+  &:hover,
+  &:focus {
+    color: @link-color-hover;
+    border-color: @link-border-color-hover;
+  }
+
+  &:focus-visible {
+    outline-color: currentColor;
+  }
+}
+
+// Header Link
+
+:where(.@{prefix}-header) a {
+  color: @header-link-color;
+  border-color: @header-link-border-color;
+
+  &:hover,
+  &:focus {
+    color: @header-link-color-hover;
+    border-color: @header-link-border-color-hover;
+  }
+}
+
+// Heading Link
+
+:where(.@{prefix}-heading) a {
+  color: @heading-link-color;
+  border-color: @heading-link-border-color;
+
+  &:hover,
+  &:focus {
+    color: @heading-link-color-hover;
+    border-color: @heading-link-border-color-hover;
+  }
+}
+
+// Footer Link
+
+:where(.@{prefix}-footer) a {
+  color: @footer-link-color;
+  border-color: @footer-link-border-color;
+
+  &:hover,
+  &:focus {
+    color: @footer-link-color-hover;
+    border-color: @footer-link-border-color-hover;
+  }
+}

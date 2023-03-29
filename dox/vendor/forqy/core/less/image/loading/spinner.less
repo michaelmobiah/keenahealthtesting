@@ -1,0 +1,27 @@
+// Image - Loading - Spinner
+
+.@{prefix}-image-loading--spinner {
+
+  // Spinner
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: @icon-size-xxxsmall;
+    height: @icon-size-xxxsmall;
+    margin-top: -(@icon-size-xxxsmall / 2);
+    margin-left: -(@icon-size-xxxsmall / 2);
+    z-index: @layer-1;
+
+    border-radius: 50%;
+    border-top: @border-width-small solid transparent;
+    border-right: @border-width-small solid transparent;
+    border-bottom: @border-width-small solid transparent;
+    border-left: @border-width-small solid currentColor;
+
+    .transform-origin(center center);
+    animation: animationRotate @transition-duration-double @transition-timing-function-linear infinite;
+  }
+}

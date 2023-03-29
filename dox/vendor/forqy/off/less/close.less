@@ -1,0 +1,45 @@
+// Close
+
+.@{prefix}-off__close {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  align-items: center;
+  justify-content: center;
+  width: @off-close-size;
+  height: @off-close-size;
+  padding: 0;
+
+  color: currentColor;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  backface-visibility: hidden;
+
+  svg {
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
+    color: currentColor;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    outline-color: currentColor;
+  }
+
+  // Within Active Off
+  .active & {
+    display: flex;
+  }
+}

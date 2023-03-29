@@ -1,0 +1,24 @@
+// Post - Sticky
+
+@sticky-marker-size: 6px;
+
+.@{prefix}-post-listing {
+  &.sticky {
+    position: relative;
+    padding: 0;
+
+    // Marker
+    &:before {
+      content: '';
+      position: absolute;
+      width: @sticky-marker-size;
+      height: @sticky-marker-size;
+      top: @grid-gutter-medium;
+      left: @grid-gutter-medium;
+      z-index: @layer-3;
+
+      background-color: @post-color-accent;
+      border-radius: (@sticky-marker-size / 2);
+    }
+  }
+}

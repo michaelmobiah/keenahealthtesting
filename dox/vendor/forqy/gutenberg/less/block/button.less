@@ -1,0 +1,282 @@
+// Block - Button
+
+.wp-block-button__link {
+  padding: @button-padding-vertical @button-padding-horizontal;
+
+  font-family: @button-font-family;
+  font-size: @button-font-size;
+  font-weight: @button-font-weight;
+  text-transform: @button-text-transform;
+  letter-spacing: @button-letter-spacing;
+  line-height: @button-line-height;
+
+  border: @button-border-width solid transparent;
+  border-radius: @button-border-radius;
+
+  outline: @link-border-width solid transparent;
+  outline-offset: @button-outline-width;
+
+  .button-focus-shadow-transparent();
+
+  user-select: none;
+
+  .transition-property(~'color, background-color, background-size, border, box-shadow, text-decoration, outline, opacity');
+  .transition-duration(@transition-duration);
+  .transition-timing-function(@transition-timing-function);
+
+  &:hover,
+  &:focus {
+    border-color: transparent;
+  }
+
+  // Default
+
+  &:not(.has-text-color) {
+    color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:visited {
+      color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+    }
+  }
+
+  &:not(.has-background) {
+    background-color: @content-color-accent;
+
+    &:hover,
+    &:focus {
+      background-color: @content-color-accent-darker;
+    }
+
+    //&:visited {
+    //  background-color: @content-color-accent;
+    //
+    //  &:hover,
+    //  &:focus {
+    //    background-color: @content-color-accent-darker;
+    //  }
+    //}
+
+    &:focus {
+      .button-focus-shadow(@content-color-accent-darker);
+    }
+
+    &:focus-visible {
+      outline-color: @content-color-accent-darker;
+    }
+  }
+
+  // Background Color
+
+  &.has-background {
+    padding-top: (@button-padding-vertical + @button-border-width);
+    padding-bottom: (@button-padding-vertical + @button-border-width);
+    border: 0;
+  }
+
+  &.has-cnt-background-color {
+
+    &:focus {
+      .button-focus-shadow(@content-color);
+    }
+
+    &:focus-visible {
+      outline-color: @content-color;
+    }
+  }
+
+  &.has-cnt-ac-background-color {
+
+    &:focus {
+      .button-focus-shadow(@content-color-accent);
+    }
+
+    &:focus-visible {
+      outline-color: @content-color-accent;
+    }
+  }
+
+  &.has-cnt-bg-background-color {
+
+    &:focus {
+      .button-focus-shadow(@content-color-accent);
+
+      .wp-block-cover & {
+        .button-focus-shadow(@content-color-background);
+      }
+    }
+
+    &:focus-visible {
+      outline-color: @content-color-accent;
+
+      .wp-block-cover & {
+        outline-color: @content-color-background;
+      }
+    }
+  }
+}
+
+// Outline
+
+.is-style-outline {
+
+  .wp-block-button__link {
+    padding: @button-padding-vertical @button-padding-horizontal;
+
+    border: @button-border-width solid;
+
+    &:not(.has-text-color) {
+      color: fade(@content-color, @content-color-opacity);
+      border-color: fade(@content-color, 40%);
+    }
+
+    &:not(.has-background) {
+      background-color: transparent;
+    }
+
+    &.has-cnt-color {
+      color: fade(@content-color, @content-color-opacity);
+      border-color: fade(@content-color, 40%);
+    }
+
+    &.has-cnt-ac-color {
+      color: @content-color-accent;
+      border-color: fade(@content-color-accent, 40%);
+    }
+
+    &.has-cnt-bg-color {
+      color: @content-color-background;
+      border-color: fade(@content-color-background, 40%);
+    }
+
+    &.has-background {
+      border-color: transparent;
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:visited {
+
+      &:not(.has-text-color) {
+        color: @content-color-accent;
+        border-color: @content-color-accent;
+      }
+
+      &:not(.has-background) {
+        background-color: transparent;
+      }
+
+      &.has-cnt-color {
+        color: @content-color;
+        border-color: @content-color;
+      }
+
+      &.has-cnt-ac-color {
+        color: @content-color-accent;
+        border-color: @content-color-accent;
+      }
+
+      &.has-cnt-bg-color {
+        color: @content-color-background;
+        border-color: @content-color-background;
+      }
+
+      // Background
+
+      &.has-background {
+        border-color: transparent;
+      }
+    }
+
+    &:focus {
+
+      &:not(.has-text-color) {
+        .button-bordered-focus-shadow(@content-color-accent);
+      }
+
+      // Text Color
+
+      &.has-text-color {
+        .button-bordered-focus-shadow(@content-color-background, 0, 0);
+      }
+
+      &.has-cnt-color {
+        .button-bordered-focus-shadow(@content-color);
+      }
+
+      &.has-cnt-ac-color {
+        .button-bordered-focus-shadow(@content-color-accent);
+      }
+
+      &.has-cnt-bg-color {
+        .button-bordered-focus-shadow(@content-color-background);
+      }
+
+      // Background Color
+
+      &.has-cnt-background-color {
+        .button-focus-shadow(@content-color);
+      }
+
+      &.has-cnt-ac-background-color {
+        .button-focus-shadow(@content-color-accent);
+      }
+
+      &.has-cnt-bg-background-color {
+        .button-focus-shadow(@content-color-background);
+      }
+    }
+
+    &:focus-visible {
+
+      &:not(.has-text-color) {
+        outline-color: @content-color-accent;
+      }
+
+      // Text Color
+
+      &.has-text-color {
+        outline-color: @content-color-background;
+      }
+
+      &.has-cnt-color {
+        outline-color: @content-color;
+      }
+
+      &.has-cnt-ac-color {
+        outline-color: @content-color-accent;
+      }
+
+      &.has-cnt-bg-color {
+        outline-color: @content-color-background;
+      }
+
+      // Background Color
+
+      &.has-cnt-background-color {
+        outline-color: @content-color;
+      }
+
+      &.has-cnt-ac-background-color {
+        outline-color: @content-color-accent;
+      }
+
+      &.has-cnt-bg-background-color {
+        outline-color: @content-color-background;
+      }
+    }
+  }
+}
+
+// Buttons
+
+.wp-block-buttons {
+  --wp--style--block-gap: 0.625rem;
+
+  .wp-block-button {
+    margin: 0;
+  }
+}

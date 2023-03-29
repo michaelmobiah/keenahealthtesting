@@ -1,0 +1,23 @@
+// Mixins - Centerer
+
+.centerer (@width: @centerer-width, @gutter: @centerer-gutter, @breakpoint: @centerer-breakpoint, @breakpoint-min: @centerer-breakpoint-min) {
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: @breakpoint-min) {
+    width: @width;
+  }
+  @media (max-width: @breakpoint) {
+    width: 100%;
+    padding-right: @gutter;
+    padding-left: @gutter;
+  }
+  @media (max-width: @screen-desktop-max) {
+    padding-right: max(@gutter / 2, @grid-gutter-medium);
+    padding-left: max(@gutter / 2, @grid-gutter-medium);
+  }
+  @media (max-width: @screen-phone-max) {
+    padding-right: max(@gutter / 4, @grid-gutter-small);
+    padding-left: max(@gutter / 4, @grid-gutter-small);
+  }
+}

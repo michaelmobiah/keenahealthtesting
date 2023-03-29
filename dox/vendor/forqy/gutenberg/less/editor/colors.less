@@ -1,0 +1,67 @@
+// Editor - Colors
+
+body {
+  color: var(--fy--content-color);
+  background-color: var(--fy--content-color-background);
+
+  a {
+    color: var(--fy--content-color-accent);
+  }
+
+  .is-root-container {
+
+    > p, > ul, > ol, td, dd {
+      &:not(.has-text-color) {
+        color: ~'rgba(var(--fy--content-color--rgb), var(--fy--content-color-opacity))';
+      }
+    }
+  }
+
+  .has-text-color,
+  .has-inline-color {
+    a {
+      color: inherit;
+    }
+  }
+
+  .has-background {
+    padding: var(--wp--style--block-gap, 2.5rem);
+  }
+
+  ul.has-background,
+  ol.has-background {
+    padding: var(--wp--style--block-gap, 2.5rem);
+  }
+
+  //
+  // Colors
+  //
+
+  // Foreground
+
+  .has-cnt-color {
+    color: var(--fy--content-color);
+  }
+
+  .has-cnt-ac-color {
+    color: var(--fy--content-color-accent);
+  }
+
+  .has-cnt-bg-color {
+    color: var(--fy--content-color-background);
+  }
+
+  // Background
+
+  .has-cnt-background-color {
+    background-color: var(--fy--content-color);
+  }
+
+  .has-cnt-ac-background-color {
+    background-color: var(--fy--content-color-accent);
+  }
+
+  .has-cnt-bg-background-color {
+    background-color: var(--fy--content-color-background);
+  }
+}

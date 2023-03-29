@@ -1,0 +1,65 @@
+// Section - Location
+
+.@{prefix}-section--location {
+
+  // Content
+
+  .@{prefix}-section__content {
+    text-align: left;
+
+    ul {
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: block;
+        padding: 0;
+        margin: 0;
+        line-height: normal;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    // Date
+
+    .@{prefix}-event-date,
+    .@{prefix}-event-time {
+      font-family: @heading-font-family;
+      letter-spacing: @heading-letter-spacing;
+      text-transform: @heading-text-transform;
+    }
+
+    .@{prefix}-event-date {
+      font-size: @font-size-h6;
+      font-weight: @heading-font-weight;
+      color: @content-color;
+    }
+
+    .@{prefix}-event-time {
+      color: fade(@content-color, @content-color-opacity - 20%);
+    }
+
+    .@{prefix}-event-price {
+      margin-top: @margin-small;
+
+      .@{prefix}-price {
+        color: @content-color;
+
+        + .@{prefix}-price-badge {
+          margin-left: @margin-small;
+        }
+      }
+    }
+
+    // Price
+
+    .@{prefix}-price-badge {
+      color: fade(@content-color, @content-color-opacity - 20%);
+      background-color: transparent;
+      border: @border-width-small solid fade(@content-color, @content-color-opacity - 40%);
+    }
+  }
+}

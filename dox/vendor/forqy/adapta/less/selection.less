@@ -1,0 +1,34 @@
+/*
+
+Selection
+
+*/
+
+::selection {
+  color: @color-light;
+  background-color: @color-primary;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  color: @color-light;
+  background-color: @color-primary;
+  text-shadow: none;
+}
+
+// Form
+
+input,
+textarea,
+select {
+
+  &::selection {
+    -webkit-text-fill-color: @color-light;
+  }
+
+  &:-webkit-autofill {
+    &::selection {
+      -webkit-text-fill-color: @color-light;
+    }
+  }
+}

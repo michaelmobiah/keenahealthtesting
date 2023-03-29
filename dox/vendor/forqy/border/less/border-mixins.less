@@ -1,0 +1,21 @@
+/*
+
+Border - Mixins
+
+*/
+
+// Inline SVG
+.inline-svg (@code) { // .inline-svg(~' @code ')
+  @-svg-code: ~'<?xml version="1.0" ?>@{code}';
+  @-svg-code-inline: ~'data:image/svg+xml;charset=UTF-8,@{-svg-code}';
+  @-svg-code-url: ~"url('@{-svg-code-inline}')";
+
+  background-image: @-svg-code-url;
+}
+
+// Translate
+
+// X
+.translateX (@x: 0) {
+  transform: translateX(@x);
+}

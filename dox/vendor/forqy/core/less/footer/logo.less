@@ -1,0 +1,26 @@
+// Footer - Logo
+
+.@{prefix}-footer-logo {
+  .flex-center();
+
+  color: fade(@footer-color, @footer-color-opacity);
+
+  @media (max-width: @screen-tablet-max) {
+    margin: @margin-small 0;
+  }
+
+  a {
+    //color: @footer-link-color;
+    border: 0 !important;
+  }
+
+  img {
+    width: auto;
+    max-height: 48px;
+    margin: 0 auto;
+  }
+
+  svg.logo {
+    fill: currentColor;
+  }
+}

@@ -1,0 +1,130 @@
+// Widget - Price Filter
+
+.widget_price_filter {
+
+  .price_slider_wrapper {
+    padding-top: @padding-small;
+  }
+
+  .price_slider_amount {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+
+    .price_label {
+      order: 1;
+      margin-bottom: @margin-small;
+
+      font-size: @font-size;
+    }
+
+    .button {
+      order: 2;
+    }
+  }
+}
+
+.woocommerce {
+
+  .widget_price_filter {
+
+    // Slider
+
+    .ui-slider {
+      margin-right: 0;
+      margin-left: 0;
+      margin-bottom: @margin;
+      height: @border-width;
+
+      background-color: fade(@content-color, 20%);
+
+      // Handle
+
+      .ui-slider-handle {
+        top: -15px;
+        width: 32px;
+        height: 32px;
+        margin-left: -15px;
+
+        color: @content-color;
+        background-color: transparent;
+        border-radius: 0;
+        outline: @link-border-width solid transparent;
+
+        .transition-property(~'color, outline');
+        .transition-duration();
+        .transition-timing-function();
+
+        // Line
+        &:before {
+          content: '';
+          position: absolute;
+          top: 10%;
+          left: 50%;
+          width: @border-width;
+          margin-left: -(@border-width);
+          height: 80%;
+
+          background-color: currentColor;
+
+          .transition(background-color);
+        }
+
+        &:focus-visible {
+          outline-color: currentColor;
+        }
+
+        &.ui-state-active {
+
+        }
+      }
+
+      .ui-slider-range {
+        border-radius: 0;
+        background-color: @content-color;
+      }
+    }
+
+    .price_slider_amount {
+      font-size: inherit;
+      line-height: normal;
+      text-align: inherit;
+
+      .button {
+        float: none;
+        font-size: @button-font-size;
+      }
+    }
+  }
+}
+
+// Footer
+
+.@{prefix}-footer {
+
+  .widget_price_filter {
+
+    .ui-slider {
+      background-color: fade(@footer-color, 20%) !important;
+
+      .ui-slider-handle {
+
+        &:before {
+          background-color: @footer-color;
+        }
+
+        &.ui-state-active {
+          &:before {
+            background-color: @footer-color;
+          }
+        }
+      }
+
+      .ui-slider-range {
+        background-color: @footer-color !important;
+      }
+    }
+  }
+}

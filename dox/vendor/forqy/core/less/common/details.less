@@ -1,0 +1,42 @@
+// Common - Details
+
+details {
+  margin-bottom: @margin-small;
+
+  color: fade(@content-color, @content-color-opacity);
+
+  // Summary
+
+  summary {
+    font-family: @heading-font-family;
+    font-size: @font-size-h4;
+    font-weight: @heading-font-weight;
+    letter-spacing: @heading-letter-spacing;
+    text-transform: @heading-text-transform;
+
+    color: @content-color;
+    outline: transparent solid @link-border-width;
+    outline-offset: min(@link-border-width * 2, 2px);
+
+    .transition-property(~'color, outline');
+    .transition-duration(@transition-duration);
+    .transition-timing-function(@transition-timing-function);
+
+    &:hover {
+      color: @content-color-accent;
+    }
+
+    // Focus
+    &:focus-visible {
+      outline-color: currentColor;
+    }
+  }
+
+  // Open
+  &[open] {
+
+    summary {
+      color: @content-color-accent;
+    }
+  }
+}

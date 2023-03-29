@@ -1,0 +1,12 @@
+// Off - Sidebar
+
+.fy-off--sidebar {
+  &[data-off-breakpoint='768'] {
+    @media (max-width: @screen-phone-max) {
+      padding-top: (@padding-large + @padding-small);
+
+      color: fade(@content-color, @content-color-opacity);
+      background-color: @content-color-background;
+    }
+  }
+}

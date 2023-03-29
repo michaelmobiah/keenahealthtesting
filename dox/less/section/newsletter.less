@@ -1,0 +1,71 @@
+// Section - Newsletter
+
+.fy-section--newsletter {
+  margin: 0;
+  z-index: @layer-3;
+
+  // Container
+  .fy-section__container {
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  // Header
+  .fy-section__header {
+    color: @newsletter-color;
+  }
+
+  // Content
+  .fy-section__content {
+    margin-bottom: 0;
+    max-width: 100%;
+
+    color: inherit;
+
+    @media (max-width: @screen-tablet-max) {
+      text-align: center;
+    }
+  }
+
+  // Footer
+  .fy-section__footer {
+    font-style: @font-style-italic;
+    color: fade(@newsletter-color, 80%);
+  }
+
+  // Form
+  .fy-section__form {
+    margin-top: @margin;
+  }
+}
+
+// Form
+
+.fy-newsletter {
+
+  .mc4wp-form {
+    margin: 0;
+
+    input,
+    textarea,
+    select {
+      background-color: contrast(@newsletter-color-background, @newsletter-color-background, darken(@newsletter-color-background, 1%), @color-contrast-threshold);
+
+      &:focus {
+        background-color: @newsletter-color-background;
+      }
+    }
+
+    [type='checkbox'],
+    [type='radio'] {
+      background-color: contrast(@newsletter-color-background, @newsletter-color-background, darken(@newsletter-color-background, 1%), @color-contrast-threshold);
+    }
+  }
+}
+
+// Form
+
+.mc4wp-form {
+  display: block;
+}

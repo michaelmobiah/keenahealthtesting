@@ -1,0 +1,12 @@
+// Editor - Block - Separator
+
+.wp-block-separator {
+  opacity: 0.25;
+  border-top-width: 0;
+  border-bottom-width: @border-width-small;
+  border-color: var(--fy--content-color);
+
+  &:not(.is-style-wide):not(.is-style-dots) {
+    max-width: calc(var(--wp--style--block-gap, 2.5rem) * 4);
+  }
+}

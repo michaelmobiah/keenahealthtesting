@@ -1,0 +1,90 @@
+// Bar
+
+.fy-bar {
+
+  .fy-socials,
+  .fy-toolbar {
+
+    li {
+      > a,
+      > button {
+        outline-offset: 0;
+
+        &:before {
+          bottom: min(@border-width, 2px);
+          height: min(@border-width, 2px);
+        }
+      }
+    }
+  }
+
+  .fy-socials {
+    .bar-cart-enabled & {
+      @media (max-width: @screen-phone-min + @grid-gutter-xxlarge) {
+        display: none;
+      }
+    }
+  }
+}
+
+// Container
+
+.fy-bar-container {
+
+  // Full
+  .header-width-full & {
+    padding-right: (@centerer-gutter / 2);
+    padding-left: (@centerer-gutter / 2);
+
+    @media (max-width: @screen-tablet-max) {
+      padding-right: (@centerer-gutter / 4);
+      padding-left: (@centerer-gutter / 4);
+    }
+  }
+
+  // Centered
+  .header-width-centered & {
+    .centerer();
+  }
+}
+
+// Icon
+
+.fy-bar-icon {
+  @media (max-width: @screen-tablet-max) {
+    display: none;
+  }
+}
+
+// Bar/Header Merge
+
+.fy-bar {
+
+  .header-bar-merge & {
+
+    // Line
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -(@border-width-small);
+      left: 0;
+      width: 100%;
+      height: @border-width-small;
+
+      background-color: fade(@header-color, 10%);
+    }
+  }
+
+  // Flex
+  .fy-flex-column-tablet-0 {
+    @media (max-width: @screen-tablet-max) {
+      padding: 0 !important;
+    }
+  }
+}
+
+.fy-bar-text {
+  display: inline-flex;
+  align-items: center;
+  font-size: min(max(12px, floor(@font-size-navigation * 0.95)), 18px);
+}

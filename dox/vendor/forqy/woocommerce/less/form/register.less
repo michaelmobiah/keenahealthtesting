@@ -1,0 +1,33 @@
+// Form - Register
+
+.woocommerce {
+
+  form.register {
+
+    // Privacy Policy
+
+    .woocommerce-privacy-policy-text {
+
+      // Password Info
+      + p:not(.form-row) {
+        padding: @padding-xsmall @padding-small;
+        margin: @grid-gutter-medium 0 0;
+
+        color: @success-color;
+        background-color: fade(@success-color, 2.5%);
+        border: @border-width-small solid @success-color;
+        border-radius: min(@border-radius, 4px);
+
+        @media (max-width: @screen-phone-max) {
+          padding: @padding-xsmall;
+        }
+      }
+    }
+
+    // Submit
+
+    [type='submit'] {
+      margin: @grid-gutter-small @grid-gutter-small 0 0;
+    }
+  }
+}

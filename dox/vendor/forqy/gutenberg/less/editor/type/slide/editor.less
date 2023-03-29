@@ -1,0 +1,28 @@
+// Editor - Slide Type - Colors
+
+body.post-type-slide {
+
+  .editor-styles-wrapper {
+    color: var(--fy--slideshow-color);
+    background-color: var(--fy--slideshow-slide-color-background, var(--fy--slideshow-color-background));
+
+    // Background Image for Future Updates
+    //background-image: var(--fy--post-thumbnail-url);
+    //background-repeat: no-repeat;
+    //background-size: cover;
+    //background-position: center;
+
+    a {
+      color: var(--fy--slideshow-color);
+    }
+
+    .is-root-container {
+
+      > p, > ul, > ol, td, dd {
+        &:not(.has-text-color) {
+          color: var(--fy--slideshow-color);
+        }
+      }
+    }
+  }
+}

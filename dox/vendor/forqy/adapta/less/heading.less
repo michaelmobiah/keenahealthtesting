@@ -1,0 +1,63 @@
+/*
+
+Heading
+
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: @heading-font-family;
+  font-weight: @heading-font-weight;
+  text-transform: @heading-text-transform;
+  letter-spacing: @heading-letter-spacing;
+  line-height: @heading-line-height;
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+// Size
+
+h1 {
+  .font-size-fluid(@font-size-h1);
+}
+
+h2 {
+  .font-size-fluid(@font-size-h2);
+}
+
+h3 {
+  .font-size-fluid(@font-size-h3);
+}
+
+h4 {
+  .font-size-fluid(@font-size-h4);
+}
+
+h5 {
+  .font-size-fluid(@font-size-h5);
+}
+
+h6 {
+  .font-size-fluid(@font-size-h6);
+}
+
+// Sub-heading
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  small {
+    font-size: @sub-heading-font-size;
+    font-weight: @sub-heading-font-weight;
+    letter-spacing: @sub-heading-letter-spacing;
+    text-transform: @sub-heading-text-transform;
+  }
+}

@@ -1,0 +1,33 @@
+// Gradient Mixins
+
+// Horizontal
+
+.gradient-horizontal (@start: @color-light, @end: @color-dark) {
+  background-image: linear-gradient(to right, @start, @end);
+}
+
+.gradient-horizontal-three-colors (@start: @color-light, @mid: @color-dark, @stop: 50%, @end: @color-light) {
+  background-image: linear-gradient(to right, @start, @mid @stop, @end);
+}
+
+// Vertical
+
+.gradient-vertical (@start: @color-light, @end: @color-dark) {
+  background-image: linear-gradient(to bottom, @start, @end);
+}
+
+.gradient-vertical-three-colors (@start: @color-light, @mid: @color-dark, @stop: 50%, @end: @color-light) {
+  background-image: linear-gradient(@start, @mid @stop, @end);
+}
+
+// Directional
+
+.gradient-directional (@start: @color-light, @end: @color-dark, @deg: 45deg) {
+  background-image: linear-gradient(@deg, @start, @end);
+}
+
+// Radial
+
+.gradient-radial (@inner: @color-light, @outer: @color-dark) {
+  background-image: radial-gradient(circle, @inner, @outer);
+}

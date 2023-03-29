@@ -1,0 +1,68 @@
+// Site - Loading - Simple - Top
+
+// Pace
+
+.pace {
+  display: none;
+  visibility: hidden;
+}
+
+// Loading
+
+.@{prefix}-site-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: @loading-z-index - 1;
+
+  color: @loading-color;
+  background-color: @loading-color-background;
+
+  .transition(opacity, @transition-duration, @transition-timing-function);
+}
+
+
+// Logo
+
+.@{prefix}-site-loading-logo {
+  display: none;
+}
+
+// Spinner
+
+.@{prefix}-site-loading-spinner {
+  opacity: 1;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: @icon-size-xxlarge;
+  height: @icon-size-xxlarge;
+
+  z-index: @layer-2;
+
+  color: @loading-color;
+
+  // Spinner
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: @icon-size-xsmall;
+    height: @icon-size-xsmall;
+    margin-top: -(@icon-size-xsmall / 2);
+    margin-left: -(@icon-size-xsmall / 2);
+
+    animation: animationRotate @transition-duration-double @transition-timing-function-linear infinite;
+    .transform-origin(center center);
+
+    border-radius: 50%;
+    border-top: @border-width solid transparent;
+    border-right: @border-width solid transparent;
+    border-bottom: @border-width solid transparent;
+    border-left: @border-width solid currentColor;
+  }
+}

@@ -1,0 +1,23 @@
+// Content - Highlight
+
+.@{prefix}-highlight {
+  padding: @border-width-large @padding-xsmall;
+  margin: 0 @margin-xxsmall;
+
+  color: @content-color-background;
+  background-color: @content-color;
+
+  border-radius: @border-radius;
+
+  a {
+    color: currentColor;
+    border-bottom: @link-border-width solid currentColor;
+  }
+
+  // Colors
+
+  // Accent
+  &.@{prefix}-highlight-color-accent {
+    background-color: @content-color-accent;
+  }
+}

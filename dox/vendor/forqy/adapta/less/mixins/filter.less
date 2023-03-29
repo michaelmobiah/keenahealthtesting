@@ -1,0 +1,59 @@
+// Filter Mixins
+
+.filters (@filters ...) { // <filter>(<value>) <filter>(<value>) <filter>(<value>) ...
+  filter: @filters;
+}
+
+// Grayscale
+
+.filter-grayscale (@grayscale: 50%) { // <number> | <percentage>
+  filter: grayscale(@grayscale);
+}
+
+// Sepia
+
+.filter-sepia (@sepia: 50%) { // <number> | <percentage>
+  filter: sepia(@sepia);
+}
+
+// Brightness
+
+.filter-brightness (@brightness: 50%) { // <number> | <percentage>
+  filter: brightness(@brightness);
+}
+
+// Contrast
+
+.filter-contrast (@contrast: 50%) { // <number> | <percentage>
+  filter: contrast(@contrast);
+}
+
+// Saturate
+
+.filter-saturate (@saturate: 50%) { // <number> | <percentage>
+  filter: saturate(@saturate);
+}
+
+// Invert
+
+.filter-invert (@invert: 50%) { // <number> | <percentage>
+  filter: invert(@invert);
+}
+
+// Hue-rotate
+
+.filter-hue-rotate (@hue-rotate: 90deg) { // <angle>
+  filter: hue-rotate(@hue-rotate);
+}
+
+// Blur
+
+.filter-blur (@blur: @padding-xxsmall) { // <length>
+  filter: blur(@blur);
+}
+
+// Opacity
+
+.filter-opacity (@opacity: 0.5) { // <number> | <percentage>
+  filter: opacity(@opacity);
+}

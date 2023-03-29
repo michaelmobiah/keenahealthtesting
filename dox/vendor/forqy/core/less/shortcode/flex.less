@@ -1,0 +1,55 @@
+// Shortcode - Flex
+
+.@{prefix}-shortcode-container {
+  margin-bottom: @grid-gutter-medium;
+
+  > br {
+    display: none;
+    float: left;
+  }
+
+  > p {
+    display: none;
+  }
+
+  + .@{prefix}-shortcode-divider {
+    margin-top: 0;
+  }
+}
+
+.@{prefix}-shortcode-column {
+
+  > p {
+    margin-bottom: @grid-gutter-medium;
+
+    &:last-child {
+      margin-bottom: @grid-gutter-medium;
+    }
+  }
+
+  .@{prefix}-page-image {
+    display: block;
+    margin-bottom: 0;
+  }
+
+  .@{prefix}-centerer {
+    width: 100%;
+    padding: 0;
+
+    &-75 {
+      width: 75%;
+
+      @media (max-width: @screen-tablet) {
+        width: 100%;
+      }
+    }
+
+    &-50 {
+      width: 50%;
+
+      @media (max-width: @screen-tablet) {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,133 @@
+// Content - Accordion
+
+.@{prefix}-accordion {
+  display: block;
+  margin: 0 auto;
+}
+
+// Section
+.@{prefix}-accordion-section {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+
+  // Input
+  input[type="radio"],
+  input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+
+    // Active
+    &:checked {
+      ~ .@{prefix}-section-content {
+        max-height: 100vh;
+      }
+    }
+  }
+
+  // Label
+  label {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    text-indent: -9999px;
+  }
+}
+
+// Header
+.@{prefix}-accordion-section-header {
+  position: relative;
+  display: block;
+  padding: @padding-small @padding;
+
+  h3 {
+    margin: 0;
+    font-size: @font-size-h6;
+    line-height: @line-height;
+  }
+}
+
+// Content
+.@{prefix}-accordion-section-content {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+
+  .@{prefix}-content {
+    padding: 0 @padding 0;
+  }
+}
+
+//
+// Skin
+//
+
+.@{prefix}-accordion {
+  color: @content-color;
+}
+
+// Section
+.@{prefix}-accordion-section {
+  border-bottom: @border-width solid fade(@content-color, 20%);
+
+  &:last-child {
+    border-bottom-color: transparent;
+  }
+
+  // Input
+  input[type="radio"],
+  input[type="checkbox"] {
+
+    // Active
+    &:checked {
+
+      ~ .@{prefix}-accordion-section-header {
+        &:before {
+          height: @padding-small;
+          margin-top: -(@margin-small / 2);
+        }
+      }
+    }
+  }
+}
+
+// Header
+.@{prefix}-accordion-section-header {
+  .transition(all, @transition-duration, @transition-timing-function);
+
+  // Line
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: @padding-xsmall;
+    height: @border-width-large;
+    margin-top: -(@border-width-large / 2);
+
+    background-color: @content-color;
+
+    .transition(all, @transition-duration-half, @transition-timing-function);
+  }
+}
+
+.@{prefix}-accordion-section {
+  &:hover {
+
+    .@{prefix}-accordion-section-header {
+      &:before {
+        width: @padding-small;
+      }
+    }
+  }
+}
+
+// Content
+.@{prefix}-accordion-section-content {
+  .transition(all, @transition-duration-double, @transition-timing-function);
+}

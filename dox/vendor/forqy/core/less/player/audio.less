@@ -1,0 +1,19 @@
+// Player - Audio
+
+.mejs-audio {
+  height: @player-control-height !important; // Original height + border
+
+  // Hiding Fix
+
+  .mejs-controls {
+    &.mejs-offscreen {
+      position: relative !important;
+      height: inherit !important;
+      width: inherit !important;
+      overflow: visible !important;
+      clip: auto !important;
+      clip-path: none !important;
+      opacity: 1 !important;
+    }
+  }
+}

@@ -1,0 +1,316 @@
+/*
+
+Helper
+
+*/
+
+// Clearfix
+
+.clearfix {
+  .clearfix();
+}
+
+// Position
+
+.@{prefix}-position-relative {
+  position: relative;
+}
+
+.@{prefix}-position-absolute {
+  position: absolute;
+}
+
+.@{prefix}-position-static {
+  position: static;
+}
+
+// Float
+
+.@{prefix}-float-left {
+  float: left;
+}
+
+.@{prefix}-float-right {
+  float: right;
+}
+
+.@{prefix}-float-none {
+  float: none;
+}
+
+// Block
+
+.@{prefix}-block {
+  display: block;
+}
+
+.@{prefix}-block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Align
+
+.@{prefix}-align-left {
+  text-align: left;
+}
+
+.@{prefix}-align-center {
+  text-align: center;
+}
+
+.@{prefix}-align-right {
+  text-align: right;
+}
+
+.@{prefix}-align-justify {
+  text-align: justify;
+}
+
+// Visibility
+
+.@{prefix}-show {
+  display: block;
+  visibility: visible;
+}
+
+.@{prefix}-hide {
+  display: none !important;
+  visibility: hidden !important;
+  padding: 0;
+  margin: 0;
+}
+
+.@{prefix}-hidden {
+  visibility: hidden;
+}
+
+.@{prefix}-visible {
+  visibility: visible;
+}
+
+// Padding
+
+.@{prefix}-padding-small {
+  padding: @padding-small @padding-small;
+}
+
+.@{prefix}-padding,
+.@{prefix}-padding-medium {
+  padding: @padding @padding;
+}
+
+.@{prefix}-padding-large {
+  padding: @padding-large @padding-large;
+}
+
+.@{prefix}-padding-0 {
+  padding: 0;
+}
+
+.@{prefix}-padding-top {
+  padding-top: @padding;
+}
+
+.@{prefix}-padding-top-0 {
+  padding-top: 0;
+}
+
+.@{prefix}-padding-right {
+  padding-right: @padding;
+}
+
+.@{prefix}-padding-right-0 {
+  padding-right: 0;
+}
+
+.@{prefix}-padding-bottom {
+  padding-bottom: @padding;
+}
+
+.@{prefix}-padding-bottom-0 {
+  padding-bottom: 0;
+}
+
+.@{prefix}-padding-left {
+  padding-left: @padding;
+}
+
+.@{prefix}-padding-left-0 {
+  padding-left: 0;
+}
+
+.@{prefix}-padding-vertical-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.@{prefix}-padding-horizontal-0 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+// Margin
+
+.@{prefix}-margin-small {
+  margin: @margin-small @margin-small;
+}
+
+.@{prefix}-margin,
+.@{prefix}-margin-medium {
+  margin: @margin @margin;
+}
+
+.@{prefix}-margin-large {
+  margin: @margin-large @margin-large;
+}
+
+.@{prefix}-margin-0 {
+  margin: 0;
+}
+
+.@{prefix}-margin-top {
+  margin-top: @margin;
+}
+
+.@{prefix}-margin-top-0 {
+  margin-top: 0;
+}
+
+.@{prefix}-margin-right {
+  margin-right: @margin;
+}
+
+.@{prefix}-margin-right-0 {
+  margin-right: 0;
+}
+
+.@{prefix}-margin-bottom {
+  margin-bottom: @margin;
+}
+
+.@{prefix}-margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.@{prefix}-margin-left {
+  margin-left: @margin;
+}
+
+.@{prefix}-margin-left-0 {
+  margin-left: 0;
+}
+
+// Media Queries
+
+// Phone Min
+@media (max-width: @screen-phone-min) {
+
+  .@{prefix}-phone-min-show {
+    display: block;
+  }
+
+  .@{prefix}-phone-min-hide {
+    display: none;
+  }
+}
+
+// Phone
+@media (max-width: @screen-phone-max) {
+
+  .@{prefix}-phone-show {
+    display: block;
+  }
+
+  .@{prefix}-phone-hide {
+    display: none;
+  }
+}
+
+// Tablet
+@media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
+
+  .@{prefix}-tablet-show {
+    display: block;
+  }
+
+  .@{prefix}-phone-show,
+  .@{prefix}-desktop-show,
+  .@{prefix}-desktop-wide-show {
+    display: none;
+  }
+
+  .@{prefix}-tablet-hide {
+    display: none;
+  }
+}
+
+// Desktop
+@media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+
+  .@{prefix}-desktop-show {
+    display: block;
+  }
+
+  .@{prefix}-phone-show,
+  .@{prefix}-tablet-show,
+  .@{prefix}-desktop-wide-show {
+    display: none;
+  }
+
+  .@{prefix}-desktop-hide {
+    display: none;
+  }
+}
+
+// Desktop Wide
+@media (min-width: @screen-desktop-wide) {
+
+  .@{prefix}-desktop-wide-show {
+    display: block;
+  }
+
+  .@{prefix}-phone-show,
+  .@{prefix}-tablet-show,
+  .@{prefix}-desktop-show {
+    display: none;
+  }
+
+  .@{prefix}-desktop-wide-hide {
+    display: none;
+  }
+}
+
+// Desktop Super Wide
+@media (min-width: @screen-desktop-super-wide) {
+
+  .@{prefix}-desktop-super-wide-show {
+    display: block;
+  }
+
+  .@{prefix}-phone-show,
+  .@{prefix}-tablet-show,
+  .@{prefix}-desktop-show,
+  .@{prefix}-desktop-wide-show {
+    display: none;
+  }
+
+  .@{prefix}-desktop-super-wide-hide {
+    display: none;
+  }
+}
+
+// Print
+@media print {
+
+  // Show
+  .@{prefix}-print-show {
+    display: block;
+  }
+
+  // Hide
+  .@{prefix}-print-hide {
+    display: none;
+  }
+}

@@ -1,0 +1,71 @@
+// Form - Label
+
+label {
+  padding: @padding-xxsmall 0;
+
+  font-family: @form-label-font-family;
+  font-size: @form-label-font-size;
+  font-weight: @form-label-font-weight;
+  letter-spacing: @form-label-letter-spacing;
+  text-transform: @form-label-text-transform;
+  line-height: @line-height-small;
+
+  cursor: pointer;
+  user-select: none;
+
+  -webkit-tap-highlight-color: transparent;
+
+  color: @form-label-color;
+
+  .transition-property(~'color');
+  .transition-duration(@transition-duration);
+  .transition-timing-function(@transition-timing-function);
+
+  // Abbreviation
+
+  abbr[title] {
+    border: 0;
+  }
+
+  // Required
+
+  .@{prefix}-required {
+    font-size: @font-size-small;
+    text-decoration: none;
+    line-height: normal;
+
+    border: 0;
+  }
+
+  // Error
+  &.@{prefix}-error {
+    color: @color-error;
+  }
+
+  // Focus
+  &:focus-within {
+    color: @form-label-color-focus;
+  }
+
+  // Fields within Label
+
+  input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+    margin-top: @margin-xxsmall;
+  }
+}
+
+// Label - Error
+
+.@{prefix}-label-error {
+  display: block;
+  padding: @padding-xxsmall 0;
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  line-height: normal;
+
+  color: @color-error;
+}

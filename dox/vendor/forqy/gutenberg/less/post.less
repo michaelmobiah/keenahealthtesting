@@ -1,0 +1,39 @@
+// Post
+
+.wp-block-post-template {
+
+  // Post Element
+
+  [class*='wp-block-post'] {
+    margin: calc(var(--wp--style--block-gap, 2.5rem) / 2) 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Title
+
+.wp-block-post-title {
+  font-size: var(--fy--heading--font-size--h2--fluid);
+
+  a {
+    display: initial;
+  }
+}
+
+// Excerpt
+
+.wp-block-post-excerpt__excerpt {
+  font-size: @font-size;
+  line-height: @line-height-small;
+}
+
+.wp-block-post-excerpt__more-link {
+  display: initial;
+}

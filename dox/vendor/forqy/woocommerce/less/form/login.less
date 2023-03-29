@@ -1,0 +1,125 @@
+// Form - Login
+
+.woocommerce {
+
+  form.login {
+
+    // Lost Password
+    .lost_password {
+      padding-top: @grid-gutter-small;
+      margin-top: @grid-gutter-medium;
+
+      font-size: @font-size-small;
+      text-align: center;
+      border-top: @border-width-small solid fade(@content-color, 20%);
+
+      a {
+        color: fade(@content-color, @content-color-opacity - 10%);
+        border-bottom: @link-border-width solid fade(@content-color, 20%);
+
+        &:hover,
+        &:focus {
+          color: @link-color-hover;
+          border-color: @link-border-color-hover;
+        }
+      }
+    }
+
+    // Submit
+    .woocommerce-form-login__submit {
+      margin: 0;
+    }
+
+    // Remember Me
+    .woocommerce-form-login__rememberme {
+      padding: (@button-padding-vertical + @button-border-width) 0;
+      margin: 0;
+
+      font-size: @font-size;
+    }
+
+    // Row
+    .form-row {
+
+      // Submit + Checkbox
+      &:not([class*='form-row-']) {
+        display: flex;
+        align-items: center;
+        margin-top: @margin;
+
+        @media (max-width: @screen-phone-max) {
+          flex-direction: column;
+          margin-top: @margin-small;
+        }
+
+        .woocommerce-form-login__rememberme {
+          flex-grow: 1;
+
+          @media (max-width: @screen-phone-max) {
+            margin-bottom: @margin-small;
+          }
+        }
+      }
+    }
+  }
+}
+
+.@{prefix}-login {
+  width: 40%;
+  margin: 0 auto;
+
+  @media (max-width: @screen-desktop-max) {
+    width: 50%;
+  }
+  @media (max-width: @screen-tablet-max) {
+    width: 75%;
+  }
+  @media (max-width: @screen-phone-max) {
+    width: 100%;
+  }
+
+  h2 {
+    margin-bottom: @grid-gutter-medium;
+    color: @content-color;
+  }
+
+  // Full
+  &--full {
+    width: 100%;
+
+    .col-1 {
+      padding-right: @grid-gutter-large;
+
+      @media (max-width: @screen-tablet-max) {
+        margin-bottom: @grid-gutter-large;
+      }
+    }
+
+    .col-2 {
+      padding-left: @grid-gutter-large;
+    }
+
+    .col-1,
+    .col-2 {
+      width: 50%;
+
+      @media (max-width: @screen-tablet-max) {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Account
+
+.woocommerce-account {
+
+  form.login {
+
+    // Lost Pass
+    .lost_password {
+      padding-top: @padding-small;
+    }
+  }
+}

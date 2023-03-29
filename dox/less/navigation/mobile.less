@@ -1,0 +1,337 @@
+// Navigation - Mobile
+
+@media (max-width: @screen-tablet-max) {
+  .navigation-mobile-appearance();
+
+  // Last Child
+  .fy-navigation-mobile-list {
+    > li {
+
+      .navigation-align-stretch &,
+      .navigation-align-right & {
+
+        &:nth-last-child(-n+2):not(:first-child),
+        &.navigation-sub-right {
+          > ul {
+            ul {
+              right: auto;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.navigation-all--enabled {
+  .navigation-mobile-appearance();
+
+  // Align - Stretch
+  &.navigation-align-stretch {
+
+    .fy-navigation-mobile-list {
+      display: block;
+      margin: 0 auto;
+
+      li {
+        display: block;
+        width: 100%;
+      }
+
+      a {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+
+  // Last Child
+
+  &.navigation-align-stretch,
+  &.navigation-align-right {
+
+    .fy-navigation-mobile-list {
+      > li {
+        &:nth-last-child(-n+2):not(:first-child),
+        &.navigation-sub-right {
+          > ul {
+            right: auto;
+            left: 0;
+            transform: translateX(0);
+
+            ul {
+              right: auto;
+              left: 0;
+            }
+
+            .divider {
+              > a {
+                direction: ltr;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mixin Navigation Mobile - Appearance
+
+.navigation-mobile-appearance () {
+
+  .fy-navigation-column {
+    flex-basis: 0;
+    max-width: 0;
+    padding: 0;
+  }
+
+  [class*="fy-navigation-mobile-container"] {
+    contain: content;
+    background-color: @navigation-mobile-color-background;
+
+    .scrollbar-thin(fade(@navigation-mobile-color, 20%), @navigation-mobile-color-background);
+  }
+
+  // Navigation - List [ul]
+
+  [class*="fy-navigation-mobile-list"] {
+    margin-top: 0;
+
+    li {
+      text-align: left;
+    }
+
+    > li {
+
+      > a {
+        padding-top: @navigation-link-padding-vertical;
+        padding-bottom: @navigation-link-padding-vertical;
+
+        font-size: (@font-size-navigation * 1.4);
+        line-height: @line-height;
+
+        color: @navigation-mobile-color;
+        background-color: transparent;
+
+        &:before {
+          left: 0;
+          bottom: 0;
+          height: @border-width;
+          background-color: @navigation-mobile-color-accent;
+        }
+
+        &:hover,
+        &:focus {
+          color: @navigation-mobile-color-accent;
+        }
+      }
+
+      // Divider
+      &.divider {
+        width: 100%;
+        height: @padding;
+        background-color: transparent;
+
+        // Line
+        &:after {
+          content: '';
+          position: absolute;
+          top: @padding-small;
+          left: 0;
+          width: 100%;
+          height: @border-width-small;
+          margin-top: -(floor(@border-width / 2));
+          margin-left: 0;
+
+          background-color: fade(@navigation-mobile-color, 20%);
+        }
+
+        a {
+          display: none;
+        }
+      }
+
+      // Important
+      &.important {
+        > a {
+          padding-right: 0;
+          padding-left: 0;
+          color: @navigation-mobile-color;
+
+          &:before {
+            left: 0;
+            background-color: currentColor;
+          }
+
+          &:hover,
+          &:focus {
+            color: @navigation-mobile-color-accent;
+          }
+        }
+
+        &:hover,
+        &:focus-within {
+          > a {
+            color: @navigation-mobile-color-accent;
+          }
+        }
+      }
+
+      // Current
+      &[class*="current"] {
+        > a {
+          color: @navigation-mobile-color-accent;
+
+          &:before {
+            left: 0;
+          }
+        }
+
+        &:hover,
+        &:focus-within {
+          > a {
+            color: @navigation-mobile-color-accent;
+          }
+        }
+      }
+
+      &:hover,
+      &:focus-within {
+        > a {
+          color: @navigation-mobile-color-accent;
+        }
+      }
+
+      // Sub-navigation
+
+      > ul {
+        margin-left: @margin-xsmall;
+      }
+
+      ul {
+        margin: 0;
+        background-color: transparent;
+        box-shadow: none;
+
+        ul {
+          margin: 0;
+          padding-left: @navigation-link-padding-horizontal;
+        }
+
+        a {
+          position: relative;
+          padding: (@navigation-link-padding-vertical / 2) @navigation-link-padding-horizontal;
+
+          line-height: @line-height-small;
+
+          color: @navigation-mobile-color;
+          background-color: transparent;
+          border: 0;
+
+          &:before {
+            right: auto !important;
+            left: 0 !important;
+            background-color: @navigation-mobile-color-accent;
+          }
+
+          &:hover,
+          &:focus {
+            color: @navigation-mobile-color;
+            background-color: transparent;
+
+            &:before {
+              left: 0 !important;
+            }
+          }
+        }
+
+        li {
+          &:hover,
+          &:focus-within {
+            > a {
+              color: @navigation-mobile-color-accent;
+              background-color: transparent;
+
+              &:before {
+                left: 0 !important;
+              }
+            }
+          }
+        }
+
+        // Important
+        .important {
+          > a {
+            color: @navigation-mobile-color;
+            background-color: transparent;
+
+            &:hover,
+            &:focus {
+              color: @navigation-mobile-color-accent;
+            }
+          }
+
+          &:hover,
+          &:focus-within {
+            > a {
+              color: @navigation-mobile-color-accent;
+            }
+          }
+        }
+
+        // Divider
+        .divider {
+
+          // Line
+          &:after {
+            left: 0;
+            width: 100%;
+            background-color: fade(@navigation-mobile-color, 20%);
+          }
+
+          a {
+            display: none;
+          }
+        }
+
+        // Has Children
+
+        .menu-item-has-children {
+          &:after {
+            display: none;
+          }
+        }
+
+        // Current
+
+        [class*="current"] {
+          > a {
+            color: @navigation-mobile-color-accent;
+          }
+
+          &:hover,
+          &:focus-within {
+            > a {
+              color: @navigation-mobile-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Navigation - Close
+
+[class*="fy-navigation-mobile-container"] {
+
+  [class*="fy-navigation-close"] {
+    color: @navigation-mobile-color;
+
+    &:before {
+      background-color: @navigation-mobile-color-accent;
+    }
+  }
+}

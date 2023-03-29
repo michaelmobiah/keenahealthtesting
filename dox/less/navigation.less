@@ -1,0 +1,230 @@
+// Navigation
+
+.fy-navigation-container {
+  color: @navigation-color;
+  background-color: fade(@navigation-color-background, @navigation-color-background-opacity);
+
+  @media (min-width: @screen-desktop) {
+    max-height: (@navigation-height + (@navigation-padding * 2));
+  }
+}
+
+.fy-navigation {
+  padding: @navigation-padding 0;
+  color: @navigation-color;
+
+  .navigation-background-solid & {
+    padding: @navigation-padding;
+  }
+}
+
+// Navigation - List [ul]
+
+.fy-navigation-list {
+  border-right: 0;
+  border-left: 0;
+
+  // List Item
+
+  > li {
+    margin: 0 @border-width-small;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    // Floats
+    &.float-left,
+    &.float-right {
+      float: none;
+    }
+
+    // Link - 1st Level
+
+    > a {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      color: @navigation-color;
+
+      // Decoration
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: @border-width;
+        left: 50%;
+        width: 0;
+        height: @border-width;
+        z-index: -1;
+        background-color: @navigation-color-accent;
+
+        .transition-property(~'left, width, background-color');
+        .transition-duration(@transition-duration);
+        .transition-timing-function(@transition-timing-function);
+      }
+
+      &:hover,
+      &:focus {
+        color: @navigation-color;
+
+        &:before {
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    // Divider
+    &.divider {
+      width: @padding-small;
+      height: @navigation-height;
+      background-color: transparent;
+
+      &:before {
+        display: none;
+      }
+
+      // Line
+      &:after {
+        content: '';
+        position: absolute;
+        top: (@navigation-height / 4);
+        left: 50%;
+        width: @border-width-1;
+        height: (@navigation-height / 2);
+        border-radius: @border-radius;
+
+        background-color: fade(@navigation-color, 20%);
+      }
+
+      a {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+      }
+    }
+
+    // Important
+    &.important {
+      margin: 0 @border-width-small;
+
+      > a {
+        &:before {
+          left: @navigation-link-padding-horizontal;
+          width: calc(~'100% - (@{navigation-link-padding-horizontal} * 2)');
+        }
+      }
+    }
+
+    // Current
+    &[class*="current"] {
+      > a {
+        color: @navigation-color;
+
+        &:before {
+          left: @navigation-link-padding-horizontal;
+          width: calc(~'100% - (@{navigation-link-padding-horizontal} * 2)');
+          background-color: currentColor;
+
+          @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+            left: (@navigation-link-padding-horizontal / 2);
+            width: calc(~'100% - @{navigation-link-padding-horizontal}');
+          }
+        }
+      }
+    }
+
+    // Hover/focus List Item
+
+    &:hover,
+    &:focus-within {
+      > a {
+        color: @navigation-color;
+
+        &:before {
+          left: 0;
+          width: 100%;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+// Navigation - Trigger
+
+[class*="fy-navigation-trigger"] {
+  display: block;
+  position: relative;
+  width: auto;
+  padding: 0 @padding-xsmall;
+  margin: @navigation-padding auto;
+
+  .navigation-background-solid & {
+    height: (@navigation-height + (@navigation-padding * 2));
+    padding: @navigation-padding max(@padding, @navigation-padding);
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @media (max-width: @screen-phone-max) {
+      padding: @navigation-padding @padding-small;
+    }
+  }
+
+  .icon {
+    .shape {
+      .transition(width);
+    }
+  }
+
+  // Decoration
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: @border-width;
+    left: 50%;
+    width: 0;
+    height: @border-width;
+    margin-top: -(@border-width);
+    background-color: @navigation-color-accent;
+
+    .transition-property(~'left, width, background-color');
+    .transition-duration(@transition-duration);
+    .transition-timing-function(@transition-timing-function);
+  }
+
+  &:hover,
+  &:focus {
+    &:before {
+      left: 0;
+      width: 100%;
+    }
+
+    .icon {
+      .shape-3 {
+        width: 20px;
+      }
+    }
+  }
+}
+
+// Navigation - Close
+
+[class*="fy-navigation-close"] {
+  right: 0;
+
+  width: @navigation-height;
+  height: @navigation-height;
+  padding: 0;
+
+  color: @navigation-mobile-color;
+
+  &:hover,
+  &:focus {
+    color: @navigation-mobile-color;
+  }
+}

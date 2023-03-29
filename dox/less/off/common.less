@@ -1,0 +1,62 @@
+// Off - Common
+
+.fy-off {
+
+  &[data-off-breakpoint='all'] {
+    .off-appearance();
+  }
+
+  &[data-off-breakpoint='1280'] {
+    @media (max-width: @screen-desktop-max) {
+      .off-appearance();
+    }
+  }
+
+  &[data-off-breakpoint='1024'] {
+    @media (max-width: @screen-tablet-max) {
+      .off-appearance();
+    }
+  }
+
+  &[data-off-breakpoint='768'] {
+    @media (max-width: @screen-phone-max) {
+      .off-appearance();
+    }
+  }
+}
+
+// Close
+
+.fy-off__close {
+
+  // Decoration
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: @border-width;
+    background-color: currentColor;
+
+    .transition-property(~'right, left, width, background-color');
+    .transition-duration(@transition-duration);
+    .transition-timing-function(@transition-timing-function);
+  }
+
+  &:hover,
+  &:focus {
+
+    &:before {
+      left: 0;
+      right: auto;
+      width: 100%;
+    }
+  }
+}
+
+// Overlay
+
+.fy-off__overlay {
+  background-color: fade(@off-overlay-color, @off-overlay-opacity);
+}

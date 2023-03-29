@@ -1,0 +1,34 @@
+// Bar - Socials
+
+.@{prefix}-bar {
+
+  .@{prefix}-socials {
+    padding: 0;
+    text-align: right;
+
+    ul {
+      @media (max-width: @screen-phone-max) {
+        margin-left: 0;
+      }
+    }
+
+    a {
+      height: @bar-height;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      color: fade(@bar-color, @bar-color-opacity);
+      outline-offset: 0;
+
+      &:before {
+        z-index: -(@layer-1);
+        background-color: @bar-color-accent;
+      }
+
+      &:hover,
+      &:focus {
+        color: @bar-color;
+      }
+    }
+  }
+}

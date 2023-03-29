@@ -1,0 +1,37 @@
+// Rating
+
+.woocommerce {
+
+  .star-rating {
+    font-size: 1rem;
+    width: 5.3rem;
+
+    &:before {
+      color: fade(@content-color, 40%);
+    }
+
+    span {
+      color: @content-color-accent;
+    }
+  }
+
+  .woocommerce-product-rating {
+    line-height: normal;
+  }
+
+  // Footer
+
+  .@{prefix}-footer {
+
+    .star-rating {
+
+      &:before {
+        color: fade(@footer-color, 40%);
+      }
+
+      span {
+        color: @footer-color-accent;
+      }
+    }
+  }
+}

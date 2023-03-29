@@ -1,0 +1,34 @@
+// Content - Divider
+
+.@{prefix}-divider {
+  display: block;
+  width: 100%;
+  margin: @grid-gutter-medium 0;
+
+  border-bottom: @border-width-1 solid @divider-color;
+}
+
+// Lines
+
+// Dotted
+.@{prefix}-divider-dotted {
+  border-bottom-style: dotted;
+}
+
+// Dashed
+.@{prefix}-divider-dashed {
+  border-bottom-style: dashed;
+}
+
+// Double
+.@{prefix}-divider-double {
+  border-bottom-width: (@border-width-1 * 3);
+  border-bottom-style: double;
+}
+
+// Colors
+
+// Accent
+.@{prefix}-divider-color-accent {
+  border-bottom-color: @divider-color-accent;
+}

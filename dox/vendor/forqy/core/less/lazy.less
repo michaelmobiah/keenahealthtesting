@@ -1,0 +1,49 @@
+// Lazy // TODO Change class to .@{prefix}-lazy
+
+.js-lazy, // TODO Deprecated
+.@{prefix}-lazy {
+  opacity: 0;
+
+  will-change: opacity;
+  backface-visibility: hidden;
+
+  // Loading
+
+  + .@{prefix}-image-loading {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // Loaded
+  &.lazy-loaded {
+    opacity: 1;
+
+    + .@{prefix}-image-loading {
+      opacity: 0;
+    }
+  }
+}
+
+// Parent
+
+.js-lazy-parent {
+  position: relative;
+
+  &:before,
+  &:after {
+    opacity: 0;
+  }
+
+  // Loaded
+  &.lazy-loaded {
+
+    &:before,
+    &:after {
+      opacity: 1;
+    }
+
+    .@{prefix}-image-loading {
+      opacity: 0;
+    }
+  }
+}

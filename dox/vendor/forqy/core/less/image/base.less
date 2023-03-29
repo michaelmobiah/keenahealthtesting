@@ -1,0 +1,119 @@
+// Image - Base
+
+figure {
+
+  > a {
+    display: inherit;
+  }
+
+  img {
+    position: relative;
+    z-index: @layer-1;
+  }
+}
+
+// Image
+
+.@{prefix}-image {
+  position: relative;
+  width: 100%;
+}
+
+// Default
+
+.@{prefix}-image-default {
+  .aspect-ratio(4, 3);
+}
+
+// Landscape 4:3 [Default]
+
+[class*="@{prefix}-image-landscape"] {
+  .aspect-ratio(4, 3);
+}
+
+// Landscape 3:2
+
+.@{prefix}-image-landscape-3-2 {
+  .aspect-ratio(3, 2);
+}
+
+// Landscape 8:5
+
+.@{prefix}-image-landscape-8-5 {
+  .aspect-ratio(8, 5);
+}
+
+// Landscape 16:9
+
+.@{prefix}-image-landscape-16-9 {
+  .aspect-ratio(16, 9);
+}
+
+// Portrait 3:4 [Default]
+
+[class*="@{prefix}-image-portrait"] {
+  .aspect-ratio(3, 4);
+}
+
+// Portrait 2:3
+
+.@{prefix}-image-portrait-2-3 {
+  .aspect-ratio(2, 3);
+}
+
+// Portrait 5:8
+
+.@{prefix}-image-portrait-5-8 {
+  .aspect-ratio(5, 8);
+}
+
+// Portrait 9:16
+
+.@{prefix}-image-portrait-9-16 {
+  .aspect-ratio(9, 16);
+}
+
+// Square
+
+.@{prefix}-image-square {
+  .aspect-ratio(1, 1);
+}
+
+// Object
+
+.@{prefix}-image-cover,
+.@{prefix}-image-contain,
+.@{prefix}-image-fill {
+  position: relative;
+  overflow: hidden;
+
+  // Image
+  img {
+    position: absolute;
+    min-width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: @layer-1;
+
+    object-position: center center;
+  }
+}
+
+.@{prefix}-image-cover {
+  img {
+    object-fit: cover;
+  }
+}
+
+.@{prefix}-image-contain {
+  img {
+    object-fit: contain;
+  }
+}
+
+.@{prefix}-image-fill {
+  img {
+    object-fit: fill;
+  }
+}

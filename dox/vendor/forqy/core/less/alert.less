@@ -1,0 +1,93 @@
+// Alert
+
+.@{prefix}-alert {
+  display: block;
+  padding: @padding-small @padding;
+  margin-bottom: @grid-gutter-small;
+
+  font-size: @font-size;
+
+  color: @content-color;
+  background-color: transparent;
+
+  border: @border-width-small solid @content-color;
+  border-radius: min(@border-radius, 4px);
+
+  @media (max-width: @screen-phone-max) {
+    padding: @padding-small;
+  }
+
+  * {
+    margin-bottom: 0;
+
+    + * {
+      margin-top: @grid-gutter-xsmall;
+    }
+  }
+
+  h5, h6 {
+    font-size: @font-size-h6;
+    color: inherit;
+  }
+
+  pre {
+    padding: 0;
+    margin-bottom: 0;
+    font-size: @font-size-xsmall;
+  }
+
+  a {
+    color: currentColor;
+    border-bottom: @link-border-width solid currentColor;
+
+    &:hover,
+    &:focus {
+      color: currentColor;
+      border-bottom-color: currentColor;
+    }
+  }
+
+  // Next
+  + .@{prefix}-alert {
+    margin-top: -(@grid-gutter-xsmall);
+  }
+
+  // Accent
+  &-accent {
+    color: @content-color-accent;
+    background-color: fade(@content-color-accent, 2.5%);
+    border-color: @content-color-accent;
+  }
+
+  // Success
+  &-success {
+    color: @success-color;
+    background-color: fade(@success-color, 2.5%);
+    border-color: @success-color;
+  }
+
+  // Error
+  &-error {
+    color: @error-color;
+    background-color: fade(@error-color, 2.5%);
+    border-color: @error-color;
+  }
+}
+
+// Alert in Content
+
+.@{prefix}-content {
+
+  .@{prefix}-alert {
+
+    h5, h6 {
+      margin: 0;
+      color: inherit;
+
+      // Next Element
+      + * {
+        margin-top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+// Heading - Search
+
+.@{prefix}-heading {
+
+  .@{prefix}-field-search {
+    max-width: @screen-min;
+    margin: @margin auto @margin-small;
+
+    .heading-horizontal-left & {
+      margin-left: 0;
+    }
+
+    .heading-horizontal-right & {
+      margin-right: 0;
+    }
+
+    // Label
+
+    label {
+      color: currentColor;
+    }
+
+    // Input
+
+    input {
+      color: fade(@heading-color, 60%);
+      background-color: transparent;
+      border-color: fade(@heading-color, 20%);
+
+      .placeholder(fade(@heading-color, 60%), fade(@heading-color, 20%));
+
+      &:focus {
+        color: @heading-color;
+        background-color: transparent;
+        border-color: @heading-color;
+        .form-field-focus-shadow(@heading-color);
+      }
+    }
+
+    &:focus-within {
+
+      input {
+        color: @heading-color;
+        background-color: transparent;
+        border-color: @heading-color;
+        .form-field-focus-shadow(@heading-color);
+      }
+    }
+
+    // Button
+
+    .@{prefix}-button {
+      color: fade(@heading-color, 60%);
+
+      &:hover,
+      &:focus {
+        color: @heading-color;
+      }
+    }
+  }
+}

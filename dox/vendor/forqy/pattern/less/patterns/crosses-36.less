@@ -1,0 +1,11 @@
+// Crosses - 36px
+
+// Mixin
+.pattern-crosses-36 (@fill: fade(@pattern-color, @pattern-opacity)) {
+  .inline-svg(~'<svg fill="@{fill}" width="36" height="36" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><polygon points="35.4,29.4 34.6,28.6 32,31.3 29.4,28.6 28.6,29.4 31.3,32 28.6,34.6 29.4,35.4 32,32.7 34.6,35.4 35.4,34.6 32.7,32"/></svg>');
+}
+
+// Pattern
+.@{prefix}-pattern-crosses-36 {
+  .pattern-crosses-36();
+}

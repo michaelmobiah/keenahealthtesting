@@ -1,0 +1,195 @@
+// Datepicker - Skin
+
+.@{prefix}-datepicker {
+  display: none;
+  padding: @padding-small;
+  z-index: @layer-8 !important;
+
+  color: @datepicker-color;
+  background-color: @datepicker-color-background;
+
+  @media (min-width: @screen-tablet) {
+    min-width: @screen-phone;
+    max-width: @screen-tablet;
+  }
+  @media (max-width: @screen-phone-max) {
+    width: calc(~'100% - @{grid-gutter-medium}');
+  }
+  @media (max-width: @screen-phone-min) {
+    width: (@screen-min - @grid-gutter-medium);
+    padding: @padding-xsmall;
+  }
+
+  // Multi
+  &.ui-datepicker-multi {
+    @media (min-width: @screen-tablet) {
+      width: auto !important;
+      max-width: @centerer-width;
+    }
+  }
+
+  // Header
+
+  .ui-widget-header {
+    padding: @padding-small @padding;
+    margin-top: -(@margin-small);
+
+    color: @datepicker-color;
+    background-color: transparent;
+
+    @media (max-width: @screen-phone-max) {
+      margin-top: 0;
+      padding-top: @padding-small;
+      padding-bottom: @padding-small;
+    }
+  }
+
+  // Title
+
+  .ui-datepicker-title {
+    font-family: @heading-font-family;
+    font-size: @font-size-h6;
+    font-weight: @heading-font-weight;
+    text-transform: @heading-text-transform;
+    letter-spacing: @heading-letter-spacing;
+    text-align: center;
+
+    color: @datepicker-color;
+
+    @media (max-width: @screen-phone-max) {
+      font-size: @font-size-xxlarge;
+    }
+    @media (max-width: @screen-phone-min) {
+      font-size: @font-size-xlarge;
+    }
+  }
+
+  // Calendar
+
+  .ui-datepicker-calendar {
+    thead {
+      tr {
+        th {
+          font-family: @font-primary;
+          font-size: @font-size;
+          font-weight: @font-weight-bold;
+          text-transform: @text-transform;
+          letter-spacing: @letter-spacing;
+
+          color: @datepicker-color-accent;
+          background-color: transparent;
+
+          @media (max-width: @screen-phone-max) {
+            font-size: @font-size-small;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          font-family: @font-secondary;
+          font-size: @font-size;
+
+          @media (max-width: @screen-phone-max) {
+            font-size: @font-size-small;
+          }
+
+          &.ui-state-disabled {
+            color: fade(@datepicker-color, 30%);
+            background-color: @datepicker-color-background;
+          }
+
+          a {
+            &.ui-state-default {
+              color: @datepicker-color;
+              background-color: transparent;
+              border: @border-width-1 solid fade(@datepicker-color, 20%);
+
+              &:hover,
+              &:focus {
+                color: @datepicker-color;
+                border-color: @datepicker-color-accent;
+              }
+
+              &.ui-state-active {
+                color: @datepicker-color-background;
+                background-color: @datepicker-color-accent;
+                border-color: transparent;
+              }
+
+              &.ui-state-highlight {
+                position: relative;
+                color: @datepicker-color-background;
+                background-color: @datepicker-color;
+                border-color: transparent;
+
+                &:before {
+                  content: '';
+                  position: absolute;
+                  top: @border-width;
+                  right: @border-width;
+                  width: 0;
+                  height: 0;
+                  border-style: solid;
+                  border-width: 0 8px 8px 0;
+                  border-color: transparent @datepicker-color-background transparent transparent;
+                }
+
+                &.ui-state-active {
+                  background-color: @datepicker-color-accent;
+                }
+              }
+            }
+          }
+
+          span {
+            &.ui-state-default {
+              border: @border-width-1 solid transparent;
+            }
+          }
+        }
+      }
+
+      tr:first-child {
+        td {
+          border-top: @border-width-1 solid transparent;
+        }
+      }
+    }
+  }
+
+  // Inline
+
+  &.@{prefix}-datepicker-inline {
+    display: block;
+    width: 100%;
+    padding: @padding;
+    margin: 0 0 @margin;
+
+    @media (max-width: @screen-phone-max) {
+      width: 100%;
+      max-width: 100%;
+    }
+    @media (max-width: @screen-phone-min) {
+      width: 100%;
+      max-width: 100%;
+      padding: @padding-small;
+    }
+
+    .ui-widget-header {
+      padding: @padding;
+      margin-top: -(@margin);
+    }
+
+    .ui-datepicker-title {
+      font-size: @font-size-h2;
+    }
+
+    td span,
+    td a {
+      padding: @padding-small;
+    }
+  }
+}

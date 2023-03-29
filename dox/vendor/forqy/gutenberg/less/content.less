@@ -1,0 +1,192 @@
+// Content
+
+.@{prefix}-content {
+
+  p {
+
+    // Dropcap
+    &.has-drop-cap {
+
+      &:not(:focus):first-letter {
+        margin: 0.05rem 1rem -0.05rem 0;
+
+        font-family: @font-primary;
+        font-size: @dropcap-size;
+        font-weight: @font-weight-bold;
+        line-height: 1;
+
+        color: inherit;
+      }
+    }
+  }
+
+  // Block - Latest
+  .wp-block-latest-posts,
+  .wp-block-latest-comments {
+    padding: 0;
+
+    // Grid
+    &.is-grid {
+      display: flex;
+    }
+  }
+
+  // Block - Categories
+  // Block - Archives
+
+  .wp-block-categories,
+  .wp-block-archives {
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding: 0;
+    }
+  }
+
+  // Block - Social Links
+
+  .wp-block-social-links {
+    padding: 0;
+  }
+
+  //
+  // Alignment
+  //
+
+  // Wide
+
+  > .alignwide {
+    min-width: calc(~'100% + (@{grid-gutter-medium} * 2)');
+    margin-right: -(@grid-gutter-medium);
+    margin-left: -(@grid-gutter-medium);
+
+    @media (max-width: @screen-desktop-max) {
+      min-width: calc(~'100% + (@{grid-gutter-small} * 2)');
+      margin-right: -(@grid-gutter-small);
+      margin-left: -(@grid-gutter-small);
+    }
+    @media (max-width: @screen-phone-max) {
+      min-width: calc(~'100% + (@{grid-gutter-xsmall} * 2)');
+      margin-right: -(@grid-gutter-xsmall);
+      margin-left: -(@grid-gutter-xsmall);
+    }
+
+    // Sidebar
+    .sidebar-active & {
+      min-width: calc(~'100% + @{grid-gutter-medium}');
+      margin-right: 0;
+      margin-left: -(@grid-gutter-medium);
+
+      @media (max-width: @screen-desktop-max) {
+        min-width: calc(~'100% + @{grid-gutter-small}');
+        margin-left: -(@grid-gutter-small);
+      }
+      @media (max-width: @screen-phone-max) {
+        min-width: calc(~'100% + @{grid-gutter-xsmall}');
+        margin-right: -(@grid-gutter-xsmall);
+        margin-left: -(@grid-gutter-xsmall);
+      }
+    }
+
+    // Nested
+
+    .alignwide {
+      min-width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  // Full-width
+
+  > .alignfull {
+    min-width: 100vw;
+    margin-right: calc(~'-100vw / 2 + 100% / 2');
+    margin-left: calc(~'-100vw / 2 + 100% / 2');
+
+    @media (min-width: (@screen-desktop-hd + 1px)) {
+      min-width: auto;
+      width: @screen-desktop-hd;
+      margin-right: calc(~'-@{screen-desktop-hd} / 2 + 100% / 2');
+      margin-left: calc(~'-@{screen-desktop-hd} / 2 + 100% / 2');
+    }
+
+    //@media (max-width: @screen-desktop-max) {
+    //  @alignfull-gutter-desktop: max(@centerer-gutter / 2, @grid-gutter-medium);
+    //
+    //  min-width: calc(~'100% + (@{alignfull-gutter-desktop} * 2)');
+    //  margin-right: -(@alignfull-gutter-desktop);
+    //  margin-left: -(@alignfull-gutter-desktop);
+    //}
+    //
+    //@media (max-width: @screen-phone-max) {
+    //  @alignfull-gutter-phone: max(@centerer-gutter / 4, @grid-gutter-small);
+    //
+    //  min-width: calc(~'100% + (@{alignfull-gutter-phone} * 2)');
+    //  margin-right: -(@alignfull-gutter-phone);
+    //  margin-left: -(@alignfull-gutter-phone);
+    //}
+
+    // Sidebar
+    .sidebar-active & {
+      float: right;
+      margin-right: 0;
+
+      @media (min-width: @centerer-breakpoint-min) and (max-width: @screen-desktop-hd) {
+        min-width: calc(~'100% + ((100vw - @{centerer-width}) / 2)');
+        margin-left: 0;
+      }
+
+      @media (min-width: @screen-desktop-hd) {
+        min-width: auto;
+        width: calc(~'100% + ((@{screen-desktop-hd} - @{centerer-width}) / 2)');
+        margin-left: 0;
+      }
+
+      @media (max-width: @centerer-breakpoint) {
+        min-width: calc(~'100% + @{centerer-gutter}');
+        margin-left: -(@centerer-gutter);
+      }
+
+      @media (max-width: @screen-desktop-max) {
+        min-width: calc(~'100% + (@{centerer-gutter} / 2)');
+        margin-left: -(@centerer-gutter / 2);
+      }
+
+      @media (max-width: @screen-phone-max) {
+        min-width: calc(~'100% + (@{centerer-gutter} / 2)');
+        margin-right: -(@centerer-gutter / 4);
+        margin-left: -(@centerer-gutter / 4);
+      }
+    }
+  }
+
+  // Inner Wide & Full-width
+
+  [class*="wp-block"] {
+
+    .alignwide,
+    .alignfull {
+      width: calc(~'100% + (@{grid-gutter-medium} * 2)');
+      min-width: calc(~'100% + (@{grid-gutter-medium} * 2)');
+
+      margin-right: -(@grid-gutter-medium);
+      margin-left: -(@grid-gutter-medium);
+    }
+  }
+
+  // Nested
+
+  .alignwide,
+  .alignfull {
+
+    .alignwide,
+    .alignfull {
+      width: 100%;
+      min-width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}

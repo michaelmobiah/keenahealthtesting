@@ -1,0 +1,55 @@
+// Image - Loading - Reveal
+
+.@{prefix}-image-loading--reveal {
+  opacity: 1;
+  z-index: @layer-2;
+
+  // Overlay
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: @content-color-background;
+
+    .transition(all, @transition-duration-double, @transition-timing-function, @transition-duration);
+  }
+}
+
+.image-loading-reveal {
+
+  // Lazy
+  .@{prefix}-lazy {
+
+    + .@{prefix}-image-loading.@{prefix}-image-loading--reveal {
+      opacity: 1;
+    }
+
+    // Loaded
+    &.lazy-loaded {
+
+      + .@{prefix}-image-loading--reveal {
+
+        // Overlay
+        &:before {
+          width: 0;
+        }
+      }
+    }
+  }
+}
+
+// Post Image
+
+.@{prefix}-post-image {
+
+  .@{prefix}-image-loading--reveal {
+
+    // Overlay
+    &:before {
+      background-color: @post-color-background;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+// Account
+
+.woocommerce-account {
+
+  // Navigation
+  .woocommerce-MyAccount-navigation {
+    ul {
+      li {
+        a {
+          &:before {
+            top: 0;
+            height: 100%;
+            background-color: transparent;
+          }
+
+          &:hover,
+          &:focus {
+            color: @link-color-hover;
+
+            &:before {
+              background-color: @link-border-color-hover;
+            }
+          }
+        }
+      }
+    }
+  }
+}

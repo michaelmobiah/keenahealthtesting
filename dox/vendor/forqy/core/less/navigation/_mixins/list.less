@@ -1,0 +1,140 @@
+// Navigation List Mixins
+
+.navigation-mobile-list () {
+  float: none;
+  display: inline-block;
+  position: relative;
+  left: 0;
+  min-width: 0;
+  max-width: @screen-min;
+  margin: @grid-gutter-medium auto;
+
+  white-space: normal;
+
+  .transition(all, @navigation-mobile-transition-duration, @transition-timing-function);
+
+  @media (max-width: @screen-phone-min) {
+    max-width: 100%;
+  }
+
+  &:before {
+    display: none;
+  }
+
+  > li {
+    display: block;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+
+    > a {
+      display: inline-block;
+      padding: @navigation-link-padding-vertical 0;
+
+      line-height: @line-height-normal;
+
+      // Anchor Link
+      &[href='#'] {
+        cursor: default;
+      }
+    }
+
+    // Divider
+    &.divider {
+      width: 100%;
+      height: @padding;
+
+      // Line
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: @border-width-small;
+        margin-top: -(floor((@border-width-small / 2)));
+        margin-left: 0;
+
+        background-color: fade(@navigation-color, 20%);
+      }
+    }
+
+    // Right
+    &.right {
+      text-align: left;
+    }
+
+    // Sub-navigation
+
+    ul {
+      opacity: 1;
+      pointer-events: auto;
+
+      display: block;
+      position: relative;
+
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+
+      padding: @padding-xxsmall 0;
+      margin: 0 auto;
+
+      text-align: inherit;
+
+      li {
+        border: 0;
+
+        &.menu-item-has-children {
+          &:before {
+            display: none;
+          }
+        }
+      }
+
+      a {
+        display: inline-block;
+        padding-top: @padding-xxsmall;
+        padding-bottom: @padding-xxsmall;
+        line-height: @line-height-normal;
+      }
+
+      // Important
+
+      .important {
+        > a {
+          padding-right: @padding-small;
+          padding-left: @padding-small;
+        }
+      }
+
+      // Right
+
+      .right {
+        text-align: left;
+      }
+
+      // Divider
+
+      .divider {
+        a {
+          display: none;
+        }
+      }
+    }
+
+    > ul {
+      ul {
+        top: 0;
+        left: 0;
+        padding: @padding-xxsmall 0;
+        margin: 0;
+      }
+    }
+  }
+}

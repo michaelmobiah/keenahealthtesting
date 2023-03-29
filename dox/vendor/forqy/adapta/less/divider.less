@@ -1,0 +1,38 @@
+/*
+
+Divider
+
+*/
+
+.@{prefix}-divider {
+  display: block;
+  width: 100%;
+  margin: @margin 0;
+
+  border-bottom: @divider-border-width solid @divider-color;
+}
+
+// Types
+
+// Dotted
+.@{prefix}-divider-dotted {
+  border-bottom-style: dotted;
+}
+
+// Dashed
+.@{prefix}-divider-dashed {
+  border-bottom-style: dashed;
+}
+
+// Double
+.@{prefix}-divider-double {
+  border-bottom-width: @divider-border-width * 3;
+  border-bottom-style: double;
+}
+
+// Colors
+
+// Accent
+.@{prefix}-divider-color-accent {
+  border-bottom-color: @divider-color-accent;
+}

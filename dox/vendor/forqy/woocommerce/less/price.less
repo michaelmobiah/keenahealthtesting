@@ -1,0 +1,80 @@
+// Price
+
+.woocommerce {
+
+  .price {
+    font-family: @font-secondary;
+    font-size: @font-size-h6;
+    font-weight: @heading-font-weight;
+    letter-spacing: @letter-spacing;
+    text-transform: @text-transform;
+
+    // Amount
+    .amount {
+      font-family: inherit;
+      font-weight: inherit;
+      text-transform: inherit;
+      letter-spacing: inherit;
+
+      color: currentColor;
+    }
+
+    del,
+    small {
+      font-size: @font-size;
+      font-weight: @font-weight;
+    }
+
+    del {
+      opacity: 1;
+    }
+
+    ins {
+      font-size: inherit;
+      font-weight: inherit;
+      text-decoration: inherit;
+    }
+  }
+
+  div.product {
+
+    // Listing
+
+    span.price {
+      font-size: @font-size-large;
+      color: @content-color-accent;
+
+      del {
+        opacity: 1;
+        font-weight: @font-weight;
+      }
+    }
+
+    // Single
+
+    p.price {
+      padding: @padding-xsmall 0;
+      margin: 0;
+
+      .font-size-fluid(@font-size-h1);
+
+      color: @content-color-accent;
+
+      del {
+        display: block;
+        font-size: @font-size-large;
+        color: fade(@content-color, @content-color-opacity);
+      }
+
+      ins {
+        font-weight: @font-weight-bold;
+        color: currentColor;
+      }
+
+      small {
+        font-size: @font-size;
+        color: fade(@content-color, @content-color-opacity);
+      }
+    }
+  }
+}

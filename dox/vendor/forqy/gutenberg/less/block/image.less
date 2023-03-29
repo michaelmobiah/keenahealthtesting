@@ -1,0 +1,57 @@
+// Block - Image
+
+.wp-block-image {
+  position: relative;
+
+  // Align Self
+
+  &.alignright {
+    margin: 0 0 var(--wp--style--block-gap, 2.5rem) var(--wp--style--block-gap, 2.5rem);
+  }
+
+  &.alignleft {
+    margin: 0 var(--wp--style--block-gap, 2.5rem) var(--wp--style--block-gap, 2.5rem) 0;
+  }
+
+  &.alignwide,
+  &.alignfull {
+    clear: both;
+  }
+
+  // Alignment
+
+  [class*="align"] {
+    margin-bottom: 0;
+  }
+
+  .alignright {
+    margin: 0 0 var(--wp--style--block-gap, 2.5rem) var(--wp--style--block-gap, 2.5rem);
+
+    figcaption {
+      text-align: right;
+    }
+  }
+
+  .alignleft {
+    margin: 0 var(--wp--style--block-gap, 2.5rem) var(--wp--style--block-gap, 2.5rem) 0;
+
+    figcaption {
+      text-align: left;
+    }
+  }
+
+  .alignwide,
+  .alignfull {
+    clear: both;
+  }
+
+  // Figure
+
+  figure {
+    @media (max-width: @screen-phone-max) {
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}

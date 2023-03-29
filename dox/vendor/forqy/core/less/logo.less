@@ -1,0 +1,49 @@
+// Logo
+
+.@{prefix}-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-height: @logo-height;
+  padding: 0;
+  margin: 0 auto;
+
+  font-family: @heading-font-family;
+  .font-size-fluid(@font-size-h2);
+  font-weight: @heading-font-weight;
+  letter-spacing: @heading-letter-spacing;
+  text-transform: @heading-text-transform;
+
+  > a {
+    position: relative;
+    display: inline-flex;
+    padding: 0;
+
+    color: @header-color;
+    border: 0;
+    outline-width: @link-border-width;
+
+    &:hover,
+    &:focus {
+      color: @header-color;
+    }
+  }
+
+  > img,
+  > svg {
+    float: left;
+    max-width: none;
+    height: auto;
+    max-height: @logo-height;
+    z-index: @layer-3;
+    transition: none;
+  }
+}
+
+// Sticky Logo Image
+
+.@{prefix}-logo-img-sticky {
+  display: none;
+}

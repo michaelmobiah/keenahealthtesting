@@ -1,0 +1,54 @@
+// Pattern - Alert
+
+.@{prefix}-pattern--alert {
+  padding: @padding-small @padding;
+  margin-bottom: @grid-gutter-medium;
+
+  color: @content-color;
+  border: @border-width-small solid @content-color;
+  border-radius: min(@border-radius, 4px);
+
+  @media (max-width: @screen-phone-max) {
+    padding: @padding-small;
+  }
+
+  * {
+    margin-bottom: 0;
+
+    // Next
+    + * {
+      margin-top: @grid-gutter-xsmall;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: (@grid-gutter-small + @grid-gutter-xsmall);
+    color: currentColor;
+  }
+
+  // Accent
+  &-accent {
+    color: @content-color-accent;
+    background-color: fade(@content-color-accent, 2.5%);
+    border-color: @content-color-accent;
+  }
+
+  // Success
+  &-success {
+    color: @success-color;
+    background-color: fade(@success-color, 2.5%);
+    border-color: @success-color;
+  }
+
+  // Error
+  &-error {
+    color: @error-color;
+    background-color: fade(@error-color, 2.5%);
+    border-color: @error-color;
+  }
+
+  // Next
+  + .@{prefix}-pattern--alert {
+    margin-top: -(@grid-gutter-small);
+  }
+}

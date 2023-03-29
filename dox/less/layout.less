@@ -1,0 +1,132 @@
+// Layout
+
+.fy-container {
+  .shadow-large();
+}
+
+// Canvas
+
+.fy-canvas {
+  overflow-x: visible;
+
+  .homepage & {
+    padding-top: @header-height;
+
+    @media (max-width: @screen-phone-max) {
+      padding-top: (@header-height - (@header-padding * 2));
+    }
+  }
+
+  .homepage.bar-enabled & {
+    padding-top: @header-height-bar;
+
+    @media (max-width: @screen-phone-max) {
+      padding-top: (@header-height-bar - (@header-padding * 2));
+    }
+  }
+
+  // Header Centered
+  .homepage.header-layout-centered & {
+    padding-top: @header-centered-height;
+  }
+
+  .homepage.header-layout-centered.bar-enabled & {
+    padding-top: @header-centered-height-bar;
+  }
+
+  // Slideshow - Height Full
+  .homepage.slideshow-height-full & {
+    padding-top: 0 !important;
+  }
+}
+
+// Wrap
+
+.fy-wrap {
+
+  // Border
+
+  > .fy-border {
+    bottom: 100%;
+    z-index: -1;
+  }
+
+  // Homepage
+
+  &.fy-wrap-homepage {
+    z-index: @layer-3;
+    background-color: transparent;
+  }
+
+  .slideshow-disabled & {
+    padding-top: @header-height;
+  }
+
+  // Has background image
+  .custom-background-image & {
+    background-color: transparent;
+
+    > .fy-border {
+      display: none;
+    }
+  }
+
+  // Has no slides
+  .no-slides & {
+    > .fy-border {
+      display: none;
+    }
+  }
+}
+
+// Grid
+
+.fy-grid {
+  margin-bottom: -(@post-gutter);
+}
+
+.fy-grid-gallery {
+  margin-bottom: -(@gallery-gutter)
+}
+
+// Main
+
+.fy-main {
+
+  .border-enabled & {
+    padding-bottom: @grid-gutter-large;
+  }
+}
+
+.fy-main-homepage {
+
+  // Section
+
+  .fy-section:not(.fy-section--widgets-cta) {
+    &:first-of-type {
+      margin-top: 0;
+
+      .fy-section__container {
+        padding-top: @grid-gutter-large;
+      }
+    }
+  }
+}
+
+// Sidebar
+
+.fy-sidebar--shop {
+  padding-top: (@grid-gutter-large + @grid-gutter-xsmall);
+  text-align: left;
+
+  @media (max-width: @screen-phone-max) {
+    padding-bottom: 0;
+    text-align: center;
+  }
+}
+
+// Content
+
+.fy-content-empty {
+  text-align: center;
+}

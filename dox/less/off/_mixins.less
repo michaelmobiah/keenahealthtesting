@@ -1,0 +1,14 @@
+// Mixins
+
+.off-appearance () {
+  contain: content;
+  background-color: @navigation-mobile-color-background;
+
+  // Scrollbar
+  .scrollbar-thin(fade(@navigation-mobile-color, 20%), @navigation-mobile-color-background);
+
+  // Active
+  &.active {
+    .shadow-large();
+  }
+}

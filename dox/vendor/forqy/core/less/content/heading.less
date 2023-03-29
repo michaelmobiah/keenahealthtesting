@@ -1,0 +1,91 @@
+// Content - Heading
+
+:where(.@{prefix}-content) {
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: @grid-gutter-small 0 @grid-gutter-medium;
+
+    // First
+    &:first-child {
+      margin-top: 0;
+    }
+
+    // Not Has Text Color
+    &:not(.has-text-color) {
+      color: @content-color;
+    }
+
+    .has-text-color & {
+      color: inherit;
+    }
+
+    // Next Element
+    + p, + ul, + ol, + table {
+      margin-top: -(@grid-gutter-small);
+    }
+
+    // Link
+
+    //a {
+    //  color: currentColor;
+    //  border-bottom: (@link-border-width * 2) solid currentColor;
+    //
+    //  &:hover,
+    //  &:focus {
+    //    color: @link-color-hover;
+    //    border-color: @link-border-color-hover;
+    //  }
+    //}
+  }
+
+  :where(h1),
+  :where(h2),
+  :where(h3),
+  :where(h4),
+  :where(h5),
+  :where(h6) {
+
+    a {
+      color: currentColor;
+      border-bottom: (@link-border-width * 2) solid currentColor;
+
+      &:hover,
+      &:focus {
+        color: @link-color-hover;
+        border-color: @link-border-color-hover;
+      }
+    }
+  }
+
+  // Sibling Headings
+
+  h1 {
+    + h2 {
+      margin-top: -(@grid-gutter-xsmall);
+    }
+  }
+
+  h2 {
+    + h3 {
+      margin-top: -(@grid-gutter-xsmall);
+    }
+  }
+
+  h3 {
+    + h4 {
+      margin-top: -(@grid-gutter-xsmall);
+    }
+  }
+
+  h4 {
+    + h5 {
+      margin-top: -(@grid-gutter-xsmall);
+    }
+  }
+
+  h5 {
+    + h6 {
+      margin-top: -(@grid-gutter-xsmall);
+    }
+  }
+}

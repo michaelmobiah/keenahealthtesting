@@ -1,0 +1,11 @@
+// Lines 1px - 2px spacing - Diagonal - Right
+
+// Mixin
+.pattern-lines-01-02-dia-right (@fill: fade(@pattern-color, @pattern-opacity)) {
+  .inline-svg(~'<svg fill="@{fill}" width="4" height="4" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4"><path d="M0,3h1V2H0V3z M1,2h1V1H1V2z M3,0H2v1h1V0z M3,3v1h1V3H3z"/></svg>');
+}
+
+// Pattern
+.@{prefix}-pattern-lines-01-02-dia-right {
+  .pattern-lines-01-02-dia-right();
+}

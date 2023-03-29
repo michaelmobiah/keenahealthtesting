@@ -1,0 +1,131 @@
+// Layout - Centerer
+
+// 100%
+
+.@{prefix}-centerer {
+  .centerer();
+
+  // 50%
+  &-50 {
+    width: (@screen-tablet - (@centerer-gutter * 2));
+
+    @media (max-width: @screen-tablet-max) {
+      width: 100%;
+      padding-right: max(@centerer-gutter / 2, @grid-gutter-medium);
+      padding-left: max(@centerer-gutter / 2, @grid-gutter-medium);
+    }
+    @media (max-width: @screen-phone-max) {
+      padding-right: max(@centerer-gutter / 4, @grid-gutter-small);
+      padding-left: max(@centerer-gutter / 4, @grid-gutter-small);
+    }
+  }
+
+  // 75%
+  &-75 {
+    width: (@screen-desktop - (@centerer-gutter * 2));
+
+    @media (max-width: @screen-tablet-max) {
+      width: 100%;
+      padding-right: max(@centerer-gutter / 2, @grid-gutter-medium);
+      padding-left: max(@centerer-gutter / 2, @grid-gutter-medium);
+    }
+    @media (max-width: @screen-phone-max) {
+      padding-right: max(@centerer-gutter / 4, @grid-gutter-small);
+      padding-left: max(@centerer-gutter / 4, @grid-gutter-small);
+    }
+  }
+
+  // Stretched
+  &-stretched {
+    width: 100%;
+    padding-right: @centerer-gutter;
+    padding-left: @centerer-gutter;
+
+    @media (max-width: @screen-desktop-max) {
+      padding-right: max(@centerer-gutter / 2, @grid-gutter-medium);
+      padding-left: max(@centerer-gutter / 2, @grid-gutter-medium);
+    }
+    @media (max-width: @screen-phone-max) {
+      padding-right: max(@centerer-gutter / 4, @grid-gutter-small);
+      padding-left: max(@centerer-gutter / 4, @grid-gutter-small);
+    }
+  }
+
+  // Full
+  &-full {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  // Left
+  &-left {
+    margin-left: 0;
+  }
+
+  // Right
+  &-right {
+    margin-right: 0;
+  }
+}
+
+// Nested
+
+.@{prefix}-centerer {
+
+  // X Full
+  &:not(.@{prefix}-centerer-full) {
+
+    // >
+    .@{prefix}-centerer,
+    .@{prefix}-centerer-50,
+    .@{prefix}-centerer-75 {
+      max-width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    // Full-width Align
+    :where(.alignfull) {
+
+      .@{prefix}-centerer {
+
+        @media (max-width: @centerer-breakpoint) {
+          width: 100%;
+          padding-right: @centerer-gutter;
+          padding-left: @centerer-gutter;
+        }
+        @media (max-width: @screen-desktop-max) {
+          padding-right: max(@centerer-gutter / 2, @grid-gutter-medium);
+          padding-left: max(@centerer-gutter / 2, @grid-gutter-medium);
+        }
+        @media (max-width: @screen-phone-max) {
+          padding-right: max(@centerer-gutter / 4, @grid-gutter-small);
+          padding-left: max(@centerer-gutter / 4, @grid-gutter-small);
+        }
+      }
+    }
+  }
+
+  // X Stretched
+  &:not(.@{prefix}-centerer-stretched) {
+
+    // > Stretched
+    .@{prefix}-centerer-stretched {
+      min-width: 100vw;
+      margin-right: calc(~'-100vw / 2 + 100% / 2');
+      margin-left: calc(~'-100vw / 2 + 100% / 2');
+    }
+  }
+}
+
+// Main
+
+.@{prefix}-main {
+  &.sidebar-active {
+
+    .@{prefix}-centerer {
+      width: 100%;
+    }
+  }
+}

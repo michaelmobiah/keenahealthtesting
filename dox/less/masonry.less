@@ -1,0 +1,135 @@
+// Masonry
+
+// Centered Layout
+
+body {
+  &.content-layout-centered {
+
+    .fy-masonry-item {
+      width: 33.333%;
+
+      @media (max-width: @screen-desktop-super-wide-max) {
+        width: 50%;
+      }
+      @media (max-width: @screen-phone-max) {
+        width: 100%;
+      }
+    }
+
+    // Sidebar Active
+
+    .sidebar-active {
+
+      .fy-masonry-item {
+        width: 50%;
+
+        @media (max-width: @screen-desktop-wide-max) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Post Side Layout
+
+body {
+  &.post-layout-side {
+
+    .fy-masonry {
+      &:not(.fy-masonry-gallery) {
+
+        .fy-masonry-item {
+          width: 100%;
+          padding: 0 (@post-gutter / 2);
+
+          @media (max-width: @screen-tablet-max) {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    // Sidebar Active
+    .sidebar-active {
+
+      .fy-masonry {
+        &:not(.fy-masonry-gallery) {
+
+          .fy-masonry-item {
+            width: 100%;
+
+            @media (max-width: @screen-tablet-max) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    &.content-layout-full {
+
+      .fy-masonry {
+        &:not(.fy-masonry-gallery) {
+
+          .fy-masonry-item {
+            width: 50%;
+
+            @media (max-width: @screen-desktop-max) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Menu Post Side Layout
+
+body {
+  &.menu-post-layout-side {
+
+    .fy-main-menu {
+
+      .fy-masonry-item {
+        width: 50%;
+        padding: 0 (@post-gutter / 2);
+
+        @media (max-width: @screen-tablet-max) {
+          width: 100%;
+        }
+      }
+
+      // Sidebar Active
+      &.sidebar-active {
+
+        .fy-masonry-item {
+          width: 50%;
+
+          @media (max-width: @screen-desktop-max) {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    // Full
+    &.content-layout-full {
+
+      .fy-main-menu {
+
+        .fy-masonry-item {
+          width: 33.333%;
+
+          @media (max-width: @screen-desktop-max) {
+            width: 50%;
+          }
+          @media (max-width: @screen-phone-max) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

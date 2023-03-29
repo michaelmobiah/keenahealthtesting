@@ -1,0 +1,11 @@
+// Dots 2px - 4px spacing
+
+// Mixin
+.pattern-dots-02-04 (@fill: fade(@pattern-color, @pattern-opacity)) {
+  .inline-svg(~'<svg fill="@{fill}" width="6" height="6" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 6"><rect x="4" y="4" width="2" height="2"/></svg>');
+}
+
+// Pattern
+.@{prefix}-pattern-dots-02-04 {
+  .pattern-dots-02-04();
+}

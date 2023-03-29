@@ -1,0 +1,60 @@
+// Base
+
+// Image
+
+svg {
+  &.border {
+	fill: currentColor;
+
+	transition-property: fill;
+	transition-timing-function: @transition-timing-function;
+	transition-duration: @transition-duration;
+
+	.shape {
+	  fill: currentColor;
+
+	  transition-property: fill, opacity;
+	  transition-timing-function: @transition-timing-function;
+	  transition-duration: @transition-duration;
+	}
+  }
+}
+
+div {
+  &.border {
+	&:before,
+	&:after {
+	  background-color: currentColor;
+	}
+  }
+}
+
+// Border
+
+.fy-border {
+  position: absolute;
+  display: block;
+  width: 100%;
+  left: 0;
+  margin-bottom: -1px;
+  overflow: hidden;
+  pointer-events: none;
+
+  color: @content-color-background;
+
+  background-position: center left;
+  background-repeat: repeat-x;
+
+  &.fy-border-solid,
+  &.fy-border-solid-double,
+  &.fy-border-step-left,
+  &.fy-border-step-right {
+	margin-bottom: 0;
+  }
+
+  svg {
+	&.border {
+	  float: left;
+	}
+  }
+}

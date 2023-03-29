@@ -1,0 +1,24 @@
+// Step - Right
+
+// Border
+.@{prefix}-border-step-right {
+  height: 20px;
+  margin-bottom: 0;
+
+  .border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+    }
+  }
+}

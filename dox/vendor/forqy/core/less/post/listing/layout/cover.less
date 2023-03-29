@@ -1,0 +1,98 @@
+// Post - Listing - Layout - Cover
+
+.@{prefix}-post-cover {
+  background-color: transparent;
+
+  // Has Thumbnail
+  &.has-post-thumbnail {
+    padding: 0;
+
+    // Container
+
+    .@{prefix}-post-container {
+      .translateY(0);
+
+      backface-visibility: hidden;
+      will-change: transform;
+
+      background-color: @post-color-background;
+
+      .transition-property(~'transform, background-color, box-shadow');
+      .transition-duration(@transition-duration);
+      .transition-timing-function(@transition-timing-function);
+    }
+
+    &:hover,
+    &:focus-within {
+
+      .@{prefix}-post-container {
+        .translateY(-@grid-gutter-large);
+      }
+    }
+  }
+
+  // Play
+
+  .@{prefix}-post-play {
+    top: 0;
+    left: auto;
+    right: 0;
+    .translate(0, 0);
+
+    // Background
+    &:before {
+      display: none;
+    }
+  }
+
+  // Card
+  &.@{prefix}-post-card {
+
+    &:after {
+      box-shadow: none;
+    }
+
+    // Image
+
+    .@{prefix}-post-image {
+      border-radius: @border-radius @border-radius 0 0;
+
+      a {
+        border-radius: inherit;
+      }
+
+      .posts-gutter-0 & {
+        border-radius: 0;
+      }
+    }
+
+    // Container
+
+    .@{prefix}-post-container {
+      border-radius: @border-radius;
+      .shadow();
+    }
+
+    &:hover,
+    &:focus-within {
+
+      .@{prefix}-post-container {
+        .shadow-hover();
+      }
+    }
+
+    // Has Thumbnail
+    &.has-post-thumbnail {
+
+      // Container
+
+      .@{prefix}-post-container {
+        border-radius: 0 0 @border-radius @border-radius;
+      }
+
+      &:after {
+        box-shadow: none;
+      }
+    }
+  }
+}

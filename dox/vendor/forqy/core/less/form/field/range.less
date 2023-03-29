@@ -1,0 +1,16 @@
+// Form - Field - Range
+
+[type='range'] {
+  min-height: calc(~'@{form-field-line-height} + (@{form-field-padding-vertical} * 2)  + (@{form-field-border-width} * 2)');
+  padding-right: 0;
+  padding-left: 0;
+
+  background: transparent;
+  border: transparent;
+  box-shadow: none;
+
+  // Focus
+  &:focus {
+    box-shadow: none;
+  }
+}

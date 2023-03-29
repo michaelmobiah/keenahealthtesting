@@ -1,0 +1,16 @@
+// Layout - Sidebar
+
+.@{prefix}-sidebar {
+  position: relative;
+  padding-top: @grid-gutter-large;
+  padding-bottom: @grid-gutter-large;
+
+  font-size: @font-size;
+
+  color: fade(@content-color, @content-color-opacity);
+
+  @media (max-width: @screen-tablet-max) {
+    padding-top: @grid-gutter-medium;
+    padding-bottom: @grid-gutter-medium;
+  }
+}

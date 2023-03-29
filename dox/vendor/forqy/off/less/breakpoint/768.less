@@ -1,0 +1,38 @@
+// Breakpoint - 768
+
+.@{prefix}-off {
+
+  &[data-off-breakpoint='768'] {
+    @media (max-width: 767px) {
+      .off();
+
+      // Active
+      &.active {
+        .off--active();
+      }
+    }
+  }
+}
+
+// Trigger
+
+.@{prefix}-off__trigger {
+
+  &[data-off-breakpoint='768'] {
+    @media (max-width: 767px) {
+      .off-trigger();
+    }
+  }
+}
+
+// Prevent Display of the Relocated Off
+
+.@{prefix}-off__location {
+
+  > .@{prefix}-off[data-off-breakpoint='768'] {
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}

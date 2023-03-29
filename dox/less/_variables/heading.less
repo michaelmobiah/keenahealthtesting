@@ -1,0 +1,27 @@
+// Heading Variables
+
+@heading-font-family: @font-primary;
+@heading-font-size: (1rem * round(@font-size-heading / @font-size-base, 4)); // Convert PX to REM
+@heading-font-weight: @font-weight-heading;
+
+@heading-font-scale: @font-scale;
+@heading-letter-spacing: @letter-spacing-heading;
+@heading-text-transform: @text-transform-heading;
+@heading-line-height: @line-height-heading;
+
+// Size
+
+@font-size-h1: round((@font-size-h2 * @heading-font-scale), 3); // 37.00897225px | 2.313rem
+@font-size-h2: round((@font-size-h3 * @heading-font-scale), 3); // 32.181715px | 2.011rem
+@font-size-h3: round((@font-size-h4 * @heading-font-scale), 3); // 27.9841px | 1.749rem
+@font-size-h4: round((@font-size-h5 * @heading-font-scale), 3); // 24.334px | 1.521rem
+@font-size-h5: round((@font-size-h6 * @heading-font-scale), 3); // 21.16px | 1.322rem
+@font-size-h6: round((@heading-font-size * @heading-font-scale), 3); // 18.4px | 1.15rem
+
+// Sub-heading
+
+@sub-heading-font-family: @font-secondary;
+@sub-heading-font-size: @font-size-xlarge;
+@sub-heading-font-weight: @font-weight-normal;
+@sub-heading-letter-spacing: @letter-spacing;
+@sub-heading-text-transform: @text-transform;

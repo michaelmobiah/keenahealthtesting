@@ -1,0 +1,38 @@
+// Form - Field - Select
+
+select {
+  padding-right: ((@form-field-padding-horizontal * 2) + 6px); // 6px: Arrow path width
+  appearance: none;
+
+  .form-field-select-icon-svg(@form-field-color-rgba);
+  background-position: right @form-field-padding-horizontal - 7px center; // 7px: Icon width - Arrow path width / 2 (20px - 6px / 2)
+  background-repeat: no-repeat;
+
+  &:focus {
+    .form-field-select-icon-svg(@form-field-color-focus-rgba);
+  }
+
+  // Option
+  option {
+    color: @content-color;
+    background-color: @content-color-background;
+  }
+
+  // Multiple
+  &[multiple] {
+    padding-top: @form-field-padding-horizontal;
+    background-image: none;
+
+    option {
+      background-color: transparent;
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+
+    &:focus {
+      background-image: none;
+    }
+  }
+}

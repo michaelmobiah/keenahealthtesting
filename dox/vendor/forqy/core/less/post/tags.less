@@ -1,0 +1,105 @@
+// Post - Tags
+
+.@{prefix}-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -2px -4px;
+
+  + .@{prefix}-post-tags {
+    margin-top: @grid-gutter-small;
+  }
+
+  h3 {
+    padding-bottom: 0;
+    margin-bottom: @grid-gutter-xsmall;
+    font-size: @font-size-h5;
+  }
+
+  ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 2px 4px;
+
+    font-size: @font-size-small;
+    font-weight: @font-weight;
+
+    list-style: none;
+
+    a {
+      display: block;
+      padding: @padding-xxsmall @padding-xsmall;
+
+      line-height: 1;
+
+      color: fade(@content-color, @content-color-opacity);
+      border: @border-width-1 solid fade(@content-color, 20%);
+      border-radius: @border-radius-small;
+      outline: none;
+
+      &:hover,
+      &:focus {
+        color: @link-color-hover;
+        border-color: @link-border-color-hover;
+      }
+    }
+  }
+
+  a {
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      color: @link-color-hover;
+    }
+  }
+
+  // Separator
+  .@{prefix}-separator {
+    display: none;
+  }
+}
+
+// PhotoSwipe Tags
+
+.pswp__caption-terms {
+
+  .@{prefix}-post-tags,
+  .@{prefix}-post-categories {
+    display: inline-flex;
+
+    a {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+
+      color: fade(@lightbox-color, 80%);
+      border: solid fade(@lightbox-color, 20%);
+      border-width: 0 0 @link-border-width;
+      border-radius: 0;
+
+      &:hover,
+      &:focus {
+        color: @lightbox-color;
+        border-color: @lightbox-color;
+      }
+    }
+
+    .@{prefix}-separator {
+      display: inline-block;
+    }
+
+    li {
+
+      // Last
+      &:last-child {
+        .@{prefix}-separator {
+          display: none;
+        }
+      }
+    }
+  }
+}

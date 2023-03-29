@@ -1,0 +1,31 @@
+// Block - Table
+
+.wp-block-table {
+
+  table {
+    margin-bottom: 0;
+    word-break: normal;
+  }
+
+  figcaption {
+    text-align: inherit;
+  }
+
+  // Striped
+  &.is-style-stripes {
+    border: 0;
+
+    th,
+    td {
+      border-color: fade(@content-color, 20%);
+    }
+
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background: linear-gradient(90deg, fade(@content-color, 0%) 0%, fade(@content-color, 5%) 50%, fade(@content-color, 0%) 100%);
+        }
+      }
+    }
+  }
+}

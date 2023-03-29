@@ -1,0 +1,91 @@
+// Editor - Typography
+
+body {
+  font-family: var(--fy--font-secondary);
+  font-size: var(--fy--font-size-base);
+  font-weight: var(--fy--font-weight);
+  letter-spacing: var(--fy--letter-spacing);
+  text-transform: var(--fy--text-transform);
+  line-height: var(--fy--line-height);
+}
+
+.block-editor-writing-flow {
+  font-family: var(--fy--font-secondary);
+  font-size: var(--fy--font-size--large--fluid);
+
+  @media (max-width: @screen-tablet-max) {
+    font-size: var(--fy--font-size);
+  }
+}
+
+// Heading
+
+.block-editor-block-list__layout {
+
+  .editor-block-list__block {
+    font-family: var(--fy--font-primary);
+    font-weight: var(--fy--font-weight-heading);
+    letter-spacing: var(--fy--letter-spacing-heading);
+    text-transform: var(--fy--text-transform-heading);
+    line-height: var(--fy--line-height-heading);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  &.rich-text.block-editor-rich-text__editable {
+    font-family: var(--fy--font-primary);
+    font-weight: var(--fy--font-weight-heading);
+    letter-spacing: var(--fy--letter-spacing-heading);
+    text-transform: var(--fy--text-transform-heading);
+    line-height: var(--fy--line-height-heading);
+  }
+}
+
+h1 {
+  &.rich-text.block-editor-rich-text__editable {
+    font-size: var(--fy--heading--font-size--h1--fluid);
+  }
+}
+
+h2 {
+  &.rich-text.block-editor-rich-text__editable {
+    font-size: var(--fy--heading--font-size--h2--fluid);
+  }
+}
+
+h3 {
+  &.rich-text.block-editor-rich-text__editable {
+    font-size: var(--fy--heading--font-size--h3--fluid);
+  }
+}
+
+h4 {
+  &.rich-text.block-editor-rich-text__editable {
+    font-size: var(--fy--heading--font-size--h4--fluid);
+  }
+}
+
+h5 {
+  &.rich-text.block-editor-rich-text__editable {
+    font-size: var(--fy--heading--font-size--h5--fluid);
+  }
+}
+
+h6 {
+  &.rich-text.block-editor-rich-text__editable {
+    font-size: var(--fy--heading--font-size--h6--fluid);
+  }
+}
+
+// Dropcap
+
+.has-drop-cap {
+  &:not(:focus):first-letter {
+    margin: 0.05rem 1rem -0.05rem 0;
+
+    font-family: var(--fy--font-primary);
+    font-size: @dropcap-size;
+    font-weight: bold;
+    line-height: 1;
+  }
+}

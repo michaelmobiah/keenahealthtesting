@@ -1,0 +1,28 @@
+// Post - Navigation
+
+.fy-post-nav-header {
+  h3 {
+    span {
+      border-bottom: @border-width solid transparent;
+      .transition(border);
+    }
+  }
+}
+
+// Post
+
+.fy-post-nav-post {
+
+  // Hover
+  &:hover,
+  &:focus-within {
+
+    .fy-post-nav-header {
+      h3 {
+        span {
+          border-color: @heading-color-accent;
+        }
+      }
+    }
+  }
+}

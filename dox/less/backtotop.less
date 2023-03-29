@@ -1,0 +1,31 @@
+// Back to Top
+
+.fy-back-to-top {
+  height: @icon-size-xlarge;
+  line-height: @icon-size-xlarge;
+
+  // Line
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: @link-border-width;
+
+    background-color: @btt-color-accent;
+
+    .transition-property(~'left, width, background-color');
+    .transition-duration(@transition-duration);
+    .transition-timing-function(@transition-timing-function);
+  }
+
+  &:hover,
+  &:focus {
+
+    &:before {
+      left: 0;
+      width: 100%;
+    }
+  }
+}

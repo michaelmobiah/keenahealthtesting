@@ -1,0 +1,414 @@
+/*
+
+Navigation
+
+*/
+
+.@{prefix}-navigation {
+  display: block;
+  position: relative;
+  list-style: none;
+  padding: @navigation-padding-vertical @navigation-padding-horizontal;
+
+  font-family: @navigation-font-family;
+  font-size: @navigation-font-size;
+  font-weight: @navigation-font-weight;
+  text-transform: @navigation-text-transform;
+  letter-spacing: @navigation-letter-spacing;
+  z-index: @layer-5;
+
+  color: @navigation-color;
+  background-color: @navigation-color-background;
+  border-radius: @navigation-border-radius;
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  // 1st level
+
+  > ul {
+    display: flex;
+
+    .transition(opacity);
+
+    > li {
+      display: inline-block;
+      position: relative;
+      font-size: @navigation-font-size;
+
+      > a {
+        display: block;
+        padding: @navigation-link-padding-vertical @navigation-link-padding-horizontal;
+
+        color: @navigation-link-color;
+        background-color: fade(@navigation-link-color-background, @navigation-link-color-background-opacity);
+
+        &:hover {
+          text-decoration: none;
+
+          color: @navigation-link-color-hover;
+          background-color: fade(@navigation-link-color-background-hover, @navigation-link-color-background-hover-opacity);
+        }
+
+        > img {
+          max-width: none;
+        }
+      }
+
+      // Hover
+
+      &:hover {
+        > a {
+          color: @navigation-link-color-hover;
+          background-color: fade(@navigation-link-color-background-hover, @navigation-link-color-background-hover-opacity);
+        }
+      }
+
+      // First
+
+      &:first-child {
+        > a {
+          .border-left-radius(@navigation-border-radius);
+        }
+      }
+
+      // Active
+
+      &.active {
+        > a {
+          color: @navigation-link-color-active;
+          background-color: fade(@navigation-link-color-background-active, @navigation-link-color-background-active-opacity);
+
+          &:hover {
+            color: @navigation-link-color-active-hover;
+            background-color: fade(@navigation-link-color-background-active-hover, @navigation-link-color-background-active-hover-opacity);
+          }
+        }
+
+        // Hover
+
+        &:hover {
+          > a {
+            color: @navigation-link-color-active-hover;
+            background-color: fade(@navigation-link-color-background-active-hover, @navigation-link-color-background-active-hover-opacity);
+          }
+        }
+      }
+
+      // Sub-navigation - 2nd level+
+
+      ul {
+        opacity: 0;
+        pointer-events: none;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: @navigation-sub-width;
+        height: auto;
+        padding: @navigation-sub-padding-vertical @navigation-sub-padding-horizontal;
+        z-index: @navigation-sub-z-index;
+
+        background-color: @navigation-sub-background;
+        backface-visibility: hidden;
+
+        .transition(opacity);
+        .shadow-large();
+
+        > li {
+          position: relative;
+
+          a {
+            display: block;
+            padding: @navigation-sub-link-padding-vertical @navigation-sub-link-padding-horizontal;
+
+            color: @navigation-sub-link-color;
+            background-color: fade(@navigation-sub-link-background, @navigation-sub-link-background-opacity);
+            border-bottom: @border-width solid @navigation-sub-border-color;
+
+            &:hover {
+              color: @navigation-sub-link-color-hover;
+              background-color: fade(@navigation-sub-link-background-hover, @navigation-sub-link-background-hover-opacity);
+            }
+          }
+
+          &:last-child {
+            > a {
+              border-bottom-color: transparent;
+            }
+          }
+
+          // Hover
+
+          &:hover {
+            > a {
+              color: @navigation-sub-link-color-hover;
+              background-color: fade(@navigation-sub-link-background-hover, @navigation-sub-link-background-hover-opacity);
+            }
+          }
+        }
+      }
+
+      // Active sub-navigation
+
+      &:hover {
+
+        // 2nd level
+
+        > ul {
+          opacity: 1;
+          pointer-events: auto;
+
+          top: auto;
+
+          > li {
+            &:hover {
+
+              // 3rd level
+
+              > ul {
+                top: 0;
+                left: 100%;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Inline
+
+.@{prefix}-navigation-inline {
+
+  // 1st level
+
+  > ul {
+    > li {
+
+      // First
+
+      &:first-child {
+        > a {
+          .border-top-radius(0);
+          .border-left-radius(@navigation-border-radius);
+        }
+      }
+    }
+  }
+
+  &.@{prefix}-float-left,
+  .@{prefix}-float-left {
+    > ul {
+      > li {
+        &:last-child {
+          > a {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &.@{prefix}-float-right,
+  .@{prefix}-float-right {
+    > ul {
+      > li {
+        &:last-child {
+          > a {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Vertical
+
+.@{prefix}-navigation-vertical {
+
+  // 1st level
+
+  > ul {
+    > li {
+      float: none;
+
+      // First
+
+      &:first-child {
+        > a {
+          .border-left-radius(0);
+          .border-top-radius(@navigation-border-radius);
+        }
+      }
+
+      // Last
+
+      &:last-child {
+        > a {
+          .border-right-radius(0);
+          .border-bottom-radius(@navigation-border-radius);
+        }
+      }
+
+      // 2nd level
+
+      ul {
+        top: 0;
+        left: -999999px;
+      }
+
+      // Active sub-navigation
+
+      &:hover {
+
+        // 2nd level
+
+        > ul {
+          top: 0;
+          left: 100%;
+
+          > li {
+            &:hover {
+
+              // 3rd level
+
+              > ul {
+                top: 0;
+                left: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Horizontal
+
+.@{prefix}-navigation-horizontal {
+
+  // 1st level
+
+  > ul {
+    > li {
+
+      // First
+
+      &:first-child {
+        > a {
+          .border-left-radius(@navigation-border-radius);
+          .border-right-radius(0);
+        }
+      }
+
+      // Active sub-navigation
+
+      &:hover {
+
+        // 2nd level
+
+        > ul {
+          top: auto;
+
+          > li {
+            &:hover {
+
+              // 3rd level
+
+              > ul {
+                top: 0;
+                left: @navigation-sub-width;
+              }
+            }
+          }
+        }
+      }
+
+      // Last 2 items aligned right
+
+      &.align-right,
+      &:last-child,
+      &:nth-last-child(2) {
+        text-align: left;
+
+        // 2nd Level
+
+        > ul {
+          > li {
+
+            // 3rd Level
+
+            > ul {
+              > li {
+                > a {
+                  border-left: 0;
+                  border-right: @border-width solid @navigation-sub-border-color;
+                }
+              }
+            }
+          }
+
+        }
+
+        // Active sub-navigation
+
+        &:hover {
+
+          // 2nd level
+
+          > ul {
+            left: auto;
+            right: 0;
+
+            > li {
+              &:hover {
+
+                // 3rd Level
+
+                > ul {
+                  left: auto;
+                  right: @navigation-sub-width;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Horizontal - Justify
+
+.@{prefix}-navigation-horizontal {
+  &.@{prefix}-navigation-justify {
+    width: 100%;
+
+    > ul {
+      display: table;
+
+      > li {
+        float: none !important;
+        display: table-cell;
+        width: 1%;
+
+        > a {
+          text-align: center;
+        }
+
+        &:last-child {
+          > a {
+            .border-right-radius(@navigation-border-radius);
+          }
+        }
+      }
+    }
+  }
+}

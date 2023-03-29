@@ -1,0 +1,79 @@
+// Editor - Block - Latest Comments
+
+.wp-block-latest-comments {
+  padding: 0;
+
+  // Avatar
+
+  .avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+    border-radius: 50%;
+  }
+}
+
+// Comment
+
+.wp-block-latest-comments__comment {
+  position: relative;
+  padding: 0 0 calc(var(--wp--style--block-gap, 2.5rem) / 2);
+  margin-bottom: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+
+  font-size: var(--fy--font-size--large);
+  line-height: var(--fy--line-height);
+
+  border-bottom: 1px solid ~'rgba(var(--fy--content-color--rgb), 10%)';
+
+  // Last
+  &:last-of-type {
+    border: 0;
+  }
+
+  // Alignment - Full Width
+  &.alignfull {
+    padding: 0 calc(var(--wp--style--block-gap, 2.5rem) / 2);
+  }
+}
+
+// Meta
+
+.wp-block-latest-comments__comment-meta {
+  margin-bottom: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+}
+
+// Excerpt
+
+.wp-block-latest-comments__comment-excerpt {
+
+  p {
+    margin: 0 0 calc(var(--wp--style--block-gap, 2.5rem) / 2);
+    font-size: var(--fy--font-size);
+
+    color: ~'rgba(var(--fy--content-color--rgb), var(--fy--content-color-opacity))';
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Date
+
+.wp-block-latest-comments__comment-date {
+  font-size: var(--fy--font-size--small);
+  color: ~'rgba(var(--fy--content-color--rgb), calc(var(--fy--content-color-opacity) - 20%))';
+}
+
+// Has Avatars
+
+.has-avatars {
+
+  .wp-block-latest-comments__comment {
+
+    .wp-block-latest-comments__comment-excerpt,
+    .wp-block-latest-comments__comment-meta {
+      margin-left: calc(var(--wp--style--block-gap, 2.5rem) + 2.5rem); // + Avatar size
+    }
+  }
+}

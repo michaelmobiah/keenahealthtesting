@@ -1,0 +1,33 @@
+// Notice
+
+body {
+  &.woocommerce-demo-store {
+    border-top: (@margin + @margin-small) solid transparent;
+  }
+}
+
+p {
+  &.demo_store {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    height: (@margin + @margin-small);
+    padding: 0;
+    z-index: @layer-6;
+
+    line-height: normal;
+
+    color: @color-light;
+    background-color: @header-color-accent;
+    border-bottom: 0;
+    box-shadow: none;
+
+    // Dismiss Link
+
+    .woocommerce-store-notice__dismiss-link {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+// Player - Variables
+
+// Firefox SVG Color Fix
+// http://codepen.io/geoffyuen/pen/zGKQQW
+@player-color-rgba: rgba(red(@player-color), green(@player-color), blue(@player-color), 0.99); // max 0.99
+@player-color-contrast-rgba: rgba(red(contrast(@player-color-accent, @player-color-background, @player-color, @color-contrast-threshold)), green(contrast(@player-color-accent, @player-color-background, @player-color, @color-contrast-threshold)), blue(contrast(@player-color-accent, @player-color-background, @player-color, @color-contrast-threshold)), 0.99); // max 0.99
+
+// Controls
+@player-controls-border: @padding-xsmall;
+@player-controls-original-height: 40px;
+@player-control-height: @player-controls-original-height + (@player-controls-border * 2);
+// Play/Pause
+@playpause-size: @icon-size-xlarge;
+@playpause-size-active: (@icon-size-xlarge + (@border-width-xlarge));

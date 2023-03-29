@@ -1,0 +1,45 @@
+{
+  "name": "adapta",
+  "description": "A Modern Components for a Web Development. No Dependencies. No Javascripts.",
+  "version": "0.9.9",
+  "private": true,
+  "license": "MIT",
+  "keywords": [
+    "adapta",
+    "ui",
+    "ui-framework",
+    "framework",
+    "library",
+    "html",
+    "html5",
+    "css",
+    "less",
+    "no-js",
+    "front-end",
+    "back-end",
+    "responsive",
+    "layout",
+    "flex",
+    "flexbox",
+    "form",
+    "theme",
+    "web"
+  ],
+  "authors": [
+    "Pavel Richter <pavel@forqy.com> (https://forqy.website/)"
+  ],
+  "main": [
+    "dist/adapta.css"
+  ],
+  "ignore": [
+    "bin/",
+    "vendor/",
+    ".directory",
+    ".gitignore",
+    ".gitattributes",
+    "composer.json",
+    "composer.lock",
+    "changelog.md",
+    "adapta.zip"
+  ]
+}

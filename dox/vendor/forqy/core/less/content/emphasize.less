@@ -1,0 +1,29 @@
+// Content - Emphasize
+
+.@{prefix}-emphasize {
+  display: block;
+  margin-bottom: @grid-gutter-medium;
+
+  font-family: @heading-font-family;
+  font-size: @font-size-h4;
+  font-weight: @font-weight;
+  line-height: @heading-line-height;
+
+  color: @content-color;
+
+  @media (max-width: @screen-tablet-max) {
+    font-size: @font-size-h5;
+  }
+
+  a {
+    color: currentColor;
+    border-bottom: @link-border-width solid currentColor;
+  }
+
+  // Colors
+
+  // Accent
+  &.@{prefix}-emphasize-color-accent {
+    color: @content-color-accent;
+  }
+}

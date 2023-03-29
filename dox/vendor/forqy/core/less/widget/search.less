@@ -1,0 +1,59 @@
+// Widget: Search
+
+.widget_search {
+
+  // Field
+
+  .@{prefix}-field-search {
+    margin: 0;
+  }
+
+  // Button
+
+  .@{prefix}-button {
+    padding-left: @form-field-padding-horizontal;
+    padding-right: @form-field-padding-horizontal;
+
+    color: fade(@form-field-color, 40%);
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: @form-field-color-focus;
+    }
+
+    &:focus-visible {
+      outline-color: currentColor;
+    }
+  }
+}
+
+// Product Search Widget
+
+.widget_product_search {
+
+  button {
+    background-color: transparent;
+  }
+}
+
+// Footer
+
+.@{prefix}-footer {
+
+  .widget_search,
+  .widget_product_search {
+
+    // Button
+
+    .@{prefix}-button {
+      color: fade(@footer-color, @footer-color-opacity - 20%);
+      background-color: transparent;
+
+      &:hover,
+      &:focus {
+        color: @footer-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+// Layout
+
+.woocommerce {
+
+  // Overlay
+
+  .blockUI.blockOverlay {
+    opacity: 1 !important;
+    z-index: @layer-2 !important;
+    background-color: fade(@content-color-background, 80%) !important;
+  }
+}
+
+// Change Order of The Layout
+// Due to Persisting of the Heading Levels
+// https://achecker.ca/checker/suggestion.php?id=37
+
+.@{prefix}-main-shop {
+  order: 2;
+
+  @media (max-width: @screen-phone-max) {
+    order: 1;
+  }
+
+  // Sidebar
+  + .@{prefix}-sidebar-column {
+    order: 1;
+
+    @media (max-width: @screen-phone-max) {
+      order: 2;
+    }
+  }
+}
+
+// Single Product
+
+body {
+  &.single-product {
+
+    .@{prefix}-main {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
+    .@{prefix}-sidebar {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+/*
+
+Flex - Container
+
+*/
+
+.@{prefix}-flex-container {
+  .flex-container();
+
+  // Inline
+  &-inline {
+    .flex-container-inline();
+  }
+
+  // Baseline
+  &-baseline {
+    .flex-align-items(baseline);
+  }
+
+  // Initial
+  &-initial {
+    .flex-align-items(initial);
+  }
+
+  //
+  // Wrap
+  //
+
+  &-wrap {
+    .flex-wrap(wrap);
+  }
+
+  &-nowrap {
+    .flex-wrap(nowrap);
+  }
+
+  //
+  // Stretch
+  //
+
+  &-stretch {
+    .flex-align-items(stretch);
+  }
+
+  &-stretch-center {
+    .flex-align-items(stretch);
+    .flex-justify(center);
+  }
+
+  &-stretch-right {
+    .flex-align-items(stretch);
+    .flex-justify(flex-end);
+  }
+
+  //
+  // Direction
+  //
+
+  // Reverse
+  &-reverse {
+    .flex-direction(row-reverse);
+    .flex-wrap(wrap-reverse);
+  }
+
+  // Column
+  &-column {
+    .flex-direction(column);
+    .flex-wrap(wrap);
+  }
+
+  // Column Reverse
+  &-column-reverse {
+    .flex-direction(column-reverse);
+    .flex-wrap(wrap-reverse);
+  }
+
+  //
+  // Alignment
+  //
+
+  // Top
+  &-top {
+    .flex-align-items(flex-start);
+  }
+
+  &-top-center {
+    .flex-align-items(flex-start);
+    .flex-justify(center);
+  }
+
+  &-top-right {
+    .flex-align-items(flex-start);
+    .flex-justify(flex-end);
+  }
+
+  // Center
+  &-center {
+    .flex-align-items(center);
+  }
+
+  &-center-center {
+    .flex-align-items(center);
+    .flex-justify(center);
+  }
+
+  &-center-right {
+    .flex-align-items(center);
+    .flex-justify(flex-end);
+  }
+
+  &-center-left {
+    .flex-align-items(center);
+    .flex-justify(flex-start);
+  }
+
+  // Bottom
+  &-bottom {
+    .flex-align-items(flex-end);
+  }
+
+  &-bottom-center {
+    .flex-align-items(flex-end);
+    .flex-justify(center);
+  }
+
+  &-bottom-right {
+    .flex-align-items(flex-end);
+    .flex-justify(flex-end);
+  }
+}

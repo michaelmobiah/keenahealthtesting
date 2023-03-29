@@ -1,0 +1,37 @@
+// Post - Badges
+
+.@{prefix}-post-badges {
+  user-select: none;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    display: inline-block;
+    padding: @padding-xxsmall @padding-small;
+    margin-right: @border-width-large;
+    margin-bottom: @border-width-large;
+
+    font-family: @font-secondary;
+    font-size: @font-size-small;
+    text-transform: @text-transform;
+    letter-spacing: @letter-spacing;
+    line-height: normal;
+
+    color: contrast(@post-color-accent, @post-color, @post-color-background, @color-contrast-threshold);
+    background-color: @post-color-accent;
+    border-radius: @border-radius-small;
+
+    white-space: nowrap;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: inherit;
+    border: 0;
+  }
+}

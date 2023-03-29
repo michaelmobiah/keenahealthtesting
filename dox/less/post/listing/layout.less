@@ -1,0 +1,59 @@
+// Post - Listing - Layout
+
+// Default
+
+body {
+  &.posts-layout-default {
+
+    .fy-main {
+      &.sidebar-active {
+
+        .fy-post-column {
+          flex-basis: 50%;
+          max-width: 50%;
+
+          @media (max-width: @screen-desktop-max) {
+            flex-basis: 50%;
+            max-width: 50%;
+          }
+          @media (max-width: @screen-tablet-max) {
+            flex-basis: 100%;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.fy-main {
+  &.sidebar-active {
+
+    // Content Centered
+    .content-layout-centered & {
+
+      .fy-post-column {
+        min-width: 50%;
+
+        @media (max-width: @screen-tablet-max) {
+          min-width: 100%;
+        }
+      }
+    }
+
+    // Content Full
+    .content-layout-full & {
+
+      .fy-post-column {
+        min-width: 33.333%;
+
+        @media (max-width: @screen-desktop-max) {
+          min-width: 50%;
+        }
+        @media (max-width: @screen-tablet-max) {
+          min-width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+/*
+
+Pagination
+
+*/
+
+.@{prefix}-pagination {
+
+  ul {
+    display: inline-block;
+
+    > li {
+      display: inline;
+
+      > a,
+      > span {
+        display: inline-block;
+        padding: @padding-xsmall @padding-small;
+        margin: 0 0 @border-width 0;
+
+        color: fade(@color-dark, 60%);
+        background-color: transparent;
+        border-radius: @border-radius;
+        border-bottom: @border-width solid transparent;
+
+        &:hover {
+          color: @color-dark;
+          border-bottom-color: @color-accent;
+        }
+      }
+
+      // Active
+
+      &.active {
+        > a,
+        > span {
+          color: @color-light;
+          background-color: @color-primary;
+          cursor: text;
+        }
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:first-child:not(:last-child) {
+        > a,
+        > span {
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+        }
+      }
+
+      &:last-child:not(:first-child) {
+        > a,
+        > span {
+          margin-right: 0;
+          border-bottom-left-radius: 0;
+          border-top-left-radius: 0;
+        }
+      }
+
+      &:not(:first-child):not(:last-child) {
+        > a,
+        > span {
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+.@{prefix}-pagination-left {
+  text-align: left;
+}
+
+.@{prefix}-pagination-center {
+  text-align: center;
+}
+
+.@{prefix}-pagination-right {
+  text-align: right;
+}

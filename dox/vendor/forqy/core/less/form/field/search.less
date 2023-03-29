@@ -1,0 +1,71 @@
+// Form - Field - Search
+
+input[type="search"] {
+  // iOS Fix
+  -webkit-appearance: none;
+  border-radius: @form-field-border-radius;
+}
+
+.@{prefix}-field-search {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+
+  // Input
+
+  .@{prefix}-input {
+    width: 100%;
+    padding-right: @icon-size-small + (@form-field-padding-horizontal * 2) !important; // icon size + button padding
+  }
+
+  // Button
+
+  .@{prefix}-button {
+    .flex-center();
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 0 @form-field-padding-horizontal;
+    margin: 0;
+
+    color: fade(@form-field-color, 50%);
+    background-color: transparent;
+    border: 0;
+    outline-offset: -(@link-border-width);
+    box-shadow: none;
+
+    .icon {
+      display: block;
+    }
+
+    &:hover,
+    &:focus {
+      color: @form-field-color-focus;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      outline-color: currentColor;
+    }
+  }
+
+  // In a Content
+  .@{prefix}-content & {
+    margin: @grid-gutter-small 0 0;
+  }
+
+  // In a Footer
+  .@{prefix}-footer & {
+
+    .@{prefix}-button {
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}

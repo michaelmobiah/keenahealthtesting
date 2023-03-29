@@ -1,0 +1,107 @@
+// Navigation - Sub-navigation
+
+.@{prefix}-navigation-list {
+
+  > li {
+
+    // Sub-navigation
+
+    ul {
+      opacity: 0;
+      pointer-events: none;
+
+      position: absolute;
+      width: 100%;
+      min-width: @navigation-sub-width-min;
+      max-width: @navigation-sub-width-max;
+      top: 100%;
+      left: 0;
+      padding: @navigation-link-padding-vertical 0;
+
+      .transition-property(~'opacity, margin-top');
+      .transition-duration(@transition-duration);
+      .transition-timing-function(@transition-timing-function);
+
+      li {
+        display: block;
+        position: relative;
+
+        font-size: @font-size-navigation;
+
+        // Hover
+
+        &:hover,
+        &:focus-within {
+          > ul {
+            opacity: 1;
+            pointer-events: initial;
+          }
+        }
+      }
+
+      a {
+        position: relative;
+        padding: floor((@navigation-link-padding-vertical / 2)) @navigation-link-padding-horizontal;
+
+        white-space: pre-wrap;
+
+        @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+          padding-right: (@navigation-link-padding-horizontal / 2);
+          padding-left: (@navigation-link-padding-horizontal / 2);
+          font-size: floor((@font-size-navigation * 0.95));
+          line-height: @line-height-small;
+        }
+      }
+
+      // Divider
+
+      .divider {
+        height: @padding-small;
+        background-color: transparent;
+
+        // Line
+        &:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: @navigation-link-padding-horizontal;
+          width: calc(~'100% - (@{navigation-link-padding-horizontal} * 2)');
+          height: @border-width-1;
+
+          background-color: fade(@navigation-sub-color, 20%);
+
+          @media (min-width: @screen-desktop) and (max-width: @screen-desktop-max) {
+            left: (@navigation-link-padding-horizontal / 2);
+            width: calc(~'100% - @{navigation-link-padding-horizontal}');
+          }
+        }
+
+        a {
+          display: none;
+          height: 0;
+          padding: 0;
+        }
+      }
+    }
+
+    // Hover
+
+    &:hover,
+    &:focus-within {
+      > ul {
+        opacity: 1;
+        pointer-events: initial;
+      }
+    }
+
+    // Sub-sub-navigation
+
+    > ul {
+      ul {
+        top: -(floor((@navigation-link-padding-vertical / 2)));
+        left: 100%;
+        z-index: @layer-2;
+      }
+    }
+  }
+}

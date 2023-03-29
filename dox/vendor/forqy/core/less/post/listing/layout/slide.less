@@ -1,0 +1,80 @@
+// Post - Listing - Layout - Slide
+
+.@{prefix}-post-slide {
+
+  .@{prefix}-post-container {
+    padding: @padding;
+  }
+
+  // Has Thumbnail
+  &.has-post-thumbnail {
+    padding: 0;
+    overflow-y: hidden;
+    background-color: transparent;
+
+    .@{prefix}-post-image {
+      a {
+        min-height: @post-slide-height-min;
+      }
+    }
+
+    // Container
+
+    .@{prefix}-post-container {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      .translate3d(0, 100%, 0);
+      width: 100%;
+
+      backface-visibility: hidden;
+      will-change: transform;
+
+      background-color: @post-color-background;
+      box-shadow: none;
+
+      .transition-property(~'transform, background-color, box-shadow');
+      .transition-duration(@transition-duration);
+      .transition-timing-function(@transition-timing-function);
+    }
+
+    &:hover,
+    &:focus-within {
+
+      .@{prefix}-post-container {
+        .translateY(2px);
+        .shadow-hover();
+      }
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+
+    .@{prefix}-post-play {
+      opacity: 0;
+    }
+  }
+
+  // Card
+  &.@{prefix}-post-card {
+
+    // Image
+
+    .@{prefix}-post-image {
+      border-radius: @border-radius;
+
+      a {
+        border-radius: @border-radius;
+      }
+
+      .posts-gutter-0 & {
+        border-radius: 0;
+
+        a {
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}

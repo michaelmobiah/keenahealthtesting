@@ -1,0 +1,127 @@
+// Navigation Container Mixins
+
+.navigation-mobile-container () {
+  opacity: 0;
+  pointer-events: none;
+  .translate3d(100%, 0, 0);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  min-width: @screen-min;
+  height: 100%;
+  min-height: 100vh;
+  max-height: none;
+  padding: @padding-large;
+  z-index: @navigation-mobile-z-index;
+
+  text-align: center;
+
+  overflow-y: auto;
+
+  backface-visibility: hidden;
+  will-change: opacity;
+
+  .transition(opacity, @navigation-mobile-transition-duration, @transition-timing-function);
+
+  @media (max-width: @screen-phone-max) {
+    padding-right: @padding;
+    padding-left: @padding;
+  }
+
+  @media (max-width: @screen-phone-min) {
+    padding-right: @padding-small;
+    padding-left: @padding-small;
+  }
+
+  // Overscroll
+  @supports (overscroll-behavior-y: contain) {
+    overscroll-behavior-y: contain;
+  }
+
+  // Momentum Scroll
+  -webkit-overflow-scrolling: touch;
+
+  // Scrollbar
+  .scrollbar-thin(fade(@navigation-mobile-color, 20%), @navigation-mobile-color-background);
+
+  // Navigation
+
+  .@{prefix}-navigation {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  // Right/Left Position
+
+  &[data-position] {
+    opacity: 1;
+    width: 80%;
+    max-width: @screen-phone;
+
+    will-change: transform;
+
+    transition: transform @navigation-mobile-transition-duration @transition-timing-function,
+    box-shadow @navigation-mobile-transition-duration @transition-timing-function @navigation-mobile-transition-duration;
+
+    @media (max-width: @screen-phone-max) {
+      .flex-center-left();
+    }
+    @media (max-width: (@screen-phone-min + @grid-gutter-medium)) {
+      max-width: calc(~'100% - @{grid-gutter-medium}');
+      min-width: (@screen-min - @grid-gutter-medium);
+    }
+
+    // Close
+
+    .@{prefix}-navigation-close {
+      opacity: 1;
+    }
+  }
+
+  // Left Position
+
+  &[data-position='left'] {
+    right: auto;
+    left: 0;
+    .translate3d(-100%, 0, 0);
+  }
+}
+
+// Active
+
+.navigation-mobile-container-active () {
+  opacity: 1;
+  pointer-events: auto;
+  .translate3d(0, 0, 0);
+
+  // Closing
+  &.closing {
+    opacity: 0;
+  }
+
+  // Closing Left/Right Position
+  &.closing[data-position] {
+    opacity: 1;
+  }
+
+  // Closing Right Position
+  &.closing[data-position='right'] {
+    .translate3d(100%, 0, 0);
+  }
+
+  // Closing Left Position
+  &.closing[data-position='left'] {
+    .translate3d(-100%, 0, 0);
+  }
+
+  // Close Button
+
+  [class*="@{prefix}-navigation-close"] {
+    opacity: 1;
+    display: flex;
+    pointer-events: auto;
+  }
+}

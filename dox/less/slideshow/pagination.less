@@ -1,0 +1,138 @@
+// Slideshow Pagination
+
+.fy-slideshow-pagination {
+  .centerer();
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  .translateX(-50%);
+  margin-bottom: @grid-gutter-small;
+  z-index: @layer-2;
+
+  color: @slideshow-color;
+
+  @media (max-width: @screen-phone-max) {
+    display: none;
+  }
+
+  .cta-enabled & {
+    margin-bottom: @grid-gutter-xlarge + @border-width-large;
+  }
+
+  // Alignment
+
+  .slideshow-pagination-align-left & {
+    text-align: left;
+  }
+
+  .slideshow-pagination-align-center & {
+    text-align: center;
+  }
+
+  .slideshow-pagination-align-right & {
+    text-align: right;
+  }
+}
+
+// Hidden
+
+.swiper-pagination-hidden {
+  opacity: 0;
+}
+
+// Bullet
+
+.swiper-pagination-bullet {
+  display: inline-block;
+  position: relative;
+  width: (@padding-xsmall + (@padding-xxsmall * 2));
+  height: (@border-width + (@padding-xsmall * 2));
+  margin: 0;
+
+  color: currentColor;
+  outline: transparent solid @link-border-width;
+
+  .transition(outline);
+
+  // Slider
+  &:before {
+    content: '';
+    position: absolute;
+    top: @padding-xsmall;
+    left: @padding-xxsmall;
+    width: 0;
+    height: @border-width;
+    margin: 0;
+    z-index: @layer-1;
+
+    background-color: currentColor;
+    border: 0;
+    border-radius: @border-radius-1;
+
+    .transition();
+  }
+
+  // Background
+  &:after {
+    content: '';
+    position: absolute;
+    top: @padding-xsmall;
+    left: @padding-xxsmall;
+    width: @padding-xsmall;
+    height: @border-width;
+    z-index: 0;
+
+    opacity: 0.5;
+    background-color: currentColor;
+
+    .transition(opacity);
+  }
+
+  &:hover,
+  &:focus {
+    &:after {
+      opacity: 0.75;
+    }
+  }
+
+  &:focus-visible {
+    outline-color: currentColor;
+  }
+}
+
+// Active
+
+.swiper-pagination-bullet-active {
+
+  &:before {
+    top: @padding-xsmall;
+    left: @padding-xxsmall;
+    width: @padding-xsmall;
+    height: @border-width;
+    margin: 0;
+
+    .shadow(fade(@color-dark, 10%));
+  }
+}
+
+// Clickable
+
+.swiper-pagination-clickable {
+
+  .swiper-pagination-bullet {
+    cursor: pointer;
+  }
+}
+
+// Vertical
+
+.swiper-container-vertical {
+  top: auto;
+  bottom: @grid-gutter-small;
+
+  .swiper-pagination-bullet {
+    margin: 0;
+    display: block;
+  }
+}

@@ -1,0 +1,137 @@
+// Transformation Mixins
+
+// Transforms
+
+.transform (@transform ...) { // <multiple-transforms>
+  transform: @transform;
+}
+
+// Transform Origin
+
+.transform-origin (@origin) {
+  transform-origin: @origin;
+}
+
+// Transform Style
+
+.transform-style (@style: 'flat') {
+  transform-style: @style;
+}
+
+// Rotate
+
+.rotate (@angle: 0deg) { // <angle>
+  transform: rotate(@angle);
+}
+
+.rotateX (@angle: 0deg) { // <angle>
+  transform: rotateX(@angle);
+}
+
+.rotateY (@angle: 0deg) { // <angle>
+  transform: rotateY(@angle);
+}
+
+.rotateZ (@angle: 0deg) { // <angle>
+  transform: rotateZ(@angle);
+}
+
+.rotate3d (@x: 0, @y: 0, @z: 0, @angle: 0deg) { // <number>, <number>, <number>, <angle>
+  transform: rotate3d(@x, @y, @z, @angle);
+}
+
+// Scale
+
+.scale (@x: 1, @y: 1) {
+  transform: scale(@x, @y);
+}
+
+.scaleX (@x: 1) {
+  transform: scaleX(@x);
+}
+
+.scaleY (@y: 1) {
+  transform: scaleY(@y);
+}
+
+.scaleZ (@z: 1) {
+  transform: scaleZ(@z);
+}
+
+.scale3d (@x: 1, @y: 1, @z: 1) {
+  transform: scale3d(@x, @y, @z);
+}
+
+// Translate
+
+.translate (@x: 0, @y: 0) {
+  transform: translate(@x, @y);
+}
+
+.translateX (@x: 0) {
+  transform: translateX(@x);
+}
+
+.translateY (@y: 0) {
+  transform: translateY(@y);
+}
+
+.translateZ (@z: 0) {
+  transform: translateZ(@z);
+}
+
+.translate3d (@x: 0, @y: 0, @z: 0) {
+  transform: translate3d(@x, @y, @z);
+}
+
+// Skew
+
+.skew (@x: 0deg, @y: 0deg) { // <angle>, <angle>
+  transform: skew(@x, @y);
+}
+
+.skewX (@x: 0deg) { // <angle>
+  transform: skewX(@x);
+}
+
+.skewY (@y: 0deg) { // <angle>
+  transform: skewY(@y);
+}
+
+// Matrix
+
+.matrix (@a: 1, @b: 1, @c: 1, @d: 1, @x: 0, @y: 0) {
+  transform: matrix(@a, @b, @c, @d, @x, @y);
+}
+
+.matrix3d (@matrix) {
+  transform: matrix3d(@matrix);
+}
+
+// Perspective
+
+.perspective (@perspective) {
+  perspective: @perspective;
+}
+
+.perspective-origin (@origin) {
+  perspective-origin: @origin;
+}
+
+// Backface visibility
+
+.backface-visibility (@visibility) {
+  backface-visibility: @visibility;
+}
+
+// Preserve 3D
+
+.preserve3d () {
+  .transform-style(preserve-3d);
+}
+
+// Aspect Ratio
+
+.aspect-ratio(@width, @height) {
+  padding-bottom: (@height / @width) * 100%;
+}

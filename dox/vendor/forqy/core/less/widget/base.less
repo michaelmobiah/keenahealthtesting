@@ -1,0 +1,263 @@
+// Widget - Base
+
+.widget {
+  position: relative;
+  margin: 0 0 @grid-gutter-medium;
+
+  color: fade(@content-color, @content-color-opacity);
+
+  // Common
+
+  a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    &:not([class*="button"]) {
+      color: fade(@content-color, @content-color-opacity);
+
+      &:hover,
+      &:focus {
+        color: @content-color;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .wp-caption {
+    margin-bottom: @grid-gutter-small;
+  }
+
+  // Form
+
+  .@{prefix}-form {
+
+    [class*="fy-flex-column"] {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .@{prefix}-form-header {
+    display: none;
+  }
+
+  .@{prefix}-field {
+    margin-top: 0;
+    margin-bottom: @margin-small;
+  }
+
+  // Alert
+
+  .@{prefix}-alert {
+    padding-right: @padding-small;
+    padding-left: @padding-small;
+  }
+
+  // Socials
+
+  .@{prefix}-socials {
+    display: inline-block;
+    margin-bottom: @grid-gutter-small;
+    padding: 0;
+
+    ul {
+      margin: 0;
+    }
+
+    li {
+      padding: 0;
+    }
+
+    a {
+      border: 0;
+    }
+  }
+}
+
+// Gutenberg Widget Block Editor
+#content {
+  > .widget {
+    margin: 0;
+  }
+}
+
+// Title
+
+[class*="widget-title"],
+.widgettitle { // Gutenberg Widget Block Editor Class
+  position: relative;
+  padding: @padding-xsmall 0;
+  margin: 0 0 @margin-small;
+
+  font-size: @font-size-h5;
+
+  color: @content-color;
+
+  a {
+    color: inherit;
+    border: 0;
+  }
+}
+
+// Content
+
+.@{prefix}-widget-content {
+  margin-bottom: @margin-small;
+
+  font-size: @font-size;
+  line-height: @line-height-small;
+
+  color: inherit;
+
+  p {
+    margin: 0 0 @margin-small;
+    font-size: inherit;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    padding-top: 0;
+    padding-bottom: @grid-gutter-small;
+
+    font-size: @font-size-h6;
+
+    color: @content-color;
+  }
+
+  a {
+    color: @link-color;
+    border-bottom: @link-border-width solid @link-border-color;
+
+    &:hover,
+    &:focus {
+      color: @link-color-hover;
+      border-bottom-color: @link-border-color-hover;
+    }
+  }
+}
+
+// Image
+
+.@{prefix}-widget-image {
+  display: block;
+  max-width: 100%;
+  margin-bottom: @margin-small;
+
+  a {
+    position: relative;
+    display: block;
+    border: 0;
+
+    // Overlay
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: @layer-2;
+
+      background-color: fade(@image-overlay-color, 0);
+
+      .transition(background-color);
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    a {
+      &:before {
+        background-color: fade(@image-overlay-color, @image-overlay-opacity);
+      }
+    }
+  }
+}
+
+// Sidebar
+
+.@{prefix}-sidebar {
+
+  .widget {
+    margin-bottom: @grid-gutter-medium;
+
+    @media (max-width: @screen-phone-max) {
+      margin-bottom: @grid-gutter-small;
+    }
+
+    // Title
+
+    [class*="title"] {
+      margin: 0 0 @margin-small;
+      border-bottom: @border-width-small solid fade(@content-color, 20%);
+    }
+  }
+}
+
+// Footer
+
+.@{prefix}-footer {
+
+  .widget {
+    color: fade(@footer-color, @footer-color-opacity);
+
+    a {
+      &:not([class*="button"]) {
+        color: fade(@footer-color, @footer-color-opacity);
+
+        &:hover,
+        &:focus {
+          color: @footer-color;
+        }
+      }
+    }
+
+    // Caption
+
+    .wp-caption-text {
+      color: fade(@footer-color, @footer-color-opacity - 20%);
+    }
+  }
+
+  // Title
+
+  [class*="widget-title"] {
+    color: @footer-color;
+    border-bottom: @border-width-small solid fade(@footer-color, 20%);
+  }
+
+  // Content
+
+  .@{prefix}-widget-content {
+    font-size: inherit;
+
+    h1, h2, h3, h4, h5, h6 {
+      color: @footer-color;
+    }
+
+    a {
+      &:not([class*="button"]) {
+        color: @footer-link-color;
+        border-bottom: @link-border-width solid @footer-link-border-color;
+
+        &:hover,
+        &:focus {
+          color: @footer-link-color-hover;
+          border-bottom-color: @footer-link-border-color-hover;
+        }
+      }
+    }
+
+    > p {
+      strong {
+        color: inherit;
+      }
+    }
+  }
+}

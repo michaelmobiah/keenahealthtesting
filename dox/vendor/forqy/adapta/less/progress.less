@@ -1,0 +1,69 @@
+/*
+
+Progress
+
+*/
+
+@import "animation/progress";
+
+.@{prefix}-progress {
+  display: block;
+  height: @progress-size;
+  margin-bottom: @margin;
+  overflow: hidden;
+
+  background-color: @progress-color-background;
+  border-radius: @border-radius-large;
+
+  .shadow-inset();
+}
+
+// Bar
+
+.@{prefix}-progress-bar {
+  display: block;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  padding: 0 0 0 @padding-small;
+
+  font-size: @font-size;
+  line-height: @progress-size;
+
+  color: @progress-bar-color;
+  background-color: @progress-bar-color-background;
+
+  .animationProgress();
+}
+
+// Color
+
+// Primary
+.@{prefix}-progress-bar-primary {
+  background-color: @progress-bar-color-background-primary;
+}
+
+// Secondary
+.@{prefix}-progress-bar-secondary {
+  background-color: @progress-bar-color-background-secondary;
+}
+
+// Warning
+.@{prefix}-progress-bar-warning {
+  background-color: @progress-bar-color-background-warning;
+}
+
+// Error
+.@{prefix}-progress-bar-error {
+  background-color: @progress-bar-color-background-error;
+}
+
+// Success
+.@{prefix}-progress-bar-success {
+  background-color: @progress-bar-color-background-success;
+}
+
+// Notice
+.@{prefix}-progress-bar-notice {
+  background-color: @progress-bar-color-background-notice;
+}

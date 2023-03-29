@@ -1,0 +1,105 @@
+// Block - Latest Comments
+
+@gutenberg-comments-avatar-size: 40px;
+
+.wp-block-latest-comments {
+
+  // Avatar
+
+  .avatar {
+    width: @gutenberg-comments-avatar-size;
+    height: @gutenberg-comments-avatar-size;
+    margin-right: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+    border-radius: 50%;
+  }
+}
+
+// Comment
+
+.wp-block-latest-comments__comment {
+  position: relative;
+  padding: 0 0 calc(var(--wp--style--block-gap, 2.5rem) / 2);
+  margin-bottom: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+
+  font-size: var(--fy--font-size--large);
+  line-height: var(--fy--line-height);
+
+  border-bottom: @border-width-1 solid fade(@content-color, 20%);
+
+  // Last
+  &:last-of-type {
+    border: 0;
+  }
+
+  // Image
+
+  > img {
+    float: left;
+  }
+
+  // Image Loading
+
+  .@{prefix}-image-loading {
+    display: none;
+  }
+
+  // Alignment - Full Width
+  &.alignfull {
+    padding: 0 calc(var(--wp--style--block-gap, 2.5rem) / 2);
+  }
+}
+
+// Meta
+
+.wp-block-latest-comments__comment-meta {
+  margin-bottom: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+}
+
+// Excerpt
+
+.wp-block-latest-comments__comment-excerpt {
+
+  p {
+    margin: 0 0 calc(var(--wp--style--block-gap, 2.5rem) / 2);
+    font-size: @font-size;
+    line-height: @line-height;
+  }
+}
+
+// Date
+
+.wp-block-latest-comments__comment-date {
+  font-size: @font-size-small;
+  color: fade(@content-color, @content-color-opacity - 20%);
+}
+
+// Has Avatars
+
+.has-avatars {
+
+  .wp-block-latest-comments__comment {
+
+    .wp-block-latest-comments__comment-excerpt,
+    .wp-block-latest-comments__comment-meta {
+      margin-left: calc(@gutenberg-comments-avatar-size + calc(var(--wp--style--block-gap, 2.5rem) / 2));
+    }
+  }
+}
+
+// Has Dates
+
+.has-dates {
+
+  .wp-block-latest-comments__comment {
+    line-height: @line-height;
+  }
+}
+
+// Has Excerpts
+
+.has-excerpts {
+
+  .wp-block-latest-comments__comment {
+    line-height: @line-height;
+  }
+}

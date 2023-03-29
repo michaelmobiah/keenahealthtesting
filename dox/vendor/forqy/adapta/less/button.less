@@ -1,0 +1,262 @@
+/*
+
+Button
+
+*/
+
+.@{prefix}-button {
+  display: inline-block;
+  position: relative;
+  padding: @button-padding-vertical @button-padding-horizontal;
+  margin: @button-margin-vertical @button-margin-horizontal;
+
+  font-family: @button-font-family;
+  font-size: @button-font-size;
+  font-weight: @button-font-weight;
+  text-transform: @button-text-transform;
+  letter-spacing: @button-letter-spacing;
+
+  white-space: nowrap;
+  vertical-align: top;
+  cursor: pointer;
+
+  color: @button-default-color;
+  background-color: @button-default-color-background;
+  background-image: none;
+  border: 0;
+  border-radius: @button-border-radius;
+  outline: none;
+
+  appearance: none;
+
+  .transition-property(~'color, background-color, border-color, opacity');
+  .transition-timing-function(@transition-timing-function);
+  .transition-duration(@transition-duration);
+  .transition-delay(@transition-delay);
+
+  &:hover,
+  &:focus {
+    color: @button-default-color-hover;
+    background-color: @button-default-color-background-hover;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  + .@{prefix}-button {
+    margin-left: @button-gutter;
+  }
+
+  // Reset
+  &[type="reset"],
+  &[type="submit"] {
+    cursor: pointer;
+  }
+
+  // Disabled
+  &:disabled {
+    opacity: 1;
+
+    cursor: not-allowed;
+    pointer-events: none;
+
+    color: @button-disabled-color;
+    background-color: @button-disabled-color-background;
+
+    .user-select(none);
+
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Block
+
+.@{prefix}-button-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  + .@{prefix}-button-block {
+    margin-top: @button-gutter;
+  }
+}
+
+// Size
+
+.@{prefix}-button-huge {
+  padding-top: @button-huge-padding-vertical;
+  padding-bottom: @button-huge-padding-vertical;
+  font-size: @button-huge-font-size;
+}
+
+.@{prefix}-button-large {
+  padding-top: @button-large-padding-vertical;
+  padding-bottom: @button-large-padding-vertical;
+  font-size: @button-large-font-size;
+}
+
+.@{prefix}-button-medium {
+  padding-top: @button-medium-padding-vertical;
+  padding-bottom: @button-medium-padding-vertical;
+  font-size: @button-medium-font-size;
+}
+
+.@{prefix}-button-small {
+  padding-top: @button-small-padding-vertical;
+  padding-bottom: @button-small-padding-vertical;
+  font-size: @button-small-font-size;
+}
+
+.@{prefix}-button-micro {
+  padding-top: @button-micro-padding-vertical;
+  padding-bottom: @button-micro-padding-vertical;
+  font-size: @button-micro-font-size;
+}
+
+// Primary
+
+.@{prefix}-button-primary {
+  color: @button-primary-color;
+  background-color: @button-primary-color-background;
+
+  &:hover,
+  &:focus {
+    color: @button-primary-color-hover;
+    background-color: @button-primary-color-background-hover;
+  }
+}
+
+// Inverse
+
+.@{prefix}-button-inverse {
+  color: @button-inverse-color;
+  background-color: @button-inverse-color-background;
+
+  &:hover,
+  &:focus {
+    color: @button-inverse-color-hover;
+    background-color: @button-inverse-color-background-hover;
+  }
+}
+
+// Warning
+
+.@{prefix}-button-warning {
+  color: @button-warning-color;
+  background-color: @button-warning-color-background;
+
+  &:hover,
+  &:focus {
+    color: @button-warning-color;
+    background-color: @button-warning-color-background-hover;
+  }
+}
+
+// Error
+
+.@{prefix}-button-error {
+  color: @button-error-color;
+  background-color: @button-error-color-background;
+
+  &:hover,
+  &:focus {
+    color: @button-error-color;
+    background-color: @button-error-color-background-hover;
+  }
+}
+
+// Delete
+
+.@{prefix}-button-delete {
+  color: @button-delete-color;
+  background-color: @button-delete-color-background;
+
+  &:hover,
+  &:focus {
+    color: @button-delete-color;
+    background-color: @button-delete-color-background-hover;
+  }
+}
+
+// Success
+
+.@{prefix}-button-success {
+  color: @button-success-color;
+  background-color: @button-success-color-background;
+
+  &:hover,
+  &:focus {
+    color: @button-success-color;
+    background-color: @button-success-color-background-hover;
+  }
+}
+
+// Notice
+
+.@{prefix}-button-notice {
+  color: @button-notice-color;
+  background-color: @button-notice-color-background;
+
+  &:hover,
+  &:focus {
+    color: @button-notice-color;
+    background-color: @button-notice-color-background-hover;
+  }
+}
+
+// Outline
+
+.@{prefix}-button-outline {
+  color: @button-default-color-background;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: @button-default-color;
+    background-color: @button-default-color-background;
+  }
+
+  // Primary
+
+  &.@{prefix}-button-primary {
+    color: @button-primary-color-background;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: @button-primary-color-hover;
+      background-color: @button-primary-color-background;
+    }
+  }
+
+  // Light
+
+  &.@{prefix}-button-light {
+    color: @button-light-color;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: @button-light-color-hover;
+      background-color: @button-light-color-background-hover;
+    }
+  }
+}
+
+// Group
+
+.@{prefix}-buttons {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0 -(@button-gutter) -(@button-gutter);
+
+  > .@{prefix}-button {
+    display: inline-block;
+    margin: 0 @button-gutter @button-gutter @button-gutter;
+  }
+}

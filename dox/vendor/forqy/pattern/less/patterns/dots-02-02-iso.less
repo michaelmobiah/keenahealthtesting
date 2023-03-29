@@ -1,0 +1,11 @@
+// Dots 2px - 2px spacing - Isometric
+
+// Mixin
+.pattern-dots-02-02-iso (@fill: fade(@pattern-color, @pattern-opacity)) {
+  .inline-svg(~'<svg fill="@{fill}" width="8" height="8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path d="M2,4h2V2H2V4z M6,6v2h2V6H6z"/></svg>');
+}
+
+// Pattern
+.@{prefix}-pattern-dots-02-02-iso {
+  .pattern-dots-02-02-iso();
+}

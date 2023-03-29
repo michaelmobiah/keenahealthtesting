@@ -1,0 +1,49 @@
+// Header - Sticky
+
+.@{prefix}-header {
+  &.sticky-clone {
+
+    // Disabled
+    .header-sticky-disabled & {
+      display: none;
+    }
+  }
+}
+
+// Admin Bar
+
+body {
+  &.admin-bar {
+
+    // Disabled
+    &.header-sticky-disabled {
+
+      .@{prefix}-header {
+        margin-top: 0 !important;
+      }
+
+      &[class*="navigation-active"] {
+
+        .@{prefix}-header {
+          .translateY(0);
+        }
+      }
+    }
+  }
+}
+
+// Navigation Active
+
+body {
+  &[class*="navigation-active"] {
+
+    .@{prefix}-header {
+      &.sticky-clone {
+
+        .@{prefix}-navigation-container {
+          display: none;
+        }
+      }
+    }
+  }
+}

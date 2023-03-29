@@ -1,0 +1,28 @@
+// Block
+
+[class*="wp-block"] {
+  margin-bottom: var(--wp--style--block-gap, 2.5rem);
+
+  // First
+  &:first-child {
+    margin-top: 0;
+  }
+
+  // Last
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  // Caption
+
+  figcaption {
+    width: 100%;
+    margin: calc(var(--wp--style--block-gap, 2.5rem) / 4) 0 0;
+
+    font-size: @font-size;
+    line-height: @line-height-small;
+    text-align: center;
+
+    color: currentColor;
+  }
+}

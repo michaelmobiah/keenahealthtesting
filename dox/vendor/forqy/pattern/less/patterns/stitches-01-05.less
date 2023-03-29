@@ -1,0 +1,11 @@
+// Stitches - 1px - 5px spacing
+
+// Mixin
+.pattern-stitches-01-05 (@fill: fade(@pattern-color, @pattern-opacity)) {
+  .inline-svg(~'<svg fill="@{fill}" width="18" height="18" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path d="M5,12h1v-1H5V12z M11,18h1v-1h-1V18z M17,11v1h1v-1H17z M11,6h1V5h-1V6z M11,12h1v-1h-1V12z"/></svg>');
+}
+
+// Pattern
+.@{prefix}-pattern-stitches-01-05 {
+  .pattern-stitches-01-05();
+}

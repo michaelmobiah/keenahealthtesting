@@ -1,0 +1,115 @@
+// Form - Field
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: @form-field-padding-vertical @form-field-padding-horizontal;
+
+  font-family: @form-field-font-family;
+  font-size: @form-field-font-size;
+  font-weight: @form-field-font-weight;
+  line-height: @form-field-line-height;
+
+  -webkit-appearance: none;
+
+  color: @form-field-color;
+  background-color: @form-field-color-background;
+  border: @form-field-border-width solid @form-field-border-color;
+  border-radius: @form-field-border-radius;
+  outline: none;
+  .form-field-focus-shadow-transparent();
+
+  .placeholder(fade(@form-field-color, 50%), fade(@form-field-color, 25%));
+
+  .transition-property(~'color, background-color, background-size, border, box-shadow, outline');
+  .transition-duration(@transition-duration);
+  .transition-timing-function(@transition-timing-function);
+
+  // Focus
+  &:focus {
+    color: @form-field-color-focus;
+    background-color: @form-field-color-background-focus;
+    border-color: @form-field-border-color-focus;
+    .form-field-focus-shadow(@form-field-border-color-focus);
+  }
+
+  // Error
+  &.@{prefix}-error {
+    border-color: @color-error;
+    .form-field-focus-shadow(@color-error);
+
+    &:focus {
+      .form-field-focus-shadow(@form-field-border-color-focus);
+    }
+  }
+}
+
+// Field
+
+.@{prefix}-field {
+  position: relative;
+  margin: 0 0 (@grid-gutter-small + @grid-gutter-xsmall);
+
+  font-family: @form-field-font-family;
+  font-size: @form-field-font-size;
+  font-weight: @form-field-font-weight;
+  text-align: left;
+
+  // Time/Date
+
+  [type='time'] {
+    max-height: calc(~'@{form-field-line-height} + (@{form-field-padding-vertical} * 2) + (@{form-field-border-width} * 2)');
+  }
+
+  // Number
+
+  [type='number'] {
+    padding-right: 0;
+  }
+
+  // Error
+
+  .@{prefix}-label-error {
+    min-width: 100%;
+    left: 0;
+    white-space: nowrap;
+  }
+
+  // Focus
+  &:focus-within {
+
+    .@{prefix}-label {
+      color: @form-label-color-focus;
+    }
+
+    .@{prefix}-input {
+      color: @form-field-color-focus;
+      background-color: @form-field-color-background-focus;
+      border-color: @form-field-border-color-focus;
+      .form-field-focus-shadow(@form-field-border-color-focus);
+    }
+
+    [type='time'] {
+      color: @form-field-color;
+    }
+  }
+}
+
+// Field within Label
+
+//label {
+//
+//  input,
+//  textarea,
+//  select {
+//    margin-top: @margin-xxsmall;
+//  }
+//}
+
+// Placeholder
+
+::-webkit-input-placeholder {
+  line-height: @line-height !important;
+}

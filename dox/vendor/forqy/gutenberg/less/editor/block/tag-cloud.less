@@ -1,0 +1,28 @@
+// Editor - Block - Tag Cloud
+
+.wp-block-tag-cloud {
+
+  p.wp-block-tag-cloud {
+    margin: 0 -2px 32px;
+    font-size: 0;
+  }
+
+  a {
+    display: inline-block;
+    padding: @padding-xxsmall @padding-xsmall;
+    margin: 0 2px 4px;
+
+    font-size: var(--fy--font-size) !important;
+    font-weight: var(--fy--font-weight);
+    line-height: 1;
+    text-decoration: none;
+
+    color: ~'rgba(var(--fy--content-color--rgb), var(--fy--content-color-opacity))' !important;
+    border: 1px solid ~'rgba(var(--fy--content-color--rgb), 20%)' !important;
+    border-radius: @border-radius-small;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

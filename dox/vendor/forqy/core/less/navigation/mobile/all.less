@@ -1,0 +1,29 @@
+// Navigation - Mobile - Breakpoint - All
+
+[class*="@{prefix}-navigation-mobile-container"] {
+
+  [class*='navigation-all--enabled'] & {
+    .navigation-mobile-container();
+
+    // Active
+    &.active {
+      .navigation-mobile-container-active();
+    }
+  }
+}
+
+// List [ul]
+
+[class*="@{prefix}-navigation-mobile-list"] {
+  [class*='navigation-all--enabled'] & {
+    .navigation-mobile-list();
+  }
+}
+
+// Trigger
+
+[class*="@{prefix}-navigation-trigger"] {
+  [class*='navigation-all--enabled'] & {
+    .navigation-mobile-trigger();
+  }
+}

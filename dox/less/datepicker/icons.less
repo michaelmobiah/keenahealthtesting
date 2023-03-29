@@ -1,0 +1,24 @@
+// Datepicker - Icons
+
+// Firefox SVG color fix
+// http://codepen.io/geoffyuen/pen/zGKQQW
+@datepicker-color-rgba: rgba(red(@datepicker-color), green(@datepicker-color), blue(@datepicker-color), 0.99);
+
+.fy-datepicker {
+
+  // Arrows
+
+  // Prev
+  .ui-datepicker-prev {
+    .ui-icon {
+      .inline-svg(~'<svg fill="@{datepicker-color-rgba}" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="14,7.024 3.852,7.024 7.524,3.409 6.11,2.007 0,8.016 6.11,13.993 7.524,12.591 3.883,9.007 14,9.007"></polygon></svg>');
+    }
+  }
+
+  // Next
+  .ui-datepicker-next {
+    .ui-icon {
+      .inline-svg(~'<svg fill="@{datepicker-color-rgba}" width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><polygon points="9.891,1.914 8.476,3.328 12.148,7 2,7 2,9 12.117,9 8.476,12.641 9.891,14.055 16,8"></polygon></svg>');
+    }
+  }
+}

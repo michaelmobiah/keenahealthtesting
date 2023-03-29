@@ -1,0 +1,27 @@
+// Editor - Block - Table
+
+.wp-block-table {
+
+  table {
+    margin-bottom: 0;
+    word-break: normal;
+  }
+
+  // Striped
+  &.is-style-stripes {
+    border: 0;
+
+    th,
+    td {
+      border-color: ~'rgba(var(--fy--content-color--rgb), 20%)';
+    }
+
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background: linear-gradient(90deg, ~'rgba(var(--fy--content-color--rgb), 0%)' 0%, ~'rgba(var(--fy--content-color--rgb), 5%)' 50%, ~'rgba(var(--fy--content-color--rgb), 0%)' 100%);
+        }
+      }
+    }
+  }
+}

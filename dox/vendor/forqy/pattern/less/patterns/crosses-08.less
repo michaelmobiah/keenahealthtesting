@@ -1,0 +1,11 @@
+// Crosses - 8px
+
+// Mixin
+.pattern-crosses-08 (@fill: fade(@pattern-color, @pattern-opacity)) {
+  .inline-svg(~'<svg fill="@{fill}" width="8" height="8" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><polygon points="7.4,1.4 6.6,0.6 4,3.3 1.4,0.6 0.6,1.4 3.3,4 0.6,6.6 1.4,7.4 4,4.7 6.6,7.4 7.4,6.6 4.7,4"/></svg>');
+}
+
+// Pattern
+.@{prefix}-pattern-crosses-08 {
+  .pattern-crosses-08();
+}

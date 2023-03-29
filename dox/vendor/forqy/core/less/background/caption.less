@@ -1,0 +1,44 @@
+// Background - Caption
+
+.@{prefix}-background-caption {
+  position: absolute;
+  bottom: @grid-gutter-medium;
+  right: @grid-gutter-medium;
+  padding: @padding-xxsmall 0;
+  margin: 0;
+  z-index: @layer-3;
+
+  font-size: @font-size-small;
+  font-style: @font-style-italic;
+  line-height: normal;
+  text-align: right;
+
+  color: contrast(@heading-background-overlay-color, fade(@color-dark, 80%), fade(@color-light, 80%), @color-contrast-threshold);
+
+  @media (max-width: @screen-desktop-max) {
+    max-width: 20%;
+  }
+
+  @media (max-width: @screen-tablet-max) {
+    display: none;
+  }
+
+  // Decoration
+  &:before {
+    opacity: 0.8;
+
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: @padding;
+    height: @border-width-1;
+
+    background-color: currentColor;
+  }
+
+  // Border Enabled
+  .border-enabled & {
+    bottom: @grid-gutter-large;
+  }
+}

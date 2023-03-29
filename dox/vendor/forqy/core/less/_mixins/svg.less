@@ -1,0 +1,30 @@
+// Mixins - SVG
+
+// Inline SVG
+
+.inline-svg (@code) { // .inline-svg(~' @code ')
+  @-svg-code: ~'@{code}';
+  @-svg-code-inline: ~'data:image/svg+xml;charset=UTF-8,@{-svg-code}';
+  @-svg-code-url: ~"url('@{-svg-code-inline}')";
+
+  background-image: @-svg-code-url;
+}
+
+.inline-svg-important (@code) { // .inline-svg(~' @code ')
+  @-svg-code: ~'@{code}';
+  @-svg-code-inline: ~'data:image/svg+xml;charset=UTF-8,@{-svg-code}';
+  @-svg-code-url: ~"url('@{-svg-code-inline}')";
+
+  background-image: @-svg-code-url !important;
+}
+
+// Cursor SVG
+
+.cursor-svg (@code) { // .cursor-svg(~' @code ')
+  @-svg-code: ~'@{code}';
+  @-svg-code-inline: ~'data:image/svg+xml;charset=UTF-8,@{-svg-code}';
+  @-svg-code-url: ~"url('@{-svg-code-inline}')";
+
+  cursor: @-svg-code-url, pointer;
+  cursor: -webkit-image-set(@-svg-code-url 1x, @-svg-code-url 2x) 0 0, pointer;
+}

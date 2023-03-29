@@ -1,0 +1,67 @@
+// Navigation - Mobile
+
+body.navigation-all--enabled,
+body.navigation-mobile-enabled {
+
+  [class*="@{prefix}-navigation-mobile-container"] {
+    .navigation-mobile-container();
+
+    // Active
+    &.active {
+      .navigation-mobile-container-active();
+    }
+  }
+
+  // List [ul]
+  [class*="@{prefix}-navigation-mobile-list"] {
+    .navigation-mobile-list();
+  }
+
+  // Trigger
+  [class*="@{prefix}-navigation-trigger"] {
+    .navigation-mobile-trigger();
+  }
+}
+
+// Overlay
+
+.@{prefix}-navigation-overlay {
+  display: none;
+
+  opacity: 0;
+  pointer-events: none;
+  .translateX(100%);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 125%; // Mobile scrolling fix
+  z-index: (@navigation-mobile-z-index - 1);
+
+  will-change: opacity;
+
+  background-color: fade(@navigation-mobile-overlay-color, @navigation-mobile-overlay-opacity);
+
+  .transition(opacity, @navigation-mobile-transition-duration);
+
+  // Mobile Enabled
+  .navigation-all--enabled &,
+  .navigation-mobile-enabled & { // TODO Deprecated
+    display: block;
+  }
+
+  // Active
+  .off-active &,
+  .navigation-active & { // TODO Deprecated
+    opacity: 1;
+    pointer-events: auto;
+    .translateX(0);
+  }
+
+  // Active Closing
+  .off-active.off-closing &,
+  .navigation-active.navigation-closing & { // TODO Deprecated
+    opacity: 0;
+  }
+}

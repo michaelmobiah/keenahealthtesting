@@ -1,0 +1,89 @@
+// Form - Label
+
+label {
+
+  a {
+    color: currentColor;
+    border-bottom: @link-border-width solid currentColor;
+
+    .transition-property(~'box-shadow, outline');
+
+    &:hover,
+    &:focus {
+      color: currentColor;
+      border-color: currentColor;
+    }
+  }
+
+  // Focus
+  &:focus-within {
+
+    a {
+      color: currentColor;
+      border-color: currentColor;
+
+      &:hover,
+      &:focus {
+        color: currentColor;
+        border-color: currentColor;
+      }
+    }
+  }
+
+  // Error
+  &.@{prefix}-error {
+    color: @error-color;
+
+    a {
+      border-color: currentColor;
+
+      &:focus,
+      &:hover {
+        border-color: currentColor;
+      }
+    }
+  }
+
+  // Abbreviation
+
+  abbr[title] {
+    opacity: 0.5;
+    margin-left: @margin-xxsmall;
+
+    font-size: @font-size-small;
+
+    .transition(opacity);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// Label
+
+.@{prefix}-label {
+  display: inline-block;
+}
+
+// Label - Error
+
+.@{prefix}-label-error {
+  position: relative;
+  padding: @padding-xxsmall @form-field-padding-horizontal;
+
+  color: @error-color;
+
+  // Decoration
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: (@form-field-padding-horizontal / 4);
+    height: @form-field-border-width;
+    margin-top: -(floor((@form-field-border-width / 2)));
+
+    background-color: @error-color;
+  }
+}

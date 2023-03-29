@@ -1,0 +1,48 @@
+// Footer - Section
+
+.@{prefix}-footer-section {
+  position: relative;
+  background-color: fade(@footer-color-background, @footer-color-background-opacity);
+
+  // Border
+  .@{prefix}-border {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    color: fade(@footer-color-background, @footer-color-background-opacity);
+  }
+}
+
+// Widgets
+
+.@{prefix}-footer-widgets {
+  display: block;
+  padding: (@grid-gutter-medium + @footer-padding) 0 0;
+  margin-bottom: -(@grid-gutter-large);
+  background-color: fade(@footer-color-background, @footer-color-background-opacity);
+
+  .@{prefix}-widget-column {
+    min-width: 25%;
+
+    @media (min-width: @screen-desktop) {
+      max-width: 50%;
+    }
+  }
+
+  // Widget
+
+  .@{prefix}-widget {
+    margin-bottom: @grid-gutter-large;
+  }
+}
+
+// Bar
+
+.@{prefix}-footer-bar {
+  display: block;
+  padding: (@grid-gutter-medium + @footer-padding) 0;
+
+  @media (max-width: @screen-tablet-max) {
+    text-align: center;
+  }
+}

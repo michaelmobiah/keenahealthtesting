@@ -1,0 +1,41 @@
+// Header - Socials
+
+.@{prefix}-header {
+
+  .@{prefix}-socials {
+    ul {
+      max-width: @screen-min;
+    }
+  }
+}
+
+.@{prefix}-header-container {
+
+  .@{prefix}-socials {
+    padding: 0;
+    text-align: right;
+
+    @media (max-width: @screen-phone-max) {
+      display: none;
+    }
+
+    a {
+      height: @navigation-height;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      color: fade(@header-color, 80%);
+      outline-offset: -(@link-border-width);
+
+      &:before {
+        z-index: -(@layer-1);
+        background-color: @header-color-accent;
+      }
+
+      &:hover,
+      &:focus {
+        color: @header-color;
+      }
+    }
+  }
+}

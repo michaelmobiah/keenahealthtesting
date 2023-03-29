@@ -1,0 +1,100 @@
+// Heading - Navigation
+
+.@{prefix}-heading__navigation {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: @margin -(@navigation-link-padding-horizontal) 0;
+  z-index: @layer-2;
+
+  // Alignment
+
+  .navigation-align-left &,
+  .navigation-align-right & {
+    .flex-justify(center);
+  }
+
+  .heading-horizontal-right & {
+    .flex-center-right();
+  }
+
+  .heading-horizontal-center & {
+    .flex-center();
+  }
+
+  .heading-horizontal-left & {
+    .flex-center-left();
+  }
+
+  // Navigation - List [ul]
+
+  .@{prefix}-navigation-list {
+    display: flex;
+    white-space: nowrap;
+
+    overflow-x: auto;
+    overflow-y: visible;
+
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    // Scrollbar
+    //.scrollbar-thin(fade(@heading-color, 25%), transparent);
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > li {
+      display: inline-block;
+      position: relative;
+
+      // All Links
+
+      a {
+        display: block;
+        position: relative;
+        padding-top: 0;
+        padding-bottom: 0;
+        z-index: @layer-2;
+
+        font-family: @font-navigation;
+        font-size: @font-size-navigation;
+        font-weight: @font-weight-navigation;
+        letter-spacing: @letter-spacing-navigation;
+        text-transform: @text-transform-navigation;
+        line-height: 4rem;
+
+        color: @heading-color;
+        outline-offset: -(@link-border-width);
+
+        @media (min-width: @screen-desktop) and (max-width: @screen-desktop-wide-max) {
+          font-size: floor((@font-size-navigation * 0.95));
+        }
+
+        &[href='#'] {
+          cursor: default;
+        }
+      }
+
+      // 1st Level Links
+
+      > a {
+        padding: @navigation-link-padding-vertical @navigation-link-padding-horizontal;
+      }
+
+      // Current
+      &[class*="current"] {
+        > a {
+          color: @heading-color-accent;
+        }
+      }
+
+      // Hover
+      &:hover,
+      &:focus-within {
+        > a {
+          color: @heading-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,216 @@
+// Form - Plugin - Contact Form 7
+
+.wpcf7 {
+  position: relative;
+
+  // Paragraph
+  p {
+    margin-bottom: @grid-gutter-small;
+  }
+
+  // Alert
+
+  span[role='alert'] {
+    display: block;
+    padding: @padding-xsmall 0;
+
+    font-family: @font-secondary;
+    font-size: @font-size-large;
+    font-weight: @font-weight;
+    text-transform: @text-transform;
+    letter-spacing: @letter-spacing;
+    line-height: normal;
+
+    color: @error-color;
+  }
+
+  // List Item
+
+  .wpcf7-list-item {
+    margin: 0 @grid-gutter-medium 0 0;
+
+    @media (max-width: @screen-phone-max) {
+      margin: 0;
+    }
+  }
+
+  // Field
+
+  input,
+  textarea,
+  select {
+
+    // Not Valid
+    &.wpcf7-not-valid {
+      border-color: @error-color;
+      .form-field-focus-shadow(@color-error);
+
+      &:focus {
+        border-color: @form-field-border-color-focus;
+        .form-field-focus-shadow(@form-field-border-color-focus);
+      }
+    }
+  }
+
+  // Control
+
+  .wpcf7-form-control-wrap {
+    display: block;
+    margin: 0 0 (@grid-gutter-small + @grid-gutter-xsmall);
+  }
+
+  .wpcf7-form-control {
+
+    // Not Valid
+    &.wpcf7-not-valid {
+
+      label {
+        color: @error-color;
+      }
+    }
+  }
+
+  // Error
+
+  .wpcf7-not-valid-tip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: @padding-xxsmall 0;
+
+    font-size: @font-size-small;
+
+    color: @error-color;
+  }
+
+  // Submit
+
+  .wpcf7-submit {
+
+    // Disabled
+    &:disabled {
+      color: @content-color-background;
+      background-color: fade(@content-color, 40%);
+    }
+  }
+
+  // Response
+
+  form {
+
+    .wpcf7-response-output {
+      padding: @padding-small @padding;
+      margin: @grid-gutter-small 0;
+
+      font-size: @font-size;
+
+      color: @content-color;
+      background-color: fade(@content-color, 2.5%);
+
+      border: @border-width-small solid @content-color;
+      border-radius: min(@border-radius, 4px);
+
+      @media (max-width: @screen-phone-max) {
+        padding: @padding-small;
+      }
+    }
+
+    // Sent
+    .wpcf7-mail-sent-ok {
+      color: @success-color;
+      background-color: fade(@success-color, 2.5%);
+      border-color: @success-color;
+    }
+
+    // Invalid/Failed/Unaccepted State
+    &.invalid,
+    &.failed,
+    &.unaccepted {
+
+      .wpcf7-response-output {
+        color: @error-color;
+        background-color: fade(@error-color, 5%);
+        border-color: @error-color;
+      }
+    }
+  }
+}
+
+// Spinner
+
+.wpcf7-spinner {
+  opacity: 1;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: @button-line-height;
+  height: @button-line-height;
+  margin: (@button-padding-vertical + @button-border-width) 0;
+
+  background-color: darken(@content-color-background, 5%);
+
+  // Dot
+  &:before {
+    background-color: @content-color;
+  }
+}
+
+// Footer
+
+.@{prefix}-footer {
+
+  .wpcf7 {
+    color: fade(@footer-color, @footer-color-opacity);
+
+    form {
+
+      // Response
+
+      .wpcf7-response-output {
+        color: @footer-color;
+      }
+    }
+
+    // Field
+
+    input,
+    textarea,
+    select {
+
+      // Not Valid
+      &.wpcf7-not-valid {
+        border-color: @error-color;
+        .form-field-focus-shadow(@color-error);
+
+        &:focus {
+          border-color: @footer-color-accent;
+          .form-field-focus-shadow(@footer-color-accent);
+        }
+      }
+    }
+  }
+
+  // Submit
+
+  .wpcf7-submit {
+
+    // Disabled
+    &:disabled {
+      color: @footer-color-background;
+      background-color: fade(@footer-color, 40%);
+    }
+  }
+
+  // Spinner
+
+  .wpcf7-spinner {
+    background-color: darken(@footer-color-background, 5%);
+
+    // Dot
+    &:before {
+      background-color: @footer-color;
+    }
+  }
+}

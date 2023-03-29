@@ -1,0 +1,456 @@
+// Player - Base
+
+.mejs-container {
+  width: auto !important;
+  max-width: 100% !important;
+  margin: 0 0 @grid-gutter-medium;
+  z-index: @layer-4;
+
+  background-color: @player-color-background !important;
+
+  audio,
+  video {
+    background-color: @player-color-background;
+  }
+
+  a {
+    border: 0 !important;
+  }
+
+  // Fullscreen
+  &.mejs-container-fullscreen {
+    margin: 0 !important;
+    z-index: (@layer-9 + 1000) !important;
+
+    .mejs-controls {
+      height: @player-controls-original-height !important;
+      border: 0 !important;
+    }
+  }
+
+  // Controls
+
+  .mejs-controls {
+    background-color: transparent !important;
+
+    // Button
+
+    .mejs-button {
+      button {
+        outline: @link-border-width solid transparent;
+        outline-offset: (@link-border-width * 2);
+
+        &:focus-visible {
+          outline: @link-border-width solid currentColor;
+        }
+      }
+    }
+  }
+}
+
+.mejs-inner {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mejs-controls {
+  opacity: 1;
+
+  align-items: center;
+  height: auto !important;
+  padding: 0 !important;
+
+  background: @player-color-background !important;
+  background-image: none;
+  border: @player-controls-border solid transparent !important;
+
+  user-select: none;
+
+  .transition(opacity);
+
+  // Button - Play/Pause, Mute/Unmute, Fullscreen, etc.
+
+  .mejs-button,
+  .mejs-time,
+  .mejs-time-rail {
+    height: @player-controls-original-height;
+  }
+
+  .mejs-button {
+    .flex-center();
+    margin: 0 @margin-xsmall;
+
+    text-align: center;
+
+    color: @player-color;
+
+    > button {
+      position: relative;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      margin: 0;
+
+      appearance: none;
+
+      color: inherit;
+      background-position: center;
+      background-color: transparent !important;
+      border: 0;
+      box-shadow: none;
+      outline: @link-border-width solid transparent;
+      outline-offset: @button-outline-width;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        outline: transparent;
+      }
+
+      &:focus-visible {
+        outline: @link-border-width solid currentColor;
+      }
+    }
+  }
+
+  // Play/Pause Button
+
+  .mejs-playpause-button {
+    position: relative;
+    width: @player-controls-original-height;
+    margin-left: @margin-xxsmall;
+    cursor: pointer;
+
+    button {
+      overflow: visible;
+      color: contrast(@player-color-accent, @player-color, @player-color-background, @color-contrast-threshold);
+
+      // Background
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+
+        width: @player-control-height;
+        height: @player-control-height;
+        margin-top: -(@player-control-height / 2);
+        margin-left: -(@player-control-height / 2);
+
+        background-color: @player-color-accent;
+        border-radius: (@player-control-height / 2);
+        outline: @link-border-width solid transparent;
+        outline-offset: @button-outline-width;
+        .button-focus-shadow-transparent();
+
+        //animation: none;
+
+        animation: playpauseAnimationPulse @transition-duration * 4 @transition-timing-function-ease-in-out 0s infinite alternate forwards;
+        animation-play-state: paused;
+
+        .scale(1, 1);
+
+        .transition-property(~'transform, background-color, box-shadow, outline');
+        .transition-duration(@transition-duration);
+        .transition-timing-function(@transition-timing-function);
+      }
+
+      &:focus {
+        box-shadow: none;
+
+        // Background
+        &:before {
+          .button-focus-shadow(@player-color-accent);
+        }
+      }
+
+      &:focus-visible {
+        // Background
+        &:before {
+          outline-color: @player-color-accent;
+        }
+      }
+    }
+
+    // Pause
+    &.mejs-pause {
+
+      button {
+        // Background
+        &:before {
+          animation-play-state: running;
+        }
+      }
+    }
+  }
+
+  // Time
+
+  .mejs-time {
+    .flex-center();
+    padding: 0 @padding-xxsmall 0 (@padding-small);
+    overflow: visible;
+
+    font-size: @font-size-small;
+    color: fade(@player-color, 40%);
+
+    &.mejs-duration-container {
+      padding: 0 @padding-xxsmall;
+    }
+  }
+
+  // Time Rail
+
+  .mejs-time-rail {
+    .flex-center-left();
+    padding: 0;
+    border-radius: 0;
+
+    span {
+      &:not(.mejs-time-float) {
+        height: @border-width-large;
+      }
+    }
+
+    .mejs-time-slider {
+      margin: 0;
+
+      outline: @link-border-width solid transparent;
+      outline-offset: (@link-border-width * 2);
+
+      .transition(outline);
+
+      &:focus-visible {
+        outline: @link-border-width solid currentColor;
+      }
+    }
+
+    .mejs-time-total {
+      position: relative;
+      margin: 0;
+
+      color: @player-color;
+      background-color: fade(@player-color, 10%) !important;
+      border-radius: 0;
+    }
+
+    .mejs-time-loaded {
+      background-color: fade(@player-color, 10%) !important;
+      border-radius: 0;
+      border-right: @border-width solid @player-color-background;
+    }
+
+    .mejs-time-current {
+      background-color: @player-color-accent !important;
+      border-radius: 0;
+      border-right: @border-width solid @player-color-background;
+    }
+
+    .mejs-time-hovered {
+      background-color: fade(@player-color, 20%) !important;
+    }
+
+    .mejs-time-handle {
+      display: none !important;
+    }
+
+    .mejs-time-float {
+      margin-left: 0 !important;
+      margin-bottom: @padding-xsmall !important;
+      line-height: @line-height !important;
+
+      color: @content-color-background !important;
+      background-color: @content-color !important;
+      border: 0 !important;
+      border-radius: @border-radius !important;
+
+      .shadow();
+
+      .mejs-time-float-corner {
+        border-color: @content-color transparent transparent !important;
+      }
+    }
+  }
+
+  // Volume - Vertical
+
+  .mejs-volume-slider {
+    background-color: @player-color-background !important;
+    border-radius: @border-radius;
+
+    .shadow-hover();
+
+    .mejs-volume-total {
+      background-color: fade(@player-color, 15%) !important;
+    }
+
+    .mejs-volume-current {
+      background-color: @player-color !important;
+    }
+
+    .mejs-volume-handle {
+      background-color: @player-color !important;
+
+      .shadow-hover();
+    }
+  }
+
+  // Volume - Horizontal
+
+  .mejs-horizontal-volume-slider {
+    width: (@padding + @padding-small);
+    height: @border-width-large;
+    margin-right: @margin-small;
+    overflow: hidden;
+
+    .mejs-horizontal-volume-total,
+    .mejs-horizontal-volume-current {
+      border-radius: 0;
+
+      .transition(background-color);
+    }
+
+    .mejs-horizontal-volume-total,
+    .mejs-horizontal-volume-current,
+    .mejs-horizontal-volume-handle {
+      height: @border-width-large;
+    }
+
+    .mejs-horizontal-volume-total {
+      top: 0;
+      width: 100%;
+      background-color: fade(@player-color, 10%) !important;
+    }
+
+    .mejs-horizontal-volume-current {
+      .box-sizing(border-box);
+      background-color: fade(@player-color, 20%) !important;
+    }
+
+    &:hover {
+      .mejs-horizontal-volume-current {
+        background-color: @player-color !important;
+      }
+    }
+
+    &.mejs-unmute {
+      .mejs-horizontal-volume-current {
+        border: 0;
+      }
+    }
+  }
+}
+
+// Big Play
+
+.mejs-layers {
+
+  .mejs-overlay-play {
+
+    // Overlay
+    &:before {
+      opacity: 1;
+
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+
+      background-color: fade(@image-overlay-color, @image-overlay-opacity);
+
+      .transition-property(~'background-color, opacity');
+      .transition-duration(@transition-duration);
+      .transition-timing-function(@transition-timing-function);
+    }
+
+    // Background
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80px;
+      height: 80px;
+      margin-top: -40px;
+      margin-left: -40px;
+      z-index: -1;
+
+      background-color: @player-color-accent;
+      border-radius: 40px;
+
+      .scale(1, 1);
+
+      .transition-property(~'transform, background-color');
+      .transition-duration(@transition-duration);
+      .transition-timing-function(@transition-timing-function);
+    }
+
+    // Button
+
+    .mejs-overlay-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      outline: none;
+
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      background-color: transparent !important;
+
+      .translate(-50%, -50%);
+    }
+
+    &[style^="display:none"],
+    &[style^="display: none"],
+    &[style*=" display:none"],
+    &[style*=" display: none"] {
+      opacity: 0;
+      visibility: hidden;
+      display: block !important; // Ouyeah!
+
+      &:before {
+        background-color: transparent;
+      }
+    }
+
+    &:hover {
+
+      // Background
+      &:after {
+        background-color: @player-color-accent;
+        .scale(1.2, 1.2);
+      }
+    }
+  }
+}
+
+// Poster
+
+.mejs-poster {
+  background-size: cover !important;
+}
+
+.mejs-mediaelement {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+// Animations
+
+@keyframes playpauseAnimationPulse {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.4, 1.4);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}

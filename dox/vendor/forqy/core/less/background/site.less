@@ -1,0 +1,68 @@
+// Background - Site
+
+.@{prefix}-background-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -@layer-1;
+  overflow: hidden;
+
+  pointer-events: none;
+
+  // iOS Fix background-attachment: fixed;
+  .ios &,
+  .iphone &,
+  .ipad & {
+    position: fixed;
+    min-height: 120vh;
+    clip: rect(0, auto, auto, 0);
+  }
+}
+
+.@{prefix}-background-site {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  z-index: 0;
+
+  // iOS Fix background-attachment: fixed;
+  .ios &,
+  .iphone &,
+  .ipad & {
+    position: fixed;
+    max-width: 100vw;
+    max-height: 120vh;
+
+    background-size: cover !important;
+    background-attachment: scroll !important;
+
+    .translateZ(0);
+  }
+
+  // Has Background Image
+  .custom-background &,
+  .custom-background-image & {
+
+    // Overlay
+
+    &:before {
+      content: '';
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+
+      background-color: fade(@background-overlay-color, @background-overlay-opacity);
+    }
+  }
+}

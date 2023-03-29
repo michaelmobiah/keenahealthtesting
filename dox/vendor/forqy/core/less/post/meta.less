@@ -1,0 +1,62 @@
+// Post - Meta
+
+.@{prefix}-post-meta {
+  display: inline-flex;
+  margin: 0 auto;
+
+  li {
+    display: inline-block;
+    position: relative;
+    padding: 0 @padding-small 0 0;
+    margin: 0 @margin-small 0 0;
+
+    line-height: @line-height-normal;
+
+    list-style: none;
+
+    border: 0;
+
+    // Divider
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -(@border-width-xxlarge / 2);
+      width: @border-width-xxlarge;
+      height: @border-width-1;
+
+      background-color: currentColor;
+      opacity: 0.4;
+    }
+
+    // First
+    &:first-child {
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    // Last
+    &:last-child {
+      padding-right: 0;
+      margin-right: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  a {
+    display: inline-block;
+    line-height: @line-height-normal;
+
+    border-bottom: @link-border-width solid transparent;
+  }
+
+  // Price
+
+  .@{prefix}-price {
+    font-size: @font-size;
+    font-weight: @font-weight-bold;
+  }
+}

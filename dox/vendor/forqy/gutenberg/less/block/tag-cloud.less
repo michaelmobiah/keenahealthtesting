@@ -1,0 +1,28 @@
+// Block - Tag Cloud
+
+.wp-block-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -(@border-width-large) calc(~'@{grid-gutter-medium} - @{border-width-xxlarge}');
+
+  a {
+    display: inline-block;
+    padding: @padding-xxsmall @padding-xsmall;
+    margin: 0 @border-width-large @border-width-xxlarge;
+
+    font-size: @font-size !important;
+    font-weight: @font-weight;
+    line-height: 1;
+
+    color: fade(@content-color, @content-color-opacity) !important;
+    border: @border-width-1 solid fade(@content-color, 20%) !important;
+    border-radius: @border-radius-small;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      color: @link-color-hover !important;
+      border-color: @link-border-color-hover !important;
+    }
+  }
+}

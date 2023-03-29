@@ -1,0 +1,73 @@
+// Off - Search
+
+.fy-off--search {
+  &[data-off-breakpoint='all'] {
+    color: var(--fy--search-color);
+    background-color: var(--fy--search-color-background);
+
+    @media (max-width: @screen-phone-max) {
+      padding-right: @padding-small;
+      padding-left: @padding-small;
+    }
+  }
+}
+
+.fy-search__form {
+  color: @search-color;
+
+  // Field
+
+  .fy-field-search {
+
+    // Field
+
+    .fy-input {
+      color: @search-color;
+      background-color: @search-color-background;
+      border-color: fade(@search-color, 25%);
+
+      .placeholder(fade(@search-color, 60%), fade(@search-color, 20%));
+
+      @media (min-width: @screen-tablet) {
+        padding: @form-field-padding-vertical * 1.5 @form-field-padding-horizontal;
+        font-size: @font-size-xlarge;
+      }
+
+      // Focus
+      &:focus {
+        color: @search-color;
+        background-color: @search-color-background;
+        border-color: @search-color-accent;
+        .form-field-focus-shadow(@search-color-accent);
+      }
+    }
+
+    &:focus-within {
+      .fy-input {
+        color: @search-color;
+        background-color: @search-color-background;
+        border-color: @search-color-accent;
+        .form-field-focus-shadow(@search-color-accent);
+      }
+    }
+
+    // Button
+
+    .fy-button {
+      color: fade(@search-color, 50%);
+
+      &:hover,
+      &:focus {
+        color: @search-color;
+      }
+    }
+  }
+
+  // Heading
+
+  h2 {
+    margin-bottom: @margin-small;
+    .font-size-fluid(@font-size-h3);
+    color: currentColor;
+  }
+}

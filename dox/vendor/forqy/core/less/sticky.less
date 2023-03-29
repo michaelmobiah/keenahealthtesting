@@ -1,0 +1,51 @@
+// Sticky
+
+.sticky-clone {
+  display: none;
+  visibility: hidden;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  backface-visibility: hidden;
+
+  .translate3d(0, -100%, 0);
+
+  .transition-property(~'transform, visibility, box-shadow, background');
+  .transition-duration(@transition-duration);
+  .transition-timing-function(@transition-timing-function);
+
+  // Sticky
+  &.is-sticky {
+    display: block;
+
+    .translate3d(0, -100%, 0);
+
+    // Admin Bar
+    .admin-bar & {
+      margin-top: @admin-bar-height;
+
+      // Phone
+      @media (max-width: 782px) {
+        margin-top: @admin-bar-height-phone;
+      }
+
+      @media (max-width: 600px) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  // Visible
+  &.is-visible {
+    visibility: visible;
+    .translate3d(0, 0, 0);
+  }
+
+  // Hidden + On Top
+  &.is-hidden,
+  &.is-on-top {
+    .translate3d(0, -100%, 0);
+  }
+}

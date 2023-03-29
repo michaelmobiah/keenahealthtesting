@@ -1,0 +1,47 @@
+// Video - Controls
+
+.@{prefix}-video-controls {
+  display: inline-block;
+
+  // Button
+
+  .@{prefix}-button {
+    color: @content-color;
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: @border-radius;
+    outline: @link-border-width solid transparent;
+    outline-offset: 0;
+    box-shadow: none;
+
+    .icon {
+      display: block;
+    }
+
+    &:hover,
+    &:focus {
+      color: @content-color;
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    &:focus {
+      &:focus-visible {
+        outline-color: currentColor;
+      }
+    }
+
+    // Icons
+
+    // Play
+    .@{prefix}-icon-play {
+      display: block;
+    }
+
+    // Pause
+    .@{prefix}-icon-pause {
+      display: none;
+    }
+  }
+}

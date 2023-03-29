@@ -1,0 +1,71 @@
+// Font Variables
+
+@font-primary: "Inter", sans-serif;
+@font-secondary: "Inter", sans-serif;
+@font-monospace: "Courier 10 Pitch", monospace;
+
+// Size
+
+@font-size-base: 16px;
+
+@font-size-xxlarge: 1.25rem; // 20px
+@font-size-xlarge: 1.125rem; // 18px
+@font-size-large: 1.0625rem; // 17px
+
+@font-size: 1rem; // 16px
+
+@font-size-small: 0.9375rem; // 15px
+@font-size-xsmall: 0.875rem; // 14px
+@font-size-xxsmall: 0.75rem; // 12px
+
+// Weight
+
+@font-weight-thin-extra: 100;
+@font-weight-thin: 300;
+@font-weight-normal: 400;
+@font-weight-bold: 700;
+@font-weight-bold-extra: 900;
+
+// Style
+
+@font-style: @font-style-normal;
+
+@font-style-normal: normal;
+@font-style-italic: italic;
+@font-style-oblique: oblique;
+
+// Transform
+
+@text-transform: @text-transform-none;
+
+@text-transform-none: none;
+@text-transform-uppercase: uppercase;
+@text-transform-lowercase: lowercase;
+@text-transform-capitalize: capitalize;
+
+// Letter Spacing
+
+@letter-spacing: @letter-spacing-0;
+
+@letter-spacing-0: 0;
+@letter-spacing-normal: normal;
+@letter-spacing-small: 0.005em;
+@letter-spacing-medium: 0.05em;
+@letter-spacing-large: 0.1em;
+
+// Line Height
+
+@line-height-normal: normal;
+
+@line-height-xxxlarge: (@line-height + 0.4);
+@line-height-xxlarge: (@line-height + 0.3);
+@line-height-xlarge: (@line-height + 0.2);
+@line-height-large: (@line-height + 0.1);
+
+@line-height: 1.7;
+
+@line-height-small: (@line-height - 0.2);
+@line-height-xsmall: (@line-height - 0.4);
+@line-height-xxsmall: (@line-height - 0.6);
+
+@line-height-computed: ceil((@font-size * @line-height));

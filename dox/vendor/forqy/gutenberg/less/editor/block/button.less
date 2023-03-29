@@ -1,0 +1,63 @@
+// Editor - Block - Button
+
+.wp-block-button__link {
+  padding: @padding-xsmall @padding;
+
+  font-family: var(--fy--font-button);
+  font-size: var(--fy--font-size-button);
+  font-weight: var(--fy--font-weight-button);
+  letter-spacing: var(--fy--letter-spacing-button);
+  text-transform: var(--fy--text-transform-button);
+
+  border-radius: var(--fy--border-radius);
+  border: var(--fy--border-width) solid transparent;
+
+  // Outline
+  .is-style-outline &,
+  &.is-style-outline {
+    border-width: var(--fy--border-width);
+    border-color: currentColor;
+  }
+
+  // Default Color
+  &:not(.has-text-color) {
+    color: var(--fy--content-color-background);
+
+    // Outline
+    .is-style-outline &,
+    &.is-style-outline {
+      color: var(--fy--content-color);
+      border-color: var(--fy--content-color);
+    }
+  }
+
+  // Default Background Color
+  &:not(.has-background) {
+    background-color: var(--fy--content-color-accent);
+
+    // Outline
+    .is-style-outline &,
+    &.is-style-outline {
+      background-color: transparent;
+    }
+  }
+
+  // Selection
+  &::selection {
+    color: var(--fy--content-color);
+    background-color: var(--fy--content-color-background);
+  }
+}
+
+// Buttons
+
+.wp-block-buttons {
+  margin-bottom: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+  column-gap: calc(var(--wp--style--block-gap, 2.5rem) / 2);
+
+  // Button
+
+  .wp-block {
+    margin: 0 calc(var(--wp--style--block-gap, 2.5rem) / 2) calc(var(--wp--style--block-gap, 2.5rem) / 2) 0;
+  }
+}

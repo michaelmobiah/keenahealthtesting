@@ -1,0 +1,68 @@
+// Bar - Toolbar
+
+.@{prefix}-bar {
+
+  .@{prefix}-toolbar {
+    z-index: @layer-6;
+    min-height: @bar-height;
+  }
+
+  .@{prefix}-toolbar__list {
+    > li {
+
+      > .icon {
+        min-height: @bar-height;
+      }
+
+      > a,
+      > button {
+        min-height: @bar-height;
+        line-height: @bar-height;
+
+        color: fade(@bar-color, @bar-color-opacity);
+
+        // Decoration
+        &:before {
+          background-color: @bar-color-accent;
+        }
+
+        &:hover,
+        &:focus {
+          color: @bar-color;
+        }
+      }
+
+      // Has Product
+      &.has-product {
+        > a,
+        > button {
+          color: @bar-color;
+
+          .@{prefix}-icon {
+
+            // Fake Product
+            &:before {
+              background-color: @bar-color;
+            }
+          }
+        }
+      }
+
+      &:hover,
+      &:focus-within {
+        > a,
+        > button {
+          color: @bar-color;
+
+          &:before {
+            background-color: @bar-color-accent;
+          }
+        }
+      }
+
+      > ul {
+        margin-top: 0;
+      }
+    }
+  }
+}

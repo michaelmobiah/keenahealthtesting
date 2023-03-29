@@ -1,0 +1,62 @@
+// Editor - Gutenberg // TODO Deprecated
+
+// Block
+.wp-block {
+  max-width: 1024px;
+}
+
+// Block Wide
+.wp-block[data-align="wide"] {
+  max-width: calc(~'100% - 200px'); // 100px of every side
+}
+
+// Block Full
+.wp-block[data-align="full"] {
+  max-width: none;
+}
+
+// Size
+
+.has-small-font-size {
+  font-size: 0.9375rem;
+}
+
+.has-medium-font-size {
+  font-size: 1.125rem;
+}
+
+.has-large-font-size {
+  font-size: 1.6rem;
+}
+
+.has-huge-font-size {
+  font-size: 2.2rem;
+}
+
+// Block - Heading
+
+.wp-block-heading {
+
+  h1, h2, h3, h4, h5, h6 {
+
+    // Small
+    small {
+      display: block;
+      font-weight: normal;
+      opacity: 0.8;
+    }
+  }
+}
+
+// Block - Blockquote
+
+.wp-block-quote {
+  font-size: 1.8rem;
+  line-height: normal;
+}
+
+// Block - Cover
+
+.wp-block-cover__inner-container {
+  padding-top: 40px;
+}

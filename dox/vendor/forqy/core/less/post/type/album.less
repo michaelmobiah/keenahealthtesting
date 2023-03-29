@@ -1,0 +1,101 @@
+// Post - Format - Album
+
+.@{prefix}-post-album {
+
+  // Post Listing
+  &.@{prefix}-post-listing {
+
+    // Meta
+    .@{prefix}-post-meta {
+      display: none;
+    }
+  }
+
+  // Album Meta
+
+  .@{prefix}-album-meta {
+    font-size: @font-size-xlarge;
+    color: fade(@post-color, @post-color-opacity - 20%);
+  }
+
+  // Album Label
+
+  .@{prefix}-album-label {
+    font-style: @font-style-italic;
+
+    a {
+      position: relative;
+      color: fade(@post-color, @post-color-opacity - 20%);
+      border-bottom: @link-border-width solid @post-link-border-color;
+
+      &:hover,
+      &:focus {
+        color: @post-link-color-hover;
+        border-bottom-color: @post-link-border-color-hover;
+      }
+    }
+  }
+
+  // Album Price
+
+  .@{prefix}-album-price {
+    font-family: @heading-font-family;
+    font-size: @font-size-h6;
+    font-weight: @heading-font-weight;
+    letter-spacing: @heading-letter-spacing;
+    text-transform: @heading-text-transform;
+  }
+
+  // Album Custom Meta
+
+  .@{prefix}-album-meta-custom {
+    padding-left: 0;
+    padding-right: 0;
+
+    // Item
+
+    .@{prefix}-meta-item {
+      display: block;
+      padding: @padding-small @padding;
+      margin-bottom: @grid-gutter-small;
+
+      border: @border-width-small solid fade(@content-color, 20%);
+      border-radius: @border-radius-small;
+
+      // Value
+
+      .@{prefix}-meta-value {
+        padding: 0;
+        font-size: @font-size-large;
+        color: fade(@content-color, 60%);
+      }
+
+      // Name
+
+      .@{prefix}-meta-name {
+        margin-top: 0;
+
+        font-family: @heading-font-family;
+        font-size: @font-size-xlarge;
+        font-weight: @heading-font-weight;
+        letter-spacing: @heading-letter-spacing;
+        text-transform: @heading-text-transform;
+
+        color: @content-color;
+      }
+    }
+  }
+
+  // Single
+
+  &.@{prefix}-post-single {
+
+    // Meta
+
+    .@{prefix}-post-meta {
+      .@{prefix}-post-meta-date {
+        display: none;
+      }
+    }
+  }
+}

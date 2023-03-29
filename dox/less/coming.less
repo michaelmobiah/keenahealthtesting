@@ -1,0 +1,43 @@
+// Coming
+
+.page-template-template-coming-soon {
+
+  .fy-canvas {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .fy-header {
+
+    .fy-bar {
+      display: none;
+    }
+
+    .fy-navigation,
+    .fy-navigation-trigger {
+      display: none;
+    }
+  }
+
+  .fy-heading {
+    .flex-align-items(center);
+    padding-top: (@header-height - (@header-padding * 2));
+
+    &:before {
+      height: 100%;
+      top: 0;
+    }
+
+    .fy-background {
+      border: none !important;
+    }
+  }
+
+  // Header Centered
+  &.header-layout-centered {
+
+    .fy-heading {
+      padding-top: (@header-centered-height - @navigation-height - @header-padding);
+    }
+  }
+}

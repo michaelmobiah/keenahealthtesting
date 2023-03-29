@@ -1,0 +1,433 @@
+// Form
+
+.woocommerce {
+
+  // Remove Button
+
+  .product-remove {
+
+    a, button {
+      .flex-center();
+
+      width: @icon-size-xsmall;
+      height: @icon-size-xsmall;
+      padding: 0;
+
+      font-size: @icon-size-xsmall;
+      font-weight: @font-weight;
+      line-height: @icon-size-xsmall;
+
+      color: fade(@content-color, @content-color-opacity - 20%) !important;
+      background-color: transparent;
+      border: 0;
+
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        color: @error-color !important;
+        background-color: transparent;
+      }
+    }
+  }
+
+  a.remove {
+    border-radius: 0;
+  }
+
+  // Update
+  input[name='update_cart'] {
+    float: right !important;
+  }
+
+  .wc-proceed-to-checkout {
+    padding: 0;
+    margin-top: @margin-small;
+
+    a.checkout-button {
+      margin-bottom: 0;
+    }
+  }
+
+  // Loading/Added Icon
+
+  a.button,
+  button.button,
+  input.button,
+  #respond input#submit {
+
+    &.loading,
+    &.added {
+      padding-right: @woo-product-container-padding-h;
+
+      // Loading: Cog/Added: Check Icon
+      &:after {
+        position: absolute;
+        top: 50%;
+        right: (@woo-product-container-padding-h / 4);
+        width: @icon-size-xsmall;
+        height: @icon-size-xsmall;
+        margin-left: @margin-xxsmall;
+        margin-top: -(@icon-size-xsmall / 2);
+
+        font-weight: @font-weight;
+        line-height: @icon-size-xsmall;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  // Forms
+
+  form.login,
+  form.register,
+  form.lost_reset_password {
+    padding: 0;
+    border: 0;
+
+    [type='text'],
+    [type='email'],
+    [type='password'],
+    [type='tel'] {
+      width: 100%;
+    }
+
+    [type='submit'] {
+      margin: @margin-small @margin-small 0 0;
+    }
+  }
+
+  // Checkout
+
+  form.checkout {
+
+    // Customer Details
+
+    #customer_details {
+      padding-top: (@margin + @margin-small);
+    }
+  }
+
+  // Reset Password
+
+  form.lost_reset_password {
+    max-width: 50%;
+
+    .heading-horizontal-center & {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (max-width: @screen-tablet-max) {
+      max-width: 75%;
+    }
+    @media (max-width: @screen-phone-max) {
+      max-width: 100%;
+    }
+
+    > p:not(.form-row) {
+      margin-bottom: @margin;
+    }
+
+    // Row
+
+    .form-row {
+      width: 100%;
+    }
+  }
+
+  // Login / Register
+
+  form.login,
+  form.register {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  // Coupon
+
+  form.checkout_coupon {
+    padding: 0;
+    margin: 0 0 @margin;
+    border: 0;
+    border-radius: 0;
+
+    p {
+      font-size: @font-size;
+      margin: 0 @margin-xsmall @margin-small 0 !important;
+
+      @media (max-width: @screen-tablet-max) {
+        width: 100%;
+        margin-bottom: @margin-xsmall !important;
+      }
+
+      &.form-row {
+        float: left;
+        max-width: @screen-min;
+      }
+    }
+  }
+
+  // Payment
+
+  #payment {
+
+    // Submit
+    #place_order {
+      float: none;
+      margin-top: @margin;
+      margin-bottom: 0;
+    }
+  }
+
+  // Misc
+
+  form {
+
+    > h3 {
+      margin-bottom: @margin;
+      color: @content-color;
+    }
+
+    // Row
+
+    .form-row {
+      padding: 0;
+      margin: 0 0 @margin-xsmall;
+
+      + p {
+        margin-top: 0;
+      }
+
+      // Label
+      label {
+        line-height: @line-height-small;
+
+        // Required
+        .required {
+          color: currentColor;
+          text-decoration: none;
+          .transition(opacity);
+        }
+      }
+
+      // Field
+      input.input-text {
+        line-height: @form-field-line-height;
+      }
+
+      textarea {
+        line-height: @line-height-small;
+        .form-field-focus-shadow-transparent();
+
+        &:focus {
+          .form-field-focus-shadow(@form-field-border-color-focus);
+        }
+      }
+
+      .input-checkbox {
+        display: inline-flex;
+        margin: 0 @margin-xsmall 0 0;
+      }
+
+      // Valid
+      &.woocommerce-validated {
+
+        input.input-text,
+        select {
+          border-color: @form-field-border-color;
+
+          &:focus {
+            border-color: @form-field-border-color-focus;
+          }
+        }
+      }
+
+      // Invalid
+      &.woocommerce-invalid {
+
+        label {
+          color: @color-error;
+        }
+
+        input,
+        input.input-text,
+        select,
+        .select2-container {
+          border-color: @color-error;
+          .form-field-focus-shadow(@color-error);
+
+          &:focus {
+            border-color: @form-field-border-color-focus;
+            .form-field-focus-shadow(@form-field-border-color-focus);
+          }
+        }
+      }
+
+      &:focus-within {
+
+        label {
+          color: @form-label-color-focus;
+        }
+      }
+    }
+
+    // Show Password
+
+    .show-password-input {
+      top: (@form-field-padding-vertical + @form-field-border-width);
+      right: @form-field-padding-horizontal;
+      height: @form-field-line-height;
+
+      // Icon
+      &:after {
+        margin-left: 0;
+        color: @content-color;
+      }
+
+      // Display
+      &.display-password {
+        &:after {
+          color: fade(@content-color, 40%);
+        }
+      }
+    }
+
+    // Quantity
+
+    [type='number'].qty {
+      max-width: 80px;
+      padding-right: 0;
+      text-align: left;
+    }
+  }
+
+  // Input
+
+  input.input-text {
+    padding: @form-field-padding-vertical @form-field-padding-horizontal;
+  }
+
+  input,
+  textarea {
+
+    // WooCommerce Placeholder Fix
+    &::-webkit-input-placeholder {
+      opacity: 1 !important;
+      transition: color @transition-duration @transition-timing-function !important;
+    }
+
+    &::-moz-placeholder {
+      opacity: 1 !important;
+      transition: color @transition-duration @transition-timing-function !important;
+    }
+  }
+
+  // Button
+
+  a.button,
+  button.button {
+    padding: @button-padding-vertical @button-padding-horizontal;
+
+    font-family: @button-font-family;
+    font-size: @button-font-size;
+    font-weight: @button-font-weight;
+    text-transform: @button-text-transform;
+    letter-spacing: @button-letter-spacing;
+    line-height: @button-line-height;
+
+    color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+    background-color: @content-color-accent;
+    border: @button-border-width solid transparent;
+    border-radius: @button-border-radius;
+
+    .button-focus-shadow-transparent();
+
+    .transition-property(~'color, background-color, background-size, border, box-shadow, text-decoration, outline, opacity');
+    .transition-duration(@transition-duration);
+    .transition-timing-function(@transition-timing-function);
+
+    @media (max-width: @screen-phone-max) {
+      padding-right: max(@button-padding-horizontal / 2, @padding-small);
+      padding-left: max(@button-padding-horizontal / 2, @padding-small);
+    }
+
+    &:hover,
+    &:focus {
+      color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+      background-color: @content-color-accent-darker;
+      border-color: transparent;
+    }
+
+    &:focus {
+      .button-focus-shadow(@content-color-accent-darker);
+    }
+
+    &:focus-visible {
+      outline-color: @content-color-accent-darker;
+    }
+
+    // Alt/Submit
+    &.alt,
+    &.submit {
+      font-size: max(@button-font-size, @font-size-large);
+      font-weight: @button-font-weight;
+
+      color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+      background-color: @content-color-accent;
+      border: @button-border-width solid transparent;
+
+      @media (max-width: @screen-phone-max) {
+        font-size: @button-font-size;
+      }
+
+      &:hover,
+      &:focus {
+        color: contrast(@content-color-accent, @content-color, @content-color-background, @color-contrast-threshold);
+        background-color: @content-color-accent-darker;
+        border-color: transparent;
+      }
+
+      &:focus {
+        .button-focus-shadow(@content-color-accent-darker);
+      }
+
+      &:focus-visible {
+        outline-color: @content-color-accent-darker;
+      }
+    }
+
+    // Disabled
+    &:disabled,
+    &.disabled,
+    &:disabled[disabled] {
+      opacity: 1;
+      padding: @button-padding-vertical @button-padding-horizontal;
+
+      cursor: not-allowed;
+
+      color: fade(@content-color-background, 60%) !important;
+      background-color: fade(@content-color, 20%) !important;
+      border-color: transparent;
+      box-shadow: none;
+
+      &:hover,
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+  }
+}
+
+// Invalid
+
+.woocommerce-invalid {
+
+  // Terms
+
+  #terms {
+    outline: none;
+  }
+}

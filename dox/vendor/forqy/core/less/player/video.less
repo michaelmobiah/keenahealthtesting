@@ -1,0 +1,85 @@
+// Player - Video
+
+.mejs-video {
+
+  // Hiding Fix
+
+  .mejs-controls {
+    .transition(opacity, @transition-duration, @transition-timing-function, 0s);
+
+    @media (max-width: @screen-tablet-max) {
+      border-width: @player-controls-border / 2;
+    }
+    @media (max-width: @screen-phone-max) {
+      border: 0;
+    }
+
+    &.mejs-offscreen {
+      opacity: 0;
+      overflow: visible !important;
+      clip: auto !important;
+      clip-path: none !important;
+    }
+
+    // Play/Pause
+
+    .mejs-playpause-button {
+
+      button {
+
+        // Background
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .mejs-controls {
+      .transition-delay(@transition-duration * 2);
+    }
+  }
+}
+
+// WordPress Video
+
+.wp-video {
+  width: 100% !important;
+  margin-bottom: @grid-gutter-medium;
+
+  background: transparent !important;
+
+  .mejs-container {
+
+    .mejs-overlay,
+    .mejs-poster {
+      width: 100% !important;
+      height: 100% !important;
+
+      &:hover {
+        .mejs-overlay-button {
+          background-position: 0 0;
+        }
+      }
+    }
+
+    .mejs-mediaelement {
+      .me-plugin {
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      video,
+      embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
+  }
+}

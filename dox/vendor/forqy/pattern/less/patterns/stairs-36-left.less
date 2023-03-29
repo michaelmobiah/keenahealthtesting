@@ -1,0 +1,11 @@
+// Stairs - 36px - Left
+
+// Mixin
+.pattern-stairs-36-left (@fill: fade(@pattern-color, @pattern-opacity)) {
+  .inline-svg(~'<svg fill="@{fill}" width="36" height="36" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path d="M19,35V17H1V0H0v18h18v18h18v-1H19z M0,36h1v-1H0V36z"/></svg>');
+}
+
+// Pattern
+.@{prefix}-pattern-stairs-36-left {
+  .pattern-stairs-36-left();
+}

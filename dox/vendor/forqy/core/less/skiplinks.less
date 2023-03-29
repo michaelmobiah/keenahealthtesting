@@ -1,0 +1,44 @@
+// Skip Links
+
+.@{prefix}-skip-links {
+  position: absolute;
+  top: 0;
+  left: -10000px;
+
+  a {
+    font-family: @font-secondary;
+    font-size: @font-size;
+    text-transform: @text-transform;
+    letter-spacing: @letter-spacing;
+
+    color: @color-dark;
+    background-color: @color-light;
+
+    .transition(none);
+
+    &:focus {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: @padding-xsmall @padding;
+      z-index: (@layer-9 + 1000);
+      text-align: center;
+      outline: none;
+
+      .shadow();
+
+      .admin-bar & {
+        top: @admin-bar-height;
+
+        @media (max-width: 782px) {
+          top: @admin-bar-height-phone;
+        }
+      }
+
+      .admin-bar.navigation-active & {
+        top: 0;
+      }
+    }
+  }
+}

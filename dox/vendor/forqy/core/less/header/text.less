@@ -1,0 +1,85 @@
+// Header - Text
+
+.@{prefix}-header-text {
+  font-size: @font-size-small;
+  font-weight: @font-weight;
+  letter-spacing: @letter-spacing;
+  text-transform: @text-transform;
+  line-height: @line-height-xsmall;
+
+  color: @header-color;
+
+  //a {
+  //  color: @header-link-color;
+  //  border-bottom: @link-border-width solid @header-link-border-color;
+  //
+  //  &:hover,
+  //  &:focus {
+  //    color: @header-link-color-hover;
+  //    border-bottom-color: @header-link-border-color-hover;
+  //  }
+  //}
+
+  // Button
+
+  .@{prefix}-button {
+    color: @header-color-background;
+    background-color: @header-color;
+
+    .button-focus-shadow-transparent();
+
+    &:hover,
+    &:focus {
+      color: @header-color-background;
+      background-color: @header-color-darker;
+    }
+
+    &:focus {
+      .button-focus-shadow(@header-color-darker);
+    }
+
+    &:focus-visible {
+      outline-color: @header-color-darker;
+    }
+  }
+
+  .@{prefix}-button-accent {
+    color: contrast(@header-color-accent, @header-color, @header-color-background, @color-contrast-threshold);
+    background-color: @header-color-accent;
+
+    &:hover,
+    &:focus {
+      color: contrast(@header-color-accent, @header-color, @header-color-background, @color-contrast-threshold);
+      background-color: @header-color-accent-darker;
+    }
+
+    &:focus {
+      .button-focus-shadow(@header-color-accent-darker);
+    }
+
+    &:focus-visible {
+      outline-color: @header-color-accent-darker;
+    }
+  }
+
+  .@{prefix}-button-bordered {
+    color: @header-color;
+    background-color: transparent;
+    border-color: fade(@header-color, 40%);
+
+    &:hover,
+    &:focus {
+      color: @header-color;
+      background-color: transparent;
+      border-color: @header-color-accent;
+    }
+
+    &:focus {
+      .button-bordered-focus-shadow(@header-color-accent);
+    }
+
+    &:focus-visible {
+      outline-color: @header-color-accent;
+    }
+  }
+}

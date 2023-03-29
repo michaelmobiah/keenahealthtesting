@@ -1,0 +1,55 @@
+// Filter - Common
+
+.@{prefix}-filter {
+  will-change: transform;
+
+  // Filter
+
+  [class*="@{prefix}-filter-"] {
+    transform: translateZ(0);
+
+    opacity: @filter-opacity-number;
+
+    // Lazy Loading
+    &.fy-lazy {
+      opacity: 0;
+
+      &.lazy-loaded {
+        opacity: @filter-opacity-number;
+      }
+    }
+
+    // Swiper Lazy Loading
+    &.swiper-lazy {
+      opacity: 0;
+
+      &.swiper-lazy-loaded {
+        opacity: @filter-opacity-number;
+      }
+    }
+  }
+
+  // Filter - None
+
+  .fy-filter-none {
+    opacity: 1;
+
+    // Lazy Loading
+    &.fy-lazy {
+      opacity: 0;
+
+      &.lazy-loaded {
+        opacity: 1;
+      }
+    }
+
+    // Swiper Lazy Loading
+    &.swiper-lazy {
+      opacity: 0;
+
+      &.swiper-lazy-loaded {
+        opacity: 1;
+      }
+    }
+  }
+}

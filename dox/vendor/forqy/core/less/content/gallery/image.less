@@ -1,0 +1,69 @@
+// Content - Gallery - Image
+
+.@{prefix}-gallery-image {
+  position: relative;
+  width: 100%;
+  margin-bottom: @gallery-gutter;
+  z-index: @layer-1;
+
+  a {
+    display: block;
+    position: relative;
+    border: 0;
+
+    // Overlay
+    &:before {
+      opacity: 0;
+
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: @layer-2;
+
+      background-color: fade(@image-overlay-color, @image-overlay-opacity);
+
+      .transition-property(~'background-color, opacity');
+      .transition-duration(@transition-duration);
+      .transition-timing-function(@transition-timing-function);
+    }
+
+    // Loaded
+    &.lazy-loaded {
+      // Overlay
+      &:before {
+        opacity: 1;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      // Overlay
+      &:before {
+        background-color: fade(@image-overlay-color, 0);
+      }
+    }
+  }
+
+  // Overlay - Reversed
+
+  .post-overlay-reversed & {
+
+    a {
+      // Overlay
+      &:before {
+        background-color: fade(@image-overlay-color, 0);
+      }
+
+      &:hover,
+      &:focus {
+        // Overlay
+        &:before {
+          background-color: fade(@image-overlay-color, @image-overlay-opacity);
+        }
+      }
+    }
+  }
+}
