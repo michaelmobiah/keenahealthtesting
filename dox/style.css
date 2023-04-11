@@ -19,3 +19,7 @@ License URI:			https://www.gnu.org/licenses/gpl-3.0-standalone.html
 Tags:					one-column, two-columns, right-sidebar, full-width-template, custom-colors, custom-header, custom-menu, flexible-header, post-formats, featured-images, microformats, sticky-post, theme-options, threaded-comments, translation-ready
 
 */
+
+.fy-background-empty, .fy-background-image, .fy-background-media, .fy-background-video {
+    background: red;
+}
